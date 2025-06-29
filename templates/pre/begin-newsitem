@@ -1,0 +1,14 @@
+#!/bin/bash
+awk -i inplace -i "utils.awk" '
+{
+    if ($0 ~ "{{begin-newsitem") {
+        time = get_parameter($0, "time");
+        sub("T", " ", time);
+        sub("Z", " UTC", time);
+
+        sub("{{begin-newsitem", "{{begin-newsitem |formatted-time=" time " ", $0);
+    }
+    print $0;
+}
+' $1
+

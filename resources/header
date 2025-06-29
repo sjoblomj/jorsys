@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>${title} - Jorvik Systems</title>
+    <link rel="stylesheet" type="text/css" href="${nesting}/jorsys.css">
+  </head>
+  <body>
+
+<div class="site">
+<nav class="menus">
+<div class="leftmenu">
+<a href="${nesting}/index.html"><img id="menulogo" src="${nesting}/csswords7.png" /></a>
+<div id="menulogoencirclement"></div>
+<div class="menucontent menucontentleft">
+
+  <div class="menudescr">Navigation Menu</div>
+  <div class="menuheader">Jorsys</div>
+  <ul>
+    <li><a href="${nesting}/index.html">News</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://www.camsys.org/news/archives.shtml">News archive</a></li>
+    <li><a href="${nesting}/feed.html">Feed</a></li>
+  </ul>
+
+  <div class="menuheader">StarCraft I</div>
+  <ul>
+    <li>About StarCraft</li>
+    <li>Playing</li>
+    <li>Modding</li>
+    <li><a href="${nesting}/starcraft/software.html">Software</a></li>
+    <li>Mods</li>
+  </ul>
+
+  <div class="menuheader">WarCraft II</div>
+  <ul>
+    <li>About WarCraft II</li>
+    <li>Playing</li>
+    <li>Modding</li>
+    <li><a href="${nesting}/warcraft2/software.html">Software</a></li>
+    <li>Mods</li>
+  </ul>
+
+  <div class="menuheader">WarCraft I</div>
+  <ul>
+    <li>About WarCraft I</li>
+    <li>Playing</li>
+    <li>Modding</li>
+    <li><a href="${nesting}/warcraft1/software.html">Software</a></li>
+    <li>Mods</li>
+  </ul>
+
+  <div class="menuheader">Other games</div>
+  <ul>
+    <li><a href="${nesting}/tiberian-sun.html">Tiberian Sun</a></li>
+    <li><a href="${nesting}/descent3.html">Descent 3</a></li>
+    <li><a href="${nesting}/genderwars.html">Gender Wars</a></li>
+    <li>Allied General</li>
+  </ul>
+
+  <div class="menuheader">About Jorsys</div>
+  <ul>
+    <li><a href="${nesting}/about.html">About</a></li>
+    <li><a href="${nesting}/who.html">Who</a></li>
+  </ul>
+
+  <hr />
+
+  <div class="orgnetwork">
+    Links<br />
+    <a href="https://settlers2.net" target="_blank"><img src="${nesting}/settlers2_net.png" /></a>
+  </div>
+
+  <div class="menuend">
+    <hr />
+  </div>
+</div>
+</div>
+
+
+<div class="rightmenu">
+<div class="menucontent menucontentright">
+  <div class="menudescr">Software Live Wire</div>
+  <div class="menuheader">StarCraft Tools</div>
+  <ul>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=stardraft">StarDraft</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=stargraft">StarGraft</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=scaiedit31">ScAIEdit 3.1</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=ice">ICE</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=arsenal3">Arsenal III</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=tileedit">TileEdit</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=arredit">ArrEdit</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=isom">ISOM</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=paledit">PalEdit</a></li>
+  </ul>
+
+  <div class="menuheader">Descent 3 Tools</div>
+  <ul>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=hog2ws">HOG2 Workshop</a></li>
+    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=d3cp">D3CP</a></li>
+  </ul>
+
+  <div class="menuheader">Gender Wars Tools</div>
+  <ul>
+    <li><a href="http://cgi.camsys.org/download.cgi?id=GenDraft">GenderDraft</a></li>
+  </ul>
+
+  <hr />
+
+  <div class="menudescr">Specs Live Wire</div>
+  <div class="menuheader">StarCraft Specs</div>
+  <ul>
+    <li><a href="techdata_dat.html">Technology</a></li>
+    <li><a href="units_dat.html">Units</a></li>
+    <li><a href="upgrades_dat.html">Upgrades</a></li>
+    <li><a href="weapons_dat.html">Weapons</a></li>
+  </ul>
+
+  <div class="menuheader">WarCraft Specs</div>
+  <ul>
+    <li><a href="udta.html">UDTA</a></li>
+  </ul>
+
+</div>
+</div>
+</nav>
+
+<div class="middle">
+
+<div id="topline"></div>
+<img src="${nesting}/jorsys.png" class="toplogo" />
+
+<div class="content">
+    <div class="newspageheader">
+        <img src="${nesting}/sunset.png" />
+    </div>
