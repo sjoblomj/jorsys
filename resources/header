@@ -62,13 +62,6 @@
     <li><a href="${nesting}/who.html">Who</a></li>
   </ul>
 
-  <hr />
-
-  <div class="orgnetwork">
-    Links<br />
-    <a href="https://settlers2.net" target="_blank"><img src="${nesting}/settlers2_net.png" /></a>
-  </div>
-
   <div class="menuend">
     <hr />
   </div>
