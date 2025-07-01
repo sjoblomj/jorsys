@@ -1,6 +1,6 @@
 # News
 
-{{begin-newsitem |time=2025-06-19T20:41:01Z |title=IronGRP 0.5 |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-06-19T20:41:01Z |title=IronGRP 0.5 |author=Ojan}}
 
 {{highlight |text=IronGRP}} version 0.5 was just released with the following features: 
 
@@ -18,7 +18,7 @@
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-06-11T21:40:59Z |title=IronImage |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-06-11T21:40:59Z |title=IronImage |author=Ojan}}
 
 After creating {{highlight |text=palpngrs}} ([GitHub](https://github.com/sjoblomj/palpngrs)) out of code from {{highlight |text=IronGRP}}, I decided to create a little utility that can convert between Palettized images and PNGs. I called it {{highlight |text=IronImage}}.
 
@@ -31,7 +31,7 @@ I would like to add support for PCX images, which are used in StarCraft. Image s
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-05-30T19:26:18Z |title=Namebreaking |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-05-30T19:26:18Z |title=Namebreaking |author=Ojan}}
 
 From Diablo I and onward, up until fairly recently, Blizzard has used MPQ files to store their game data. The MPQ format is a container format that can hold multiple files and directories, like ZIP files. While the MPQ files store files, they do not store file names. To know the names of the files, an external listfile must be used. Internally, the MPQ files instead store two hashes of the file names to identify the files.
 
@@ -44,7 +44,7 @@ I just created a little CUDA program to make use of the GPU to continue to brute
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-05-20T18:55:19Z |title=Work begun on image converter |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-05-20T18:55:19Z |title=Work begun on image converter |author=Ojan}}
 
 I have started to work on an image converter for WarCraft I and WarCraft II. I have made a library called [palpngrs](https://github.com/sjoblomj/palpngrs) out of the code I had for {{highlight |text=IronGRP}}, which can handle conversions to and from Palettized images and PNG files. Very few lines of code then allowed me to slap together a little utility that can convert raw IMG files (used for backgrounds and dialog elements in WarCraft I and WarCraft II) as well as Cursor files (used for the mouse cursor in WarCraft I and WarCraft II) to PNGs and back.
 
@@ -53,7 +53,7 @@ I have some finishing touches to do and I can't decide on a name I like for it. 
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-05-10T06:13:47Z |title=IronGRP 0.4 released |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-05-10T06:13:47Z |title=IronGRP 0.4 released |author=Ojan}}
 
 {{highlight |text=IronGRP}} 0.4 has just been released and is avaliable at [GitHub](https://github.com/sjoblomj/irongrp). Some of the features have been mentioned before: It has support for Extended Uncompressed GRPs and WarCraft I GRPs, and it can now correctly differentiate between different GRP types. I have added some boundary checks for width, height, offsets and frame count, and added more unit tests. It can now also generate shell completions, to make the tool more ergonomic to work with.
 
@@ -64,7 +64,7 @@ A fair amount of refactoring has been done, so the code is now a bit better stru
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-04-26T09:37:22Z |title=Support for WarCraft I GRPs in IronGRP |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-26T09:37:22Z |title=Support for WarCraft I GRPs in IronGRP |author=Ojan}}
 
 I extracted the GRPs from WarCraft I: Orcs and Humans from its data archive files. The format is nearly identical to Uncompressed GRPs, except that the header is four bytes instead of six (in WarCraft I there is first a two byte frame count, and then a byte with the maximum width followed by a byte of the maximum height - In StarCraft and WarCraft II the max width and max height are both two bytes each).
 
@@ -73,7 +73,7 @@ This caused a surprising amount of code changes in {{highlight |text=IronGRP}}, 
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-04-21T14:27:41Z |title=Support for Extended Uncompressed GRPs |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-21T14:27:41Z |title=Support for Extended Uncompressed GRPs |author=Ojan}}
 
 After spending the Easter holidays being sick, I looked a bit more at the last three GRPs that I mentioned last time.
 
@@ -95,7 +95,7 @@ With this, all GRPs of StarCraft, StarCraft: Brood Wars and WarCraft II: Battle.
 
 
 
-{{begin-newsitem |time=2025-04-19T09:14:19Z |title=IronGRP 0.3 |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-19T09:14:19Z |title=IronGRP 0.3 |author=Ojan}}
 
 With release 0.3 of {{highlight |text=IronGRP}}, it now supports converting to and from uncompressed GRPs. That means that every last GRP from StarCraft and StarCraft: Brood War can be converted to and from PNGs. The program is available on [GitHub](https://github.com/sjoblomj/irongrp).
 
@@ -125,7 +125,7 @@ The last two files are probably Uncompressed GRPs or a variant thereof. Either m
 
 
 
-{{begin-newsitem |time=2025-04-15T16:36:58Z |title=Fixed offset bug in IronGRP |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-15T16:36:58Z |title=Fixed offset bug in IronGRP |author=Ojan}}
 
 {{highlight |text=IronGRP}} now correctly handles the last eight normal GRPs that previously were encoded differently than their input! When frames had identical image contents, it would reuse the same frame data, including the vertical and horizontal offsets. It turned out that 
 identical image data does not necessarily mean identical offsets. For instance, the red blinking "nuke dot" jumps around a little bit, which is accomplished by setting different offsets, although the image data is the same.
@@ -154,7 +154,7 @@ The ten uncompressed GRPs are:
 
 
 
-{{begin-newsitem |time=2025-04-14T21:52:08Z |title=Palettes ruining the party |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-14T21:52:08Z |title=Palettes ruining the party |author=Ojan}}
 
 So I've been playing around with {{highlight |text=IronGRP}} for a few hours now, and I just realized what the cause of (almost all) the remaining differences between the input GRPs and the output GRPs are.
 
@@ -195,7 +195,7 @@ The ones marked with * are uncompressed I believe, for which there is no support
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-04-14T19:05:13Z |title=IronGRP is getting preciser |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-14T19:05:13Z |title=IronGRP is getting preciser |author=Ojan}}
 
 I have continued to look at how the GRP converter, {{highlight |text=IronGRP}}, decodes and re-encodes the GRP files of StarCraft. I have examined the output of the Terran Battlecruiser, the Protoss Dragoon and the Protoss Nexus GRPs, since those were three random GRPs out of the bunch where my tool failed to perfectly convert the GRP to PNGs and then back to GRP again.
 
@@ -213,7 +213,7 @@ Much better than last time, but still some work to be done.
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-04-10T21:09:02Z |title=Work on TBL converter |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-10T21:09:02Z |title=Work on TBL converter |author=Ojan}}
 
 I started working on a TBL converter. TBL files are used in WarCraft I, WarCraft II and StarCraft for holding text data, such as unit names, menu text, and other game strings. They also act as mappings to sprite and sound files. Since I've written the tool in Rust, I went with the same naming as the previous tool, and called it {{highlight |text=IronTBL}}.
 
@@ -223,7 +223,7 @@ It can convert TBL files to plain text files and back. As a little extra, I also
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-04-07T21:26:41Z |title=More progress on IronGRP |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-07T21:26:41Z |title=More progress on IronGRP |author=Ojan}}
 
 Work continues on the GRP converter, {{highlight |text=IronGRP}}, when time permits. It can now detect duplicated frames and reuse them, instead of copying identical frames multiple times.
 
@@ -243,7 +243,7 @@ Still remaining is also to handle Uncompressed GRPs.
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-04-03T22:22:30Z |title=IronGRP now converts flawlessly |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-03T22:22:30Z |title=IronGRP now converts flawlessly |author=Ojan}}
 
 The GRP converter, {{highlight |text=IronGRP}}, that I've been working on for the past few days, now seems to work flawlessly (at least on the Valkyrie GRP; I need to test on more GRPs). Previously, it would sometimes fail to consume enough pixels when reading a row of pixels, which caused slight deviations when converting from GRP to PNG and back to GRP. That was the cause of the slight difference in output that I referred to in the last post. Now, GRP to PNG to GRP conversion is byte-to-byte identical (for the Valkyrie).
 
@@ -258,7 +258,7 @@ Once that is in place, it seems fitting to call it version 1.0.
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-04-02T22:15:02Z |title=New tool: IronGRP |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-04-02T22:15:02Z |title=New tool: IronGRP |author=Ojan}}
 
 The unit and building sprites of WarCraft I, WarCraft II and StarCraft I are found in GRP files, which need to be converted into other image formats in order to be edited. For that, I'm working on a little GRP to PNG converter tool, called {{highlight |text=IronGRP}}.
 
@@ -274,7 +274,7 @@ I'm trying to see if these differences are fixable. I also want to handle uncomp
 {{end-newsitem}}
 
 
-{{begin-newsitem |time=2025-03-20T21:19:22Z |title=First update of Jorvik Systems |author=Ojan |email=ojan@jorsys.org}}
+{{begin-newsitem |time=2025-03-20T21:19:22Z |title=First update of Jorvik Systems |author=Ojan}}
 
 With this post, I want to open the gates of {{highlight |text=Jorvik Systems}}.
 
