@@ -17,8 +17,8 @@
   <div class="menuheader">Jorsys</div>
   <ul>
     <li><a href="${nesting}/index.html">News</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://www.camsys.org/news/archives.shtml">News archive</a></li>
-    <li><a href="${nesting}/feed.html">Feed</a></li>
+    <li>News archive</li>
+    <li>Feed</li>
   </ul>
 
   <div class="menuheader">StarCraft I</div>
