@@ -111,6 +111,6 @@
 <img src="${nesting}/jorsys.png" class="toplogo" />
 
 <div class="content">
-    <div class="newspageheader">
+    <div class="contentillustration">
         <img src="${nesting}/sunset.png" />
     </div>

@@ -90,8 +90,8 @@ p {
   margin-right: auto;
 }
 @media only screen and (max-width: 1500px) {
-  .newspageheader {
-    padding-top: 100px;
+  .contentillustration {
+    padding-top: 100px !important;
   }
 }
 
@@ -104,11 +104,11 @@ p {
   white-space: pre-line;
   padding-bottom: 2em;
 }
-.newspageheader {
+.contentillustration {
   padding-top: 2em;
   text-align: center;
 }
-.newspageheader img {
+.contentillustration img {
   max-height: 128px;
 }
 
