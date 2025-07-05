@@ -1,8 +1,32 @@
 # News
 
+{{begin-newsitem |time=2025-07-04T16:43:56Z |title=Camelot System downloads |author=Ojan}}
+
+Digging through my files, I found some modding software from the old {{highlight |text=Camelot Systems}} days, some 25 years ago. While CamSys was mainly focused on StarCraft and WarCraft II, they also made some software for other, non-Blizzard games:
+
+* [Tiberian Sun](tiberian-sun.html)
+* [Descent 3](descent3.html)
+* [Gender Wars](genderwars.html)
+
+While these are not games I myself ever played, I suppose they might as well be uploaded here as they once briefly were on the CamSys website. The respective modding communities of these games (of which I know nothing) have presumably long since superceded these with other tools, but I thought it would be fun to upload these here anyway as a little digital library.
+
+{{end-newsitem}}
+
+
+{{begin-newsitem |time=2025-06-30T22:11:49Z |title=IronTBL 1.0 |author=Ojan}}
+
+I finally made some finishing touches on {{highlight |text=IronTBL}}, the TBL to TXT converter, so I decided to release it as version 1.0.
+
+Not much has changed since the last release (apart from some logging improvements), it mostly has some external integrations: comes with [ImHex](https://imhex.werwolv.net) pattern language definitions and [yazi](https://yazi-rs.github.io/) integration, and it can now generate shell completions.
+
+{{highlight |text=IronTBL}} is available on [GitHub](https://github.com/sjoblomj/irontbl).
+
+{{end-newsitem}}
+
+
 {{begin-newsitem |time=2025-06-19T20:41:01Z |title=IronGRP 0.5 |author=Ojan}}
 
-{{highlight |text=IronGRP}} version 0.5 was just released with the following features: 
+{{highlight |text=IronGRP}} version 0.5 was just released with the following features:
 
 * Added [ImHex](https://imhex.werwolv.net) pattern language definitions for Normal GRPs, Uncompressed GRPs and WarCraft I style GRPs.
 * Added [yazi](https://yazi-rs.github.io/) integration.
@@ -127,8 +151,7 @@ The last two files are probably Uncompressed GRPs or a variant thereof. Either m
 
 {{begin-newsitem |time=2025-04-15T16:36:58Z |title=Fixed offset bug in IronGRP |author=Ojan}}
 
-{{highlight |text=IronGRP}} now correctly handles the last eight normal GRPs that previously were encoded differently than their input! When frames had identical image contents, it would reuse the same frame data, including the vertical and horizontal offsets. It turned out that 
-identical image data does not necessarily mean identical offsets. For instance, the red blinking "nuke dot" jumps around a little bit, which is accomplished by setting different offsets, although the image data is the same.
+{{highlight |text=IronGRP}} now correctly handles the last eight normal GRPs that previously were encoded differently than their input! When frames had identical image contents, it would reuse the same frame data, including the vertical and horizontal offsets. It turned out that identical image data does not necessarily mean identical offsets. For instance, the red blinking "nuke dot" jumps around a little bit, which is accomplished by setting different offsets, although the image data is the same.
 
 This means that all normal GRPs are now handled correctly! Remaining are ten uncompressed GRPs, that I will turn my attention to next.
 
