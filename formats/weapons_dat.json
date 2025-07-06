@@ -1,0 +1,621 @@
+[
+  {
+    "name": "Label",
+    "offset": "0x0000",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Label displayed for this weapon in unit's status bar. Corresponds to an entry in the rez\\stat_txt.tbl file.",
+    "values": "Integer value from 0 to the last index of the rez\\stat_txt.tbl file.",
+    "bits": []
+  },
+  {
+    "name": "Missile Sprite",
+    "offset": "0x0104",
+    "length": "520 bytes (4 bytes / Weapon)",
+    "description": "Sprite displayed when the weapon is fired. Corresponds to an entry in the flingy.dat file.",
+    "values": "Integer value between 0 and the # of entries in flingy.dat",
+    "bits": []
+  },
+  {
+    "name": "Special Attack",
+    "offset": "0x030C",
+    "length": "130 bytes (1 byte / Weapon)",
+    "description": "Spell/special effect to use with this weapon.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Nothing"
+      },
+      {
+        "bit": "0x01",
+        "value": "Lockdown"
+      },
+      {
+        "bit": "0x02",
+        "value": "EMP Shockwave"
+      },
+      {
+        "bit": "0x03",
+        "value": "Spider Mines"
+      },
+      {
+        "bit": "0x04",
+        "value": "Normal"
+      },
+      {
+        "bit": "0x05",
+        "value": "No Damage"
+      },
+      {
+        "bit": "0x06",
+        "value": "No Damage"
+      },
+      {
+        "bit": "0x07",
+        "value": "Irradiate"
+      },
+      {
+        "bit": "0x08",
+        "value": "Yamato Gun"
+      },
+      {
+        "bit": "0x09",
+        "value": "No Damage"
+      },
+      {
+        "bit": "0x0A",
+        "value": "No Damage"
+      },
+      {
+        "bit": "0x0B",
+        "value": "No Damage"
+      },
+      {
+        "bit": "0x0C",
+        "value": "No Damage"
+      },
+      {
+        "bit": "0x0D",
+        "value": "Broodling"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Dark Swarm"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Plague"
+      },
+      {
+        "bit": "0x10",
+        "value": "Consume"
+      },
+      {
+        "bit": "0x11",
+        "value": "Ensnare"
+      },
+      {
+        "bit": "0x12",
+        "value": "Parasite"
+      },
+      {
+        "bit": "0x13",
+        "value": "Psi Storm"
+      },
+      {
+        "bit": "0x14",
+        "value": "Normal"
+      },
+      {
+        "bit": "0x15",
+        "value": "Normal"
+      },
+      {
+        "bit": "0x16",
+        "value": "Stasis"
+      },
+      {
+        "bit": "0x17",
+        "value": "1/4 Damage"
+      },
+      {
+        "bit": "0x18",
+        "value": "Restoration"
+      },
+      {
+        "bit": "0x19",
+        "value": "Disruption Web"
+      },
+      {
+        "bit": "0x1A",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x1B",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x1C",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x1D",
+        "value": "Feedback"
+      },
+      {
+        "bit": "0x1E",
+        "value": "Optical Flare"
+      },
+      {
+        "bit": "0x1F",
+        "value": "Maelstrom/Spines"
+      },
+      {
+        "bit": "0x20",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x21",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x22",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x23",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x24",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x25",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x26",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x27",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x28",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x29",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x2A",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x2B",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x2C",
+        "value": "None"
+      }
+    ]
+  },
+  {
+    "name": "Attack Type",
+    "offset": "0x038E",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Restrictions for where the weapon can be used.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x0001",
+        "value": "Air Only"
+      },
+      {
+        "bit": "0x0002",
+        "value": "Ground Only"
+      },
+      {
+        "bit": "0x0003",
+        "value": "Air and Ground"
+      },
+      {
+        "bit": "0x0004",
+        "value": "Units Only (No Buildings)"
+      },
+      {
+        "bit": "0x0012",
+        "value": "Ground Units (No Hover or Buildings)"
+      },
+      {
+        "bit": "0x0013",
+        "value": "Ground Units Only (No Buildings"
+      },
+      {
+        "bit": "0x0019",
+        "value": "Mechanical Only"
+      },
+      {
+        "bit": "0x0043",
+        "value": "Non-mechanical Only"
+      },
+      {
+        "bit": "0x0053",
+        "value": "Ground, Ground Units"
+      },
+      {
+        "bit": "0x00B2",
+        "value": "Ground Units (No Buildings, No Archon)"
+      },
+      {
+        "bit": "0x011B",
+        "value": "Owned Units (Consume)"
+      }
+    ]
+  },
+  {
+    "name": "Minimum Range",
+    "offset": "0x0492",
+    "length": "520 bytes (4 bytes / Weapon)",
+    "description": "Minimum range required for this weapon.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Maximum Range",
+    "offset": "0x069A",
+    "length": "520 bytes (4 bytes / Weapon)",
+    "description": "Maximum range required to use this weapon.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Upgrade Group",
+    "offset": "0x08A2",
+    "length": "130 bytes (1 byte / Weapon)",
+    "description": "Upgrade group which applies to this weapon.",
+    "values": "Integer value between 0 and the last index of the Upgrades.dat file. Common values are:",
+    "bits": [
+      {
+        "bit": "0x07",
+        "value": "Terran Infantry"
+      },
+      {
+        "bit": "0x08",
+        "value": "Terran Vehicle"
+      },
+      {
+        "bit": "0x09",
+        "value": "Terran Ship"
+      },
+      {
+        "bit": "0x0A",
+        "value": "Zerg Melee"
+      },
+      {
+        "bit": "0x0B",
+        "value": "Zerg Missile"
+      },
+      {
+        "bit": "0x0C",
+        "value": "Zerg Flyer"
+      },
+      {
+        "bit": "0x0D",
+        "value": "Protoss Ground"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Protoss Air"
+      },
+      {
+        "bit": "0x23",
+        "value": "Scarab"
+      },
+      {
+        "bit": "0x3C",
+        "value": "No upgrades"
+      }
+    ]
+  },
+  {
+    "name": "Weapon Type",
+    "offset": "0x0924",
+    "length": "130 bytes (1 byte / Weapon)",
+    "description": "The type of this weapon.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x01",
+        "value": "Explosive"
+      },
+      {
+        "bit": "0x02",
+        "value": "Concussive"
+      },
+      {
+        "bit": "0x03",
+        "value": "Normal"
+      },
+      {
+        "bit": "0x04",
+        "value": "Special"
+      }
+    ]
+  },
+  {
+    "name": "Weapon Behavior",
+    "offset": "0x09A6",
+    "length": "130 bytes (1 byte / Weapon)",
+    "description": "The behavior this weapon uses.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Flies to target"
+      },
+      {
+        "bit": "0x01",
+        "value": "Seeks Target"
+      },
+      {
+        "bit": "0x02",
+        "value": "Appears on Target"
+      },
+      {
+        "bit": "0x03",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x04",
+        "value": "Persistant Explosion"
+      },
+      {
+        "bit": "0x05",
+        "value": "Normal hit"
+      },
+      {
+        "bit": "0x06",
+        "value": "Suicide"
+      },
+      {
+        "bit": "0x07",
+        "value": "Bounce"
+      },
+      {
+        "bit": "0x08",
+        "value": "Spin around (Halo)"
+      },
+      {
+        "bit": "0x09",
+        "value": "Bursts thru ground (Sub. Spines)"
+      }
+    ]
+  },
+  {
+    "name": "Missile Type",
+    "offset": "0x0A28",
+    "length": "130 bytes (1 byte / Weapon)",
+    "description": "The type of missile this Weapon emulates.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x1E",
+        "value": "Homing"
+      },
+      {
+        "bit": "0x3C",
+        "value": "Bouncing"
+      },
+      {
+        "bit": "0xFF",
+        "value": "Normal"
+      }
+    ]
+  },
+  {
+    "name": "Explosion Type",
+    "offset": "0x0AAA",
+    "length": "",
+    "description": "Type of explosion which occurs after the weapon hits its target.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "None"
+      },
+      {
+        "bit": "0x01",
+        "value": "Normal"
+      },
+      {
+        "bit": "0x02",
+        "value": "Radial Splash"
+      },
+      {
+        "bit": "0x03",
+        "value": "Line Splash"
+      },
+      {
+        "bit": "0x04",
+        "value": "Lockdown"
+      },
+      {
+        "bit": "0x05",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x06",
+        "value": "Parasite"
+      },
+      {
+        "bit": "0x07",
+        "value": "Spawn Broodlings"
+      },
+      {
+        "bit": "0x08",
+        "value": "EMP Shockwave"
+      },
+      {
+        "bit": "0x09",
+        "value": "Irradiate"
+      },
+      {
+        "bit": "0x0A",
+        "value": "Ensnare"
+      },
+      {
+        "bit": "0x0B",
+        "value": "Plague"
+      },
+      {
+        "bit": "0x0C",
+        "value": "Stasis"
+      },
+      {
+        "bit": "0x0D",
+        "value": "Dark Swarm"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Radial Splash"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Line Splash"
+      },
+      {
+        "bit": "0x10",
+        "value": "Restoration"
+      },
+      {
+        "bit": "0x11",
+        "value": "Disruption Web"
+      },
+      {
+        "bit": "0x12",
+        "value": "Corrosive Acid"
+      },
+      {
+        "bit": "0x13",
+        "value": "Mind Control"
+      },
+      {
+        "bit": "0x14",
+        "value": "Feedback"
+      },
+      {
+        "bit": "0x15",
+        "value": "Optical Flare"
+      },
+      {
+        "bit": "0x16",
+        "value": "Maelstrom"
+      },
+      {
+        "bit": "0x17",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x18",
+        "value": "Air Splash"
+      }
+    ]
+  },
+  {
+    "name": "Splash Value 1",
+    "offset": "0x0B2C",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Smallest of 3 radii which the Explosion Type uses to deal damage.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Splash Value 2",
+    "offset": "0x0C30",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Middle of 3 radii which the Explosion Type uses to deal damage.",
+    "values": "Integer values between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Splash Value 3",
+    "offset": "0x0D34",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Largest of 3 radii which the Explosion Type uses to deal damage.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Damage Amount",
+    "offset": "0x0E38",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Amount of damage dealt to target. May be adjusted based on the type of unit.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Damage Bonus",
+    "offset": "0x0F3C",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Amount added to damage when the weapon is upgraded.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cooldown Delay",
+    "offset": "0x1040",
+    "length": "130 bytes (1 byte / Weapon)",
+    "description": "Delay between attacks with this weapon. Lower values make the weapon attack faster, and higher values make the weapon attack slower.",
+    "values": "Integer value between 1 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Damage Factor",
+    "offset": "0x10C2",
+    "length": "130 bytes (1 byte / Weapon)",
+    "description": "The number of \"copies\" of this weapon a unit assigned this weapon has. To get the actual damage amount for units with more than 1 in the factor category, multiply this value by the Damage Amount.",
+    "values": "Integer value from 0 to 255.",
+    "bits": []
+  },
+  {
+    "name": "Coordinate Group 1",
+    "offset": "0x1144",
+    "length": "260 Bytes (2 bytes / Weapon)",
+    "description": "Actually an x-y pair of values. The first byte is actually the X coordinate, and the second is the Y coordinate.",
+    "values": "Integer values between 0 and 255 for both the X and Y parts of the coordinate.",
+    "bits": []
+  },
+  {
+    "name": "Coordinate Group 2",
+    "offset": "0x1248",
+    "length": "260 Bytes (2 bytes / Weapon)",
+    "description": "Actually an x-y pair of values. The first byte is actually the X coordinate, and the second is the Y coordinate.",
+    "values": "Integer values between 0 and 255 for both the X and Y parts of the coordinate.",
+    "bits": []
+  },
+  {
+    "name": "Error Message",
+    "offset": "0x134C",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Index in the rez\\stat_txt.tbl file which this weapon displays if it cannot be used for some reason.",
+    "values": "Integer value between 0 and the last index in rez\\stat_txt.tbl",
+    "bits": []
+  },
+  {
+    "name": "Icon",
+    "offset": "0x1450",
+    "length": "260 bytes (2 bytes / Weapon)",
+    "description": "Icon displayed for this weapon in the unit's status bar.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  }
+]

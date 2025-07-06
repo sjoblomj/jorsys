@@ -1,0 +1,872 @@
+[
+  {
+    "name": "Graphic",
+    "offset": "0x0000",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Graphic of unit. Corresponds to an entry in the Images data file.",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Subunit 1",
+    "offset": "0x00E4",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Subunit 1 for this unit. Corresponds to another entry in this file.",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Subunit 2",
+    "offset": "0x02AC",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Subunit 2 for this unit. Corresponds to another entry in this file.",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Subunit 3",
+    "offset": "0x0474",
+    "length": "192 bytes (2 bytes / Unit) (First 96 Units only)",
+    "description": "Subunit 3 for this unit. Corresponds to another entry in this file.",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Construction Animation",
+    "offset": "0x0534",
+    "length": "912 bytes (4 bytes / Unit)",
+    "description": "Construction Animation for this unit.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0",
+        "value": "None"
+      },
+      {
+        "bit": "2",
+        "value": "Zerg Scourge"
+      },
+      {
+        "bit": "15",
+        "value": "Zerg Defiler"
+      },
+      {
+        "bit": "19",
+        "value": "Zerg Drone"
+      },
+      {
+        "bit": "27",
+        "value": "Zerg Guardian"
+      },
+      {
+        "bit": "31",
+        "value": "Zerg Hydralisk"
+      },
+      {
+        "bit": "40",
+        "value": "Zerg Mutalisk"
+      },
+      {
+        "bit": "44",
+        "value": "Zerg Overlord"
+      },
+      {
+        "bit": "49",
+        "value": "Zerg Queen"
+      },
+      {
+        "bit": "52",
+        "value": "Zerg Ultralisk"
+      },
+      {
+        "bit": "56",
+        "value": "Zerg Zergling"
+      },
+      {
+        "bit": "101",
+        "value": "Infested Command Center"
+      },
+      {
+        "bit": "102",
+        "value": "Zerg Extractor"
+      },
+      {
+        "bit": "103",
+        "value": "Zerg Building Upgrade"
+      },
+      {
+        "bit": "104",
+        "value": "Zerg Large Construction"
+      },
+      {
+        "bit": "105",
+        "value": "Zerg Small Construction"
+      },
+      {
+        "bit": "200",
+        "value": "Protoss Stargate"
+      },
+      {
+        "bit": "325",
+        "value": "Terran Large Construction"
+      },
+      {
+        "bit": "327",
+        "value": "Terram Small Construction"
+      },
+      {
+        "bit": "329",
+        "value": "Terran Missile Tower"
+      },
+      {
+        "bit": "330",
+        "value": "Terran Addon Construction"
+      }
+    ]
+  },
+  {
+    "name": "Unknown",
+    "offset": "0x08C4",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Unknown function.",
+    "values": "Integer value from 0 to 255",
+    "bits": []
+  },
+  {
+    "name": "Shield Enable",
+    "offset": "0x09A8",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Enables shields.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0",
+        "value": "false"
+      },
+      {
+        "bit": "1",
+        "value": "true"
+      }
+    ]
+  },
+  {
+    "name": "Shield Amount",
+    "offset": "0x0A8C",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Shield Amount.",
+    "values": "Integer value from 0 to 65535.",
+    "bits": []
+  },
+  {
+    "name": "Hitpoints",
+    "offset": "0x0C54",
+    "length": "912 bytes (4 bytes / Unit)",
+    "description": "Hitpoint Amount. Lower 24 bits are the hitpoint value. The 4 high bits are unknown.",
+    "values": "Integer value between 0 and 4294967295",
+    "bits": []
+  },
+  {
+    "name": "Animation Level",
+    "offset": "0x0FE4",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Animation level this unit is drawn at. Basically Z-Order.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0",
+        "value": "Below Ground (Can walk under everything but Buildings)"
+      },
+      {
+        "bit": "1",
+        "value": "Below Ground (Can walk under everything but Buildings)"
+      },
+      {
+        "bit": "2",
+        "value": "Low Ground (Can walk under corners of buildings/units)"
+      },
+      {
+        "bit": "3",
+        "value": "Low Ground (Can walk under corners of buildings/units)"
+      },
+      {
+        "bit": "4",
+        "value": "Ground (Normal ground unit elevation level)"
+      },
+      {
+        "bit": "5",
+        "value": "Low Air"
+      },
+      {
+        "bit": "6",
+        "value": "Low Air"
+      },
+      {
+        "bit": "7",
+        "value": "Low Air"
+      },
+      {
+        "bit": "8",
+        "value": "Low Air"
+      },
+      {
+        "bit": "9",
+        "value": "Air"
+      },
+      {
+        "bit": "10",
+        "value": "Air"
+      },
+      {
+        "bit": "11",
+        "value": "Air"
+      },
+      {
+        "bit": "12",
+        "value": "Air"
+      },
+      {
+        "bit": "13",
+        "value": "High Air"
+      },
+      {
+        "bit": "14",
+        "value": "High Air"
+      },
+      {
+        "bit": "15",
+        "value": "High Air"
+      },
+      {
+        "bit": "16",
+        "value": "High Air"
+      },
+      {
+        "bit": "17",
+        "value": "Orbital"
+      },
+      {
+        "bit": "18",
+        "value": "Orbital"
+      }
+    ]
+  },
+  {
+    "name": "Movement Type",
+    "offset": "0x10C8",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Movement type for this unit.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0",
+        "value": "None"
+      },
+      {
+        "bit": "64",
+        "value": "Creep"
+      },
+      {
+        "bit": "65",
+        "value": "Walk"
+      },
+      {
+        "bit": "193",
+        "value": "Hover"
+      },
+      {
+        "bit": "197",
+        "value": "Fly"
+      }
+    ]
+  },
+  {
+    "name": "StarEdit: Order/SubLabel",
+    "offset": "0x11AC",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "The sub-label (rank, etc) displayed in StarCraft, and the Order this unit is displayed in its folder in StarEdit.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Action: Computer AI Idle",
+    "offset": "0x1290",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Action/Order this unit performs when it's Idle. Used when under Computer AI control. Corresponds to entry in Orders data file.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Action: Human AI Idle",
+    "offset": "0x1374",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Action/Order this unit performs when it's Idle. Used when under Human AI control. Corresponds to entry in Orders data file.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Action: Unknown",
+    "offset": "0x1458",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Action/Order this unit performs at some unknown time. Corresponds to entry in Orders data file.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Action: Ground Attack",
+    "offset": "0x153C",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Action/Order this unit performs when attacking Ground units. Corresponds to entry in Orders data file.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Action: Air Attack",
+    "offset": "0x1620",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Action/Order this unit performs when attacking Air units. Corresponds to entry in Orders data file.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Weapon: Ground",
+    "offset": "0x1704",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Weapon this unit uses to attack Ground units. Corresponds to entry in Weapons data file.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Max Hit: Ground",
+    "offset": "0x17E8",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Max # of times unit hits its target per Ground attack. This value is for statistics purposes only. Changing it only effects the value displayed in StarEdit.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Weapon: Air",
+    "offset": "0x18CC",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Weapon this unit uses to attack Air units. Corresponds to entry in Weapons data file.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Max Hit: Air",
+    "offset": "0x19B0",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Max # of times unit hits its target per Air attack. This value is for statistics purposes only. Changing it only effects the value displayed in StarEdit.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Unknown",
+    "offset": "0x1A94",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Unknown function.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Special Ability Flags",
+    "offset": "0x1B78",
+    "length": "912 bytes (4 bytes / Unit)",
+    "description": "Special Ability Flags. Add any of these together.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00000001",
+        "value": "Building"
+      },
+      {
+        "bit": "0x00000002",
+        "value": "Add-on"
+      },
+      {
+        "bit": "0x00000004",
+        "value": "Flyer"
+      },
+      {
+        "bit": "0x00000008",
+        "value": "Worker"
+      },
+      {
+        "bit": "0x00000010",
+        "value": "Sub-Unit (Turret)"
+      },
+      {
+        "bit": "0x00000020",
+        "value": "Flying Building"
+      },
+      {
+        "bit": "0x00000040",
+        "value": "Hero"
+      },
+      {
+        "bit": "0x00000080",
+        "value": "Regenerates HP"
+      },
+      {
+        "bit": "0x00000100",
+        "value": "Animated Idle"
+      },
+      {
+        "bit": "0x00000200",
+        "value": "Cloakable"
+      },
+      {
+        "bit": "0x00000400",
+        "value": "2 Units in 1 Egg"
+      },
+      {
+        "bit": "0x00000800",
+        "value": "Neutral accessories"
+      },
+      {
+        "bit": "0x00001000",
+        "value": "Resource Depot"
+      },
+      {
+        "bit": "0x00002000",
+        "value": "Contains gas"
+      },
+      {
+        "bit": "0x00004000",
+        "value": "Robotic Unit"
+      },
+      {
+        "bit": "0x00008000",
+        "value": "Detector"
+      },
+      {
+        "bit": "0x00010000",
+        "value": "Organic unit"
+      },
+      {
+        "bit": "0x00020000",
+        "value": "Creep Building"
+      },
+      {
+        "bit": "0x00040000",
+        "value": "Unused"
+      },
+      {
+        "bit": "0x00080000",
+        "value": "Requires PSI"
+      },
+      {
+        "bit": "0x00100000",
+        "value": "Burrowable"
+      },
+      {
+        "bit": "0x00200000",
+        "value": "Mana bar"
+      },
+      {
+        "bit": "0x00400000",
+        "value": "Permanent cloak"
+      },
+      {
+        "bit": "0x00800000",
+        "value": "NPC / accessories"
+      },
+      {
+        "bit": "0x01000000",
+        "value": "Morph from other unit"
+      },
+      {
+        "bit": "0x02000000",
+        "value": "Large Unit ???"
+      },
+      {
+        "bit": "0x04000000",
+        "value": "Huge Unit ???"
+      },
+      {
+        "bit": "0x08000000",
+        "value": "Auto attack and move"
+      },
+      {
+        "bit": "0x10000000",
+        "value": "Attack"
+      },
+      {
+        "bit": "0x20000000",
+        "value": "Invincible"
+      },
+      {
+        "bit": "0x40000000",
+        "value": "Mechanical"
+      },
+      {
+        "bit": "0x80000000",
+        "value": "Produces Units"
+      }
+    ]
+  },
+  {
+    "name": "Subunit (Turret) Attack Range",
+    "offset": "0x1F08",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Subunit Attack Range. Only valid for units with subunits.",
+    "values": "Integer values between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Sight Range",
+    "offset": "0x1FEC",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Sight range for this unit.",
+    "values": "Integer values between 0 and 225 (anything above 11 crashes the game).",
+    "bits": []
+  },
+  {
+    "name": "Armor Upgrade Group",
+    "offset": "0x20D0",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Upgrade groups that change the Armor for this unit.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "1",
+        "value": "Terran Infantry"
+      },
+      {
+        "bit": "2",
+        "value": "Terran Vehicle"
+      },
+      {
+        "bit": "3",
+        "value": "Terran Air"
+      },
+      {
+        "bit": "4",
+        "value": "Zerg Ground"
+      },
+      {
+        "bit": "5",
+        "value": "Zerg Air"
+      },
+      {
+        "bit": "6",
+        "value": "Protoss Ground"
+      },
+      {
+        "bit": "7",
+        "value": "Protoss Air"
+      },
+      {
+        "bit": "60",
+        "value": "None"
+      }
+    ]
+  },
+  {
+    "name": "Size",
+    "offset": "0x21B4",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Affects damage unit is dealt when attacked.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0",
+        "value": "Undefined"
+      },
+      {
+        "bit": "1",
+        "value": "Small"
+      },
+      {
+        "bit": "2",
+        "value": "Medium"
+      },
+      {
+        "bit": "3",
+        "value": "Large"
+      }
+    ]
+  },
+  {
+    "name": "Armor",
+    "offset": "0x2298",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Amount of Armor this unit has.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Unknown",
+    "offset": "0x237C",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Unknown function.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Sounds",
+    "offset": "0x2460",
+    "length": "3268 bytes (? bytes / Unit)",
+    "description": "Unit sound section...",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Width",
+    "offset": "0x3124",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Width of the unit. Used for movement purposes.",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Height",
+    "offset": "0x32EC",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Height of the unit. Used for movement purposes.",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Circle Width",
+    "offset": "0x34B4",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "I thought it determined the width of the circle, but apparently it doesn't...",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Circle Height",
+    "offset": "0x367C",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "I thought it determined the height of the circle, but apparently it doesn't...",
+    "values": "Integer value from 0 to 65535",
+    "bits": []
+  },
+  {
+    "name": "Portrait",
+    "offset": "0x3844",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Determines portrait displayed.",
+    "values": "Value corresponds to an entry in the Portraits data file.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Minerals",
+    "offset": "0x3A0C",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Determines minerals required to build.",
+    "values": "Integer values between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Vespene Gas",
+    "offset": "0x3BD4",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Determines vespene gas required to build.",
+    "values": "Integer values between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Build Time",
+    "offset": "0x3D9C",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Determines time to build. Value here is in seconds.",
+    "values": "Integer values between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Restrictions",
+    "offset": "0x3F64",
+    "length": "456 bytes (2 byte / Unit)",
+    "description": "Might determine the default Player Settings for this unit (whether it's enabled or not, etc).",
+    "values": "Integer values between 0 and 65535",
+    "bits": []
+  },
+  {
+    "name": "StarEdit: Group Flags",
+    "offset": "0x412C",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Combinations of the values below determine the StarEdit folder the unit appears in.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x01",
+        "value": "Zerg"
+      },
+      {
+        "bit": "0x02",
+        "value": "Terran"
+      },
+      {
+        "bit": "0x04",
+        "value": "Protoss"
+      },
+      {
+        "bit": "0x08",
+        "value": "Unit"
+      },
+      {
+        "bit": "0x10",
+        "value": "Building"
+      },
+      {
+        "bit": "0x20",
+        "value": "Factory"
+      },
+      {
+        "bit": "0x40",
+        "value": "Independent"
+      },
+      {
+        "bit": "0x80",
+        "value": "Neutral"
+      }
+    ]
+  },
+  {
+    "name": "Unknown",
+    "offset": "0x4210",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Unknown function.",
+    "values": "Integer values from 0 to 255.",
+    "bits": []
+  },
+  {
+    "name": "Food Produced",
+    "offset": "0x42F4",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Amount of food produced by this unit.",
+    "values": "Integer values from 0 to 255.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Food",
+    "offset": "0x43D8",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Amount of food required to produce unit. Actual value is this value / 2, because the Zergling and Scourge are 2 for 1.",
+    "values": "Integer values from 0 to 255.",
+    "bits": []
+  },
+  {
+    "name": "Transport/Bunker Space",
+    "offset": "0x44BC",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Space this unit has for storing units (i.e. Bunkers and Transports).",
+    "values": "Integer values from 0 to 255.",
+    "bits": []
+  },
+  {
+    "name": "Score: Build",
+    "offset": "0x45A0",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Point value awarded for constructing this unit.",
+    "values": "Integer values from 0 to 65535.",
+    "bits": []
+  },
+  {
+    "name": "Score: Destroy",
+    "offset": "0x4768",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Point value awarded for destroying this unit.",
+    "values": "Integer values from 0 to 65535.",
+    "bits": []
+  },
+  {
+    "name": "Unknown",
+    "offset": "0x4930",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Unknown function.",
+    "values": "Integer values from 0 to 255.",
+    "bits": []
+  },
+  {
+    "name": "Brood War Unit",
+    "offset": "0x4AF8",
+    "length": "228 bytes (1 byte / Unit)",
+    "description": "Flag to determine if the unit is a Brood War (Expansion) Unit or not.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0",
+        "value": "false"
+      },
+      {
+        "bit": "1",
+        "value": "true"
+      }
+    ]
+  },
+  {
+    "name": "StarEdit: Availability Flags",
+    "offset": "0x4BDC",
+    "length": "456 bytes (2 bytes / Unit)",
+    "description": "Determines the availability of the unit in StarEdit.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x0001",
+        "value": "Owned (Not Neutral)"
+      },
+      {
+        "bit": "0x0002",
+        "value": "Placeable (With Map Editor or Trigger)"
+      },
+      {
+        "bit": "0x0004",
+        "value": "Mission Briefing"
+      },
+      {
+        "bit": "0x0008",
+        "value": "Removed from Player Settings"
+      },
+      {
+        "bit": "0x0010",
+        "value": "Race Restricted"
+      },
+      {
+        "bit": "0x0020",
+        "value": "Part of Terrain (Traps)"
+      },
+      {
+        "bit": "0x0040",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x0080",
+        "value": "Special Effect/Nuke"
+      },
+      {
+        "bit": "0x0100",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x0200",
+        "value": "Brood War"
+      },
+      {
+        "bit": "0x0400",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x0800",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x1000",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x2000",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x4000",
+        "value": "Unknown"
+      },
+      {
+        "bit": "0x8000",
+        "value": "Unknown"
+      }
+    ]
+  }
+]

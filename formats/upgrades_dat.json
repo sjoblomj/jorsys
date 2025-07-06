@@ -1,0 +1,124 @@
+[
+  {
+    "name": "Cost: Minerals",
+    "offset": "0x0000",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Cost in Minerals to research this Upgrade.",
+    "values": "Integer value betwen 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost Factor: Minerals",
+    "offset": "0x007A",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Factor cost in Minerals to research this Upgrade.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Vespene Gas",
+    "offset": "0x00F4",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Cost in Vespene Gas required to research this Upgrade.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost Factor: Vespene Gas",
+    "offset": "0x016E",
+    "length": "Factor Cost in Vespene Gas to research this Upgrade.",
+    "description": "",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Research Time",
+    "offset": "0x01E8",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Time required to research this Upgrade.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost Factor: Research Time",
+    "offset": "0x0262",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Factor Cost in Time required to research this Upgrade.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Unknown",
+    "offset": "0x02DC",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Unknown, probably a set of flags for each upgrade. All upgrades have 0xFFFF.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Icon",
+    "offset": "0x0356",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Index of an icon in cmdicons.grp",
+    "values": "Integer value between 0 and the last index of cmdicons.grp",
+    "bits": []
+  },
+  {
+    "name": "Label",
+    "offset": "0x03D0",
+    "length": "122 bytes (2 bytes / Upgrade)",
+    "description": "Index of label in rez\\stat_txt.tbl",
+    "values": "Integer value between 0 and the last index of rez\\stat_txt.tbl",
+    "bits": []
+  },
+  {
+    "name": "Race",
+    "offset": "0x044A",
+    "length": "61 bytes (1 byte / Upgrade)",
+    "description": "Determines which races can research this upgrade.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Zerg"
+      },
+      {
+        "bit": "0x01",
+        "value": "Terran"
+      },
+      {
+        "bit": "0x02",
+        "value": "Protoss"
+      },
+      {
+        "bit": "0x03",
+        "value": "All"
+      }
+    ]
+  },
+  {
+    "name": "Repeat",
+    "offset": "0x0487",
+    "length": "61 bytes (1 byte / Upgrade)",
+    "description": "The number of times this upgrade can be researched.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Brood War Flag",
+    "offset": "0x04C4",
+    "length": "61 bytes (1 byte / Upgrade)",
+    "description": "Boolean flag which determines whether this upgrade is restricted to Brood War.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "false (SC and BW)"
+      },
+      {
+        "bit": "0x01",
+        "value": "true (BW only)"
+      }
+    ]
+  }
+]

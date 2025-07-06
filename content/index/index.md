@@ -1,5 +1,14 @@
 # News
 
+{{begin-newsitem |time=2025-07-06T20:02:41Z |title=Format specs live |author=Ojan}}
+
+Some format specifications have been published, from the {{highlight |text=Camelot Systems}} site. For now, it is only four DAT files from StarCraft, and the Unit data DAT file from WarCraft II.
+
+The plan is to let the collection of formats grow, hopefully to be of pretty much all modding-relevant files. The specifications are available on the [Format specifications](formats.html) page.
+
+{{end-newsitem}}
+
+
 {{begin-newsitem |time=2025-07-04T16:43:56Z |title=Camelot System downloads |author=Ojan}}
 
 Digging through my files, I found some modding software from the old {{highlight |text=Camelot Systems}} days, some 25 years ago. While CamSys was mainly focused on StarCraft and WarCraft II, they also made some software for other, non-Blizzard games:

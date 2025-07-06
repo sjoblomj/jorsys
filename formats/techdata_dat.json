@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Cost: Minerals",
+    "offset": "0x0000",
+    "length": "88 bytes (2 bytes / Technology)",
+    "description": "Cost in Minerals required to research this Technology.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Vespene Gas",
+    "offset": "0x0058",
+    "length": "88 bytes (2 bytes / Technology)",
+    "description": "Cost in Vespene Gas to research this Technology.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Research Time",
+    "offset": "0x00B0",
+    "length": "88 bytes (2 bytes / Technology)",
+    "description": "Time required to research this Technology.",
+    "values": "Integer values between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Mana",
+    "offset": "0x0108",
+    "length": "88 bytes (2 bytes / Technology)",
+    "description": "Mana required to use this Technology.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Unknown",
+    "offset": "0x0160",
+    "length": "176 bytes (4 bytes / Technology)",
+    "description": "Unknown, most likely this is a flag of some sort. Always set to 0xFFFFFFFF.",
+    "values": "Integer values between 0 and 2^32",
+    "bits": []
+  },
+  {
+    "name": "Icon",
+    "offset": "0x0210",
+    "length": "88 bytes (2 bytes / Technology)",
+    "description": "The index of an icon in the cmdicons.grp file.",
+    "values": "Integer value between 0 and the last index of cmdicons.grp.",
+    "bits": []
+  },
+  {
+    "name": "Label",
+    "offset": "0x0268",
+    "length": "88 bytes (2 bytes / Technology)",
+    "description": "Index of a string in rez\\stat_txt.tbl which is the label for this technology.",
+    "values": "Integer value between 0 and the last index of rez\\stat_txt.tbl",
+    "bits": []
+  },
+  {
+    "name": "Race",
+    "offset": "0x02C0",
+    "length": "44 bytes (1 byte / Technology)",
+    "description": "Determines the race this Technology is researched by.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Zerg"
+      },
+      {
+        "bit": "0x01",
+        "value": "Terran"
+      },
+      {
+        "bit": "0x02",
+        "value": "Protoss"
+      },
+      {
+        "bit": "0x03",
+        "value": "All"
+      }
+    ]
+  },
+  {
+    "name": "Researched",
+    "offset": "0x02EC",
+    "length": "44 bytes (1 byte / Technology)",
+    "description": "Boolean flag which determines whether this Technology is already researched.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "false (not researched)"
+      },
+      {
+        "bit": "0x01",
+        "value": "true (researched)"
+      }
+    ]
+  },
+  {
+    "name": "Brood War Flag",
+    "offset": "0x0318",
+    "length": "44 bytes (1 byte / Technology)",
+    "description": "Boolean flag that determines whether this technology is Brood War-researchable only.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "false (SC and BW)"
+      },
+      {
+        "bit": "0x01",
+        "value": "true (BW Only)"
+      }
+    ]
+  }
+]

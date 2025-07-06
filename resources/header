@@ -27,6 +27,7 @@
     <li>Playing</li>
     <li>Modding</li>
     <li><a href="${nesting}/starcraft/software.html">Software</a></li>
+    <li><a href="${nesting}/formats.html">Formats</a></li>
     <li>Mods</li>
   </ul>
 
@@ -36,6 +37,7 @@
     <li>Playing</li>
     <li>Modding</li>
     <li><a href="${nesting}/warcraft2/software.html">Software</a></li>
+    <li><a href="${nesting}/formats.html">Formats</a></li>
     <li>Mods</li>
   </ul>
 
@@ -72,17 +74,11 @@
 <div class="rightmenu">
 <div class="menucontent menucontentright">
   <div class="menudescr">Software Live Wire</div>
-  <div class="menuheader">StarCraft Tools</div>
+  <div class="menuheader">Modding Tools</div>
   <ul>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=stardraft">StarDraft</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=stargraft">StarGraft</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=scaiedit31">ScAIEdit 3.1</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=ice">ICE</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=arsenal3">Arsenal III</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=tileedit">TileEdit</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=arredit">ArrEdit</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=isom">ISOM</a></li>
-    <li><a href="https://web.archive.org/web/20011108031720/http://cgi.camsys.org/download.cgi?id=paledit">PalEdit</a></li>
+    <li><a href="https://github.com/sjoblomj/irongrp" target="_blank">IronGRP</a></li>
+    <li><a href="https://github.com/sjoblomj/irontbl" target="_blank">IronTBL</a></li>
+    <li><a href="https://github.com/sjoblomj/ironimage" target="_blank">IronImage</a></li>
   </ul>
 
   <hr />
@@ -90,15 +86,15 @@
   <div class="menudescr">Specs Live Wire</div>
   <div class="menuheader">StarCraft Specs</div>
   <ul>
-    <li><a href="techdata_dat.html">Technology</a></li>
-    <li><a href="units_dat.html">Units</a></li>
-    <li><a href="upgrades_dat.html">Upgrades</a></li>
-    <li><a href="weapons_dat.html">Weapons</a></li>
+    <li><a href="${nesting}/formats/techdata_dat.html">Technology</a></li>
+    <li><a href="${nesting}/formats/units_dat.html">Units</a></li>
+    <li><a href="${nesting}/formats/upgrades_dat.html">Upgrades</a></li>
+    <li><a href="${nesting}/formats/weapons_dat.html">Weapons</a></li>
   </ul>
 
   <div class="menuheader">WarCraft Specs</div>
   <ul>
-    <li><a href="udta.html">UDTA</a></li>
+    <li><a href="${nesting}/formats/udta.html">UDTA</a></li>
   </ul>
 
 </div>

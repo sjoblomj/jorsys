@@ -1,0 +1,676 @@
+[
+  {
+    "name": "Graphics: Group",
+    "offset": "0x0000",
+    "length": "220 bytes (2 bytes / First 110 Units)",
+    "description": "Graphics group this unit uses. To be honest I sort of forgot what this does :)",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Graphics: General",
+    "offset": "0x00DC",
+    "length": "254 bytes (2 bytes / Unit)",
+    "description": "The graphic this unit uses in general. Most units (except the critter) specify this value as their only graphic. All buildings (and the critter) use graphics specific to tileset.",
+    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+    "bits": [
+      {
+        "bit": "0x0D",
+        "value": "Flag #2"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Flag #1"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Repeat (used if this unit uses another's GFX)"
+      }
+    ]
+  },
+  {
+    "name": "Graphics: Forest",
+    "offset": "0x01DA",
+    "length": "254 bytes (2 bytes / Unit)",
+    "description": "The graphic this unit uses for Forest maps.",
+    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+    "bits": [
+      {
+        "bit": "0x0D",
+        "value": "Flag #2"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Flag #1"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Repeat (used if this unit uses another's GFX)"
+      }
+    ]
+  },
+  {
+    "name": "Graphics: Winter",
+    "offset": "0x02D8",
+    "length": "254 bytes (2 bytes / Unit)",
+    "description": "The graphic this unit uses for Winter maps.",
+    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+    "bits": [
+      {
+        "bit": "0x0D",
+        "value": "Flag #2"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Flag #1"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Repeat (used if this unit uses another's GFX)"
+      }
+    ]
+  },
+  {
+    "name": "Graphics: Wasteland",
+    "offset": "0x03D6",
+    "length": "254 bytes (2 bytes / Unit)",
+    "description": "The graphic this unit uses for Wasteland maps.",
+    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+    "bits": [
+      {
+        "bit": "0x0D",
+        "value": "Flag #2"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Flag #1"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Repeat (used if this unit uses another's GFX)"
+      }
+    ]
+  },
+  {
+    "name": "Range: Sight",
+    "offset": "0x04D4",
+    "length": "440 bytes (1 long / First 110 Units)",
+    "description": "Sight range (in tiles) of this unit.",
+    "values": "Integer value between 0 and 2^32",
+    "bits": []
+  },
+  {
+    "name": "Hitpoints",
+    "offset": "0x068C",
+    "length": "220 bytes (2 bytes / First 110 Units)",
+    "description": "Hitpoints for this Unit.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Magic Flag",
+    "offset": "0x0768",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Flag to determine whether this unit is a spell user.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "false (not a magic user)"
+      },
+      {
+        "bit": "0x01",
+        "value": "true (magic user)"
+      }
+    ]
+  },
+  {
+    "name": "Cost: Build Time",
+    "offset": "0x07D6",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Time required to build this Unit. Multiply by 6 to obtain seconds.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Gold",
+    "offset": "0x0844",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "The amount of Gold required to build this Unit. Multiply by 10 to get actual value.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Lumber",
+    "offset": "0x08B2",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Amount of Lumber required to build this Unit. Multiply by 10 to obtain actual value.",
+    "values": "Integer values between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Cost: Oil",
+    "offset": "0x0920",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Amount of oil required to build this unit. Multiply by 10 to obtain actual value.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Size: Unit",
+    "offset": "0x098E",
+    "length": "440 bytes (4 bytes / First 110 Units)",
+    "description": "First two bytes are the X size (width), second two are the Y size (height).",
+    "values": "Two integer values between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Size: Box",
+    "offset": "0x0B46",
+    "length": "440 bytes (4 bytes / First 110 Units)",
+    "description": "First two bytes are the X size (width), second two are the Y size (height).",
+    "values": "Two integer values between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Attack Range",
+    "offset": "0x0CF3",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Minimum range this unit must be from its target to attack.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "React Range: Computer AI",
+    "offset": "0x0D6C",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Minimum range that computer units must be from this unit in order to react to it.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "React Range: Human AI",
+    "offset": "0x0DDA",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Minimum range this unit must be from an enemy before it reacts to the enemy.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Armor",
+    "offset": "0x0E48",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Amount of armor this unit has.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Multiselectable Flag",
+    "offset": "0x0EB6",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Flag which determines whether the unit can be selected with other units.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "false (not multiselectable)"
+      },
+      {
+        "bit": "0x01",
+        "value": "true (multiselecatble)"
+      }
+    ]
+  },
+  {
+    "name": "Priority / AI Treatment",
+    "offset": "0x0F24",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Priority value / AI Treatment for this unit.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Damage: Basic",
+    "offset": "0x0F92",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Basic damage dealt by this unit when it attacks.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Damage: Piercing",
+    "offset": "0x1000",
+    "length": "110 bytes (1 byte / First 110 Unis)",
+    "description": "Piercing damage dealt by this unit when it attacks.",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Weapon Upgrade Flag",
+    "offset": "0x106E",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Flag which determines whether this unit upgrades its weapon.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "false (no weapon upgrade)"
+      },
+      {
+        "bit": "0x01",
+        "value": "true (weapon upgrade)"
+      }
+    ]
+  },
+  {
+    "name": "Armor Upgrade Flag",
+    "offset": "0x10DC",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Flag which determines whether this unit upgrades its armor.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "false (no armor upgrade)"
+      },
+      {
+        "bit": "0x01",
+        "value": "true (armor upgrade)"
+      }
+    ]
+  },
+  {
+    "name": "Weapon Missile",
+    "offset": "0x114A",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Missile type this unit uses when it attacks.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Lightning"
+      },
+      {
+        "bit": "0x01",
+        "value": "Griffon Hammer"
+      },
+      {
+        "bit": "0x02",
+        "value": "Dragon Breath and Fireball"
+      },
+      {
+        "bit": "0x03",
+        "value": "Flameshield Fireball"
+      },
+      {
+        "bit": "0x04",
+        "value": "Flame Shield"
+      },
+      {
+        "bit": "0x05",
+        "value": "Blizzard"
+      },
+      {
+        "bit": "0x06",
+        "value": "Death &amp; Decay"
+      },
+      {
+        "bit": "0x07",
+        "value": "Big Cannon"
+      },
+      {
+        "bit": "0x08",
+        "value": "Exorcism"
+      },
+      {
+        "bit": "0x09",
+        "value": "Heal Effect"
+      },
+      {
+        "bit": "0x0A",
+        "value": "Touch of Death"
+      },
+      {
+        "bit": "0x0B",
+        "value": "Rune"
+      },
+      {
+        "bit": "0x0C",
+        "value": "Whirlwind"
+      },
+      {
+        "bit": "0x0D",
+        "value": "Catapult Rock"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Ballista Bolt"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Arrow"
+      },
+      {
+        "bit": "0x10",
+        "value": "Axe"
+      },
+      {
+        "bit": "0x11",
+        "value": "Submarine Missile"
+      },
+      {
+        "bit": "0x12",
+        "value": "Turtle Missile"
+      },
+      {
+        "bit": "0x13",
+        "value": "Small Fire"
+      },
+      {
+        "bit": "0x14",
+        "value": "Big Fire"
+      },
+      {
+        "bit": "0x15",
+        "value": "Ballista &amp; Catapult Impact"
+      },
+      {
+        "bit": "0x16",
+        "value": "Normal Spell"
+      },
+      {
+        "bit": "0x17",
+        "value": "Explosion"
+      },
+      {
+        "bit": "0x18",
+        "value": "Small Cannon"
+      },
+      {
+        "bit": "0x19",
+        "value": "Cannon Explosion"
+      },
+      {
+        "bit": "0x1A",
+        "value": "Cannon Tower Explosion"
+      },
+      {
+        "bit": "0x1B",
+        "value": "Daemon Fire"
+      },
+      {
+        "bit": "0x1C",
+        "value": "Green Cross"
+      },
+      {
+        "bit": "0x1D",
+        "value": "None"
+      }
+    ]
+  },
+  {
+    "name": "Unit Type",
+    "offset": "0x11B8",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Domain unit resides in (visual only).",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Land"
+      },
+      {
+        "bit": "0x01",
+        "value": "Air"
+      },
+      {
+        "bit": "0x02",
+        "value": "Sea"
+      }
+    ]
+  },
+  {
+    "name": "Decay Rate",
+    "offset": "0x1226",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Rate at which this unit decays. Multiply by 6 to get seconds. Decay rates only apply to units created during the game, not those placed on the map at design time.",
+    "values": "Integer value between 0 and 255. 0 means the unit never decays.",
+    "bits": []
+  },
+  {
+    "name": "Computer Annoy Factor",
+    "offset": "0x1294",
+    "length": "",
+    "description": "How much this unit annoys the computer (likelihood it will be attacked).",
+    "values": "Integer value between 0 and 255.",
+    "bits": []
+  },
+  {
+    "name": "Right Click Action",
+    "offset": "0x1302",
+    "length": "58 bytes (1 byte / First 58 Units)",
+    "description": "Action this unit performs when you have it selected and right click with it.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "None"
+      },
+      {
+        "bit": "0x01",
+        "value": "Attack"
+      },
+      {
+        "bit": "0x02",
+        "value": "Move"
+      },
+      {
+        "bit": "0x03",
+        "value": "Harvest"
+      },
+      {
+        "bit": "0x04",
+        "value": "Haul Oil"
+      },
+      {
+        "bit": "0x05",
+        "value": "Demolish"
+      },
+      {
+        "bit": "0x06",
+        "value": "Sail"
+      }
+    ]
+  },
+  {
+    "name": "Point Value",
+    "offset": "0x133C",
+    "length": "220 bytes (2 bytes / First 110 Units)",
+    "description": "Point value awarded towards total score for a player which destroys this unit.",
+    "values": "Integer value between 0 and 65535.",
+    "bits": []
+  },
+  {
+    "name": "Weapon Attack Domain",
+    "offset": "0x1418",
+    "length": "110 bytes (1 byte / First 110 Units)",
+    "description": "Domain whose units this unit can attack.",
+    "values": "(Any combination of these are valid - just add them together)",
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "None"
+      },
+      {
+        "bit": "0x01",
+        "value": "Land"
+      },
+      {
+        "bit": "0x02",
+        "value": "Sea"
+      },
+      {
+        "bit": "0x03",
+        "value": "Air"
+      }
+    ]
+  },
+  {
+    "name": "Unit Flags",
+    "offset": "0x1486",
+    "length": "440 bytes (4 bytes / First 110 Units)",
+    "description": "Flags which determine special properties this unit has.",
+    "values": null,
+    "bits": [
+      {
+        "bit": "0x00",
+        "value": "Land Unit"
+      },
+      {
+        "bit": "0x01",
+        "value": "Air Unit"
+      },
+      {
+        "bit": "0x02",
+        "value": "Exploding Death"
+      },
+      {
+        "bit": "0x03",
+        "value": "Sea Unit"
+      },
+      {
+        "bit": "0x04",
+        "value": "Critter"
+      },
+      {
+        "bit": "0x05",
+        "value": "Building"
+      },
+      {
+        "bit": "0x06",
+        "value": "Submarine"
+      },
+      {
+        "bit": "0x07",
+        "value": "Submarine Spotter"
+      },
+      {
+        "bit": "0x08",
+        "value": "Peon"
+      },
+      {
+        "bit": "0x09",
+        "value": "Tanker"
+      },
+      {
+        "bit": "0x0A",
+        "value": "Transport"
+      },
+      {
+        "bit": "0x0B",
+        "value": "Oil Platform"
+      },
+      {
+        "bit": "0x0C",
+        "value": "Gold Storage"
+      },
+      {
+        "bit": "0x0D",
+        "value": "Not used"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Attack Ground"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Undead"
+      },
+      {
+        "bit": "0x10",
+        "value": "Shore Building"
+      },
+      {
+        "bit": "0x11",
+        "value": "Spellcaster"
+      },
+      {
+        "bit": "0x12",
+        "value": "Lumber Storage"
+      },
+      {
+        "bit": "0x13",
+        "value": "Attacks"
+      },
+      {
+        "bit": "0x14",
+        "value": "Tower"
+      },
+      {
+        "bit": "0x15",
+        "value": "Oil Patch"
+      },
+      {
+        "bit": "0x16",
+        "value": "Gold Mine"
+      },
+      {
+        "bit": "0x17",
+        "value": "Hero"
+      },
+      {
+        "bit": "0x18",
+        "value": "Oil Storage"
+      },
+      {
+        "bit": "0x19",
+        "value": "Volatile"
+      },
+      {
+        "bit": "0x1A",
+        "value": "Mage (runs when attacked)"
+      },
+      {
+        "bit": "0x1B",
+        "value": "Organic"
+      },
+      {
+        "bit": "0x1C",
+        "value": "Not used"
+      },
+      {
+        "bit": "0x1D",
+        "value": "Not used"
+      },
+      {
+        "bit": "0x1E",
+        "value": "Not used"
+      },
+      {
+        "bit": "0x1F",
+        "value": "Not used"
+      }
+    ]
+  },
+  {
+    "name": "Graphics: Swamp",
+    "offset": "0x163E",
+    "length": "252 bytes (2 bytes / Unit)",
+    "description": "The graphic this unit uses for Swamp maps.",
+    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+    "bits": [
+      {
+        "bit": "0x0D",
+        "value": "Flag #2"
+      },
+      {
+        "bit": "0x0E",
+        "value": "Flag #1"
+      },
+      {
+        "bit": "0x0F",
+        "value": "Repeat (used if this unit uses another's GFX)"
+      }
+    ]
+  }
+]
