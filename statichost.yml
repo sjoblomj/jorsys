@@ -1,7 +1,7 @@
 image: ubuntu
 command: dir=$(pwd) &&
          apt-get update &&
-         apt-get -y install texlive-full dvisvgm inkscape cmark-gfm &&
+         apt-get -y install git texlive-full dvisvgm inkscape cmark-gfm &&
          git clone https://github.com/sjoblomj/incunable.git $HOME/incunable &&
          cd $HOME/incunable &&
          ./html/compile.sh $dir/content $HOME/site $dir/resources $dir/templates
