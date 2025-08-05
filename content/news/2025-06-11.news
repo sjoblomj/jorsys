@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2025-06-11T21:40:59Z |title=IronImage |author=Ojan |resources=ironimage.png |categories=WarCraft I, WarCraft II, modding, tools, IronImage |summary=Released IronImage for converting between Palettized Images and PNG files}}
+
+After creating {{highlight |text=palpngrs}} ([GitHub](https://github.com/sjoblomj/palpngrs)) out of code from {{highlight |text=IronGRP}}, I decided to create a little utility that can convert between Palettized images and PNGs. I called it {{highlight |text=IronImage}}.
+
+It can convert between PNGs and Palettized images from WarCraft I and WarCraft II. It can also convert between PNGs and the cursor format of WarCraft I and WarCraft II (which has the identical format to Palettized images, but with two extra bytes in the header {{dash}} one for the x-hotspot and one for the y-hotspot).
+
+{{img |file=ironimage.png |title=IronImage}}
+
+The code is available at [GitHub](https://github.com/sjoblomj/ironimage).
+
+I would like to add support for PCX images, which are used in StarCraft. Image support in {{highlight |text=palpngrs}} is provided by [image-rs](https://github.com/image-rs/image), and there seems to be an experimental image-rs module, [image-extras](https://github.com/image-rs/image-extras) where PCX support is being considered (see discussion [here](https://github.com/image-rs/image/issues/2363)). However, it does not yet seem to be in a stable state, and [GIMP](gimp.org) supports the PCX format anyway. I will probably revisit PCX support at a later time. For now, IMG and Cursor support will have to do.

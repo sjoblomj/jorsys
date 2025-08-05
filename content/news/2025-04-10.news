@@ -1,0 +1,7 @@
+{{begin-newsitem |time=2025-04-10T21:09:02Z |title=Work on TBL converter |author=Ojan |resources=irontbl.png |categories=StarCraft I, WarCraft II, modding, tools, IronTBL |summary=New tool: IronTBL - A TBL file converter}}
+
+I started working on a TBL converter. TBL files are used in WarCraft II and StarCraft for holding text data, such as unit names, menu text, and other game strings. They also act as mappings to sprite and sound files. Since I've written the tool in Rust, I went with the same naming as the previous tool, and called it {{highlight |text=IronTBL}}.
+
+{{img |file=irontbl.png |title=IronTBL logo}}
+
+It can convert TBL files to plain text files and back. As a little extra, I also added [yazi](https://yazi-rs.github.io/) preview integration. There's some minor things I still want to fix for it, such as adding a Readme file, and provide a way to autogenerate shell completions (because why not).

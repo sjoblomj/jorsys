@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>${title} - Jorvik Systems</title>
+    <link rel="icon" type="image/png" href="${nesting}/favicon.png" />
     <link rel="stylesheet" type="text/css" href="${nesting}/jorsys.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for news" href="${nesting}/feed-files/rss.xml" />
   </head>
   <body>
 
@@ -17,8 +19,8 @@
   <div class="menuheader">Jorsys</div>
   <ul>
     <li><a href="${nesting}/index.html">News</a></li>
-    <li>News archive</li>
-    <li>Feed</li>
+    <li><a href="${nesting}/archive.html">News archive</a></li>
+    <li><a href="${nesting}/feed.html">Feed</a></li>
   </ul>
 
   <div class="menuheader">StarCraft I</div>

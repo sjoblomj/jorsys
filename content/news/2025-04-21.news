@@ -1,0 +1,17 @@
+{{begin-newsitem |time=2025-04-21T14:27:41Z |title=Support for Extended Uncompressed GRPs |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=IronGRP now flawlessly converts all GRPs from StarCraft and WarCraft II}}
+
+After spending the Easter holidays being sick, I looked a bit more at the last three GRPs that I mentioned last time.
+
+The `art/orc.grp` and `art/human.grp` turned out to be what I call Extended Uncompressed GRPs for lack of a better name. A frame in the GRP files only have room for sprites of up to 255x255 pixels. However, for these two files, Blizzard has done a little trick. Each frame contain an offset to where the image data starts. By setting the high bit of the offset, it indicates that the frame is wider than 255 pixels. The actual width then, is what the frame reports, plus 256, which for these two files becomes 300 pixels wide. {{highlight |text=IronGRP}} now supports this format hack, and converting from GRP to PNGs to GRP renders identical result as the input.
+
+As for the `art/unit/orc/black.grp` {{dash}} the Orc Blacksmith from WarCraft II {{dash}} it turns out that Blizzard for some reason tweaked a parameter when encoding it. GRPs use RLE (Run-Length Encoding) compression, which on a high level works like this: a control byte is used to communicate one of three command types: one being that the next x pixels are transparent; one being that the next x pixels are identical; one being to copy the next x pixels, which can be different. So if there were eight identical pixels in a row, the command byte would signal identicality, and the next byte would be the pixel value. This thus saves 8 - 2 = 6 bytes of space.
+
+Normally, four pixels must be identical for the identicality instruction to be used. However, for the Orc Blacksmith GRP {{dash}} and that GRP alone {{dash}} a different more efficient threshold of three pixels is used. As this saves more space than the normal threshold of four pixels, it is unclear why this is not the standard.
+
+{{highlight |text=IronGRP}} supports three different compression types: the Normal RLE compression, Uncompressed, and a more Optimised compression type. The Optimised compression type would previously do three things: use this more efficient threshold of three identical pixels; attempt to reuse the encoded ending pixels of a row if that matched the first pixels of the next row; as well as continuing to read identical pixels rather than finishing because too many pixels had been read.
+
+These latter two optimisations do result in smaller file sizes, but only by very little, and they add complexity to the code. I have thus decided to remove them, and instead just use the more efficient threshold of three pixels for the identicality instruction. Not only do these two optimisations not yield a significant size reduction, but by not doing them, the Optimised compression type now creates an identical output of the Blacksmith.
+
+A user then has the option to use the Normal RLE compression type, or the Optimised compression type. The games should have no problem using either, so it is up to the user whether they want the Blizzard standard way, or a slightly more efficient way.
+
+With this, all GRPs of StarCraft, StarCraft: Brood Wars and WarCraft II: Battle.net edition can now be perfectly converted (apart from the WarCraft II portrait files I mentioned previously, which can be handled but with a difference, which I regard as an error on Blizzard's part).

@@ -1,0 +1,12 @@
+{{begin-newsitem |time=2025-08-05T22:07:15Z |title=News archive and news feed |author=Ojan |categories=site |summary=The site now has a news archive and a news RSS feed}}
+
+I hacked together a script for the site that will automatically take all news items, divide them by year and month and create a news archive. It will also put the news items into an RSS feed.
+
+The pages are available in the navigation menu, as well as here:
+
+* [News archive](../archive.html)
+* [News feed](../feed.html)
+
+Powering this site is [incunable](https://github.com/sjoblomj/incunable) {{dash}} a hackish templating engine for static site generation that I started a few years back. I have also made some updates to it the past few days, so that is at least indirectly related to this site.
+
+Things are a bit slower now compared to a few months ago. I have a big, long trip coming up, for which planning has taken a lot of time. And right now I'm in my home town where I try to meet friends and family.

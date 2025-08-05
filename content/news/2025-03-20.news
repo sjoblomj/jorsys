@@ -1,0 +1,17 @@
+{{begin-newsitem |time=2025-03-20T21:19:22Z |title=First update of Jorvik Systems |author=Ojan |categories=site |resources=jorsys.png |summary=Starting up Jorvik Systems, intending it to be a hub for modding resources for StarCraft, WarCraft I and WarCraft II.}}
+
+With this post, I want to open the gates of {{highlight |text=Jorvik Systems}}.
+
+This site is a long-overdue return to an old passion of mine: digging deep into the internals of some of the most iconic games of the '90s {{dash}} WarCraft: Orcs and Humans, WarCraft II, and StarCraft. These titles defined a generation of real-time strategy gaming, and for many of us, they also opened the door to a world of creativity through modding the games, where we changed their visuals and dynamics.
+
+Roughly 25 years ago (!!!), I was very active in the modding community. Back then, we reverse-engineered file formats, hex-edited game data, created tools and programs to make it all more accessible, and shared our findings on forums, chats, and IRC channels. It was a different era {{dash}} the Internet of old before social media, filled with curiosity and ingenuity. As for myself, while life has pulled me in other directions, I never truly lost that fascination with how the games work under the hood.
+
+{{img |file=jorsys.png |title=Jorvik Systems}}
+
+This site is my attempt to reconnect with that world. I hope this site will grow to host format specifications of files, modding tools, old mod files, tutorials and guides. As an avid Linux user, I also wish to present tools that hopefully are cross-platform and open source, so that anyone can use them.
+
+The site itself draws much inspiration from the legendary {{highlight |text=Camelot Systems}}, or CamSys, and the website design is indeed visually very similar. CamSys, its members and forum were in many ways the driving force in the modding community of WarCraft II and StarCraft, although plenty of sites, groups and other forums followed in its wake.
+
+Whether you're a veteran modder from the old days, someone who wishes to understand how the games and formats worked, or just someone with a soft spot for late-90s PC gaming, I hope you’ll find something interesting here.
+
+Let’s dive in {{dash}} there's a lot of magic buried in those old bytes.

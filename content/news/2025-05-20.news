@@ -1,0 +1,5 @@
+{{begin-newsitem |time=2025-05-20T18:55:19Z |title=Work begun on image converter |author=Ojan |categories=WarCraft I, WarCraft II, modding, tools, IronImage |summary=Started work on a new tool for converting palettized images from WarCraft I and WarCraft II}}
+
+I have started to work on an image converter for WarCraft I and WarCraft II. I have made a library called [palpngrs](https://github.com/sjoblomj/palpngrs) out of the code I had for {{highlight |text=IronGRP}}, which can handle conversions to and from Palettized images and PNG files. Very few lines of code then allowed me to slap together a little utility that can convert raw IMG files (used for backgrounds and dialog elements in WarCraft I and WarCraft II) as well as Cursor files (used for the mouse cursor in WarCraft I and WarCraft II) to PNGs and back.
+
+I have some finishing touches to do and I can't decide on a name I like for it. But with this utility, {{highlight |text=IronGRP}} and {{highlight |text=IronTBL}}, a fair amount of the game files of WarCraft I and WarCraft II can now be converted to and from more accessible formats.

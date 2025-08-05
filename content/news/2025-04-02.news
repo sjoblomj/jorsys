@@ -1,0 +1,13 @@
+{{begin-newsitem |time=2025-04-02T22:15:02Z |title=New tool: IronGRP |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |resources=valkyrie.png |summary=Created a modding tool for GRP files}}
+
+The unit and building sprites of WarCraft I, WarCraft II and StarCraft I are found in GRP files, which need to be converted into other image formats in order to be edited. For that, I'm working on a little GRP to PNG converter tool, called {{highlight |text=IronGRP}}.
+
+Back in the day, {{highlight |text=RetroGRP}} was used by everyone, but it is a closed source Windows only utility. {{highlight |text=ShadowFlare}} made [grpapi](https://sfsrealm.hopto.org/projects/gitweb.cgi?p=grpapi.git;a=summary) which is no doubt very competent, but not too straight-forward to compile on Linux (probably speaks more about my own short-comings than anything else). There is also [PyGRP as part of PyMS](https://github.com/poiuyqwert/PyMS/) by {{highlight |text=poiuyqwert}}, but it seems to be stuck in Python 2 land. Worth mentioning is also [libgrp](https://github.com/Stratagus/libgrp/) by {{highlight |text=Bradley Clemetson}}.
+
+Instead of fighting to compile 20 year old source code, I decided to take a shot at creating a utility from scratch. {{highlight |text=IronGRP}} is the fruit of that labour. As of this writing, it can convert GRPs to PNGs and vice versa, and it can create tiled images, where all frames are in one tiled image:
+
+{{img |file=valkyrie.png |title=Converted Valkyrie GRP}}
+
+The decoding and encoding algorithm appears to create near-perfect results compared to Blizzard's own file, but there are some instances where the output differs ever so slightly.
+
+I'm trying to see if these differences are fixable. I also want to handle uncompressed GRPs, and more gracefully handle PNGs with alpha channels (transparency). Support for detecting duplicated frames and re-using them should be added as well. But for now, I'm happy to say that what I have feels like a pretty solid start.

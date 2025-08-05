@@ -1,0 +1,24 @@
+{{begin-newsitem |time=2025-04-15T16:36:58Z |title=Fixed offset bug in IronGRP |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=Fixed offset issue; from StarCraft, only uncompressed GRPs are now not handled correctly}}
+
+{{highlight |text=IronGRP}} now correctly handles the last eight normal GRPs that previously were encoded differently than their input! When frames had identical image contents, it would reuse the same frame data, including the vertical and horizontal offsets. It turned out that identical image data does not necessarily mean identical offsets. For instance, the red blinking "nuke dot" jumps around a little bit, which is accomplished by setting different offsets, although the image data is the same.
+
+This means that all normal GRPs are now handled correctly! Remaining are ten uncompressed GRPs, that I will turn my attention to next.
+
+| Status             | Numbers |
+| :----------------- | ------: |
+| Identical          |    1080 |
+| GRPs differ        |      10 |
+| Ratio of identical |     99% |
+
+The ten uncompressed GRPs are:
+
+ 1. Patch_rt.mpq: dlgs/protoss.grp
+ 2. Patch_rt.mpq: dlgs/terran.grp
+ 3. Patch_rt.mpq: dlgs/zerg.grp
+ 4. Patch_rt.mpq: glue/PalNl/Dlg.grp
+ 5. BrooDat.mpq: glue/ScorePd/iScore.grp
+ 6. BrooDat.mpq: glue/ScorePv/iScore.grp
+ 7. BrooDat.mpq: glue/ScoreTd/iScore.grp
+ 8. BrooDat.mpq: glue/ScoreTv/iScore.grp
+ 9. BrooDat.mpq: glue/ScoreZd/iScore.grp
+10. BrooDat.mpq: glue/ScoreZv/iScore.grp

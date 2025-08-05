@@ -1,0 +1,26 @@
+{{begin-newsitem |time=2025-04-19T09:14:19Z |title=IronGRP 0.3 |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=IronGRP now supports uncompressed GRPs. 95% of WarCraft II GRPs can be handled flawlessly.}}
+
+With release 0.3 of {{highlight |text=IronGRP}}, it now supports converting to and from uncompressed GRPs. That means that every last GRP from StarCraft and StarCraft: Brood War can be converted to and from PNGs. The program is available on [GitHub](https://github.com/sjoblomj/irongrp).
+
+I now turn my attention to WarCraft II: Battle.net Edition. The GRP format is the same as in StarCraft, but a few files have differences when going from GRP to PNGs to GRP again, and some files fail due to format errors. For WarCraft II: BNE, we have:
+
+| Status             | Numbers |
+| :----------------- | ------: |
+| Identical          |     266 |
+| GRPs differ        |       7 |
+| Ratio of identical |     95% |
+
+The seven outliers are:
+1. War2Dat/Art/Unit/Orc/black.grp
+2. War2Dat/Art/unit/Portrait/portrait.grp
+3. War2Dat/Art/unit/Portrait/l_port.grp
+4. War2Dat/Art/unit/Portrait/s_port.grp
+5. War2Dat/Art/unit/Portrait/x_port.grp
+6. War2Dat/art/orc.grp
+7. War2Dat/art/human.grp
+
+The first one, the Orc Blacksmith, is a normal GRP. There are significant differences in the input and output GRPs. I need to investigate further what is happening there.
+
+The four portrait files all have the same underlying issue. Identical frames can be reused to save space, which is frequently utilized in the GRPs. The frames 182 and 183 are identical and the image data is reused. Ditto with frames 184 and 185. However, frame 158 and 159 are also identical, but their image data is not reused but instead duplicated. For all these three pairs of frames, {{highlight |text=IronGRP}} detects that they are identical and reuse the image data. I will write this off as an error on Blizzard's part, as there is no reason to reuse some frames and not others.
+
+The last two files are probably Uncompressed GRPs or a variant thereof. Either my handling of Uncompressed GRPs is not solid enough, or they are a different variant compared to the Uncompressed GRPs of StarCraft.

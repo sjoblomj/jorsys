@@ -1,0 +1,9 @@
+{{begin-newsitem |time=2025-05-30T19:26:18Z |title=Namebreaking |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools, Namebreaking |summary=Started work on MPQ name bruteforcer}}
+
+From Diablo I and onward, up until fairly recently, Blizzard has used MPQ files to store their game data. The MPQ format is a container format that can hold multiple files and directories, like ZIP files. While the MPQ files store files, they do not store file names. To know the names of the files, an external listfile must be used. Internally, the MPQ files instead store two hashes of the file names to identify the files.
+
+Almost all file names of all MPQ files are known, but there are a few unknown file names.
+
+Back in the days, some 20 years ago, I tried to figure out all the names of the MPQ files of Blizzard. At university, I wrote a distributed brute-force program that would try to find one of the remaining portrait files, but it never found it.
+
+I just created a little CUDA program to make use of the GPU to continue to brute-force where I left off many years ago. Just a little something to run in the background, in the hopes that some of the last unknown properties of the games will be revealed.

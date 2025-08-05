@@ -1,0 +1,17 @@
+{{begin-newsitem |time=2025-04-07T21:26:41Z |title=More progress on IronGRP |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=New IronGRP features, handles 45% of GRPs flawlessly}}
+
+Work continues on the GRP converter, {{highlight |text=IronGRP}}, when time permits. It can now detect duplicated frames and reuse them, instead of copying identical frames multiple times.
+
+The GRP format has no concept of transparency, whereas PNGs do, in their alpha channel. {{highlight |text=IronGRP}} can now handle PNGs with alpha channels, in the sense that completely transparent pixels are treated as belonging to palette index 0, which is the transparent colour in the GRP format. Pixels with complete opacity are treated as normal pixels. Any other value in the alpha channel gives rise to a warning, but is otherwise treated as a normal pixel.
+
+In the previous news item, I claimed that {{highlight |text=IronGRP}} converts flawlessly, but this turned out to be a premature claim. I converted all GRPs to PNGs, and then back to GRPs again, for all GRPs in unit/protoss, unit/thingy, unit/terran and unit/zerg from StarDat.mpq. The results are as follows:
+
+| Status             | Numbers |
+| :----------------- | ------: |
+| Identical          |     183 |
+| GRPs differ        |     219 |
+| Ratio of identical |     45% |
+
+I was hoping for more identical GRPs, and I'll need some time to investigate what these differences are. I doubt they are really visible; this is probably more encoding differences making individual bytes different, or perhaps "residue" bytes that are not actually read by the game.
+
+Still remaining is also to handle Uncompressed GRPs.

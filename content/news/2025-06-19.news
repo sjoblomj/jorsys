@@ -1,0 +1,18 @@
+{{begin-newsitem |time=2025-06-19T20:41:01Z |title=IronGRP 0.5 |author=Ojan |resources=irongrp.png |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=Released IronGRP 0.5 with a bunch of minor updates}}
+
+{{highlight |text=IronGRP}} is a GRP to PNG converter for WarCraft I, WarCraft II and StarCraft.
+
+{{img |file=irongrp.png |title=IronGRP}}
+
+{{highlight |text=IronGRP}} version 0.5 was just released with the following features:
+
+* Added [ImHex](https://imhex.werwolv.net) pattern language definitions for Normal GRPs, Uncompressed GRPs and WarCraft I style GRPs.
+* Added [yazi](https://yazi-rs.github.io/) integration.
+* Included fallback greyscale palette.
+* Added a Readme file.
+* Added a logo.
+* Moved the PNG handling to an external library, [palpngrs](https://github.com/sjoblomj/palpngrs).
+* Better logging: Introduced logging library and the log level 'trace'.
+* Removed some Optimisation schemes from CompressionType Optimised. This makes it slightly less optimised but identical to how Blizzard did it, and the code is less complex.
+
+{{highlight |text=IronGRP}} is available on [GitHub](https://github.com/sjoblomj/irongrp).

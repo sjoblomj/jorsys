@@ -1,0 +1,38 @@
+{{begin-newsitem |time=2025-04-14T21:52:08Z |title=Palettes ruining the party |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=Realized why IronGRP failed at some GRP files. It now handles 98% of all StarCraft GRP files.}}
+
+So I've been playing around with {{highlight |text=IronGRP}} for a few hours now, and I just realized what the cause of (almost all) the remaining differences between the input GRPs and the output GRPs are.
+
+The algorithm I use to encode PNG files into GRPs is based on reading the colour values of each pixel in the PNG, and finding the index of the corresponding colour in the palette. This is done by searching through the palette for the matching colour (or if the user has deviated from the palette, the closest colour match), and then using that index in the GRP encoding.
+
+However, I just realized that the palette file that I have been using has several entries with duplicated colours. I have thus been trying to figure out why on earth the program would swap a single colour for another (I thought it was some integer overflow situation again), when what happened is that it looked for a colour matching the pixel value and correctly returned the first match it found, when the input GRP referred to a different index with an identical colour value.
+
+When I switched to a palette file that has no duplicated colours, the results were better. When running on all GRP files in StarDat.mpq, BrooDat.mpq and patch_rt.mpq, the results are now as follows:
+
+| Status             | Numbers |
+| :----------------- | ------: |
+| Identical          |    1072 |
+| GRPs differ        |      18 |
+| Ratio of identical |     98% |
+
+We're getting there! The offending GRPs are:
+
+ 1. StarDat.mpq: unit/neutral/nddsha2.grp
+ 2. StarDat.mpq: unit/thingy/dbl_exp.grp
+ 3. StarDat.mpq: unit/thingy/nukebeam.grp
+ 4. StarDat.mpq: unit/thingy/sbalarge.grp
+ 5. Patch_rt.mpq: dlgs/protoss.grp *
+ 6. Patch_rt.mpq: dlgs/terran.grp *
+ 7. Patch_rt.mpq: dlgs/zerg.grp *
+ 8. Patch_rt.mpq: glue/PalNl/Dlg.grp *
+ 9. BrooDat.mpq: glue/ScorePd/iScore.grp *
+10. BrooDat.mpq: glue/ScorePv/iScore.grp *
+11. BrooDat.mpq: glue/ScoreTd/iScore.grp *
+12. BrooDat.mpq: glue/ScoreTv/iScore.grp *
+13. BrooDat.mpq: glue/ScoreZd/iScore.grp *
+14. BrooDat.mpq: glue/ScoreZv/iScore.grp *
+15. BrooDat.mpq: unit/neutral/ncicShad.grp
+16. BrooDat.mpq: unit/neutral/nckShad.grp
+17. BrooDat.mpq: unit/neutral/nddSha2.grp
+18. BrooDat.mpq: unit/wirefram/wirefram.grp
+
+The ones marked with * are uncompressed I believe, for which there is no support yet. As for the rest, I did a quick analysis. None have unused "residue" bytes (which is a good thing), but they all have several sets of identical GRP frames. My hunch is that it is related to that, or to some corner case regarding vertical and horisontal offsets.

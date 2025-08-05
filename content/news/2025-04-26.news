@@ -1,0 +1,5 @@
+{{begin-newsitem |time=2025-04-26T09:37:22Z |title=Support for WarCraft I GRPs in IronGRP |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=Added support for WarCraft I GRP files}}
+
+I extracted the GRPs from WarCraft I: Orcs and Humans from its data archive files. The format is nearly identical to Uncompressed GRPs, except that the header is four bytes instead of six (in WarCraft I there is first a two byte frame count, and then a byte with the maximum width followed by a byte of the maximum height - In StarCraft and WarCraft II the max width and max height are both two bytes each).
+
+This caused a surprising amount of code changes in {{highlight |text=IronGRP}}, but nothing too difficult. There is still work to be done in automatically detecting whether the header is four or six bytes, though. I implemented a primitive check, but it fails to differentiate between WarCraft I GRPs and Extended Uncompressed GRPs. Some more work is needed to make it correct and more robust.

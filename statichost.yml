@@ -1,5 +1,6 @@
 image: ubuntu
 command: dir=$(pwd) &&
+         ./generate_content &&
          apt-get update &&
          apt-get -y install git python3 gawk cmark-gfm &&
          git clone https://github.com/sjoblomj/incunable.git $HOME/incunable &&

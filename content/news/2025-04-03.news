@@ -1,0 +1,12 @@
+{{begin-newsitem |time=2025-04-03T22:22:30Z |title=IronGRP now converts flawlessly |author=Ojan |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=Progress on IronGRP}}
+
+The GRP converter, {{highlight |text=IronGRP}}, that I've been working on for the past few days, now seems to work flawlessly (at least on the Valkyrie GRP; I need to test on more GRPs). Previously, it would sometimes fail to consume enough pixels when reading a row of pixels, which caused slight deviations when converting from GRP to PNG and back to GRP. That was the cause of the slight difference in output that I referred to in the last post. Now, GRP to PNG to GRP conversion is byte-to-byte identical (for the Valkyrie).
+
+Since it now produces identical output to its input, I've promoted the code to version 0.1. The code is available on [GitHub](https://github.com/sjoblomj/irongrp).
+
+As I wrote in last post, there are some things I still want to add:
+* Handling of Uncompressed GRPs.
+* Handling PNGs with alpha channels (transparency).
+* Detecting duplicated frames and reusing them rather than writing them anew.
+
+Once that is in place, it seems fitting to call it version 1.0.

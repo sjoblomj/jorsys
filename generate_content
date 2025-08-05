@@ -1,0 +1,210 @@
+#!/bin/bash
+
+function update_formats() {
+    for f in formats/*.json; do
+        file=$(basename "$f" .json)
+        title=$(echo "$file" | tr _ .)
+        echo "Generating format file $title into content/formats/$file/index.md"
+
+        mkdir -p content/formats/"$file"
+        printf "# %s Format\n\n" "$title" > content/formats/"$file"/index.md
+
+        jq -r 'map(
+          "## " + .name + "\n" +
+          "{{begin-formattable}}\n" +
+            "  {{formatlbl |label=Offset |value=" + .offset + "}}\n" +
+            "  {{formatlbl |label=Length |value=" + .length + "}}\n" +
+            "  {{formatlbl |label=Description |value=" + .description + "}}\n" +
+          (if .values == null then "" else
+            "  {{formatlbl |label=Values |value=" + .values + "}}\n"
+          end) +
+          (if .bits == [] then "" else
+            "  {{formatlbl |label=Bits |value={{begin-bittable}}" + (.bits | map("      {{formatbitlbl |label=" + .bit + " |value=" + .value + "}}") | join("")) + "    {{end-bittable}}  }}\n"
+          end) +
+          "{{end-formattable}}\n"
+        ) | join("\n")' formats/"$file".json >> content/formats/"$file"/index.md
+    done
+}
+
+function update_news_and_rss() {
+    max_newsitems=10
+    rootpath="content"
+
+    # Only keep the skeleton (.skl) files in the archive and index directories,
+    # the rest will be rebuilt.
+    find "$rootpath"/archive/ -not -name 'index.skl' -not -name 'archive' -delete
+    find "$rootpath"/index/   -not -name 'index.skl' -not -name 'index'   -delete
+
+    awk \
+      -v rss_content="$(<"$rootpath"/feed/rss.skl)" \
+      -v rss_filename="$rootpath/feed/rss.xml" \
+      -v newspage_content="$(<"$rootpath"/index/index.skl)" \
+      -v newspage_filename="$rootpath/index/index.md" \
+      -v archive_content="$(<"$rootpath"/archive/index.skl)" \
+      -v archive_filename="$rootpath/archive/index.md" \
+      -v rootpath="$rootpath" \
+      -v max_newsitems="$max_newsitems" '
+    BEGIN {
+        DELIM = "|"
+        delete date_paths[""]
+        delete news_data[""]
+        split("January February March April May June July August September October November December", months, " ")
+
+        archive_new_content  = ""
+        newspage_new_content = ""
+
+        parse_newsitems()
+        # Sort dates descending
+        asorti(date_paths, sorted_dates, "reverse_date_cmp")
+
+        for (i = 1; i <= length(sorted_dates); i++) {
+            date = sorted_dates[i]
+            path = date_paths[date]
+            print_message("Processing news item: " date)
+
+            split(date, dparts, "-")
+            year = dparts[1]
+            month_num = dparts[2] + 0
+            title = months[month_num] " " year
+            fn = tolower(months[month_num]) "_" year
+
+            if (!(fn in seen)) {
+                month_filename = rootpath "/archive/" fn "/index.md"
+                run_system_command("mkdir -p " rootpath "/archive/" fn)
+                print "# " title " - News archive" > month_filename
+                archive_new_content = archive_new_content "\n* [" title "](archive/" fn ".html)"
+
+                seen[fn] = 1
+            }
+
+            news_item = read_file(path) "\n{{end-newsitem}}"
+            print news_item >> month_filename
+            if (i < length(sorted_dates))
+                print "\n\n" >> month_filename
+            move_resources_to_directory(date, rootpath "/archive/" fn)
+
+            if (i > max_newsitems)
+                continue
+            # Create the news item for the news page
+            newspage_new_content = newspage_new_content "\n" news_item
+            if (i < length(sorted_dates) && i != max_newsitems)
+                newspage_new_content = newspage_new_content "\n\n"
+            move_resources_to_directory(date, rootpath "/index")
+
+            # Create the RSS item
+            title       = get_parameter(news_data[date], "title")
+            timestamp   = get_parameter(news_data[date], "time")
+            author      = get_parameter(news_data[date], "author")
+            categories  = get_parameter(news_data[date], "categories")
+            description = get_parameter(news_data[date], "summary")
+            link        = "https://www.jorsys.org/archive/" fn ".html#newsitem_" timestamp
+
+            item="\n    <item>\n      <title>" title "</title>\n      <dc:creator>" author "</dc:creator>\n      <guid isPermaLink=\"true\">" link "</guid>\n      <link>" link "</link>\n      <description>" description "</description>\n      <category>" categories "</category>\n      <pubDate>" timestamp "</pubDate>\n    </item>"
+            sub(/ *<\/channel>/, item "\n  </channel>", rss_content)
+        }
+        date = run_system_command_with_output("LC_ALL=en_GB.utf8 date -d " sorted_dates[1] " -Ru")
+        sub(/ *<lastBuildDate>.*<\/lastBuildDate>/, "    <lastBuildDate>" date "</lastBuildDate>", rss_content)
+        print rss_content > rss_filename
+
+        sub(/{{newsarchive}}/, archive_new_content, archive_content)
+        print archive_content > archive_filename
+        sub(/{{newsitems}}/, newspage_new_content, newspage_content)
+        print newspage_content > newspage_filename
+    }
+
+    function reverse_date_cmp(i1, v1, i2, v2) {
+        return (v1 > v2) ? -1 : (v1 < v2) ? 1 : 0
+    }
+
+    # Given a [text], this function returns the value of the parameter key given in [param_name].
+    # If [text] does not contain [param_name], the empty string is returned.
+    # Note! This does not support templates within templates!
+    function get_parameter(text, param_name,  m) {
+        match(text, "\\| *" param_name " *= *([^|}]+)", m)
+        if (m[1] != "")
+            return trim(m[1])
+        return ""
+    }
+
+    function move_resources_to_directory(date, destination_dir) {
+        # Move resources to archive directory
+        if (news_data[date] ~ "\\| *resources *=") {
+            res = get_parameter(news_data[date], "resources")
+            split(res, c, ",")
+            for (j in c) {
+                res = trim(c[j])
+                if (res == "")
+                    continue
+                run_system_command("cp " rootpath "/news/" res " " destination_dir)
+            }
+        }
+    }
+
+    function parse_newsitems(sysout, o, c, path, cat) {
+        sysout = run_system_command_with_output("grep --include=\"*.news\" -PIri \"{{begin-newsitem .*}}\" " rootpath " | sed \"s/.news:/.news@/g\"")
+        split(sysout, o, "\n")
+        for (i in o) {
+            if (o[i] == "")
+                continue
+            if (split(o[i], c, "@") != 2) {
+                print_error("Unable to split string: " o[i])
+                continue
+            }
+            path = c[1]
+            date = get_parameter(c[2], "time")
+            date_paths[date] = path
+
+            news_data[date] = c[2]
+        }
+    }
+
+    # Runs the given system command
+    function run_system_command(command) {
+        system(command)
+        close(command)
+    }
+
+    # Runs the given system command and returns its output
+    function run_system_command_with_output(command,  output) {
+        output = ""
+        while ((command | getline line) > 0) {
+            output = output "\n" line
+        }
+        close(command)
+        return trim(output)
+    }
+
+    # Trims away any whitespace (i.e. space, tab, newlines, carrige-returns) from the left and right of given [string]
+    function trim(string) {
+        sub(/^[ \t\r\n]+/,  "", string)
+        sub( /[ \t\r\n]+$/, "", string)
+        return string
+    }
+
+    # Prints [message] to stderr
+    function print_error(message) {
+        print message > "/dev/stderr"
+    }
+
+    # Prints [message] to stdout
+    function print_message(message) {
+        print message > "/dev/stdout"
+    }
+
+    # Reads every line of the given [file] from disk and returns the content.
+    function read_file(file,  line, lines) {
+        lines = ""
+        while ((getline line < file) > 0) {
+            if (lines == "")
+                lines = line
+            else
+                lines = lines "\n" line
+        }
+        close(file)
+        return lines
+    }
+    '
+}
+
+update_formats
+update_news_and_rss

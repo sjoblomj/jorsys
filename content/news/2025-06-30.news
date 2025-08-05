@@ -1,0 +1,9 @@
+{{begin-newsitem |time=2025-06-30T22:11:49Z |title=IronTBL 1.0 |author=Ojan |resources=irontbl.png |categories=StarCraft I, WarCraft II, modding, tools, IronTBL |summary=Released IronTBL 1.0}}
+
+I finally made some finishing touches on {{highlight |text=IronTBL}}, the TBL to TXT converter, so I decided to release it as version 1.0.
+
+{{img |file=irontbl.png |title=IronTBL}}
+
+Not much has changed since the last release (apart from some logging improvements), it mostly has some external integrations: comes with [ImHex](https://imhex.werwolv.net) pattern language definitions and [yazi](https://yazi-rs.github.io/) integration, and it can now generate shell completions.
+
+{{highlight |text=IronTBL}} is available on [GitHub](https://github.com/sjoblomj/irontbl).
