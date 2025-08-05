@@ -1,8 +1,8 @@
 image: ubuntu
 command: dir=$(pwd) &&
-         ./generate_content &&
          apt-get update &&
-         apt-get -y install git python3 gawk cmark-gfm &&
+         apt-get -y install git jq python3 gawk cmark-gfm &&
+         ./generate_content &&
          git clone https://github.com/sjoblomj/incunable.git $HOME/incunable &&
          cd $HOME/incunable &&
          sed -i 's/ python / python3 /' html/compile.sh &&
