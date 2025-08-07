@@ -98,11 +98,12 @@ function update_news_and_rss() {
             categories  = get_parameter(news_data[date], "categories")
             description = get_parameter(news_data[date], "summary")
             link        = "https://www.jorsys.org/archive/" fn ".html#newsitem_" timestamp
+            timestamp   = convert_date(timestamp)
 
             item="\n    <item>\n      <title>" title "</title>\n      <dc:creator>" author "</dc:creator>\n      <guid isPermaLink=\"true\">" link "</guid>\n      <link>" link "</link>\n      <description>" description "</description>\n      <category>" categories "</category>\n      <pubDate>" timestamp "</pubDate>\n    </item>"
             sub(/ *<\/channel>/, item "\n  </channel>", rss_content)
         }
-        date = run_system_command_with_output("LC_ALL=en_GB.utf8 date -d " sorted_dates[1] " -Ru")
+        date = convert_date(sorted_dates[1])
         sub(/ *<lastBuildDate>.*<\/lastBuildDate>/, "    <lastBuildDate>" date "</lastBuildDate>", rss_content)
         print rss_content > rss_filename
 
@@ -156,6 +157,10 @@ function update_news_and_rss() {
 
             news_data[date] = c[2]
         }
+    }
+
+    function convert_date(date) {
+        return run_system_command_with_output("LC_ALL=en_GB.utf8 date -Rud " date)
     }
 
     # Runs the given system command
