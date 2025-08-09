@@ -1,10 +1,6 @@
-image: ubuntu
-command: dir=$(pwd) &&
-         apt-get update &&
-         apt-get -y install git jq python3 gawk cmark-gfm &&
+image: sjoblomj/incunable:v1.6
+command: apt-get update &&
+         apt-get -y install jq gawk &&
          ./generate_content &&
-         git clone https://github.com/sjoblomj/incunable.git $HOME/incunable &&
-         cd $HOME/incunable &&
-         sed -i 's/ python / python3 /' html/compile.sh &&
-         ./html/compile.sh $dir/content $dir/site $dir/resources $dir/templates
+         ./incunable content site resources templates
 public: site
