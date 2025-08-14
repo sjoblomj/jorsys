@@ -2,25 +2,25 @@
 <html>
   <head>
     <title>${title} - Jorvik Systems</title>
-    <link rel="icon" type="image/png" href="${nesting}/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="${nesting}/jorsys.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for news" href="${nesting}/feed-files/rss.xml" />
+    <link rel="icon" type="image/png" href="${nesting}favicon.png" />
+    <link rel="stylesheet" type="text/css" href="${nesting}jorsys.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for news" href="${nesting}feed-files/rss.xml" />
   </head>
   <body>
 
 <div class="site">
 <nav class="menus">
 <div class="leftmenu">
-<a href="${nesting}/index.html"><img id="menulogo" src="${nesting}/csswords7.png" /></a>
+<a href="${nesting}index.html"><img id="menulogo" src="${nesting}csswords7.png" /></a>
 <div id="menulogoencirclement"></div>
 <div class="menucontent menucontentleft">
 
   <div class="menudescr">Navigation Menu</div>
   <div class="menuheader">Jorsys</div>
   <ul>
-    <li><a href="${nesting}/index.html">News</a></li>
-    <li><a href="${nesting}/archive.html">News archive</a></li>
-    <li><a href="${nesting}/feed.html">Feed</a></li>
+    <li><a href="${nesting}index.html">News</a></li>
+    <li><a href="${nesting}archive.html">News archive</a></li>
+    <li><a href="${nesting}feed.html">Feed</a></li>
   </ul>
 
   <div class="menuheader">StarCraft I</div>
@@ -28,8 +28,8 @@
     <li>About StarCraft</li>
     <li>Playing</li>
     <li>Modding</li>
-    <li><a href="${nesting}/starcraft/software.html">Software</a></li>
-    <li><a href="${nesting}/formats.html">Formats</a></li>
+    <li><a href="${nesting}starcraft/software.html">Software</a></li>
+    <li><a href="${nesting}formats.html">Formats</a></li>
     <li>Mods</li>
   </ul>
 
@@ -38,8 +38,8 @@
     <li>About WarCraft II</li>
     <li>Playing</li>
     <li>Modding</li>
-    <li><a href="${nesting}/warcraft2/software.html">Software</a></li>
-    <li><a href="${nesting}/formats.html">Formats</a></li>
+    <li><a href="${nesting}warcraft2/software.html">Software</a></li>
+    <li><a href="${nesting}formats.html">Formats</a></li>
     <li>Mods</li>
   </ul>
 
@@ -48,22 +48,22 @@
     <li>About WarCraft I</li>
     <li>Playing</li>
     <li>Modding</li>
-    <li><a href="${nesting}/warcraft1/software.html">Software</a></li>
+    <li><a href="${nesting}warcraft1/software.html">Software</a></li>
     <li>Mods</li>
   </ul>
 
   <div class="menuheader">Other games</div>
   <ul>
-    <li><a href="${nesting}/tiberian-sun.html">Tiberian Sun</a></li>
-    <li><a href="${nesting}/descent3.html">Descent 3</a></li>
-    <li><a href="${nesting}/genderwars.html">Gender Wars</a></li>
+    <li><a href="${nesting}tiberian-sun.html">Tiberian Sun</a></li>
+    <li><a href="${nesting}descent3.html">Descent 3</a></li>
+    <li><a href="${nesting}genderwars.html">Gender Wars</a></li>
     <li>Allied General</li>
   </ul>
 
   <div class="menuheader">About Jorsys</div>
   <ul>
-    <li><a href="${nesting}/about.html">About</a></li>
-    <li><a href="${nesting}/who.html">Who</a></li>
+    <li><a href="${nesting}about.html">About</a></li>
+    <li><a href="${nesting}who.html">Who</a></li>
   </ul>
 
   <div class="menuend">
@@ -88,15 +88,15 @@
   <div class="menudescr">Specs Live Wire</div>
   <div class="menuheader">StarCraft Specs</div>
   <ul>
-    <li><a href="${nesting}/formats/techdata_dat.html">Technology</a></li>
-    <li><a href="${nesting}/formats/units_dat.html">Units</a></li>
-    <li><a href="${nesting}/formats/upgrades_dat.html">Upgrades</a></li>
-    <li><a href="${nesting}/formats/weapons_dat.html">Weapons</a></li>
+    <li><a href="${nesting}formats/techdata_dat.html">Technology</a></li>
+    <li><a href="${nesting}formats/units_dat.html">Units</a></li>
+    <li><a href="${nesting}formats/upgrades_dat.html">Upgrades</a></li>
+    <li><a href="${nesting}formats/weapons_dat.html">Weapons</a></li>
   </ul>
 
   <div class="menuheader">WarCraft Specs</div>
   <ul>
-    <li><a href="${nesting}/formats/udta.html">UDTA</a></li>
+    <li><a href="${nesting}formats/udta.html">UDTA</a></li>
   </ul>
 
 </div>
@@ -106,9 +106,9 @@
 <div class="middle">
 
 <div id="topline"></div>
-<img src="${nesting}/jorsys.png" class="toplogo" />
+<img src="${nesting}jorsys.png" class="toplogo" />
 
 <div class="content">
     <div class="contentillustration">
-        <img src="${nesting}/sunset.png" />
+        <img src="${nesting}sunset.png" />
     </div>
