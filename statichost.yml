@@ -1,4 +1,4 @@
-image: sjoblomj/incunable:v1.6
+image: sjoblomj/incunable:v1.7
 command: apt-get update &&
          apt-get -y install jq gawk &&
          ./generate_content &&
