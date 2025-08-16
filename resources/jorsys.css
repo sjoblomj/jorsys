@@ -12,6 +12,29 @@
         --box-header-background-colour: #101010;
     }
 }
+@font-face {
+  font-family: 'FontWithASyntaxHighlighter';
+  src:
+    url('FontWithASyntaxHighlighter-Regular.woff2')
+    format('woff2')
+  ;
+}
+@font-palette-values --myCustomPalette {
+  font-family: 'FontWithASyntaxHighlighter';
+  override-colors:
+    0 orange,      /* keywords, {} */
+    1 red,         /* comments */
+    2 yellow,      /* literals */
+    3 turquoise,   /* numbers */
+    4 deepskyblue, /* functions, [] */
+    5 lightgreen,  /* js others */
+    6 black,       /* not in use */
+    7 hotpink,     /* inside quotes, css properties, few chars */
+    8 darkgray     /* few chars */
+  ;
+}
+
+
 body {
   background-color: var(--background-colour);
   color: var(--text-colour);
@@ -331,6 +354,47 @@ code {
     border-color: var(--border-colour);
     font-family: monospace;
 }
+.code-block code {
+    border: 0;
+}
+.code-block {
+    word-wrap: break-word;
+    padding: .1rem .3rem .3rem;
+    border-radius: .2rem;
+    border: 1px solid;
+    border-color: var(--border-colour);
+
+    line-height: 1em;
+    font-size: medium;
+
+    counter-reset: line;
+    padding-left: 3em;
+    position: relative;
+    white-space: pre;
+}
+
+.line {
+    display: block;
+    position: relative;
+    padding-left: 1.5em;
+    font-family: "FontWithASyntaxHighlighter", monospace;
+    font-palette: --myCustomPalette;
+}
+
+/* Line number styling */
+.line::before {
+    counter-increment: line;
+    content: counter(line);
+    position: absolute;
+    left: -2.5em;
+    width: 2em;
+    text-align: right;
+    color: var(--text-colour);
+    user-select: none; /* prevents selecting line numbers */
+    font-family: monospace;
+}
+
+
 
 .centered {
     margin: auto;
