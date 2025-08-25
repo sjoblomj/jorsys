@@ -1,0 +1,7 @@
+{{begin-newsitem |time=2025-08-25T19:49:29Z |title=Site auto-deployment |author=Ojan |categories=site |summary=The site also auto-deploys on updates}}
+
+I have made some site maintenance over the past few days. The DNS records are updated and should be in order, and I have made some minor fixes to the site, such as making images more web-friendly, adding a favicon and 404-page, and doing some tweaking.
+
+I have also made some updates to [Incunable](https://github.com/sjoblomj/incunable) {{dash}} the templating engine that generates this site. Together with some GitHub webhooks, this site will now automatically deploy whenever I push updates to [its GitHub repo](https://github.com/sjoblomj/jorsys).
+
+All of this leading to a faster and smoother process to go live with content.
