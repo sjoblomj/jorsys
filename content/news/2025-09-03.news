@@ -1,0 +1,10 @@
+{{begin-newsitem |time=2025-09-03T06:47:19Z |title=More specs |author=Ojan |categories=StarCraft I, WarCraft II, modding, formats |summary=Made TBL and SPK specs available}}
+
+The specs for TBL files and SPK files are now available on the [formats page](../formats.html).
+
+TBL files are lists of strings, containing things such as unit names and stats, dialog and game texts, file paths to resources such as graphics or sounds, etc. TBL files are used in StarCraft and WarCraft II.
+
+SPK files are the star parallax background of the Space tileset in StarCraft I.
+
+* [TBL file format specs](../formats/tbl.html)
+* [SPK file format specs](../formats/spk.html)
