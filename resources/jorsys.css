@@ -344,6 +344,16 @@ a:hover {
     font-weight: bold;
     padding-right: 1em;
 }
+.formatbox {
+    padding: 0 1em 1em 1em;
+    margin: 1em;
+    background-color: var(--grey-background-colour-trans);
+    border: 3px solid var(--border-colour);
+}
+.formatbox-title {
+    font-size: 1.5em;
+    text-decoration: underline;
+}
 
 code {
     color: var(--header-colour);

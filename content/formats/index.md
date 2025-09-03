@@ -6,6 +6,7 @@
 * [techdata.dat](formats/techdata_dat.html)
 * [upgrades.dat](formats/upgrades_dat.html)
 * [TBL](formats/tbl.html)
+* [SPK](formats/spk.html)
 
 ## WarCraft II
 * [UDTA](formats/udta.html)

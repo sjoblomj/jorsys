@@ -93,6 +93,7 @@
     <li><a href="${nesting}formats/upgrades_dat.html">Upgrades</a></li>
     <li><a href="${nesting}formats/weapons_dat.html">Weapons</a></li>
     <li><a href="${nesting}formats/tbl.html">TBL</a></li>
+    <li><a href="${nesting}formats/spk.html">SPK</a></li>
   </ul>
 
   <div class="menuheader">WarCraft Specs</div>
