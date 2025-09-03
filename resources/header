@@ -92,11 +92,13 @@
     <li><a href="${nesting}formats/units_dat.html">Units</a></li>
     <li><a href="${nesting}formats/upgrades_dat.html">Upgrades</a></li>
     <li><a href="${nesting}formats/weapons_dat.html">Weapons</a></li>
+    <li><a href="${nesting}formats/tbl.html">TBL</a></li>
   </ul>
 
   <div class="menuheader">WarCraft Specs</div>
   <ul>
     <li><a href="${nesting}formats/udta.html">UDTA</a></li>
+    <li><a href="${nesting}formats/tbl.html">TBL</a></li>
   </ul>
 
 </div>
