@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:dc="https://purl.org/dc/elements/1.1" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jorvik Systems News</title>
     <link>https://www.jorsys.org</link>
@@ -8,12 +8,13 @@
     <category>starcraft, warcraft 2, warcraft 1, modding</category>
     <image>
         <link>https://www.jorsys.org</link>
-        <title>jorsys.org</title>
+        <title>Jorvik Systems News</title>
         <url>https://www.jorsys.org/favicon.png</url>
     </image>
     <pubDate>Thu, 20 Mar 2025 21:19:22 +0000</pubDate>
     <lastBuildDate>Thu, 20 Mar 2025 21:19:22 +0000</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <atom:link href="https://www.jorsys.org/feed-files/rss.xml" rel="self" type="application/rss+xml" />
     <!-- Content -->
   </channel>
 </rss>
