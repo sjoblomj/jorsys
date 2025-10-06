@@ -1,4 +1,4 @@
-{{begin-newsitem |time=2025-10-04T23:09:55Z |title=Release of mpqcli 0.9.3 |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=New version of mpqcli - command line tool for MPQs}}
+{{begin-newsitem |time=2025-10-04T20:09:55Z |title=Release of mpqcli 0.9.3 |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=New version of mpqcli - command line tool for MPQs}}
 
 [mpqcli](https://github.com/TheGrayDot/mpqcli), a command line tool to create, add, remove, list, extract, read, and verify MPQ archives has just released version 0.9.3. The tool makes it easy to work with MPQs from the command line, while powered by the well-maintained [StormLib library](https://github.com/ladislav-zezula/StormLib) under the hood.
 
@@ -6,4 +6,4 @@ Version 0.9.3 comes with two changes:
 * Added support for `add` subcommand to have path inside MPQ archive.
 * Fixed bug in `add` subcommand when exceeding max file count.
 
-Thomas Laurenson, the author of the tool, is hard at work pushing the tool to version 1.0. To follow, see the [issues page on GitHub](https://github.com/TheGrayDot/mpqcli/issues).
+Thomas Laurenson, the author of the tool, is hard at work pushing the tool to version 1.0. To follow the progress, see the [issues page on GitHub](https://github.com/TheGrayDot/mpqcli/issues).
