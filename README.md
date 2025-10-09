@@ -21,5 +21,5 @@ incunable content output resources templates
 ./generate_content
 rm -rf output
 mkdir output # If the output directory does not exist, Docker will create it but it will be owned by root
-docker run --rm --user $(id -u):$(id -g) -v $(pwd)/content:/content -v $(pwd)/output:/output -v $(pwd)/resources:/resources -v $(pwd)/templates:/templates incunable:v1.7 /content /output /resources /templates
+docker run --rm --user $(id -u):$(id -g) -v $(pwd)/content:/content -v $(pwd)/output:/output -v $(pwd)/resources:/resources -v $(pwd)/templates:/templates incunable:v1.8 /content /output /resources /templates
 ```
