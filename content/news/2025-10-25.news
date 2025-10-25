@@ -1,0 +1,5 @@
+{{begin-newsitem |time=2025-10-25T20:18:41Z |title=Attempting to get MPQs to work |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=Trying and failing to create and load MPQs in StarCraft I}}
+
+Many Blizzard games used [MPQ archives](https://wowpedia.fandom.com/wiki/MPQ) to store their game data, StarCraft I and WarCraft II: Battle.net Edition included. The MPQ files can be compared to ZIP files; they contain many other files and compress them. The MPQ format has evolved over the years, with libraries and tools such as [StormLib](https://github.com/ladislav-zezula/StormLib) keeping up to the changes.
+
+I've spent some time trying to make custom MPQs that run with StarCraft I on Linux using Wine. I am able to load up 20 year old MPQ files that I have laying around. However, when I attempt to create new MPQs and load them, the game crashes. I am unsure what the cause is. I have used tools both new and old without success. The investigation continues...
