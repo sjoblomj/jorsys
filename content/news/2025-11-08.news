@@ -1,0 +1,16 @@
+{{begin-newsitem |time=2025-11-08T10:45:08Z |title=Custom MPQs working |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=Succeeding in creatin and loading MPQs in StarCraft I}}
+
+As I wrote [previously](../archive/october_2025.html#newsitem_2025-10-25T20:18:41Z), I have struggled to create and load custom [MPQ archives](https://wowpedia.fandom.com/wiki/MPQ) in StarCraft I. It turns out that the tool I've been using, [mpqcli](https://github.com/TheGrayDot/mpqcli), always uses ZLIB compression, wheras StarCraft I apparently expects PKWARE DCL compression (at least on the non-audio files I have been fiddling with), leading to immediate crashes when trying to use MPQs using the wrong compression.
+
+Since the MPQ format has evolved over the years and different games have different expectations, perhaps mpqcli needs a compression parameter, even though extensive parameters are always a drag on the user experience. But [StormLib](https://github.com/ladislav-zezula/StormLib/), which mpqcli uses under the hood, support the following compressions, and it is probably not easy to automatically assume which one to use:
+
+* Huffmann compression (used on WAVE files only).
+* Deflated (ZLIB). Added in Warcraft III.
+* Imploded (PKWARE DCL compression).
+* BZIP2 compression. Added in Warcraft III or World of Warcraft: The Burning Crusade.
+* Run-length (sparse) compression. Added in Starcraft II.
+* IMA ADPCM compression (mono).
+* IMA ADPCM compression (stereo).
+* LZMA compression. Added in Starcraft II.
+
+To make matters more complicated, algorithms used to be arbitrarily combinable. But with StarCraft II, only one or two different compression algorithms were allowed, and had to be from a list of valid combinations; specifically, most compression types (e.g. Deflate and Implode) are now mutually exclusive, and may only be combined with a small number of other algorithms (e.g. IMA ADPCM), which themselves are mutually exclusive. Furthermore, there is one exception where the value is not two algorithms combined, but a single, new algorithm (LZMA).
