@@ -358,6 +358,10 @@ code {
     border-color: var(--border-colour);
     font-family: monospace;
 }
+pre code {
+    display: block;
+    overflow: scroll;
+}
 .code-block code {
     border: 0;
 }

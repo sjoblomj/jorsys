@@ -88,6 +88,7 @@
   <div class="menudescr">Specs Live Wire</div>
   <div class="menuheader">StarCraft Specs</div>
   <ul>
+    <li><a href="${nesting}formats/mpq.html">MPQ</a></li>
     <li><a href="${nesting}formats/techdata_dat.html">Technology</a></li>
     <li><a href="${nesting}formats/units_dat.html">Units</a></li>
     <li><a href="${nesting}formats/upgrades_dat.html">Upgrades</a></li>
@@ -98,6 +99,7 @@
 
   <div class="menuheader">WarCraft Specs</div>
   <ul>
+    <li><a href="${nesting}formats/mpq.html">MPQ</a></li>
     <li><a href="${nesting}formats/udta.html">UDTA</a></li>
     <li><a href="${nesting}formats/tbl.html">TBL</a></li>
   </ul>
