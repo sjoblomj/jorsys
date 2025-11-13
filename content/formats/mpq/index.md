@@ -26,7 +26,7 @@ All numbers in the MoPaQ format are in little endian byte order; signed numbers 
 * Hash Table
 * Block Table
 * Extended Block Table
-* Strong Digital signatureg
+* Strong Digital signature
 
 This is the usual archive layout, but it is not mandatory. Some archives have been observed placing the hash table and file table after the archive header, and before the file data.
 
@@ -37,20 +37,20 @@ However, beginning with Starcraft 2, the block table must immediately follow the
 ```
 00h: char(4) Magic             Indicates that the file is a MoPaQ archive. Must be ASCII "MPQ" 1Ah.
 04h: int32 HeaderSize          Size of the archive header.
-08h: int32 ArchiveSize         Size of the whole archive, including the header. Does not include the strong digital signature,g
-                               if present. This size is used, among other things, for determining the region to hash in computingg
-                               the digital signature. This field is deprecated in the Burning Crusade MoPaQ format, and the sizeg
-                               of the archive is calculated as the size from the beginning of the archive to the end of theg
+08h: int32 ArchiveSize         Size of the whole archive, including the header. Does not include the strong digital signature,
+                               if present. This size is used, among other things, for determining the region to hash in computing
+                               the digital signature. This field is deprecated in the Burning Crusade MoPaQ format, and the size
+                               of the archive is calculated as the size from the beginning of the archive to the end of the
                                hash table, block table, or extended block table (whichever is largest).
 0Ch: int16 FormatVersion       MoPaQ format version. MPQAPI will not open archives where this is negative. Known versions:
         0000h                  Original format. HeaderSize should be 20h, and large archives are not supported.
         0001h                  Burning Crusade format. Header size should be 2Ch, and large archives are supported.
-0Eh: int8 SectorSizeShift      Power of two exponent specifying the number of 512-byte disk sectors in each logical sectorg
-                               in the archive. The size of each logical sector in the archive is 512 * 2^SectorSizeShift.g
+0Eh: int8 SectorSizeShift      Power of two exponent specifying the number of 512-byte disk sectors in each logical sector
+                               in the archive. The size of each logical sector in the archive is 512 * 2^SectorSizeShift.
                                Bugs in the Storm library dictate that this should always be 3 (4096 byte sectors).
 10h: int32 HashTableOffset     Offset to the beginning of the hash table, relative to the beginning of the archive.
 14h: int32 BlockTableOffset    Offset to the beginning of the block table, relative to the beginning of the archive.
-18h: int32 HashTableEntries    Number of entries in the hash table. Must be a power of two, and must be less than 2^16g
+18h: int32 HashTableEntries    Number of entries in the hash table. Must be a power of two, and must be less than 2^16
                                for the original MoPaQ format, or less than 2^20 for the Burning Crusade format.
 1Ch: int32 BlockTableEntries   Number of entries in the block table.
 
@@ -70,18 +70,18 @@ The block table contains entries for each region in the archive. Regions may be 
 ```
 00h: int32 BlockOffset   Offset of the beginning of the block, relative to the beginning of the archive.
 04h: int32 BlockSize     Size of the block in the archive.
-08h: int32 FileSize      Size of the file data stored in the block. Only valid if the block is a file; otherwiseg
-                         meaningless, and should be 0. If the file is compressed, this is the size of the uncompressedg
+08h: int32 FileSize      Size of the file data stored in the block. Only valid if the block is a file; otherwise
+                         meaningless, and should be 0. If the file is compressed, this is the size of the uncompressed
                          file data.
 0Ch: int32 Flags         Bit mask of the flags for the block. The following values are conclusively identified:
-        80000000h        Block is a file, and follows the file data format; otherwise, block is free space or unused.g
+        80000000h        Block is a file, and follows the file data format; otherwise, block is free space or unused.
                          If the block is not a file, all other flags should be cleared, and FileSize should be 0.
         04000000h        File has checksums for each sector (explained in the File Data section). Ignored if file is not
                          compressed or imploded.
         02000000h        File is a deletion marker, indicating that the file no longer exists. This is used to allow
                          patch archives to delete files present in lower-priority archives in the search chain.
         01000000h        File is stored as a single unit, rather than split into sectors.
-        00020000h        The file's encryption key is adjusted by the block offset and file size (explained in detail in theg
+        00020000h        The file's encryption key is adjusted by the block offset and file size (explained in detail in the
                          File Data section). File must be encrypted.
         00010000h        File is encrypted.
         00000200h        File is compressed. File cannot be imploded.
@@ -109,14 +109,14 @@ Each entry is structured as follows:
 ```
 00h: int32 FilePathHashA    The hash of the file path, using method A.
 04h: int32 FilePathHashB    The hash of the file path, using method B.
-08h: int16 Language         The language of the file. This is a Windows LANGID data type, and uses the same values.g
+08h: int16 Language         The language of the file. This is a Windows LANGID data type, and uses the same values.
                             0 indicates the default language (American English), or that the file is language-neutral.
-0Ah: int8 Platform          The platform the file is used for. 0 indicates the default platform. No other valuesg
+0Ah: int8 Platform          The platform the file is used for. 0 indicates the default platform. No other values
                             have been observed.
-0Ch: int32 FileBlockIndex   If the hash table entry is valid, this is the index into the block table of the file.g
+0Ch: int32 FileBlockIndex   If the hash table entry is valid, this is the index into the block table of the file.
                             Otherwise, one of the following two values:
         FFFFFFFFh           Hash table entry is empty, and has always been empty. Terminates searches for a given file.
-        FFFFFFFEh           Hash table entry is empty, but was valid at some point (in other words, the file was deleted).g
+        FFFFFFFEh           Hash table entry is empty, but was valid at some point (in other words, the file was deleted).
                             Does not terminate searches for a given file.
 ```
 
@@ -130,11 +130,11 @@ The extended attributes are optional file attributes for files in the block tabl
         00000001h: File CRC32s.
         00000002h: File timestamps.
         00000004h: File MD5s.
-08h: int32(BlockTableEntries) CRC32s :   CRC32s of the (uncompressed) file data for each block in the archive.g
+08h: int32(BlockTableEntries) CRC32s :   CRC32s of the (uncompressed) file data for each block in the archive.
                                          Omitted if the archive does not have CRC32s.
-FILETIME(BlockTableEntries) Timestamps : Timestamps for each block in the archive. The format is that of theg
+FILETIME(BlockTableEntries) Timestamps : Timestamps for each block in the archive. The format is that of the
                                          Windows FILETIME structure. Omitted if the archive does not have timestamps.
-MD5(BlockTableEntries) MD5s :            MD5s of the (uncompressed) file data for each block in the archive.g
+MD5(BlockTableEntries) MD5s :            MD5s of the (uncompressed) file data for each block in the archive.
                                          Omitted if the archive does not have MD5s.
 ```
 
@@ -143,8 +143,8 @@ MD5(BlockTableEntries) MD5s :            MD5s of the (uncompressed) file data fo
 The data for each file is composed of the following structure:
 
 ```
-int32(SectorsInFile* + 1) SectorOffsetTable  Offsets to the start of each sector, relative to the beginningg
-                                             of the file data. The last entry contains the total compressed fileg
+int32(SectorsInFile* + 1) SectorOffsetTable  Offsets to the start of each sector, relative to the beginning
+                                             of the file data. The last entry contains the total compressed file
                                              size, making it possible to easily calculate the size of any given
                                              sector by simple subtraction. This table is not present or necessary
                                              if the file is not compressed.
@@ -216,7 +216,7 @@ int mpq_verify_weak_signature(RSA *public_key, const unsigned char *signature, c
     unsigned char reversed_signature[MPQ_WEAK_SIGNATURE_SIZE];
     memcpy(reversed_signature, signature + 8, MPQ_WEAK_SIGNATURE_SIZE);
     memrev(reversed_signature, MPQ_WEAK_SIGNATURE_SIZE);
-   g
+
     return RSA_verify(NID_md5, digest, MD5_DIGEST_LENGTH, reversed_signature, MPQ_WEAK_SIGNATURE_SIZE, public_key);
 }
 ```
@@ -380,7 +380,7 @@ unsigned long HashString(const char *lpszString, unsigned long dwHashType)
 {
     assert(lpszString);
     assert(dwHashType <= MPQ_HASH_FILE_KEY);
-   g
+
     unsigned long  seed1 = 0x7FED7FEDL;
     unsigned long  seed2 = 0xEEEEEEEEL;
     int    ch;
@@ -527,7 +527,7 @@ bool FindFileInHashTable(
     {
         if (lpHashTable[iCurEntry].FileBlockIndex != MPQ_HASH_ENTRY_DELETED)
         {
-            if (lpHashTable[iCurEntry].FilePathHashA == nNameHashAg
+            if (lpHashTable[iCurEntry].FilePathHashA == nNameHashA
                 && lpHashTable[iCurEntry].FilePathHashB == nNameHashB
                 && lpHashTable[iCurEntry].Language == nLang
                 && lpHashTable[iCurEntry].Platform == nPlatform)
