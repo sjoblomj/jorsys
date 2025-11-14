@@ -1,9 +1,6 @@
 # The MoPaQ Archive Format
 
-© 2006-2010 Justin Olbrantz (Quantam) and Jean-Francois Roy (BahamutZERO). All Rights Reserved.
-
-Distribution and reproduction of this specification are allowed without limitation, as long as it is not altered; however, linking to [this authoritative copy](https://web.archive.org/web/20120222093346/https://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format) is preferrable, to ensure that everyone has access to the most recent version. Quotation in other works is freely allowed, as long as the source and author of the quote are stated.
-
+By Justin Olbrantz (Quantam) and Jean-Francois Roy (BahamutZERO), 2006-2010
 
 ## Introduction to the MoPaQ Format
 
@@ -211,7 +208,7 @@ The weak digital signature is a RSASSA-PKCS1-v1_5 digital signature, using the M
 
 The structure of the signature, when decrypted, follows the RSASSA-PKCS1-v1_5 specification; this format is rather icky to work with (Quantam wrote a program to verify this signature using nothing but an MD5 function and huge integer functions; it wasn't pleasant), and best left to an encryption library, such as OpenSSL as shown below:
 
-```
+{{begincode}}
 int mpq_verify_weak_signature(RSA *public_key, const unsigned char *signature, const unsigned char *digest) {
     unsigned char reversed_signature[MPQ_WEAK_SIGNATURE_SIZE];
     memcpy(reversed_signature, signature + 8, MPQ_WEAK_SIGNATURE_SIZE);
@@ -219,7 +216,7 @@ int mpq_verify_weak_signature(RSA *public_key, const unsigned char *signature, c
 
     return RSA_verify(NID_md5, digest, MD5_DIGEST_LENGTH, reversed_signature, MPQ_WEAK_SIGNATURE_SIZE, public_key);
 }
-```
+{{endcode}}
 
 MPQKit includes the weak signature public RSA key in PEM format since r73.
 
@@ -290,7 +287,7 @@ All of the sample code here assumes little endian machine byte order, that the s
 
 Based on code from [StormLib](https://github.com/ladislav-zezula/StormLib).
 
-```
+{{begincode}}
 unsigned long dwCryptTable[0x500];
 
 // The encryption and hashing functions use a number table in their procedures.
@@ -300,7 +297,7 @@ void InitializeCryptTable()
     unsigned long seed   = 0x00100001;
     unsigned long index1 = 0;
     unsigned long index2 = 0;
-    int   i;
+    int i;
 
     for (index1 = 0; index1 < 0x100; index1++)
     {
@@ -362,13 +359,13 @@ void DecryptData(void *lpbyBuffer, unsigned long dwLength, unsigned long dwKey)
         *lpdwBuffer++ = ch;
     }
 }
-```
+{{endcode}}
 
 ### Hashing And File Key Computation
 
 These functions may have been derived from [StormLib code](https://github.com/ladislav-zezula/StormLib) at some point in the very distant past. It was so long ago that I don't remember for certain.
 
-```
+{{begincode}}
 // Different types of hashes to make with HashString
 #define MPQ_HASH_TABLE_OFFSET 0
 #define MPQ_HASH_NAME_A       1
@@ -420,7 +417,7 @@ unsigned long ComputeFileKey(
 
     return nFileKey;
 }
-```
+{{endcode}}
 
 ### Conversion of FILETIME And time_t
 
@@ -428,7 +425,7 @@ This code assumes that the base ("zero") date for time_t is 01/01/1970. This is 
 
 **THIS CODE MAY BE INCORRECT, AND HAS NOT BEEN TESTED**
 
-```
+{{begincode}}
 #define EPOCH_OFFSET 116444736000000000ULL // Number of 100 ns units between 01/01/1601 and 01/01/1970
 
 bool GetTimeFromFileTime(const FILETIME &fileTime, time_t &time)
@@ -461,23 +458,23 @@ void GetFileTimeFromTime(const time_t &time, FILETIME &fileTime)
     fileTime.dwLowDateTime = (DWORD)nTime;
     fileTime.dwHighDateTime = (DWORD)(nTime >> 32);
 }
-```
+{{endcode}}
 
 ### Conversion of FILETIME And NSDate
 
 MPQKit includes a category on [NSDate](https://web.archive.org/web/20120222093346/http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/Reference/Reference.html) to convert to and from NTFS FILETIME, and has been properly tested for correctness.
 Forming a 64-Bit Large Archive Offset From 32-Bit And 16-Bit Components
 
-```
+{{begincode}}
 unsigned long long MakeLargeArchiveOffset(unsigned long nOffsetLow, unsigned short nOffsetHigh)
 {
     return ((unsigned long long)nOffsetHigh << 32) + (unsigned long long)nOffsetLow;
 }
-```
+{{endcode}}
 
 ### Verifying a Sector Checksum
 
-```
+{{begincode}}
 bool VerifySectorChecksum(const void *buffer, unsigned int length, unsigned long checksum)
 {
     if (checksum == 0)
@@ -490,11 +487,11 @@ bool VerifySectorChecksum(const void *buffer, unsigned int length, unsigned long
 
     return (bufferChecksum == checksum);
 }
-```
+{{endcode}}
 
 ### Finding Files
 
-```
+{{begincode}}
 #define MPQ_HASH_ENTRY_EMPTY 0xFFFFFFFFL
 #define MPQ_HASH_ENTRY_DELETED 0xFFFFFFFEL
 
@@ -543,11 +540,11 @@ bool FindFileInHashTable(
 
     return false;
 }
-```
+{{endcode}}
 
 ### Deleting Files
 
-```
+{{begincode}}
 bool DeleteFile(
         HashTableEntry *lpHashTable,
         unsigned long nHashTableSize,
@@ -589,12 +586,12 @@ bool DeleteFile(
 
     return true;
 }
-```
+{{endcode}}
 
 ## Constants
 ### Locales
 
-```
+{{begincode}}
     MPQNeutral      = 0,
     MPQChinese      = 0x404,
     MPQCzech        = 0x405,
@@ -610,4 +607,10 @@ bool DeleteFile(
     MPQPortuguese   = 0x416,
     MPQRusssian     = 0x419,
     MPQEnglishUK    = 0x809
-```
+{{endcode}}
+
+## Copyright And Distribution
+
+© 2006-2010 Justin Olbrantz (Quantam) and Jean-Francois Roy (BahamutZERO). All Rights Reserved.
+
+Distribution and reproduction of this specification are allowed without limitation, as long as it is not altered; however, linking to [this authoritative copy](https://web.archive.org/web/20120222093346/https://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format) is preferrable, to ensure that everyone has access to the most recent version. Quotation in other works is freely allowed, as long as the source and author of the quote are stated.
