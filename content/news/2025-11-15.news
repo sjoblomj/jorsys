@@ -1,0 +1,5 @@
+{{begin-newsitem |time=2025-11-15T10:32:24Z |title=Site is now mobile friendly |author=Ojan |categories=site |summary=Website now uses responsive design}}
+
+I finally got around to tweak the CSS of the website, so that it looks good on smaller screens. It now has a menu that hides in mobile view, all in CSS only, without any Javascript.
+
+I also added a little text on the front page introducing the website and its purpose.

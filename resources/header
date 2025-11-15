@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <title>${title} - Jorvik Systems</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" type="image/png" href="${nesting}favicon.png" />
-    <link rel="stylesheet" type="text/css" href="${nesting}jorsys.css">
+    <link rel="stylesheet" type="text/css" href="${nesting}jorsys.css" />
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for news" href="${nesting}feed-files/rss.xml" />
   </head>
   <body>
 
 <div class="site">
+  <input type="checkbox" id="menucheckbox" />
+  <label for="menucheckbox" class="overlay"></label>
+  <div class="logo">
+    <a href="${nesting}index.html"><img id="menulogo" src="${nesting}csswords7.png" /></a>
+    <div id="menulogoencirclement"></div>
+  </div>
+  <div class="foldedmenu"><label for="menucheckbox"><a>↡&nbsp;Menu&nbsp;↡</a></label></div>
 <nav class="menus">
 <div class="leftmenu">
-<a href="${nesting}index.html"><img id="menulogo" src="${nesting}csswords7.png" /></a>
-<div id="menulogoencirclement"></div>
 <div class="menucontent menucontentleft">
 
   <div class="menudescr">Navigation Menu</div>
@@ -66,7 +73,7 @@
     <li><a href="${nesting}who.html">Who</a></li>
   </ul>
 
-  <div class="menuend">
+  <div class="menudivisor">
     <hr />
   </div>
 </div>
@@ -114,6 +121,3 @@
 <img src="${nesting}jorsys.png" class="toplogo" />
 
 <div class="content">
-    <div class="contentillustration">
-        <img src="${nesting}sunset.png" />
-    </div>

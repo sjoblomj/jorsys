@@ -4,4 +4,4 @@ Over the course of around 20 years, Blizzard used MPQ archives to contain the ga
 
 I have salvaged the MPQ format spec that they wrote from the Internet Archive. It is likely a bit dated, as the spec was written between 2006 and 2010, and the MPQ format continued to evolve afterwards. Regardless, it is a very good resource if one wishes to work with the details of the format.
 
-The MPQ format specs are available [here](../formats/mpq.html).
+The MPQ format specs are available [here](../formats/mpq.html) (complete with [syntax-highlighting built into the font](https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/) - not flawless, but good enough).
