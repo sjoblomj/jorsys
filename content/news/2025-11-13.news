@@ -1,6 +1,6 @@
 {{begin-newsitem |time=2025-11-13T18:32:44Z |title=MPQ spec uploaded |author=Ojan |categories=StarCraft I, WarCraft II, modding, formats, site |summary=Uploaded MPQ format specs}}
 
-Over the course of around 20 years, Blizzard used MPQ archives to contain the game data. While reading MPQ archives was fairly straight forward for the community from the start, writing them took quite some time to figure out. Many people have worked on deciphering the ins and outs and oddities of the format over the years, and one of the best format descriptions were made by Quantam and BahamutZERO.
+Over the course of around 20 years, Blizzard used MPQ archives to contain the game data. While reading MPQ archives was fairly straight forward for the community from the start, writing them took quite some time to figure out. Many people have worked on deciphering the ins and outs and oddities of the format over the years, and one of the best format descriptions were made by {{highlight |text=Quantam}} and {{highlight |text=BahamutZERO}}.
 
 I have salvaged the MPQ format spec that they wrote from the Internet Archive. It is likely a bit dated, as the spec was written between 2006 and 2010, and the MPQ format continued to evolve afterwards. Regardless, it is a very good resource if one wishes to work with the details of the format.
 

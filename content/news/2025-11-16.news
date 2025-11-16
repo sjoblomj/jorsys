@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2025-11-16T10:54:19Z |title=Modernising MPQDraft |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=Attempting to make MPQDraft buildable and MFC-free}}
+
+{{highlight |text=MPQDraft}} is a tool for loading MPQs with mods into any game that uses them. It was developed by {{highlight |text=Quantam}} (Justin Olbrantz) with development starting some time in 2001, and the first public release on new year's eve of 2002. Its [last update](https://sourceforge.net/projects/mpqdraft/) by {{highlight |text=Quantam}} was 2009-09-13.
+
+In 2021, {{highlight |text=milestone-dev}} updated [the code base](https://github.com/milestone-dev/MPQDraft/) and made it more compatible with Visual Studio Code 2019 and Windows 10. A CLI was also added.
+
+I am hoping to modernise the code further. It quite heavily uses [MFC](https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library), a proprietary Microsoft desktop framework initially released in 1992. The use of that framework in particular makes the code impossible to cross-compile.
+
+My end goal would be to be able to compile Windows binaries (to be run with Wine) on my Linux machine using MinGW-w64. Quite some updates to the code base will be necessary before that is possible though. I don't have access to a Windows machine to build on, but after some fiddling around I got a build chain running on GitHub Actions which can compile the code. This is slow and cumbersome though, and my time to spend on this is a bit limited.
+
+Even if cross-compilation with MinGW-w64 may be too much of a stretch, I do at the very least hope to replace the MFC code with a more modern GUI framework, such as QT.

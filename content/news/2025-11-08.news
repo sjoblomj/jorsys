@@ -2,7 +2,7 @@
 
 As I wrote [previously](../archive/october_2025.html#newsitem_2025-10-25T20:18:41Z), I have struggled to create and load custom [MPQ archives](https://wowpedia.fandom.com/wiki/MPQ) in StarCraft I. It turns out that the tool I've been using, [mpqcli](https://github.com/TheGrayDot/mpqcli), always uses ZLIB compression, wheras StarCraft I apparently expects PKWARE DCL compression (at least on the non-audio files I have been fiddling with), leading to immediate crashes when trying to use MPQs using the wrong compression.
 
-Since the MPQ format has evolved over the years and different games have different expectations, perhaps mpqcli needs a compression parameter, even though extensive parameters are always a drag on the user experience. But [StormLib](https://github.com/ladislav-zezula/StormLib/), which mpqcli uses under the hood, support the following compressions, and it is probably not easy to automatically assume which one to use:
+Since the MPQ format has evolved over the years and different games have different expectations, perhaps {{highlight |text=mpqcli}} needs a compression parameter, even though extensive parameters are always a drag on the user experience. But [StormLib](https://github.com/ladislav-zezula/StormLib/), which {{highlight |text=mpqcli}} uses under the hood, support the following compressions, and it is probably not easy to automatically assume which one to use:
 
 * Huffmann compression (used on WAVE files only).
 * Deflated (ZLIB). Added in Warcraft III.

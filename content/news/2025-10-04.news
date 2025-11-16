@@ -6,4 +6,4 @@ Version 0.9.3 comes with two changes:
 * Added support for `add` subcommand to have path inside MPQ archive.
 * Fixed bug in `add` subcommand when exceeding max file count.
 
-Thomas Laurenson, the author of the tool, is hard at work pushing the tool to version 1.0. To follow the progress, see the [issues page on GitHub](https://github.com/TheGrayDot/mpqcli/issues).
+{{highlight |text=Thomas Laurenson}}, the author of the tool, is hard at work pushing the tool to version 1.0. To follow the progress, see the [issues page on GitHub](https://github.com/TheGrayDot/mpqcli/issues).
