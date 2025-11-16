@@ -1,5 +1,5 @@
 <article class="newscontainer">
   <a name="newsitem_${time}"></a>
-  <div class="newsheader"><div class="newstitle">${title}</div><div class="newsmeta"><time datetime="${time}">${formatted-time}</time></div><div class="newsmeta"><span class="postedby">Posted by </span><a href="../who.html">${author}</a></div></div>
+  <div class="newsheader"><div class="newstitle">${title}</div><div class="newsmeta"><time class="news-datetime" datetime="${datetime}">${datetimestr}</time><time class="news-date" datetime="${datetime}">${date}</time><div class="newsauthor"><span class="postedby">Posted by </span><a href="../who.html">${author}</a></div></div></div>
 
   <div class="newscontent">
