@@ -8,4 +8,4 @@ I am hoping to modernise the code further. It quite heavily uses [MFC](https://e
 
 My end goal would be to be able to compile Windows binaries (to be run with Wine) on my Linux machine using MinGW-w64. Quite some updates to the code base will be necessary before that is possible though. I don't have access to a Windows machine to build on, but after some fiddling around I got a build chain running on GitHub Actions which can compile the code. This is slow and cumbersome though, and my time to spend on this is a bit limited.
 
-Even if cross-compilation with MinGW-w64 may be too much of a stretch, I do at the very least hope to replace the MFC code with a more modern GUI framework, such as QT.
+Even if cross-compilation with MinGW-w64 may be too much of a stretch, I do at the very least hope to replace the MFC code with a more modern GUI framework, such as Qt.
