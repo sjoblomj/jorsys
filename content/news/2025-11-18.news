@@ -6,10 +6,10 @@ Supported games are Diablo I, Diablo I: Hellfire, Diablo II, StarCraft I + StarE
 
 {{img |file=MPQDraft.png |title=MPQDraft logo}}
 
-For the end user, there really isn't many news of interest, but the release is rather significant anyway. The application comes in two modes: a CLI (added in 2021 by {{highlight |text=milestone-dev}}) and GUI (by {{highlight |text=Quantam}}, written in 2001). The application used to rely heavily on [MFC](https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library), which made it difficult to compile on modern systems. The release I have just made removes MFC from the CLI, and refactors the code-base. The core parts is thus buildable without MFC support, making it significantly nicer to work with on modern systems. The GUI still heavily uses MFC, though.
+For the end user, there really isn't much news of interest, but the release is rather significant anyway. The application comes in two modes: a GUI (by {{highlight |text=Quantam}}, written in 2001), and a CLI (added in 2021 by {{highlight |text=milestone-dev}}). The application used to rely heavily on [MFC](https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library), which made it difficult to compile on modern systems. The release I have just made removes MFC from the CLI, and refactors the code-base. The core parts is thus buildable without MFC support, making it significantly nicer to work with on modern systems. The GUI still heavily uses MFC, though.
 
-The MFC dependency has ment that I have been completely unable to compile the application on my machine, instead using a GitHub Actions build pipeline to build it. Setting up Visual Studio with MFC support and building could easily take more than ten minutes, and the development has thus been *very* slow and tedious. I am hopeful that that is behind me now, though.
+The MFC dependency has meant that I have been completely unable to compile the application on my machine, instead using a GitHub Actions build pipeline to build it. Setting up Visual Studio with MFC support and building could easily take more than ten minutes, and the development has thus been *very* slow and tedious. I am hopeful that that is behind me now, though.
 
 Anyway, find [MPQDraft 2025-11-18 on GitHub](https://github.com/sjoblomj/MPQDraft/releases/tag/2025-11-18)!
 
-Next, I will see if I can rewrite the GUI in Qt. It will basically mean keeping nothing of the old GUI code, so it could be a bit time consuming.
+Next, I will see if I can rewrite the GUI in Qt. It will basically mean keeping nothing of the old GUI code, so it could be a bit time-consuming.
