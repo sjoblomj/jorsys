@@ -1,10 +1,10 @@
-{{begin-newsitem |time=2025-11-18T22:32:55Z |title=MPQDraft 2025-11-18 released |author=Ojan |resources=MPQDraft.png |categories=StarCraft I, WarCraft II, modding, tools |summary=Released new MPQDraft version}}
+{{begin-newsitem |time=2025-11-18T22:32:55Z |title=MPQDraft 2025-11-18 released |author=Ojan |resources=mpqdraft.svg |categories=StarCraft I, WarCraft II, modding, tools |summary=Released new MPQDraft version}}
 
 After some hacking, I am pleased to release a [new version](https://github.com/sjoblomj/MPQDraft/releases/tag/2025-11-18) of {{highlight |text=MPQDraft}}! The application allows you to load mods with changes to the game files, and it supports loading plugins to tweak the game engines.
 
 Supported games are Diablo I, Diablo I: Hellfire, Diablo II, StarCraft I + StarEdit, WarCraft II: Battle.net Edition, WarCraft III + WorldEdit and Lords of Magic SE. 
 
-{{img |file=MPQDraft.png |title=MPQDraft logo}}
+{{img |file=mpqdraft.svg |title=MPQDraft logo}}
 
 For the end user, there really isn't much news of interest, but the release is rather significant anyway. The application comes in two modes: a GUI (by {{highlight |text=Quantam}}, written in 2001), and a CLI (added in 2021 by {{highlight |text=milestone-dev}}). The application used to rely heavily on [MFC](https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library), which made it difficult to compile on modern systems. The release I have just made removes MFC from the CLI, and refactors the code-base. The core parts are thus buildable without MFC support, making it significantly nicer to work with on modern systems. The GUI is still tightly coupled to MFC, though.
 
