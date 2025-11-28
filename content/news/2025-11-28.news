@@ -1,0 +1,16 @@
+{{begin-newsitem |time=2025-11-28T18:32:19Z |title=MPQDraft GUI progress |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=The new Qt6 GUI of MPQDraft is nearly done}}
+
+Just wanted to give a little update on my progress with the {{highlight |text=MPQDraft}} GUI.
+
+As I wrote in the [last update](../archive/november_2025.html#newsitem_2025-11-18T22:32:55Z), I'm working on modernizing {{highlight |text=MPQDraft}}. The GUI needs to be replaced, since the old one uses [MFC](https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library), which made it difficult to compile on modern systems.
+
+I have a brand new GUI written in Qt6 nearly done. I will immediately confess that AI has done most of the grunt work with creating it; it has saved me from writing 5000 lines of GUI code, which would be rather heavy to write manually. I think the AI has done a pretty good job and produced a reasonably tidy result, and GUI code by its nature isn't all too pretty anyway.
+
+The process has definitely followed the [80/20 rule](https://en.wikipedia.org/wiki/Pareto_principle); 80% of the GUI was done in 20% of the time, and then endless time spent doing lots and lots of little tweaking.
+
+So not only is the new GUI using the latest and greatest open source Qt framework instead of proprietary Microsoft frameworks from the 1990s, it also comes with some news:
+
+- It is hopefully easier to use, with texts and help buttons to help the user understand what different controls do.
+- Especially in the SEMPQ creator (where the user can create self-executing mods, so that those running the mods don't need to have {{highlight |text=MPQDraft}} installed themselves), it empowers users by opening up the ability to target games or applications that are not built in with {{highlight |text=MPQDraft}} at the moment.
+
+I need to do some minor cleaning up of the GUI, and then a little refactoring of the {{highlight |text=MPQDraft}} internals. Then, hopefully, this brand new Qt6 GUI should be more or less a drop-in replacement of the old clunky MFC code. Again, my time available right now is limited, though.
