@@ -1,0 +1,7 @@
+{{begin-newsitem |time=2025-12-01T16:30:43Z |title=MPQ compatibility matrix shared |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools, site |summary=Ladik has shared the rules gouverning how different files in different games are handled by default}}
+
+In [early November](../archive/november_2025.html#newsitem_2025-11-08T10:45:08Z), I wrote about how different games use different compression algorithms in the MPQ files. So to make your own MPQ files with mods, you need your files to be compressed with the right compression method for the right game.
+
+Ladislav Zezula, the author of [StormLib](https://github.com/ladislav-zezula/StormLib) has kindly [shared](https://github.com/ladislav-zezula/StormLib/issues/406#issuecomment-3591766421) a compatibility matrix of what different games expect by default.
+
+When I find the time, I will use this data to update the [MPQ format specs](../formats/mpq.html) and make a PR for [mpqcli](https://github.com/TheGrayDot/mpqcli). I'm envisioning that you should be able to pass in a parameter with which game to target the MPQ for, and {{highlight |text=mpqcli}} will handle the rest.
