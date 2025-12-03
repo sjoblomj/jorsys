@@ -390,7 +390,8 @@
 .newscontent {
   padding: 0 1em 0 1em;
 }
-.newscontent img {
+.newscontent img, .newscontent hr {
+  max-width: 71%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -534,11 +535,9 @@ a:focus-visible {
 .centered {
   margin: auto;
   display: block;
-}
-
-.content img {
   max-width: 100%;
 }
+
 .content h1 {
   text-align: center;
   font-weight: bold;
@@ -556,6 +555,7 @@ a:focus-visible {
 }
 .contentillustration img {
   max-height: 128px;
+  max-width: 100%;
 }
 
 .aboutbox {
