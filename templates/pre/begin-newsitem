@@ -2,18 +2,19 @@
 awk -i inplace -i "utils.awk" '
 {
     if ($0 ~ "{{begin-newsitem") {
-        time = get_parameter($0, "time")
-        if (time != "") {
-            sub("T", " ", time)
-            sub("Z", "",  time)
-            split(time, arr, " ")
+        datetime = get_parameter($0, "time")
+        if (datetime != "") {
+            dt = datetime
+            sub("T", " ", dt)
+            sub("Z", "",  dt)
+            split(dt, arr, " ")
             date = arr[1]
             datetimestr = arr[1] " " arr[2] " UTC"
         } else {
             datetimestr = get_parameter($0, "date")
         }
 
-        sub("{{begin-newsitem", "{{begin-newsitem |datetimestr=" datetimestr " |date=" date, $0)
+        sub("{{begin-newsitem", "{{begin-newsitem |datetime= " datetime " |datetimestr=" datetimestr " |date=" date, $0)
     }
     print $0
 }
