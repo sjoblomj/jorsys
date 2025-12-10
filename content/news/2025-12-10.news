@@ -1,0 +1,65 @@
+{{begin-newsitem |time=2025-12-10T11:24:48Z |title=WarCraft II stories |author=Ojan |resources=Warcraft-2-Screenshot.jpg, teamcanada.gif |categories=WarCraft II |summary=The thread on Hacker News spawned some discussions}}
+
+After publishing my text on the [30 year anniversary of WarCraft II: Tides of Darkness](../archive/december_2025.html#newsitem_2025-12-09T07:42:19Z) and [posting about it on Hacker News](https://news.ycombinator.com/item?id=46202921), I'm proud and humbled to see that it has now stayed on the front page for around 24 hours. Many people shared stories and memories in the thread:
+
+{{img |file=Warcraft-2-Screenshot.jpg |title=WarCraft II Screenshot}}
+
+> *my sister and I opened it Xmas morning, then had to wait all day agonizingly to be able to play jt because we hosted the family holiday, we were supposed to be socializing with relatives, not playing computer games upstairs.*
+>
+> *We had to wait until after mom and dad went to sleep that night, then snuck up the hall to install it and play it as quietly as possible.*
+{{dash}} {{highlight |text=mock-possum}}
+
+---
+
+> *This was the first game I was really obsessed with. I remember having one floppy disc and I wanted to copy the game from a friend, so we split the game to ~10 parts, and for a whole weekend I was going back and forth between our houses, "downloading" those 10mb.*
+{{dash}} {{highlight |text=yoavm}}
+
+---
+
+> *I love Warcraft II. My first ever RTS, and one of the all time greats even now. The game just has soul oozing out of every pore; you can feel the excitement of the Blizzard guys for the game as you play it. The expansion was great too.*
+{{dash}} {{highlight |text=bigstrat2003}}
+
+---
+
+> *This game lead me down a path that resulted in me becoming a software engineer. Good game.*
+{{dash}} {{highlight |text=bfors}}
+
+---
+
+> *I know the game was horribly unbalanced against humans once bloodlust showed up, but I still quit after they "patched" bloodlust years later in Battle.net. Felt sacrilege, like patching the queen in chess. Yeah, the queen is imba, but that's chess. Beating an orc player as a human was a fun flex.*
+{{dash}} {{highlight |text=jquery}}
+
+---
+
+> *One thing that was delightful about this game was how the community discovered that Farms made for better walls than the actual walls, and so an enormous variety of strategies developed around this. As players developed knowledge of how units were pushed out of buildings, walling off buildings to push units past forest was another strategy that developed from this, creating the potential for sneaky tricks.*
+{{dash}} {{highlight |text=Tiktaalik}}
+
+---
+
+> *You cannot imagine the lengths we had to go to play this game in our home. We were lucky enough to have two apple computers and so my brother and I would play each other using the battle net technology over appletalk. The thing was, the only appletalk cable in our house was barely long enough to make it between the two bedrooms, so when we wanted to play the cable would hang in the air stretched across the hallway where the slightest tug would rip it out of the port killing the match.*
+>
+> *The number of times that cable got unplugged mid-game and the inter-household rancor that would ensue is the stuff of legends. I honestly remember the fits we had about whose fault it was that the cord got unplugged more than I remember any specific aspect of those Warcraft games.*
+>
+> *It just goes to show, networking topography matters.*
+>
+> *WCII ToD is absolutely one of the most insane games to ever be birthed unto the world. It was so brain breaking compared to everything else we were playing at the. time. Just a real quantum leap in terms of dopeness.*
+{{dash}} {{highlight |text=josh2600}}
+
+---
+
+> *I was 10 a the time and yes I’m not sure people realize how magical it felt at the time. When I got it in Christmas 96 on a 68k Mac it felt like it really opened a parallel universe compared to other games.*
+>
+> *The graphics (looked like a high res SNES game, which at the time was quite unique on PC), the CD quality soundtrack, the booklet concept art, the unit voices and buildings sounds… as a kid discovering Fantasy it had everything.*
+>
+> *And the attention to details, like Christmas string lights on building or a snowman when the map was in winter may seem insignificant, but as a kid it was wonderful.*
+>
+> *Even my dad who was not into video games but had played tabletop war games in the past and got hooked and spent a few nights on it to complete a solo campaign.*
+>
+> *This is by far the retro game I have the most nostalgia for.*
+{{dash}} {{highlight |text=tarsinge}}
+
+{{img |file=teamcanada.gif |title=What grunts do in their spare time, by Cyberkarkas}}
+
+---
+
+A special thanks also to {{highlight |text=barfoure}} who pointed out that "*you can find the War 2 for [PSX](https://en.wikipedia.org/wiki/PSX_(digital_video_recorder)) source on Archive. It has all the Windows stuff commented out. It might be possible to uncomment and compile with something like Borland C or Watcom C or whatever they used*". It seems that [this item on Archive](https://archive.org/details/warcraftIIsourcecodePSX) is what is being referred to, but it appears to have been taken down. I would venture to guess that it can still be found on the deeper parts on the Internet, though.
