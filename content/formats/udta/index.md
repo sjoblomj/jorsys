@@ -14,7 +14,11 @@
   {{formatlbl |label=Length |value=254 bytes (2 bytes / Unit)}}
   {{formatlbl |label=Description |value=The graphic this unit uses in general. Most units (except the critter) specify this value as their only graphic. All buildings (and the critter) use graphics specific to tileset.}}
   {{formatlbl |label=Values |value=Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x0D |value=Flag #2}}      {{formatbitlbl |label=0x0E |value=Flag #1}}      {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x0D |value=Flag #2}}
+    {{formatbitlbl |label=0x0E |value=Flag #1}}
+    {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Graphics: Forest
@@ -23,7 +27,11 @@
   {{formatlbl |label=Length |value=254 bytes (2 bytes / Unit)}}
   {{formatlbl |label=Description |value=The graphic this unit uses for Forest maps.}}
   {{formatlbl |label=Values |value=Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x0D |value=Flag #2}}      {{formatbitlbl |label=0x0E |value=Flag #1}}      {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x0D |value=Flag #2}}
+    {{formatbitlbl |label=0x0E |value=Flag #1}}
+    {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Graphics: Winter
@@ -32,7 +40,11 @@
   {{formatlbl |label=Length |value=254 bytes (2 bytes / Unit)}}
   {{formatlbl |label=Description |value=The graphic this unit uses for Winter maps.}}
   {{formatlbl |label=Values |value=Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x0D |value=Flag #2}}      {{formatbitlbl |label=0x0E |value=Flag #1}}      {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x0D |value=Flag #2}}
+    {{formatbitlbl |label=0x0E |value=Flag #1}}
+    {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Graphics: Wasteland
@@ -41,7 +53,11 @@
   {{formatlbl |label=Length |value=254 bytes (2 bytes / Unit)}}
   {{formatlbl |label=Description |value=The graphic this unit uses for Wasteland maps.}}
   {{formatlbl |label=Values |value=Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x0D |value=Flag #2}}      {{formatbitlbl |label=0x0E |value=Flag #1}}      {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x0D |value=Flag #2}}
+    {{formatbitlbl |label=0x0E |value=Flag #1}}
+    {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Range: Sight
@@ -65,7 +81,10 @@
   {{formatlbl |label=Offset |value=0x0768}}
   {{formatlbl |label=Length |value=110 bytes (1 byte / First 110 Units)}}
   {{formatlbl |label=Description |value=Flag to determine whether this unit is a spell user.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=false (not a magic user)}}      {{formatbitlbl |label=0x01 |value=true (magic user)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=false (not a magic user)}}
+    {{formatbitlbl |label=0x01 |value=true (magic user)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Cost: Build Time
@@ -153,7 +172,10 @@
   {{formatlbl |label=Offset |value=0x0EB6}}
   {{formatlbl |label=Length |value=110 bytes (1 byte / First 110 Units)}}
   {{formatlbl |label=Description |value=Flag which determines whether the unit can be selected with other units.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=false (not multiselectable)}}      {{formatbitlbl |label=0x01 |value=true (multiselecatble)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=false (not multiselectable)}}
+    {{formatbitlbl |label=0x01 |value=true (multiselecatble)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Priority / AI Treatment
@@ -185,7 +207,10 @@
   {{formatlbl |label=Offset |value=0x106E}}
   {{formatlbl |label=Length |value=110 bytes (1 byte / First 110 Units)}}
   {{formatlbl |label=Description |value=Flag which determines whether this unit upgrades its weapon.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=false (no weapon upgrade)}}      {{formatbitlbl |label=0x01 |value=true (weapon upgrade)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=false (no weapon upgrade)}}
+    {{formatbitlbl |label=0x01 |value=true (weapon upgrade)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Armor Upgrade Flag
@@ -193,7 +218,10 @@
   {{formatlbl |label=Offset |value=0x10DC}}
   {{formatlbl |label=Length |value=110 bytes (1 byte / First 110 Units)}}
   {{formatlbl |label=Description |value=Flag which determines whether this unit upgrades its armor.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=false (no armor upgrade)}}      {{formatbitlbl |label=0x01 |value=true (armor upgrade)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=false (no armor upgrade)}}
+    {{formatbitlbl |label=0x01 |value=true (armor upgrade)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Weapon Missile
@@ -201,7 +229,38 @@
   {{formatlbl |label=Offset |value=0x114A}}
   {{formatlbl |label=Length |value=110 bytes (1 byte / First 110 Units)}}
   {{formatlbl |label=Description |value=Missile type this unit uses when it attacks.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=Lightning}}      {{formatbitlbl |label=0x01 |value=Griffon Hammer}}      {{formatbitlbl |label=0x02 |value=Dragon Breath and Fireball}}      {{formatbitlbl |label=0x03 |value=Flameshield Fireball}}      {{formatbitlbl |label=0x04 |value=Flame Shield}}      {{formatbitlbl |label=0x05 |value=Blizzard}}      {{formatbitlbl |label=0x06 |value=Death &amp; Decay}}      {{formatbitlbl |label=0x07 |value=Big Cannon}}      {{formatbitlbl |label=0x08 |value=Exorcism}}      {{formatbitlbl |label=0x09 |value=Heal Effect}}      {{formatbitlbl |label=0x0A |value=Touch of Death}}      {{formatbitlbl |label=0x0B |value=Rune}}      {{formatbitlbl |label=0x0C |value=Whirlwind}}      {{formatbitlbl |label=0x0D |value=Catapult Rock}}      {{formatbitlbl |label=0x0E |value=Ballista Bolt}}      {{formatbitlbl |label=0x0F |value=Arrow}}      {{formatbitlbl |label=0x10 |value=Axe}}      {{formatbitlbl |label=0x11 |value=Submarine Missile}}      {{formatbitlbl |label=0x12 |value=Turtle Missile}}      {{formatbitlbl |label=0x13 |value=Small Fire}}      {{formatbitlbl |label=0x14 |value=Big Fire}}      {{formatbitlbl |label=0x15 |value=Ballista &amp; Catapult Impact}}      {{formatbitlbl |label=0x16 |value=Normal Spell}}      {{formatbitlbl |label=0x17 |value=Explosion}}      {{formatbitlbl |label=0x18 |value=Small Cannon}}      {{formatbitlbl |label=0x19 |value=Cannon Explosion}}      {{formatbitlbl |label=0x1A |value=Cannon Tower Explosion}}      {{formatbitlbl |label=0x1B |value=Daemon Fire}}      {{formatbitlbl |label=0x1C |value=Green Cross}}      {{formatbitlbl |label=0x1D |value=None}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=Lightning}}
+    {{formatbitlbl |label=0x01 |value=Griffon Hammer}}
+    {{formatbitlbl |label=0x02 |value=Dragon Breath and Fireball}}
+    {{formatbitlbl |label=0x03 |value=Flameshield Fireball}}
+    {{formatbitlbl |label=0x04 |value=Flame Shield}}
+    {{formatbitlbl |label=0x05 |value=Blizzard}}
+    {{formatbitlbl |label=0x06 |value=Death &amp; Decay}}
+    {{formatbitlbl |label=0x07 |value=Big Cannon}}
+    {{formatbitlbl |label=0x08 |value=Exorcism}}
+    {{formatbitlbl |label=0x09 |value=Heal Effect}}
+    {{formatbitlbl |label=0x0A |value=Touch of Death}}
+    {{formatbitlbl |label=0x0B |value=Rune}}
+    {{formatbitlbl |label=0x0C |value=Whirlwind}}
+    {{formatbitlbl |label=0x0D |value=Catapult Rock}}
+    {{formatbitlbl |label=0x0E |value=Ballista Bolt}}
+    {{formatbitlbl |label=0x0F |value=Arrow}}
+    {{formatbitlbl |label=0x10 |value=Axe}}
+    {{formatbitlbl |label=0x11 |value=Submarine Missile}}
+    {{formatbitlbl |label=0x12 |value=Turtle Missile}}
+    {{formatbitlbl |label=0x13 |value=Small Fire}}
+    {{formatbitlbl |label=0x14 |value=Big Fire}}
+    {{formatbitlbl |label=0x15 |value=Ballista &amp; Catapult Impact}}
+    {{formatbitlbl |label=0x16 |value=Normal Spell}}
+    {{formatbitlbl |label=0x17 |value=Explosion}}
+    {{formatbitlbl |label=0x18 |value=Small Cannon}}
+    {{formatbitlbl |label=0x19 |value=Cannon Explosion}}
+    {{formatbitlbl |label=0x1A |value=Cannon Tower Explosion}}
+    {{formatbitlbl |label=0x1B |value=Daemon Fire}}
+    {{formatbitlbl |label=0x1C |value=Green Cross}}
+    {{formatbitlbl |label=0x1D |value=None}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Unit Type
@@ -209,7 +268,11 @@
   {{formatlbl |label=Offset |value=0x11B8}}
   {{formatlbl |label=Length |value=110 bytes (1 byte / First 110 Units)}}
   {{formatlbl |label=Description |value=Domain unit resides in (visual only).}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=Land}}      {{formatbitlbl |label=0x01 |value=Air}}      {{formatbitlbl |label=0x02 |value=Sea}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=Land}}
+    {{formatbitlbl |label=0x01 |value=Air}}
+    {{formatbitlbl |label=0x02 |value=Sea}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Decay Rate
@@ -233,7 +296,15 @@
   {{formatlbl |label=Offset |value=0x1302}}
   {{formatlbl |label=Length |value=58 bytes (1 byte / First 58 Units)}}
   {{formatlbl |label=Description |value=Action this unit performs when you have it selected and right click with it.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=None}}      {{formatbitlbl |label=0x01 |value=Attack}}      {{formatbitlbl |label=0x02 |value=Move}}      {{formatbitlbl |label=0x03 |value=Harvest}}      {{formatbitlbl |label=0x04 |value=Haul Oil}}      {{formatbitlbl |label=0x05 |value=Demolish}}      {{formatbitlbl |label=0x06 |value=Sail}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=None}}
+    {{formatbitlbl |label=0x01 |value=Attack}}
+    {{formatbitlbl |label=0x02 |value=Move}}
+    {{formatbitlbl |label=0x03 |value=Harvest}}
+    {{formatbitlbl |label=0x04 |value=Haul Oil}}
+    {{formatbitlbl |label=0x05 |value=Demolish}}
+    {{formatbitlbl |label=0x06 |value=Sail}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Point Value
@@ -250,7 +321,12 @@
   {{formatlbl |label=Length |value=110 bytes (1 byte / First 110 Units)}}
   {{formatlbl |label=Description |value=Domain whose units this unit can attack.}}
   {{formatlbl |label=Values |value=(Any combination of these are valid - just add them together)}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=None}}      {{formatbitlbl |label=0x01 |value=Land}}      {{formatbitlbl |label=0x02 |value=Sea}}      {{formatbitlbl |label=0x03 |value=Air}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=None}}
+    {{formatbitlbl |label=0x01 |value=Land}}
+    {{formatbitlbl |label=0x02 |value=Sea}}
+    {{formatbitlbl |label=0x03 |value=Air}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Unit Flags
@@ -258,7 +334,40 @@
   {{formatlbl |label=Offset |value=0x1486}}
   {{formatlbl |label=Length |value=440 bytes (4 bytes / First 110 Units)}}
   {{formatlbl |label=Description |value=Flags which determine special properties this unit has.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=Land Unit}}      {{formatbitlbl |label=0x01 |value=Air Unit}}      {{formatbitlbl |label=0x02 |value=Exploding Death}}      {{formatbitlbl |label=0x03 |value=Sea Unit}}      {{formatbitlbl |label=0x04 |value=Critter}}      {{formatbitlbl |label=0x05 |value=Building}}      {{formatbitlbl |label=0x06 |value=Submarine}}      {{formatbitlbl |label=0x07 |value=Submarine Spotter}}      {{formatbitlbl |label=0x08 |value=Peon}}      {{formatbitlbl |label=0x09 |value=Tanker}}      {{formatbitlbl |label=0x0A |value=Transport}}      {{formatbitlbl |label=0x0B |value=Oil Platform}}      {{formatbitlbl |label=0x0C |value=Gold Storage}}      {{formatbitlbl |label=0x0D |value=Not used}}      {{formatbitlbl |label=0x0E |value=Attack Ground}}      {{formatbitlbl |label=0x0F |value=Undead}}      {{formatbitlbl |label=0x10 |value=Shore Building}}      {{formatbitlbl |label=0x11 |value=Spellcaster}}      {{formatbitlbl |label=0x12 |value=Lumber Storage}}      {{formatbitlbl |label=0x13 |value=Attacks}}      {{formatbitlbl |label=0x14 |value=Tower}}      {{formatbitlbl |label=0x15 |value=Oil Patch}}      {{formatbitlbl |label=0x16 |value=Gold Mine}}      {{formatbitlbl |label=0x17 |value=Hero}}      {{formatbitlbl |label=0x18 |value=Oil Storage}}      {{formatbitlbl |label=0x19 |value=Volatile}}      {{formatbitlbl |label=0x1A |value=Mage (runs when attacked)}}      {{formatbitlbl |label=0x1B |value=Organic}}      {{formatbitlbl |label=0x1C |value=Not used}}      {{formatbitlbl |label=0x1D |value=Not used}}      {{formatbitlbl |label=0x1E |value=Not used}}      {{formatbitlbl |label=0x1F |value=Not used}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=Land Unit}}
+    {{formatbitlbl |label=0x01 |value=Air Unit}}
+    {{formatbitlbl |label=0x02 |value=Exploding Death}}
+    {{formatbitlbl |label=0x03 |value=Sea Unit}}
+    {{formatbitlbl |label=0x04 |value=Critter}}
+    {{formatbitlbl |label=0x05 |value=Building}}
+    {{formatbitlbl |label=0x06 |value=Submarine}}
+    {{formatbitlbl |label=0x07 |value=Submarine Spotter}}
+    {{formatbitlbl |label=0x08 |value=Peon}}
+    {{formatbitlbl |label=0x09 |value=Tanker}}
+    {{formatbitlbl |label=0x0A |value=Transport}}
+    {{formatbitlbl |label=0x0B |value=Oil Platform}}
+    {{formatbitlbl |label=0x0C |value=Gold Storage}}
+    {{formatbitlbl |label=0x0D |value=Not used}}
+    {{formatbitlbl |label=0x0E |value=Attack Ground}}
+    {{formatbitlbl |label=0x0F |value=Undead}}
+    {{formatbitlbl |label=0x10 |value=Shore Building}}
+    {{formatbitlbl |label=0x11 |value=Spellcaster}}
+    {{formatbitlbl |label=0x12 |value=Lumber Storage}}
+    {{formatbitlbl |label=0x13 |value=Attacks}}
+    {{formatbitlbl |label=0x14 |value=Tower}}
+    {{formatbitlbl |label=0x15 |value=Oil Patch}}
+    {{formatbitlbl |label=0x16 |value=Gold Mine}}
+    {{formatbitlbl |label=0x17 |value=Hero}}
+    {{formatbitlbl |label=0x18 |value=Oil Storage}}
+    {{formatbitlbl |label=0x19 |value=Volatile}}
+    {{formatbitlbl |label=0x1A |value=Mage (runs when attacked)}}
+    {{formatbitlbl |label=0x1B |value=Organic}}
+    {{formatbitlbl |label=0x1C |value=Not used}}
+    {{formatbitlbl |label=0x1D |value=Not used}}
+    {{formatbitlbl |label=0x1E |value=Not used}}
+    {{formatbitlbl |label=0x1F |value=Not used}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Graphics: Swamp
@@ -267,6 +376,10 @@
   {{formatlbl |label=Length |value=252 bytes (2 bytes / Unit)}}
   {{formatlbl |label=Description |value=The graphic this unit uses for Swamp maps.}}
   {{formatlbl |label=Values |value=Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x0D |value=Flag #2}}      {{formatbitlbl |label=0x0E |value=Flag #1}}      {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x0D |value=Flag #2}}
+    {{formatbitlbl |label=0x0E |value=Flag #1}}
+    {{formatbitlbl |label=0x0F |value=Repeat (used if this unit uses another's GFX)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 

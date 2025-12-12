@@ -1,0 +1,68 @@
+#!/bin/bash
+# @precedes bittable_before, bittable_after
+
+awk -i inplace -i "utils.awk" '
+BEGIN {
+    IS_READING_BITTABLE = 0
+    CONTENT_BEFORE = ""
+    CONTENT = ""
+}
+{
+    while (1) {
+        begin_open_pos = index($0, "{{begin-bittable")
+        end_open_pos   = index($0, "{{end-bittable")
+
+        if (IS_READING_BITTABLE && end_open_pos == 0) {
+            # We are currently reading a multiline bittable snippet and this line does not end it.
+            # Read one more line
+            CONTENT = CONTENT $0
+            break
+
+        } else if (IS_READING_BITTABLE && end_open_pos > 0) {
+            # We are reading a multiline bittable that ends on this line.
+            # Read the rest of the content
+            content = substr($0, 0, end_open_pos - 1)
+            CONTENT = CONTENT content
+
+            # Remove the {{end-bittable}} from $0
+            end_finish_pos = find_template_closing_pos(substr($0, end_open_pos + length(OPENING_BRACKETS))) + length(OPENING_BRACKETS) +     end_open_pos + 1
+            $0 = CONTENT_BEFORE "{{bittable_before}}" CONTENT "{{bittable_after}}" substr($0, end_finish_pos)
+
+            IS_READING_BITTABLE = 0
+            CONTENT_BEFORE = ""
+            CONTENT = ""
+
+        } else if (begin_open_pos > 0 && end_open_pos > 0) {
+            # We are not currently reading a bittable, however,
+            # the current line contains both a start and an end of a one-line bittable.
+
+            begin_finish_pos = index(substr($0, begin_open_pos), CLOSING_BRACKETS) + begin_open_pos
+            end_finish_pos = find_template_closing_pos(substr($0, end_open_pos + length(OPENING_BRACKETS))) + length(OPENING_BRACKETS) +     end_open_pos + 1
+
+            content = substr($0, begin_finish_pos + 1, end_open_pos - begin_finish_pos - 1)
+            content = "{{bittable_before}}" content "{{bittable_after}}"
+            $0 = substr($0, 0, begin_open_pos - 1) content substr($0, end_finish_pos)
+
+        } else if (begin_open_pos > 0) {
+            # We are not currently reading a bittable, however,
+            # the current line contains the start of a multi-line bittable.
+
+            begin_finish_pos = find_template_closing_pos(substr($0, begin_open_pos + length(OPENING_BRACKETS))) + length(OPENING_BRACKETS) + begin_open_pos + 1
+
+            line = trim(substr($0, 0, begin_open_pos - 1))
+            if (line != "")
+                CONTENT_BEFORE = line
+
+            # Read content on this line
+            CONTENT = substr($0, begin_finish_pos)
+
+            IS_READING_BITTABLE = 1
+            break
+
+        } else {
+            # We are not reading a bittable, and there is not one starting either.
+            print $0
+            break
+        }
+    }
+}' "$1"

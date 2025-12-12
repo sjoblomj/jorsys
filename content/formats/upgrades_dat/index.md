@@ -77,7 +77,12 @@
   {{formatlbl |label=Offset |value=0x044A}}
   {{formatlbl |label=Length |value=61 bytes (1 byte / Upgrade)}}
   {{formatlbl |label=Description |value=Determines which races can research this upgrade.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=Zerg}}      {{formatbitlbl |label=0x01 |value=Terran}}      {{formatbitlbl |label=0x02 |value=Protoss}}      {{formatbitlbl |label=0x03 |value=All}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=Zerg}}
+    {{formatbitlbl |label=0x01 |value=Terran}}
+    {{formatbitlbl |label=0x02 |value=Protoss}}
+    {{formatbitlbl |label=0x03 |value=All}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Repeat
@@ -93,6 +98,9 @@
   {{formatlbl |label=Offset |value=0x04C4}}
   {{formatlbl |label=Length |value=61 bytes (1 byte / Upgrade)}}
   {{formatlbl |label=Description |value=Boolean flag which determines whether this upgrade is restricted to Brood War.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=false (SC and BW)}}      {{formatbitlbl |label=0x01 |value=true (BW only)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=false (SC and BW)}}
+    {{formatbitlbl |label=0x01 |value=true (BW only)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 

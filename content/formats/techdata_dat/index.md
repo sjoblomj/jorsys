@@ -61,7 +61,12 @@
   {{formatlbl |label=Offset |value=0x02C0}}
   {{formatlbl |label=Length |value=44 bytes (1 byte / Technology)}}
   {{formatlbl |label=Description |value=Determines the race this Technology is researched by.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=Zerg}}      {{formatbitlbl |label=0x01 |value=Terran}}      {{formatbitlbl |label=0x02 |value=Protoss}}      {{formatbitlbl |label=0x03 |value=All}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=Zerg}}
+    {{formatbitlbl |label=0x01 |value=Terran}}
+    {{formatbitlbl |label=0x02 |value=Protoss}}
+    {{formatbitlbl |label=0x03 |value=All}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Researched
@@ -69,7 +74,10 @@
   {{formatlbl |label=Offset |value=0x02EC}}
   {{formatlbl |label=Length |value=44 bytes (1 byte / Technology)}}
   {{formatlbl |label=Description |value=Boolean flag which determines whether this Technology is already researched.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=false (not researched)}}      {{formatbitlbl |label=0x01 |value=true (researched)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=false (not researched)}}
+    {{formatbitlbl |label=0x01 |value=true (researched)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 
 ## Brood War Flag
@@ -77,6 +85,9 @@
   {{formatlbl |label=Offset |value=0x0318}}
   {{formatlbl |label=Length |value=44 bytes (1 byte / Technology)}}
   {{formatlbl |label=Description |value=Boolean flag that determines whether this technology is Brood War-researchable only.}}
-  {{formatlbl |label=Bits |value={{begin-bittable}}      {{formatbitlbl |label=0x00 |value=false (SC and BW)}}      {{formatbitlbl |label=0x01 |value=true (BW Only)}}    {{end-bittable}}  }}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=false (SC and BW)}}
+    {{formatbitlbl |label=0x01 |value=true (BW Only)}}
+  {{end-bittable}} }}
 {{end-formattable}}
 

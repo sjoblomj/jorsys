@@ -19,7 +19,7 @@ function update_formats() {
             "  {{formatlbl |label=Values |value=" + .values + "}}\n"
           end) +
           (if .bits == [] then "" else
-            "  {{formatlbl |label=Bits |value={{begin-bittable}}" + (.bits | map("      {{formatbitlbl |label=" + .bit + " |value=" + .value + "}}") | join("")) + "    {{end-bittable}}  }}\n"
+            "  {{formatlbl |label=Bits |value={{begin-bittable}}\n" + (.bits | map("    {{formatbitlbl |label=" + .bit + " |value=" + .value + "}}") | join("\n")) + "\n  {{end-bittable}} }}\n"
           end) +
           "{{end-formattable}}\n"
         ) | join("\n")' formats/"$file".json >> content/formats/"$file"/index.md
