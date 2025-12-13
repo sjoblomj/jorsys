@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2025-12-13T12:31:02Z |title=MPQDraft filelister plugin |author=Ojan |categories=StarCraft I, WarCraft II, tools, modding |summary=Wrote a small test plugin}}
+
+I spent some time last week writing an {{highlight |text=MPQDraft}} plugin, called {{highlight |text=MpqFileLister}}. Games that use MPQ archives use a library called Storm.dll to access the files inside those archives. A peculiarity of MPQs are that they don't contain the file names of the files inside. But when accessing them, the game will call the `SFileOpenFileEx` function in Storm.dll to open those files, and by hooking into that call, we can intercept the file it is attempting to open, thus construct a list of all files that are accessed.
+
+The {{highlight |text=MpqFileLister}} plugin does just that; it hooks into the `SFileOpenFileEx` function call and constructs a list of the accessed files. While the community has long since made complete file lists of all files that are accessed from the MPQs, I still found it interesting to make. It serves as a nice example of how to make an {{highlight |text=MPQDraft}} plugin; it can teach us when files are accessed and from which archive; and it can serve as an example of how to access and poke around in the Storm function calls.
+
+The main reason I wrote it was to test that my {{highlight |text=MPQDraft}} refactoring and modernising did not break the plugin functionality, or the ability to configure plugins. I thus needed a plugin to test with, and it just seemed easier to make one myself than scour the Internet for something.
+
+The plugin is not working flawlessly, unfortunately. In StarCraft, I do get file lists of many game assets from it, but it does not list GRPs (graphics files) nor music files. It must mean the game loads them in some different fashion, but I'm not sure why or how. I reached out to {{highlight |text=ShadowFlare}} with an inquiry about it since she has written similar plugins back in the day and is very knowledgeable in the ins and outs of MPQs, but she has not replied yet. Presumably she is no longer using her hotmail account from twenty five years ago that [her website](https://sfsrealm.hopto.org/) lists, and I have no other means of contacting her.
+
+The plugin is available [here](https://github.com/sjoblomj/MpqFileLister).
