@@ -118,6 +118,8 @@
 <div class="middle">
 
 <div id="topline"></div>
-<img src="${nesting}jorsys.png" class="toplogo" />
+<img src="${nesting}jorsys.png" class="toplogo" alt="Jorvik Systems" />
 
+<!-- Page count repository: https://github.com/sjoblomj/pixel-page-count -->
+<img src="https://pixel-page-count.fly.dev/counter.gif?domain=jorsys.org&page=/${path}.html" alt="" width="1" height="1" />
 <div class="content">
