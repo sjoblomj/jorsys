@@ -1,0 +1,20 @@
+{{begin-newsitem |time=2025-12-18T19:29:21Z |title=MpqFileLister 1.1 released |author=Ojan |resources=MpqFileLister.png |categories=StarCraft I, WarCraft II, modding, tools |summary=MpqFileLister 1.1 released, an MPQDraft plugin to intercept Storm.dll calls to open game assets}}
+
+As I wrote [the other day](../archive/december_2025.html#newsitem_2025-12-13T12:31:02Z), I have created a little plugin for {{highlight |text=MPQDraft}} called {{highlight |text=MpqFileLister}}.
+
+Games that use MPQ archives use a library called Storm.dll to access the files inside those archives. A peculiarity of MPQs are that they don't contain the file names of the files inside, but when Storm.dll opens files it does so using the file names. {{highlight |text=MpqFileLister}} allows you listen in to those calls from Storm.dll, and the plugin creates a list of all files that are being accessed.
+
+As I wrote in the previous post about it, the plugin was not working flawlessly, and only listed a subset of game assets. I reached out to {{highlight |text=ShadowFlare}} about it, and after she saw my e-mail a few days later she kindly pointed me in the right direction: I had only been hooking into the `SFileOpenFileEx` calls of Storm.dll, but not the `SFileOpenFile` calls. By intercepting both calls, the asset lists are now complete (at least so it seems to me).
+
+{{img |file=MpqFileLister.png |title=MpqFileLister configuration dialog}}
+
+So, I just released [MpqFileLister 1.1](https://github.com/sjoblomj/MpqFileLister). Differences since last time:
+
+- Can now intercept calls to `SFileOpenFile`.
+- Support for Diablo I (untested though).
+- Support for logging timestamps, in the form of milliseconds since epoch.
+- Some UI improvements:
+  * More logically grouped controls.
+  * Descriptive labels.
+  * Keyboard shortcuts.
+
