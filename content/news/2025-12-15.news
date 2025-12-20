@@ -6,6 +6,6 @@ I today release [MPQDraft 2025-12-15 beta](https://github.com/sjoblomj/MPQDraft/
 
 The beta release contains a completely rewritten GUI using Qt, and the code base has been refactored and modernised. Oddities have been fixed and all [MFC](https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library) code, which previously prevented cross-compiling has been replaced. The code can now be compiled from a Linux system with MinGW-w64 to produce a Windows executable. The GUI can be compiled natively under Linux, but not the underlying program as that code is very tied to the Windows platform (and it is 32-bit only!)
 
-{{img |file=mpqdraft-sempq.png |title=MPQDraft main screen, by Joel Steudler}}
+{{img |file=mpqdraft-sempq.png |title=MPQDraft SEMPQ Creation screen. Graphics by Joel Steudler.}}
 
 I will try to make some tests to verify that this all works before making a full release. It must be said that there has been some opportunity for bugs to creep in. For example, the original code has around 100 lines of assembly code that it injects, and my AI assistant has translated it for cross-compiling reasons. It is not at all obvious to me from reading the assembly, that it is bug-free. So far it seems to work, and if compiling on a Windows system, the original battle-proven assembly is used, though.

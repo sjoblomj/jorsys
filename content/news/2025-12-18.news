@@ -8,7 +8,7 @@ As I wrote in the previous post about it, the plugin was not working flawlessly,
 
 {{img |file=MpqFileLister.png |title=MpqFileLister configuration dialog}}
 
-So, I just released [MpqFileLister 1.1](https://github.com/sjoblomj/MpqFileLister). Differences since last time:
+So, I just released [MpqFileLister 1.1](https://github.com/sjoblomj/MpqFileLister). Changes since 1.0:
 
 - Can now intercept calls to `SFileOpenFile`.
 - Support for Diablo I (untested though).
