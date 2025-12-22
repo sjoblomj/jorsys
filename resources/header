@@ -85,6 +85,7 @@
   <div class="menudescr">Software Live Wire</div>
   <div class="menuheader">Modding Tools</div>
   <ul>
+    <li><a href="https://jorsys.org/common/software/mpqdraft.html" target="_blank">MPQDraft</a></li>
     <li><a href="https://github.com/sjoblomj/irongrp" target="_blank">IronGRP</a></li>
     <li><a href="https://github.com/sjoblomj/irontbl" target="_blank">IronTBL</a></li>
     <li><a href="https://github.com/sjoblomj/ironimage" target="_blank">IronImage</a></li>
