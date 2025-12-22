@@ -1,0 +1,9 @@
+{{begin-newsitem |time=2025-12-22T23:11:49Z |title=MPQDraft 2025-12-22 beta released, plus dedicated page |resources=mpqdraft.svg |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools, site |summary=MPQDraft 2025-12-22 beta released with CLI updates. Also added a page about the tool here on Jorsys}}
+
+I have just released {{highlight |text=MPQDraft}} 2025-12-22 beta, with a CLI interface that has feature-parity with the GUI (with the exception that plugins cannot be configured from the CLI {{dash}} use the GUI once to configure any plugins, and then the plugin should have the same settings saved for later when you run it through the CLI).
+
+I was a bit worried that the CLI would turn into an overly complex beast, but I decided to use [CLI11](https://github.com/CLIUtils/CLI11) which made things very smooth. I am reluctant to bring in any third-party dependencies, but this one is a single C++ header to include, so I figured the trade-off was well worth it.
+
+{{img |file=mpqdraft.svg |title=MPQDraft logo}}
+
+In other news, I have made a dedicated [MPQDraft page](../common/software/mpqdraft.html) with a description of the program and a download link. So, find a download link to the binaries at the [MPQDraft page](../common/software/mpqdraft.html) and as always, find the source on [GitHub](https://github.com/sjoblomj/MPQDraft).
