@@ -1,5 +1,5 @@
 {{begin-newsitem |time=2025-12-23T22:01:47Z |title=mpqcli 0.9.6 released |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.9.6 released, with support for locales and MPQ signature bugfix}}
 
-Just a little while ago, {{highlight |text=Thomas Laurenson}} relesed [version 0.9.6 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.6). The main highlight is a bugfix for MPQ signatures by him, and support for locales added by me.
+Just a little while ago, {{highlight |text=Thomas Laurenson}} released [version 0.9.6 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.6). The main highlight is a bugfix for MPQ signatures by him, and support for locales added by me.
 
 MPQ archives uniquely identifies files by hashes of their file names, locale and platform (only one platform has ever been observed and the platform is thus usually ignored). With this release, {{highlight |text=mpqcli}} has support for listing, adding and removing files with different locales.
