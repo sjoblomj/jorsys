@@ -1,0 +1,24 @@
+{{begin-newsitem |time=2026-01-01T13:10:36Z |title=MPQDraft 2026-01-01 released |resources=mpqdraft.png |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=MPQDraft 2026-01-01 released - the culmination of two months work}}
+
+The calendar now shows 2026. I hope your previous year was splendid and that the new one will be even better!
+
+To kick the year off, I'm releasing {{highlight |text=MPQDraft}} 2026-01-01. Compared to the beta releases I have previously made, it does not contain much worth mentioning, but it is the culmination of what I have done to modernise the code base during the past two months.
+
+[Download page](../common/software/mpqdraft.html)
+
+Overview of the changes:
+
+- Completely rewritten GUI in Qt. It has a few more features than the old and is more structured.
+- More help for the user, with texts that explain what things do.
+- Ability to patch games without built-in support.
+- CLI that can do all that the GUI can (except configure plugins, which for technical reasons is not feasible from the terminal in a pretty way {{dash}} if you want to configure a plugin, use the GUI once and then the plugins in the CLI should have the same settings)
+- Support for adding custom icons to SEMPQs.
+- Cross-compilation is now possible. Using MinGW-w64, one can now compile the code from a Linux machine (Mac too presumably). All [MFC](https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library) code has been removed. {{highlight |text=MPQDraft}} itself is still very much a Windows 32-bit only program though, but at least you no longer need a Windows machine to build it.
+
+The title screen by {{highlight |text=Joel Steudler}} remains the same as it always has:
+
+{{img |file=mpqdraft.png |title=MPQDraft title screen, graphics by Joel Steudler}}
+
+The first public release of {{highlight |text=MPQDraft}} by {{highlight |text=Quantam}} (Justin Olbrantz) was on 2002-01-01. Given the date, I figured that today, exactly 24 years later, was a good date to release this revamp. [Let me know](../who.html) if you experience any issues.
+
+[Download page](../common/software/mpqdraft.html)
