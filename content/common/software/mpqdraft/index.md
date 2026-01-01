@@ -1,13 +1,13 @@
 # MPQDraft
 
-MPQDraft is a modding tool thta allows in-memory patching of game data files, added features through plugins, and creation of self-executing mods.
+MPQDraft is a modding tool that allows in-memory patching of game data files, added features through plugins, and creation of self-executing mods.
 
 It was originally written by {{highlight |text=Quantam}} (Justin Olbrantz) and later enhanced by {{highlight |text=milestone-dev}} and {{highlight |text=Ojan}} (Johan Sjöblom).
 
 {{img |file=mpqdraft.svg |class=centered |title=MPQDraft logo}}
 
 ## Download
-Download [MPQDraft 2025-12-22 beta](mpqdraft-files/mpqdraft-2025-12-22-beta.zip).
+Download [MPQDraft 2026-01-01](mpqdraft-files/MPQDraft-2026-01-01.zip).
 
 ### Source code
 The source code is available on [GitHub](https://github.com/sjoblomj/MPQDraft) under the CDDL license.
