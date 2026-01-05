@@ -16,6 +16,9 @@ Let’s dive in {{dash}} there's a lot of magic buried in those old bytes.
 
 
 ## Site
-This site is built using [Incunable](https://github.com/sjoblomj/incunable), and the Markdown-esque pages that build up the site are available on [GitHub](https://github.com/sjoblomj/jorsys). The design is heavily inspired by {{highlight |text=Camelot Systems}} of around 2001, designed by {{highlight |text=Otak}}. The site is hosted in the European Union on [statichost](https://www.statichost.eu/).
+This site is built using [Incunable](https://github.com/sjoblomj/incunable), and the Markdown-esque pages that build up the site are available on [GitHub](https://github.com/sjoblomj/jorsys)[^1]. The design is heavily inspired by {{highlight |text=Camelot Systems}} of around 2001, designed by {{highlight |text=Otak}}. The site is hosted in the European Union on [statichost](https://www.statichost.eu/).
 
-The site uses no cookies, no scripts, no ads and no tracking (almost {{dash}} there is a [page counter](https://github.com/sjoblomj/pixel-page-count) for each page, but no IPs or user data are tracked). It is a simple static site that aims to provide information and resources without the shadiness and dark patterns of the web of the twenties.
+The site uses no cookies, no scripts, no ads and no tracking[^2]. It is a simple static site that aims to provide information and resources without the shadiness and dark patterns of the web of the twenties.
+
+[^1]: You can also replace ".html" in the URL with ".md" to see the raw Markdown-esque source of any page.
+[^2]: No external tracking {{dash}} there is however a [page counter](https://github.com/sjoblomj/pixel-page-count) for each page, but no IPs or user data are tracked; only the page visited and the date when it happened.
