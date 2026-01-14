@@ -1,0 +1,16 @@
+{{begin-newsitem |time=2026-01-14T00:32:51Z |title=mpqcli PRs |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=I made several PRs to mpqcli over the past few days}}
+
+I have on several occations mentioned {{highlight |text=mpqcli}}, a wonderful little command line tool to create, add, remove, list, extract, read, and verify MPQ archives using the StormLib library.
+
+Over the course of the past few days, I have made several big and small [PRs to mpqcli](https://github.com/TheGrayDot/mpqcli/pulls):
+
+- [PR 1](https://github.com/TheGrayDot/mpqcli/pull/133) - Small improvement to make it list details if properties are requested.
+- [PR 2](https://github.com/TheGrayDot/mpqcli/pull/134) - Big PR that adds built in support for all games using MPQs up until Diablo III.
+- [PR 3](https://github.com/TheGrayDot/mpqcli/pull/135) - Small improvements to the Readme file.
+- [PR 4](https://github.com/TheGrayDot/mpqcli/pull/136) - Fairly big PR, mainly adding support for unfamiliar locales.
+- [PR 5](https://github.com/TheGrayDot/mpqcli/pull/137) - Improvements to the `remove`, `extract` and `read` subcommands of {{highlight |text=mpqcli}} - they will now respect locales, not halt on errors and return error codes to the shell.
+- [PR 6](https://github.com/TheGrayDot/mpqcli/pull/138) - Small PR to fix memory leaks by closing the MPQ archives properly after reading.
+
+Especially PR 2 is a big deal for those of us who want our MPQs compatible with older games. Previously, {{highlight |text=mpqcli}} always used Zlib compression, which meant older games could not read the files. With this PR, the user simply specifies what game they target and {{highlight |text=mpqcli}} will choose the appropriate compression algorithm based on the files the user wants to add. I mentioned this back in [early December](../archive/december_2025.html#newsitem_2025-12-01T16:30:43Z), and now we have what is hopefully a pretty solid implementation.
+
+The maintainer of {{highlight |text=mpqcli}}, {{highlight |text=Thomas Lausenson}}, seems to have been fairly busy as of late, but hopefully he can give feedback on the PRs or merge them fairly quickly.
