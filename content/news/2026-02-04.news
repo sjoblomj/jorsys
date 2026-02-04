@@ -1,0 +1,7 @@
+{{begin-newsitem |time=2026-02-04T04:50:19Z |title=MPQDraft 2026-02-04 released |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=MPQDraft 2026-02-04 released - minor bugfix plus translations}}
+
+I just made a small fix to [MPQDraft](../common/software/mpqdraft.html). Before, when creating SEMPQs (self-executing MPQs), it used to force you to specify an MPQ and optionally plugins. Now, either an MPQ or plugins are required, i.e. you can now omit MPQs if you specify plugins. This functionality is used by [Cosmonarchy](https://cosmonarchy.com), which utilises a hot-loader plugin that downloads the latest MPQs on the fly, allowing frequent updating without having to rely on re-distribution of SEMPQs.
+
+Also in this release are translation of the GUI into Swedish and Korean. Both are AI-translated, with the former language quickly verified by myself while the latter is completely unverified. If you have corrections or want to contribute a new translation, then please [reach out](../about.html).
+
+See the [MPQDraft page here](../common/software/mpqdraft.html), for a download link. 
