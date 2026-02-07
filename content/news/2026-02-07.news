@@ -1,0 +1,16 @@
+{{begin-newsitem |time=2026-02-07T07:39:51Z |title=Chkdraft 2.06 released |author=Ojan |categories=StarCraft I, tools |summary=Chkdraft 2.06 released - minor bugfix plus translations}}
+
+{{highlight |text=TheNitesWhoSay}} have released version 2.06 of {{highlight |text=Chkdraft}} yesterday, a map editor for StarCraft I. The tool describes itself as "A remake-in-progress of the beloved {{highlight |text=Scmdraft}} to fill the holes left behind". 
+
+News in version 2.06:
+
+- Support for DatExt mods and Cosmonarchy in particular
+- Add profiles json files and the profiles UI, including live-reloading, replacing the old settings.ini file
+- Add ability to drop-to-open multiple map files at once
+- Add ability to customize the unit and sprite trees in the profiles json
+- Add ability to treat a regular filesystem folder like a casc or mpq for data loading
+- Now relies on a stable release of nf hist
+- Clang can now be used on linux to compile map_gfx_utils and generate pictures of maps
+- Many bugfixes (including and beyond those of recent pre-releases) especially those related to profiles and sounds
+
+The release is available [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.06).
