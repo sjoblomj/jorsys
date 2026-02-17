@@ -1,0 +1,18 @@
+{{begin-newsitem |time=2026-02-17T08:31:31Z |title=Chkdraft 2.08 released |author=Ojan |categories=StarCraft I, tools |summary=Chkdraft 2.08 released - locations and fixed}}
+
+{{highlight |text=TheNitesWhoSay}} has released version 2.08 of {{highlight |text=Chkdraft}} yesterday, a map editor for StarCraft I. The tool describes itself as "A remake-in-progress of the beloved {{highlight |text=Scmdraft}} to fill the holes left behind". 
+
+News in version 2.08:
+
+- Add ability to create locations for sprite units
+- Accurate mini-map unit display sizes
+- Fix map & minimap color displays for remastered colors, fix resource minimap color
+- Fix create location menu options updating the layer but not the dropdown box to locations
+- Fix trigger string-clearing issue
+- Fix actions being added to history when trigger values were unchanged
+- Fix blank strings showing up in string suggestions after opening a map with fragmented strings
+- Fix resources not reciprocal respecting the mineral distance flag with resource depots
+- Fix display of carrier shadows
+- Fix a crash that occurred when using non-empty default triggers with new maps
+
+The release is available [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.08).
