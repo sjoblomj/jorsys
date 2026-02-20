@@ -1,0 +1,32 @@
+{{begin-newsitem |time=2026-02-20T08:31:31Z |title=Three new Chkdraft releases |author=Ojan |categories=StarCraft I, tools |summary=Chkdraft is out with three new releases}}
+
+In rapid succession, {{highlight |text=TheNitesWhoSay}} has released version 2.07, 2.08 and 2.09 of the StarCraft I map editor {{highlight |text=Chkdraft}}.
+
+News in version 2.07:
+
+- Have units on classic minimaps render with the appropriate sizes
+- Add ability to render classic minimap webps in map_gfx_utils
+- Fix resource coloring on classic minimaps
+
+News in version 2.08:
+
+- Add ability to create locations for sprite units
+- Accurate mini-map unit display sizes
+- Fix map and minimap color displays for remastered colors, fix resource minimap color
+- Fix create location menu options updating the layer but not the dropdown box to locations
+- Fix trigger string-clearing issue
+- Fix actions being added to history when trigger values were unchanged
+- Fix blank strings showing up in string suggestions after opening a map with fragmented strings
+- Fix resources not reciprocal respecting the mineral distance flag with resource depots
+- Fix display of carrier shadows
+- Fix a crash that occurred when using non-empty default triggers with new maps
+
+News in version 2.09:
+
+- Improved load time for large scenarios (3-5 times faster)
+- Triggering performance improved for maps with large trigger quantities
+- Fixed a crash that occurred when compiling text for an individual trigger from the trigger gui
+- Fixed a bug where the string editor edited game strings when it should edit editor strings
+
+
+Version 2.09 is available [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.09).
