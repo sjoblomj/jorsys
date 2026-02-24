@@ -1,0 +1,33 @@
+{{begin-newsitem |time=2026-02-24T07:51:27Z |title=mpqcli 0.9.7 is out |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.9.7 released, with build in game support}}
+
+Yesterday, {{highlight |text=Thomas Laurenson}} released [version 0.9.7 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.7). I have contributed all the changes in this release, some of which turned out pretty big.
+
+The major thing in this release is game profiles. By using the `--game` option, you can have {{highlight |text=mpqcli}} target the specified game, using the correct compression methods and settings. This allows it to be used to create archives and add files to MPQs for StarCraft I and WarCraft II and all the other games. Great news for us old school guys still digging around in the nineties games!
+
+The full changelist is as follows:
+
+Added:
+
+- Game profile support for create and add subcommands via `-g`/`--game` option
+- Game profiles for Diablo, StarCraft, Warcraft, WoW, and more
+- Game setting override options for `create` subcommand
+- Compression override options for `add` subcommand
+- Support for unfamiliar/unknown locales via raw hex LCID
+- Additional built-in locales: ptBR, esMX, ptPT
+
+Fixed
+
+- Subcommands now properly verify locale before operating on files
+- Error messages now include locale context in `remove`, `extract`, and `read`.
+- MPQ archives are now properly closed across all subcommands
+- Non-zero exit codes returned on failure in `extract` and `remove`
+- `list` subcommand now shows long output when properties are requested
+
+Changed
+
+- Improved locale printing and display throughout
+
+
+Find [version 0.9.7 of mpqcli here](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.7).
+
+(As an aside, when travelling to New Zealand a few weeks ago, I met up with {{highlight |text=Thomas Laurenson}} and had a drink with him. Really nice guy!)
