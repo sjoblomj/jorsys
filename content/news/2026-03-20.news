@@ -1,0 +1,21 @@
+{{begin-newsitem |time=2026-03-20T10:50:45Z |title=One year anniversary of Jorvik Systems |author=Ojan |categories=site |resources=jorsys.png |summary=Jorvik Systems is one years old}}
+
+Time flies, and today marks the one year anniversary of {{highlight |text=Jorvik Systems}}.
+
+{{img |file=jorsys.png |title=Jorvik Systems}}
+
+The website itself has progressed slower than I anticipated, and I had wanted to have more content up on the site by now. However, I have focused the time available on creating tools and software instead. Below is a list of the Blizzard-related software projects I have created and contributed to during this time.
+
+| Project                                                      | Description |
+| :----------------------------------------------------------- | :---------- |
+| [IronTBL](https://github.com/sjoblomj/irontbl)               | A tool to convert StarCraft and WarCraft II TBL files to text files. |
+| [IronGRP](https://github.com/sjoblomj/irongrp)               | A tool to convert StarCraft, WarCraft I and WarCraft II GRP files to PNG using a PAL color palette. |
+| [IronImage](https://github.com/sjoblomj/ironimage)           | Converts IMG files (images) and CUR files (cursors) from WarCraft I and II to PNGs and vice versa. |
+| [mpqcli](https://github.com/TheGrayDot/mpqcli)               | A command line tool to create, add, remove, list, extract, read, and verify MPQ archives using the StormLib library. |
+| [MPQDraft](https://github.com/sjoblomj/MPQDraft)             | MPQDraft allows in-memory patching of Blizzard game data files, added features through plugins, and creation of self-executing mods. |
+| [MpqFileLister](https://github.com/sjoblomj/MpqFileLister)   | MPQDraft plugin to list all files the games access. |
+| [namebreak-cuda](https://github.com/sjoblomj/namebreak-cuda) | Application to brute-force the names of files inside MPQ archives. |
+
+Overall, I'm very happy with that amount of output. As for the site, a major event was in December, when I wrote a piece about the thirty year anniversary of Warcraft II: Tides of Darkness, a post which stayed on the front page of Hacker News for 24 hours and generated quite some site views.
+
+Things have been slow with the site lately, as I've been on vacation with extended travel for a while now. That is about to wrap up in not too long, so I anticipate that I will have some more free time to spend on the site and tools, hopefully.
