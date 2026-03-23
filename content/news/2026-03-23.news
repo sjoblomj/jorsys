@@ -1,0 +1,18 @@
+{{begin-newsitem |time=2026-03-23T03:06:28Z |title=mpqcli 0.9.8 is out |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.9.8 released, with overwrite and convenience support}}
+
+Yesterday, {{highlight |text=Thomas Laurenson}} released [version 0.9.8 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.8), mostly containing changes contributed by me. When adding files, there is now support for overwriting existing files, as well as for specifying the path within the archve. Archives can also be created from a single file rather than requiring the user to giv a directory. Finally, some memory leaks have been fixed and all file handles are now properly closed.
+
+
+The full changelist is as follows:
+
+Added:
+
+- The create subcommand now supports a single file
+- The add and create subcommands have additional arguments for specifiying the file location in the MPQ archive (`filename-in-archive`, `directory-in-archive` and `path`)
+- The add subcommand can now overwrite existing files if requested (`overwrite`)
+
+Fixed:
+
+- Several memory leaks
+
+Find [version 0.9.8 of mpqcli here](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.8).
