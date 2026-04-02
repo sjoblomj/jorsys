@@ -1,0 +1,15 @@
+{{begin-newsitem |time=2026-04-02T03:49:03Z |title=Chkdraft 2.11 released |author=Ojan |categories=StarCraft I, tools |summary=Chkdraft 2.11 is out with bugfixes}}
+
+{{highlight |text=TheNitesWhoSay}} recently released version 2.1 of the StarCraft I map editor {{highlight |text=Chkdraft}}.
+
+News in version 2.11:
+
+- Fix minimap unit position issue for maps with a dimension of 192.
+- Fix a crash on carbot due to certain images/anims not being present on the skin.
+- Support unicode for command line arguments (fixes "Open With" Chkdraft issues for certain maps).
+
+News in version 2.10:
+
+- Support unicode for command line arguments (the "Open With" menu option in windows).
+
+Version 2.11 is available [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.11).
