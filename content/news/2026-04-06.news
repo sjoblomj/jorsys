@@ -1,0 +1,13 @@
+{{begin-newsitem |time=2026-04-06T09:06:29Z |title=mpqcli 0.9.9 is out |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.9.9 released, with bugfixes}}
+
+Yesterday, {{highlight |text=Thomas Laurenson}} released [version 0.9.9 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.9), a release packed with bugfixes. As previously covered here, {{highlight |text=mpqcli}} is a tool for creating and modding MPQ files, used for loading custom data into games.
+
+Fixed in version 0.9.9:
+
+- Potential path traversal attack in `extract` subcommand.
+- Empty MPQ archive name when directory supplied with trailing slash.
+- Bug where MPQ internal files were added with `create` subcommand.
+- Signature being added automatically when not requested.
+- Potential DWORD overflow in `add` subcommand.
+
+Find [version 0.9.9 of mpqcli here](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.9).
