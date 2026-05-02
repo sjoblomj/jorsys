@@ -1,0 +1,24 @@
+{{begin-newsitem |time=2026-05-02T07:55:36Z |title=Scraping the web |author=Ojan |categories=site |summary=I'm scraping forums for content}}
+
+Apologies for the silence here. I've been keeping myself busy whenever time allows, by scraping the remains of various community forums.
+
+It started off in late March when I noticed by chance that the [Campaign Creations forums](https://www.campaigncreations.org/forum/) were down. These forums hold decades of community talk, culture and knowledge, and once someone stops paying the bills or maintain the servers, all of that is gone from the face of the Internet. The [Internet Archive](https://archive.org) does a valiant job in backing up sites, but especially forums can be quite lacking in their backups. Fortunately, the {{highlight |text=Campaign Creations}} forums went back online soon enough, but I had already decided to swing into action.
+
+I have thus been busy creating scripts to fetch all of the {{highlight |text=Campaign Creations}} forums, and [Staredit Networks](https://www.staredit.net). The fetching is the easy part; I also am trying to convert the forums into json-format, and the posts into Markdown. The latter, turning HTML into Markdown, is quite complicated, as especially on {{highlight |text=Staredit}} {{dash}} people have been using all sorts of markup tags to add "flavour" to their posts. Trimming that away is rather laboursome.
+
+I thus far have the whole of the {{highlight |text=Campaign Creations}} forums, the {{highlight |text=Staredit}} forums, and all news items from {{highlight |text=Camelot Systems}} between 1998 and 1999, as well as 2002. I'm currently fetching and parsing the news items from 2000 and 2001.
+
+---
+
+So what is the point and the plan? Well, I see value in just keeping this available for the sake of it. It contains lots of knowledge, and holds intristic value due to the culture embodied within. As long as {{highlight |text=Campaign Creations}} and {{highlight |text=Staredit}} are online, I'll let the backups reside on my harddrive. I intend to do the same with the [war2.ru forums](https://forum.war2.ru) (in addition, there seems to be another Russian language forum [here](https://www.war2.ru/modules/newbb_plus/)). For the other sites, I'd love to try to host forum copies though.
+
+There are several other sites and forums of interest. If the Internet Archive has it, I'd like to scrape and parse these places:
+
+- {{highlight |text=WarDraft forums}}
+- {{highlight |text=CamSys forums}}
+- {{highlight |text=Soverign Modding Empire}}
+- {{highlight |text=SAMods}}
+- {{highlight |text=ShadowFlare's Realm}}
+- {{highlight |text=Infoceptor}}
+
+If you have suggestions of more places that are relevant for the modding community for StarCraft I, WarCraft I and WarCraft II, then [reach out to me!](../who.html)
