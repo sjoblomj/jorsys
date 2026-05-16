@@ -422,6 +422,9 @@ blockquote {
   color: var(--gold-colour);
   margin-left: 5em;
 }
+.quote-time {
+  display: none;
+}
 /** </quote styling> **/
 
 
@@ -550,6 +553,10 @@ p {
   font-size: 1em;
 }
 
+.content ul {
+  text-align: justify;
+}
+
 a {
   color: var(--link-colour);
   text-decoration: none;
@@ -582,6 +589,8 @@ a:focus-visible {
 
 .contentillustration {
   text-align: center;
+  clear: both;
+  display: block;
 }
 .contentillustration img {
   max-height: 128px;
