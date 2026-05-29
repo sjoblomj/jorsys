@@ -10,11 +10,25 @@ awk -i inplace -i "utils.awk" '
             split(dt, arr, " ")
             date = arr[1]
             datetimestr = arr[1] " " arr[2] " UTC"
+            anchor = datetime
+            anchor_count[anchor]++
+            if (anchor_count[anchor] > 1)
+                anchor = anchor "_" anchor_count[anchor]
         } else {
             datetimestr = get_parameter($0, "date")
+            slug = datetimestr
+            gsub(/[^A-Za-z0-9._-]/, "_", slug)
+            anchor_count[slug]++
+            anchor = slug "_" anchor_count[slug]
         }
 
-        sub("{{begin-newsitem", "{{begin-newsitem |datetime= " datetime " |datetimestr=" datetimestr " |date=" date, $0)
+        if (get_parameter($0, "site") == "") {
+            author = "<a href=\"../who.html\">" get_parameter($0, "author") "</a>"
+        } else {
+            author = "<span class=\"gold\">" get_parameter($0, "author") "</span>"
+        }
+
+        sub("{{begin-newsitem", "{{begin-newsitem |anchor=" anchor " |datetime= " datetime " |datetimestr=" datetimestr " |date=" date " |author=" author, $0)
     }
     print $0
 }
