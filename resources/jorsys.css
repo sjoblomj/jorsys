@@ -455,6 +455,10 @@ blockquote {
   width: 100%;
   border: 1px solid var(--border-colour);
 }
+.formattable dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
 .formatlbl {
   text-align: right;
   vertical-align: top;

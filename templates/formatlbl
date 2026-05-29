@@ -1,1 +1,1 @@
-<tr><td class="formatlbl">${label}</td><td>${value}</td></tr>
+<dt class="formatlbl">${label}</dt><dd>${value}</dd>
