@@ -1,4 +1,6 @@
 <div class="aboutbox">
-    <div class="contentillustration">
-        <img src="magnussonnenes_saga.png" alt="Jorsys" title="Based on 'Kong Sigurd seglar ut frå landet', painting by Gerhard Munthe, around 1896-1898" />
-    </div>
+    <picture class="contentillustration">
+        <source media="(min-width: 1000px)" srcset="magnussonnenes_saga.png">
+        <source media="(min-width: 700px)"  srcset="magnussonnenes_saga.jpg">
+        <img src="transparent.png" alt="Jorsys" /> <!-- Based on 'Kong Sigurd seglar ut frå landet', painting by Gerhard Munthe, around 1896-1898" -->
+    </picture>
