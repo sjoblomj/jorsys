@@ -1,0 +1,9 @@
+{{begin-newsitem |time=2026-05-28T17:53:13Z |title=Chkdraft 2.12 released |author=Ojan |categories=StarCraft I, tools |summary=Chkdraft 2.12 is out with bugfixes}}
+
+Yesterday, {{highlight |text=TheNitesWhoSay}} released version 2.12 of the StarCraft I map editor {{highlight |text=Chkdraft}}.
+
+It is a small bugfix with a single change:
+
+- Fix a trigger action display-text issue where the move unit to/from locations were swapped
+
+Version 2.12 is available [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.12).
