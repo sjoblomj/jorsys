@@ -1,0 +1,34 @@
+{{begin-newsitem |time=2026-06-06T09:19:57Z |title=mpqcli 0.9.10 is out |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.9.10 released}}
+
+{{highlight |text=Thomas Laurenson}} just released [version 0.9.10 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.10) two hours ago. As previously covered here, {{highlight |text=mpqcli}} is a tool for creating and modding MPQ files, used for loading custom data into games.
+
+Both {{highlight |text=Thomas Laurenson}} and myself have made several contributions to the release, which is rather large:
+
+**Added**
+
+- Support passing multiple files to the `add` and `remove` subcommands
+- Support reading file paths from stdin in the `add` and `remove` subcommands
+- Support adding entire directories with the `add` subcommand
+- Add an `--update` flag to the `add` subcommand. When given, files whose archived size matches the on-disk size won't be added to save time.
+
+**Fixed**
+
+- `extract` subcommand now reports an error when the output directory cannot be created
+- Path traversal guard in `extract` uses fully resolved paths, closing a potential bypass
+- Crash when reading strong signatures from malformed or truncated archives
+- Docker glibc image updated to ubuntu:24.04
+- Adding files is now ordered and operating system agnostic
+- `add` subcommand now returns non-zero exit codes on failure
+- Error messages now include StormLib error codes
+- Duplicate error messages removed
+- Makefile build targets corrected
+
+**Changed**
+
+- The `--path` flag on add now acts as an archive path prefix when a directory is given, and the full name when a file is given.
+
+**Removed**
+
+- `--filename-in-archive` and `--directory-in-archive`. They are now replaced by a unified `--path` flag
+
+Find [version 0.9.10 of mpqcli here](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.10).
