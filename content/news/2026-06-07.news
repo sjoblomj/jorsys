@@ -1,0 +1,7 @@
+{{begin-newsitem |time=2026-06-07T17:48:50Z |title=mpqcli 0.9.10 turned into 0.10.0 |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.9.10 removed and 0.10.0 released in its place}}
+
+{{highlight |text=Thomas Laurenson}} seems to have figured that yesterday's 0.9.10 release of {{highlight |text=mpqcli}} merited a version bump, since it is a rather big release.
+
+He also included a contribution by me to add the `compact` subcommand which defragments an MPQ archive, thus shrinking it in size if it contains any gaps from previous `add`s or `remove`s.
+
+So, version 0.9.10 is not available anymore, but instead [version 0.10.0 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.10.0) is out!

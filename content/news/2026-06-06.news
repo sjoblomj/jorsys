@@ -1,6 +1,6 @@
 {{begin-newsitem |time=2026-06-06T09:19:57Z |title=mpqcli 0.9.10 is out |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.9.10 released}}
 
-{{highlight |text=Thomas Laurenson}} just released [version 0.9.10 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.10) two hours ago. As previously covered here, {{highlight |text=mpqcli}} is a tool for creating and modding MPQ files, used for loading custom data into games.
+{{highlight |text=Thomas Laurenson}} just released [version 0.9.10 of mpqcli](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.10.0) two hours ago. As previously covered here, {{highlight |text=mpqcli}} is a tool for creating and modding MPQ files, used for loading custom data into games.
 
 Both {{highlight |text=Thomas Laurenson}} and myself have made several contributions to the release, which is rather large:
 
@@ -31,4 +31,4 @@ Both {{highlight |text=Thomas Laurenson}} and myself have made several contribut
 
 - `--filename-in-archive` and `--directory-in-archive`. They are now replaced by a unified `--path` flag
 
-Find [version 0.9.10 of mpqcli here](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.9.10).
+Find [version 0.9.10 of mpqcli here](https://github.com/TheGrayDot/mpqcli/releases/tag/v0.10.0).
