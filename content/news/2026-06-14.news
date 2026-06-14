@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2026-06-14T13:03:48Z |title=IronTBL 2.0.0 |author=Ojan |resources=irontbl.png |categories=StarCraft I, WarCraft II, modding, tools, IronTBL |summary=Released IronTBL 2.0.0}}
+
+StarCraft I and Warcraft II use TBL files to store game strings for things such as unit names, dialog strings, game tips, mission dialogs etc. Roughly a year ago, I wrote a little utility, [IronTbl](https://github.com/sjoblomj/IronTBL) to convert these TBL files to TXT files and back.
+
+I recently decided to give {{highlight |text=IronTBL}} some love and fixed some minor bugs and issues, and spent some time hardening it. So with that, version 2.0.0 is now out.
+
+{{img |file=irontbl.png |title=IronTBL}}
+
+The previous `--mode` flag is now replaced by proper subcommands {{dash}} since this is a breaking change for the interface, I bumped the version to 2.0.0 even though the release doesn't offer any new features.
+
+{{highlight |text=IronTBL}} 2.0.0 is available on [GitHub](https://github.com/sjoblomj/irontbl/releases/tag/v2.0.0).
