@@ -1,0 +1,15 @@
+{{begin-newsitem |time=2026-06-23T17:40:33Z |title=PyMS Updates |author=Ojan |categories=StarCraft I, modding, tools |summary=PyMS updated for Python 3, and now has MIT license}}
+
+For StarCraft I modders, one of the best set of tools has for a long time been {{highlight |text=PyMS}}, a graphical tool suite that allows several file types to be modded.
+
+The author, {{highlight |text=poiuy_qwert}}, has been hard at work converting the source from Python 2 to Python 3, and writes:
+
+{{beginquote |quote-source=poiuy_qwert}}
+Hey all, I've been putting a lot of work into the python3 version of PyMS recently, but again I only have time to work on the tools not to actually use them, so I need to lean on others to use/test the programs and report any issues. If anyone is able to play with them please let me know!
+{{endquote}}
+
+See [here](https://github.com/poiuyqwert/PyMS#issuesfeedback) for how to raise any issues.
+
+Also, while the source of {{highlight |text=PyMS}} has been available for a long time, it has so far been without any explicit license, but {{highlight |text=poiuy_qwert}} just now released it under the MIT license.
+
+Find the Python 3 branch of {{highlight |text=PyMS}} on [GitHub](https://github.com/poiuyqwert/PyMS/tree/python3).
