@@ -1,0 +1,44 @@
+{{begin-newsitem |time=2026-07-05T19:28:31Z |title=mpqcli and StormLib updated |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=Two new releases of mpqcli, and a new release of StormLib}}
+
+Over the past few days, there's been two releases of [mpqcli](https://github.com/thegraydot/mpqcli), and [StormLib](https://github.com/ladislav-zezula/StormLib) has also had a release. {{highlight |text=mpqcli}} is a command-line tool to create, add and remove files from MPQ archives, and {{highlight |text=StormLib}} is the underlying library powering it. MPQ archives were used for many years by Blizzard games such as StarCraft I and Warcraft II, and contain the game assets that game modifications change.
+
+## Changes in {{highlight |text=mpqcli}} 0.10.1:
+
+**Added**
+
+- Command completion for common shells (bash, zsh, fish and powershell)
+
+**Fixed**
+
+- Memory leak in `read` subcommand
+- Inconsistencies in documentation
+
+**Updated**
+
+- Code style to conform to Google CPP style with slight variations
+- {{highlight |text=StormLib}} dependency for a variety of fixes
+
+
+## Changes in {{highlight |text=mpqcli}} 0.10.2:
+
+**Fixed**
+
+- `verify` incorrectly reporting success for a tampered archive
+- `verify` failure messages now clarify whether a signature is missing or invalid
+- `add` overwrite flag not always working as expected
+- Archive size incorrectly reported for large archives
+- File sizes shown as negative for large files
+
+**Updated**
+
+- Simplified how strong archive signatures are read internally
+
+
+## Changes in {{highlight |text=StormLib}} 9.40:
+
+The changelog for {{highlight |text=StormLib}} is brief and only states that it "Added functions `SFileOpenFileArchive` and `SFilegetFileArchive`", but the release is actually the accumulation of changes since November 2024. 
+
+
+## Download:
+
+Find version 0.10.2 of {{highlight |text=mpqcli}} [here](https://github.com/thegraydot/mpqcli/releases/tag/v0.10.2), and version 9.40 of {{highlight |text=StormLib}} [here](https://github.com/ladislav-zezula/StormLib/releases/tag/v9.40).
