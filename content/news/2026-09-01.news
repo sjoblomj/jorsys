@@ -1,0 +1,13 @@
+{{begin-newsitem |time=2026-09-01T19:59:25Z |title=New MPQ file name found |author=Ojan |categories=WarCraft II, modding, tools |summary=Namebreaker found a new filename in the WarCraft II MPQs.}}
+
+For many years, Blizzard used MPQ files as their archive files for many of their games. MPQ files are basically like ZIP files; they store many other files in a compressed format. One quirk of MPQ files is that they don't contain the filenames of their own content. Some MPQ files contain a listfile consisting of the filenames of their content, but other MPQ files do not. For these, an external listfile is needed.
+
+The `War2Dat.mpq` archive of WarCraft II: Battle.net Edition has had a 99% complete listfile for years, but there has been one single file that the community has not known the name of.
+
+Around [a year ago](https://www.jorsys.org/archive/may_2025.html#newsitem_2025-05-30T19:26:18Z), I made a tool, {{highlight |text=namebreak-cuda}}, which bruteforces filenames on Nvidia GPUs. While I put the heavy lifting in place, I never quite finished it then. So now, after tweaking it for a bit, I ran it for less than two hours, and it returned the missing filename:
+
+`ART\CHAT_BNE_PLAIN.PCX`
+
+The `War2Dat.mpq` now has complete listfiles after all these years. I was happily surprised that the search was so quick.
+
+There are other archives that also don't have complete listfiles, to which I turn my attention next. I plan to make the tool more polished, create a server which can coordinate the efforts of finding more file names, and publish the code on GitHub.
