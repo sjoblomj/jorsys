@@ -1,0 +1,13 @@
+{{begin-newsitem |time=2026-09-08T16:26:27Z |title=MpqFileLister v1.2.0 released |author=Ojan |categories=StarCraft I, WarCraft II, tools, modding |summary=The MpqFileLister plugin v1.2.0 was just released, featuring more hooked Storm.dll calls, which gives completer results.}}
+
+In [December](https://www.jorsys.org/archive/december_2025.html#newsitem_2025-12-13T12:31:02Z), I wrote an {{highlight |text=MPQDraft}} plugin, {{highlight |text=MpqFileLister}} that lists all the filenames that a games accesses in its MPQ archives {{dash}} or at least that was the intention. A peculiarity of MPQs are that they don't contain the file names of the content of the archives. But when accessing them, the game will call functions in Storm.dll to open those files, and by hooking into those calls, we can intercept the file it is attempting to open, thus construct a list of all files that are accessed.
+
+I had thought that hooking into the `SFileOpenFile` and `SFileOpenFileEx` calls would be enough, but when {{highlight |text=luauser32167}} pointed out on [GitHub](https://github.com/sjoblomj/MpqFileLister/issues/1) that the resulting list files were not containing all assets that the game loaded, I realized those two calls were not enough.
+
+I have just made a new release of {{highlight |text=MpqFileLister}} that in addition to `SFileOpenFile` and `SFileOpenFileEx` and also hook into `SVidPlayBegin`, `SFileLoadFile`, `SFileLoadFileEx`, `SBmpLoadImage` and `SBmpAllocLoadImage`. I thus believe all Storm.dll functions that load files by their file names are covered.
+
+In addition, this new release allows the user to freely specify the log format and timestamps, some odd bugs have been fixed and the code has been refactored.
+
+You can find version 1.2.0 of {{highlight |text=MpqFileLister}} on [GitHub](https://github.com/sjoblomj/MpqFileLister/releases/tag/v1.2.0).
+
+By the way, you might be wondering what the need then is for {{highlight |text=namebreak-cuda}}, which I wrote about in the [previous        entry](https://www.jorsys.org/archive/september_2025.html#newsitem_2026-09-01T19:59:25Z). The answer is simple: not all files are accessed,  but finding and naming them is still of interest.
