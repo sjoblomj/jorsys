@@ -285,7 +285,7 @@
   width: 80px;
 }
 #menulogoencirclement {
-  clip-path: path("M 175 49 L 400 49 L 499 0 L 500 0 L 400 50 L 175 50 L 151 50 A 61 61 0 1 0 150 80 L 175 80 L 175 175 L 174 175 L 174 79 L 151 79 A 61 61 0 1 1 150 49 Z");
+  clip-path: path("M 175 49 L 400 49 L 499 0 L 500 0 L 400 50 L 175 50 L 151 50 A 61 61 0 1 0 150 80 L 175 80 L 175 175 L 174 175 L 174 79 L 149.24 79 A 60 60 0 1 1 149.74 49 Z");
   background-color: var(--border-colour);
   height: 135px;
   width: 175px;
