@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2026-09-14T19:55:33Z |title=MpqDraft 2026-09-13 released |author=Ojan |categories=StarCraft I, WarCraft II, tools, modding |summary=MPQDraft 2026-09-13 released - Updates to how translations are managed, and added Chinese translations.}}
+
+I released a new version of [MPQDraft](../common/software/mpqdraft.html) yesterday. {{highlight |text=MPQDraft}} is a modding tool that allows in-memory patching of game data files, added features through plugins, and creation of self-executing mods.
+
+This summer, {{highlight |text=jzy-chitong56}} made some Chinese (Simplified) translations for the program and suggested ways in which to make the user experience nicer for those using the translations. While it took me a while to sit down and look at it, I was happy to merge the translations, and {{highlight |text=jzy-chitong56}}'s idea of a dynamic language switcher was much nicer than the convoluted and technical way it was handled before. I thus developed a little menu button on the Main GUI to change languages. Hopefully {{highlight |text=Joel Steudler}}, the graphical artist who made the interface back in the day, won't be too mad at me for slightly deviating from his 2002 work :)
+
+Apart from the new translations and the translations menu, I made it easier to build the application under Arch Linux, and there were improvements to the CI pipeline.
+
+For those who are happy with English and don't intend to build the software yourself, this version unfortunately doesn't bring much excitement. But perhaps that is also a testament to the fact that the original author, {{highlight |text=Quantam}} (Justin Olbrantz), made a pretty solid piece of software back in the day.
+
+See the [MPQDraft page here](../common/software/mpqdraft.html), for a download link.
