@@ -4,7 +4,7 @@ For many years, Blizzard used MPQ files as their archive files for many of their
 
 The `War2Dat.mpq` archive of WarCraft II: Battle.net Edition has had a 99% complete listfile for years, but there has been one single file that the community has not known the name of.
 
-Around [a year ago](https://www.jorsys.org/archive/may_2025.html#newsitem_2025-05-30T19:26:18Z), I made a tool, {{highlight |text=namebreak-cuda}}, which bruteforces filenames on Nvidia GPUs. While I put the heavy lifting in place, I never quite finished it then. So now, after tweaking it for a bit, I ran it for less than two hours, and it returned the missing filename:
+Around [a year ago](../archive/may_2025.html#newsitem_2025-05-30T19:26:18Z), I made a tool, {{highlight |text=namebreak-cuda}}, which bruteforces filenames on Nvidia GPUs. While I put the heavy lifting in place, I never quite finished it then. So now, after tweaking it for a bit, I ran it for less than two hours, and it returned the missing filename:
 
 `ART\CHAT_BNE_PLAIN.PCX`
 
