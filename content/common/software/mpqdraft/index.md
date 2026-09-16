@@ -7,7 +7,7 @@ It was originally written by {{highlight |text=Quantam}} (Justin Olbrantz) and l
 {{img |file=mpqdraft.svg |class=centered |title=MPQDraft logo}}
 
 ## Download
-Download [MPQDraft 2026-02-04](mpqdraft-files/MPQDraft-2026-02-04.zip).
+Download [MPQDraft 2026-09-13](https://github.com/sjoblomj/MPQDraft/releases/tag/2026-09-13).
 
 ### Source code
 The source code is available on [GitHub](https://github.com/sjoblomj/MPQDraft) under the CDDL license.
