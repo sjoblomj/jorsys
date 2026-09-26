@@ -1,0 +1,34 @@
+{{begin-newsitem |time=2026-09-26T09:35:32Z |title=mpqcli 0.11.0 released |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.11.0 released with many new features}}
+
+I just saw that {{highlight |text=Thomas Laurenson}} made a new release of [mpqcli](https://github.com/thegraydot/mpqcli) earlier this week. Many of the changes are things I contributed a while back, that has now made it into release 0.11.0. {{highlight |text=mpqcli}} is a command-line tool to create, add and remove files from MPQ archives. MPQ archives were used for many years by Blizzard games such as StarCraft I and Warcraft II, and contain the game assets that game modifications change.
+
+I'd like to highlight a few of the changes that I contributed to this release:
+
+- A rename subcommand has been added, which allows you to rename a file inside an archive without having to remove and re-add it.
+
+- The logic for updating files in an archive has been improved. When working on archives containing the `(attributes)` file, {{highlight |text=mpqcli}} will now {{dash}} if the `--update` flag is given {{dash}} compare timestamps and checksums in addition to just file size when deciding whether to update a file. This means that it will much more quickly decide whether a file needs to be updated or not, and will avoid unnecessary writes to the archive. This was quite an extensive change, that also involved me making some contributions to [StormLib](https://github.com/ladislav-zezula/StormLib), the MPQ library that {{highlight |text=mpqcli}} uses to read and write MPQ archives.
+
+## Changes in {{highlight |text=mpqcli}} 0.11.0:
+
+**Added**
+- Add `rename` subcommand to rename a file inside an archive
+
+**Changed**
+- Compare timestamps and checksums when updating files, not size alone
+- Accept the `--update` flag for single files as well as directories
+- Reject the `--update` and `--overwrite` flags on add when both are given
+
+**Fixed**
+- Report filesystem errors instead of aborting when a path cannot be resolved
+- Add to and create archives on volumes that cannot report real paths
+- Block path traversal in extract before anything is written to disk
+
+**Updated**
+- Update {{highlight |text=StormLib}} for a variety of fixes
+- Add hash-library as a submodule dependency
+- Build with {{highlight |text=StormLib}}'s bundled compression libraries instead of system packages
+- Require CMake 3.25 or later
+
+## Download:
+
+Find version 0.11.0 of {{highlight |text=mpqcli}} [here](https://github.com/thegraydot/mpqcli/releases/tag/v0.11.0).
