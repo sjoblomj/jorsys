@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2026-09-26T08:00:13Z |title=Chkdraft 2.15 released |author=Ojan |categories=StarCraft I, tools |summary=Chkdraft 2.15 is out with three changes}}
+
+Yesterday, {{highlight |text=TheNitesWhoSay}} released version 2.15 of the StarCraft I map editor {{highlight |text=Chkdraft}}.
+
+It is a smaller release with three changes:
+
+- The submenu tools/scripts now has a script to downgrade maps from remastered
+- Support for new cosmonarchy weapon limits
+- Better logging/debugging/browsing when dat file loading has issues
+
+Version 2.15 is available [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.15).
