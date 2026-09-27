@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2026-09-27T19:43:51Z |title=PudForge and RuneFoundry |author=Ojan |categories=WarCraft II, tools |summary=New WarCraft II map making program and modding tool in the making}}
+
+Recently, {{highlight |text=milestone}} started working on some tools for Warcraft II: {{highlight |text=PudForge}} and {{highlight |text=RuneFoundry}}.
+
+{{highlight |text=PudForge}} is a very competent map editor. The map format is the same in the original DOS versions of Warcraft II as well as the Battle.net Edition and the more recent Remastered version. {{highlight |text=PudForge}} thus works for all of them. The author, {{highlight |text=milestone}}, has made [a video showing the features](https://www.youtube.com/watch?v=nTLuCuUqlOg), and it has some really nice capabilities. I was especially impressed with the terrain editing, as the editor supports copying and pasting terrain, replacing a given terrain type with other types, generating maps, drawing symmetrical shapes and much more. 
+
+{{highlight |text=RuneFoundry}} is a set of mod tools for Warcraft II Remastered only {{dash}} not the DOS originals or Battle.net Edition. It has two programs, a mod launcher and an editor. A [video showing its features is available here](https://www.youtube.com/watch?v=2CbPMADp0ao) along with [a video of an example campaign](https://www.youtube.com/watch?v=jKroUVWjOF0) which plays through a campaign made with {{highlight |text=RuneFoundry}}. It can edit things like the campaign, AI-scripts, sprites and unit and weapon properties.
+
+It is fantastic to see such feature rich and capable tools still being put out! Hats off to {{highlight |text=milestone}} for the efforts! 
+
+Find [PudForge here](https://github.com/pudforge/PUDForge) and [RuneFoundry here](https://github.com/pudforge/RuneFoundry).
