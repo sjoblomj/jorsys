@@ -1,0 +1,28 @@
+{{begin-newsitem |time=2026-10-05T06:55:49Z |title=mpqcli 0.12.0 released |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.12.0 released with many new features}}
+
+{{highlight |text=Thomas Laurenson}} just made a new release of [mpqcli](https://github.com/thegraydot/mpqcli). The release mainly refactors the code, overhauls the install scripts and release artifacts, and makes the program work more in accordance with how terminal programs are expected to behave.
+
+
+## Changes in {{highlight |text=mpqcli}} 0.12.0:
+
+**Added**
+- Stop cleanly on Ctrl-C, leaving no partial archive behind
+
+**Changed**
+- Ship one static musl Linux binary per architecture, with the release assets renamed by OS and architecture
+- Publish install scripts and a signed checksums file with each release
+- Run the Docker image in /data so mounted paths need no prefix
+- Print progress and warnings on stderr, leaving stdout for results alone
+- Mark an overwritten file as changed rather than added when adding
+
+**Fixed**
+- Fail with a non-zero exit code on an unknown subcommand, a missing argument or an internal error
+- Fail with a non-zero exit code when closing, signing, listing or printing a signature fails
+- Complete every locale, game profile and archive path in the zsh, fish and PowerShell scripts
+
+**Removed**
+- Remove the install scripts from the repository; each release now carries its own
+
+## Download:
+
+Find version 0.12.0 of {{highlight |text=mpqcli}} [here](https://github.com/thegraydot/mpqcli/releases/tag/v0.12.0).
