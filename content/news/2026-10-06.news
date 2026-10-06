@@ -1,0 +1,26 @@
+{{begin-newsitem |time=2026-10-06T06:53:37Z |title=IronGRP 0.6 released |author=Ojan |resources=irongrp.png |categories=StarCraft I, WarCraft I, WarCraft II, modding, tools, IronGRP |summary=Released IronGRP 0.6 with a bugfixes, hardening and overhauled commands}}
+
+{{highlight |text=IronGRP}} is a GRP to PNG converter for WarCraft I, WarCraft II and StarCraft.
+
+{{img |file=irongrp.png |title=IronGRP}}
+
+I just released {{highlight |text=IronGRP}} version 0.6. It mainly focuses on bug-fixes, hardening the program and taking care of corner cases. The command-line interface now uses subcommands, which changes the interface compared to before.
+
+Some of the breaking changes:
+
+The command-line interface uses subcommands instead of `--mode`, and takes the input and output paths as positional arguments:
+- `--mode grp-to-png --input-path X --output-path Y` is now `grp-to-png X Y`
+- `--mode png-to-grp --input-path X --output-path Y` is now `png-to-grp X Y`
+- `--mode analyse-grp --input-path X` is now `analyse X` (`analyse-grp` is accepted as an alias)
+- `--generate-shell-completions SHELL` is now `completions SHELL`
+
+Some flags are renamed: `--pal-path` to `--palette`, `--use-transparency` to `--transparent`, `--frame-number` to `--frame`, `--compression-type`   to `--compression` and `--analyse-row-number` to `--row`. The old names are still accepted. New short forms: `-c` for `--compression`, `-f`  for `--frame` and `-r` for `--row`.
+
+Some other safety features:
+- Existing files are no longer silently overwritten. `png-to-grp` refuses to overwrite an existing GRP, and `grp-to-png` refuses to          overwrite existing PNGs or to write all frames into a directory that already contains frame PNGs, unless the new `--force` flag is given.
+- `png-to-grp` writes the GRP to a temporary file and renames it into place, so a failure no longer leaves a partially written GRP.
+- `png-to-grp` reports up front when the input path is not a directory.
+
+These are just a few of the many changes. See the full changelog [here](https://github.com/sjoblomj/irongrp/blob/main/CHANGELOG.md).
+
+{{highlight |text=IronGRP}} is available on [GitHub](https://github.com/sjoblomj/irongrp/releases/tag/v0.6.0).
