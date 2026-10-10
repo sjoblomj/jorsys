@@ -14,10 +14,10 @@ The command-line interface uses subcommands instead of `--mode`, and takes the i
 - `--mode analyse-grp --input-path X` is now `analyse X` (`analyse-grp` is accepted as an alias)
 - `--generate-shell-completions SHELL` is now `completions SHELL`
 
-Some flags are renamed: `--pal-path` to `--palette`, `--use-transparency` to `--transparent`, `--frame-number` to `--frame`, `--compression-type`   to `--compression` and `--analyse-row-number` to `--row`. The old names are still accepted. New short forms: `-c` for `--compression`, `-f`  for `--frame` and `-r` for `--row`.
+Some flags are renamed: `--pal-path` to `--palette`, `--use-transparency` to `--transparent`, `--frame-number` to `--frame`, `--compression-type` to `--compression` and `--analyse-row-number` to `--row`. The old names are still accepted. New short forms: `-c` for `--compression`, `-f` for `--frame` and `-r` for `--row`.
 
 Some other safety features:
-- Existing files are no longer silently overwritten. `png-to-grp` refuses to overwrite an existing GRP, and `grp-to-png` refuses to          overwrite existing PNGs or to write all frames into a directory that already contains frame PNGs, unless the new `--force` flag is given.
+- Existing files are no longer silently overwritten. `png-to-grp` refuses to overwrite an existing GRP, and `grp-to-png` refuses to overwrite existing PNGs or to write all frames into a directory that already contains frame PNGs, unless the new `--force` flag is given.
 - `png-to-grp` writes the GRP to a temporary file and renames it into place, so a failure no longer leaves a partially written GRP.
 - `png-to-grp` reports up front when the input path is not a directory.
 

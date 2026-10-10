@@ -12,4 +12,4 @@ You can find version 1.2.0 of {{highlight |text=MpqFileLister}} on [GitHub](http
 
 This is still rather untested on Diablo I. I tried to test, but Diablo I is just too buggy under Wine on my machine, and I don't have access to a Windows computer. I might try to see if I can contribute to Wine and fix it eventually, but I'm not going to prioritize that for a while yet.
 
-By the way, you might be wondering what the need then is for {{highlight |text=namebreak-cuda}}, which I wrote about in the [previous        entry](../archive/september_2026.html#newsitem_2026-09-01T19:59:25Z). The answer is simple: not all files are accessed, but finding and naming them is still of interest.
+By the way, you might be wondering what the need then is for {{highlight |text=namebreak-cuda}}, which I wrote about in the [previous entry](../archive/september_2026.html#newsitem_2026-09-01T19:59:25Z). The answer is simple: not all files are accessed, but finding and naming them is still of interest.
