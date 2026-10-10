@@ -1,0 +1,57 @@
+{{begin-newsitem |time=2026-10-10T21:46:55Z |title=Finding the last unknown filenames in MPQs |author=Ojan |resources=namebreak-small.png |categories=StarCraft I, WarCraft II, modding, Namebreaking |summary=The race is on to find the last unknown filenames in the MPQ files. Using namebreak-bombe we can coordinate efforts to crack the names on GPUs}}
+
+For many years, Blizzard used MPQ files as their archive files for many of their games. MPQ files are basically like ZIP files; they store many other files in a compressed format. One quirk of MPQ files is that they don't contain the filenames of their own content. Some MPQ files contain a listfile consisting of the filenames of their content, but other MPQ files do not. For these, an external listfile is needed. By now, we know the names of nearly all files of these games, but there are a few files whos names are yet to be cracked.
+
+I have made a tool, {{highlight |text=namebreak-bombe}} (available on [GitHub](https://github.com/sjoblomj/namebreak-bombe)), which bruteforces filenames on GPUs. By default, it will contact a [central server](https://namebreak-coordinator.fly.dev/) which will assign it a range to search in, thus allowing coordinated efforts where many people simultaneously can look for filenames (though it can also be set to run locally only without talking to servers).
+
+{{img |file=namebreak-small.png |title=namebreak-bombe}}
+
+I ask everyone who finds this interesting to join in on the search by [running namebreak-bombe](https://github.com/sjoblomj/namebreak-bombe/releases) on their machines - the more machines that run this, the faster we crack this. The [dashboard here](https://namebreak-coordinator.fly.dev/) shows the current progress on the remaining names.
+
+I have over the past month optimised the client significantly, and me and {{highlight |text=Heinermann}} have been testing it together on Linux and Windows 10 over the past few days. Already we have uncovered quite a few names that were previously unknown:
+
+**WarCraft II: Battle.net Edition, War2Dat.mpq:**
+```
+ART\\CHAT_BNE_PLAIN.PCX
+```
+
+**WarCraft II: Battle.net Edition, Install.exe:**
+```
+MacFiles\\DF.ModuleUniverselUSBHID
+MACFILES\\DF.PATCH.TXT
+MacFiles\\RF.ModuleUniverselUSBHID
+MACFILES\\RF.PATCH.TXT
+```
+
+**StarCraft Beta, StarDat.mpq:**
+```
+GLUE\\BATTLE.NET\\ICONS\\RAD_PRESSED.PCX
+GLUE\\BATTLE.NET\\ICONS\\RAD_UNPRESSED.PCX
+```
+
+**StarCraft Brazil edition, Install.exe:**
+```
+CAMPAIGN\\EXPTERRAN\\TERRAN03\\STAREDIT\\WAV\\T3M02GAL.WAV
+```
+
+**Diablo II Mac Installer TOME:**
+```
+103b\\DF.BNUpdate
+103b\\DF.Diablo II
+103b\\DF.Storm
+103b\\RF.BNUpdate
+103b\\RF.Diablo II
+103b\\RF.Storm
+
+103c\\DF.Diablo II
+103c\\RF.Diablo II
+103c\\DF.Storm
+103c\\RF.Storm
+103c\\DF.BNUpdate
+103c\\RF.BNUpdate
+
+DF.InputSprocket Extension
+RF.InputSprocket Extension
+```
+
+Again, if you find this interesting, please join the search by [running namebreak-bombe](https://github.com/sjoblomj/namebreak-bombe/releases) on your machine! The [dashboard here](https://namebreak-coordinator.fly.dev/) shows the current progress on the remaining names.
