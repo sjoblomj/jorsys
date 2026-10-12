@@ -1,0 +1,27 @@
+{{begin-newsitem |time=2026-10-12T21:44:10Z |title=scmJS, a new StarCraft map editor |author=Ojan |categories=StarCraft I, tools |summary=scmJS is a new map editor for StarCraft and Brood War that runs in the browser or as a desktop app}}
+
+{{highlight |text=jeany55}} has been working on {{highlight |text=scmJS}}, a new map editor for StarCraft, Brood War and StarCraft: Remastered. It takes inspiration from {{highlight |text=StarEdit}}, {{highlight |text=SCMDraft 2}} and {{highlight |text=StarForge}}, and runs either directly in the browser or as a desktop app for Windows, macOS and Linux. The editor is still in beta, but it already has an impressive set of features.
+
+{{highlight |text=scmJS}} opens and saves `.scm` and `.scx` maps as well as bare `.chk` scenarios. Map sections that the editor does not understand, as well as malformed ones, are written back unchanged when saving, so maps are not damaged by sections the editor does not know about. Backups (`.bak`) and recovery copies are kept as well.
+
+Some of the features:
+- Classic graphics, or StarCraft: Remastered graphics if you point it to a Remastered installation
+- Real-time collaborative editing, where several people can edit the same map at once through a shared link
+- TrigScript, which lets you write triggers in TypeScript, with a simulator for testing them
+- A Repair plugin for damaged or protected maps, and a Section Explorer that shows the contents of the map file byte by byte
+- Plugins for graphing trigger dependencies, showing walkability (islands, chokepoints and distances), importing terrain from images and recording timelapses as GIF or WebM
+- A stamp library for reusable map pieces, and conversion of doodads to terrain
+- Searching for and opening maps from [scmscx.com](https://scmscx.com)
+- English and Korean interfaces
+
+No game data is bundled with the editor. On first use, it offers to download the needed files from Blizzard, or you can use the `.mpq` files from a classic installation.
+
+## Try it out:
+
+The editor can be used directly in the browser at [scmjs.dev/editor](https://scmjs.dev/editor/), where the maps stay on your own disk. Desktop builds are available on [GitHub](https://github.com/scm-js/scm-js/releases), and there is also a Docker container image:
+
+```
+docker run --rm -p 8080:80 ghcr.io/scm-js/scm-js:latest
+```
+
+The documentation, including a user guide, a TrigScript guide, a trigger reference and a reference for the CHK format, is available at [docs.scmjs.dev](https://docs.scmjs.dev/). The source code is available on [GitHub](https://github.com/scm-js/scm-js) under the MIT license.
