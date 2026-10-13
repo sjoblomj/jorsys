@@ -1,0 +1,25 @@
+{{begin-newsitem |time=2026-10-13T21:43:34Z |title=StarDraft 2, a new map editor for StarCraft: Remastered |author=Ojan |categories=StarCraft I, modding, tools |summary=StarDraft 2 v0.5 Alpha is out; a new map editor for StarCraft: Remastered that brings EUD mapping together in one place}}
+
+{{highlight |text=Milestone}} and {{highlight |text=iDoodler}} have released the first alpha of {{highlight |text=StarDraft 2}}, a new map editor for StarCraft: Remastered on Windows. It can be used for classic maps, but its main focus is EUD maps, with new units, weapons and game rules. Apparently, modding support is on the way.
+
+The name is a homage to the original {{highlight |text=StarDraft}} by {{highlight |text=Camelot Systems}} from 1998, which pretty much started the StarCraft modding scene and gave modders what they needed to make their creations in the early 2000s. {{highlight |text=StarDraft 2}} aims to be a spiritual successor for StarCraft modders in 2026 and beyond. Just like the original, {{highlight |text=StarDraft 2}} seems to be aiming to be a one-stop-shop for all modding eventually.
+
+EUD mapping has opened up exciting possibilities for StarCraft maps, but getting started can be challenging. Typically, one needs to set up [euddraft](https://github.com/armoha/euddraft) alongside one or more editors, learn which tool handles what, and switch between them to edit units, triggers and other game data. The goal of {{highlight |text=StarDraft 2}} is to bring all of this together in one place, making EUD mapping more accessible to newcomers while giving experienced mappers a faster and more integrated workflow.
+
+Some of the features:
+- **Maps:** terrain brushes with symmetry, generated terrain, HD, SD and Carbot graphics, and a town area overlay
+- **Classic maps:** a classic trigger editor, unit, upgrade and tech settings, and a briefing editor with a preview
+- **EUD projects:** editing of every `.dat` file, as well as strings, requirements and button sets, with previews of things such as ranges, images and the command card
+- **Triggers:** trigger blocks are turned into epScript, a checker finds EUD errors and desyncs, and you can link your own `.eps` files
+- **Debugging:** a debug mode, and epTrace profiling that shows which script lines take the most time
+- **Building:** `Ctrl+B` builds the playable map, and {{highlight |text=StarDraft 2}} downloads {{highlight |text=euddraft}} for you
+
+More features are planned, such as campaign projects and support for mods. The authors update the editor often based on feedback, and the editor checks for updates when it starts. Feedback can be given by right-clicking almost anything and selecting *Report feedback*, or on the [StarDraft 2 Discord](https://discord.gg/JBMCwSRJBm).
+
+As this is an alpha, expect bugs and features that are not fully implemented. Save often and keep backups of your maps!
+
+A video showing the editor can be seen [here](https://www.youtube.com/watch?v=pUr3eruPKA4).
+
+## Download:
+
+Find the latest version of {{highlight |text=StarDraft 2}} on [GitHub](https://github.com/stardraft-editor/stardraft/releases/latest).
