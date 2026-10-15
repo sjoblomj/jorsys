@@ -1,0 +1,30 @@
+{{begin-newsitem |time=2026-10-15T22:10:47Z |title=mpqcli 0.13.0 released |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=mpqcli 0.13.0 released with consistent subcommand arguments}}
+
+{{highlight |text=Thomas Laurenson}} just made a new release of [mpqcli](https://github.com/thegraydot/mpqcli). The release makes the subcommands consistent, with the archive now always being the first argument, and lets the `create` and `extract` subcommands work on several files at once. Note that this breaks compatibility with scripts written for earlier versions, as some arguments have moved and a few flags have been removed.
+
+
+## Changes in {{highlight |text=mpqcli}} 0.13.0:
+
+**Added**
+- Accept several files, or a list read from stdin, in `create` and `extract`
+- Add a flat option to `extract`
+- Add short flags `-e`, `-j`, `-q` and `-x` for the `locale`, `flat`, `property` and `print` options
+
+**Changed**
+- Take the archive as the first argument in every subcommand, including `create` and `read`
+- Keep folders when extracting named files
+- Rename the `create version` option to `format-version`
+- Reject an unknown locale in `extract` and `read` instead of using the default locale
+
+**Fixed**
+- Show the encryption keys of encrypted files listed without their names
+- Accept Windows line endings in paths read from stdin
+- Stop `add` and `create` from storing an archive inside itself
+- Leave no archive behind when `create` cannot add every file
+
+**Removed**
+- Remove `create -o`, `extract -f` and `-k`, and the `-p` flag from `info`, `list` and `verify`
+
+## Download:
+
+Find version 0.13.0 of {{highlight |text=mpqcli}} [here](https://github.com/thegraydot/mpqcli/releases/tag/v0.13.0).
