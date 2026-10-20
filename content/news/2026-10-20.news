@@ -1,0 +1,10 @@
+{{begin-newsitem |time=2026-10-20T18:10:11Z |title=Chkdraft 2.16 released |author=Ojan |categories=StarCraft I, tools |summary=Chkdraft 2.16 is out with bug fixes}}
+
+Yesterday, {{highlight |text=TheNitesWhoSay}} released version 2.16 of the StarCraft I map editor {{highlight |text=Chkdraft}}.
+
+It is a smaller release with two bug-fixes:
+
+- Fix a bug where zero-sized anims (e.g. start locations) rendered at the wrong positions on HD skins
+- Fix a crash where cutting units while not having a selection resulted in a crash
+
+Version 2.16 is available [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.16).
