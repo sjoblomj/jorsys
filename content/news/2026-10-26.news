@@ -1,0 +1,143 @@
+{{begin-newsitem |time=2026-10-26T21:57:25Z |title=Namebreaking progress: 70 more names found |author=Ojan |resources=namebreak-small.png |categories=StarCraft I, WarCraft II, modding, Namebreaking |summary=Two weeks after the start, eight people have joined the hunt for the last unknown MPQ filenames, and around 70 more names have been found. The client has also been improved with dictionary search and meet-in-the-middle search}}
+
+Two weeks ago, I [wrote](../archive/october_2026.html#newsitem_2026-10-10T21:46:55Z) about {{highlight |text=namebreak-bombe}}, the tool for cracking the last unknown filenames in Blizzard's MPQ archives on GPUs. A lot has happened since then! At the time it was just me and {{highlight |text=Heinermann}} running it; now people have contributed to the [coordinated search](https://namebreak-coordinator.fly.dev/), and together we have hashed more than 8 quintillion ({{math |eq=8 \cdot 10^18}}) candidate names. A big thanks to everyone who has joined, in particular {{highlight |text=Heinermann}}, {{highlight |text=lucifirius}}, {{highlight |text=Johnny C}}, {{highlight |text=Jesse}} and {{highlight |text=mika}} (and myself!), who have all found names.
+
+{{img |file=namebreak-small.png |title=namebreak-bombe}}
+
+
+## Names found since last time
+
+**StarCraft: Brood War French edition, BroodDat.mpq:**
+```
+SOUND\\PROTOSS\\DARCHON\\PDAWHT011.WAV
+SOUND\\PROTOSS\\DARCHON\\PDAWHT021.WAV
+SOUND\\PROTOSS\\DARCHON\\PDAWHT031.WAV
+```
+
+**StarCraft: Brood War French edition, Install.exe:**
+```
+NEWMUSIC\\PDEFEAT.WAV
+NEWMUSIC\\PRDYROOM.WAV
+NEWMUSIC\\PROTOSS1.WAV
+```
+
+**StarCraft German edition, StarDat.mpq:**
+```
+SOUND\\TERRAN\\RAYNORM\\TMARDY00.WAV
+```
+
+**StarCraft: Brood War German edition, Install.exe:**
+```
+CAMPAIGN\\EXPTERRAN\\TERRAN07\\STAREDIT\\WAV\\T7M06STU.WAV
+FILES\\LOCALOLD.DLL
+```
+
+**StarCraft Brazil edition, StarDat.mpq:**
+```
+SCRIPTS\\CRDT_LST.TXT
+```
+
+**StarCraft: Brood War Brazil edition, Install.exe:**
+```
+SETUPDAT\\INST_F~1.$$$
+SETUPDAT\\STRINGS.$$$
+
+setupdat_working_sp\\bwunin.exe
+setupdat_working_sp\\bwunin.pif
+setupdat_working_sp\\cleanup.ins
+setupdat_working_sp\\debug.ins
+setupdat_working_sp\\defaults.vis
+setupdat_working_sp\\directx.ins
+setupdat_working_sp\\gendefs.ins
+setupdat_working_sp\\inst.ins
+setupdat_working_sp\\inst.vis
+setupdat_working_sp\\installed.ins
+setupdat_working_sp\\instgen.ins
+setupdat_working_sp\\inst_files.ins
+setupdat_working_sp\\inst_gen.ins
+setupdat_working_sp\\inst_regs.ins
+setupdat_working_sp\\inst_sys.ins
+setupdat_working_sp\\iswinnt.ins
+setupdat_working_sp\\license.txt
+setupdat_working_sp\\mainplay.vis
+setupdat_working_sp\\noboot.dat
+setupdat_working_sp\\normal.ins
+setupdat_working_sp\\prepbrood.ins
+setupdat_working_sp\\savetemp.ins
+setupdat_working_sp\\scr_blizzard.vis
+setupdat_working_sp\\scr_isp.vis
+setupdat_working_sp\\scr_main.vis
+setupdat_working_sp\\scr_options.vis
+setupdat_working_sp\\scunin.exe
+setupdat_working_sp\\scunin.pif
+setupdat_working_sp\\setup.vis
+setupdat_working_sp\\single.ins
+setupdat_working_sp\\spawn.ins
+setupdat_working_sp\\spawn.vis
+setupdat_working_sp\\strings.ins
+setupdat_working_sp\\INST_F~1.$$$
+setupdat_working_sp\\upgrade.ins
+setupdat_working_sp\\upgrade.vis
+setupdat_working_sp\\95\\comctl32.dll
+setupdat_working_sp\\audio\\battlenetclick.wav
+setupdat_working_sp\\audio\\installermusic.wav
+setupdat_working_sp\\audio\\mousedown.wav
+setupdat_working_sp\\audio\\mouseover.wav
+setupdat_working_sp\\font\\font.ccd
+setupdat_working_sp\\font\\font16.fnt
+setupdat_working_sp\\font\\font16x.fnt
+setupdat_working_sp\\font\\font32.fnt
+setupdat_working_sp\\gen\\allied.lst
+setupdat_working_sp\\gen\\broodwar.lst
+setupdat_working_sp\\gen\\bwladder.lst
+setupdat_working_sp\\gen\\ladder.lst
+setupdat_working_sp\\gen\\oldladder.lst
+setupdat_working_sp\\gen\\webmaps.lst
+setupdat_working_sp\\images\\install.pcx
+setupdat_working_sp\\nt\\comctl32.dll
+setupdat_working_sp\\STRINGS.$$$
+setupdat_working_sp\\instcc.exe
+setupdat_working_sp\\riched20.dll
+setupdat_working_sp\\vssver.scc
+```
+
+The last one is particularly nice. The Brazilian Brood War installer contains 57 files, one after another, that turned out to be an older, Spanish working copy of the installer's `SETUPDAT` directory, but under a different name. Most of their basenames could be worked out, but the directory itself eluded us. Finding `SETUPDAT_WORKING_SP` thus gave names to the other 56 files in it as well, including its subdirectories `95`, `AUDIO`, `FONT`, `GEN`, `IMAGES` and `NT`.
+
+Also of note are `SETUPDAT\\INST_F~1.$$$`, `SETUPDAT\\STRINGS.$$$` that contain the characters `$` and `~` that we normally don't search for. These files themselves seemed to be half-done versions of other files, and some editors in the 90's would save temporary copies of files with `.$$$` extension. The `~1` part is the filesystems of the times that would trim longer file names in this way. We were lucky to have discovered these thanks to AI that tried a bunch of more or less likely patterns.
+
+**Diablo II: Lord of Destruction Japanese edition, setup.mpq:**
+```
+SETUPDAT\\JPN\\VSSVER.SCC
+SETUPDAT\\LOC_INSTALLED.INS
+SETUPDAT\\US_INSTALLED.INS
+```
+
+
+## Encryption keys give away the basename
+
+Several of the names above were cracked by first finding only the *basename* (the part after the last backslash), and then the directory separately. This is possible because many files in MPQs are encrypted, and the key a file is encrypted with is derived from a hash of its basename. Strictly speaking, the key is the basename's hash, adjusted by the file's position and size in the archive, but that adjustment is easily undone. The key itself isn't stored anywhere, but since we know what the first few bytes of an encrypted file must decrypt to, the key can be recovered from the encrypted data.
+
+This is very useful: it means a single file gives us three hashes rather than two, and that one of them only depends on the basename. For example, the French Brood War music files were identified to be identical to `PDEFEAT.WAV`, `PRDYROOM.WAV` and `PROTOSS1.WAV`. Because of the encryption key, we can now verify that the files indeed has these basenames. The remaining search is then for the directory, which turned out to be `NEWMUSIC`. The key also lets the client discard false matches; with the number of candidates we hash, names matching both of the regular hashes purely by chance do occur, but a chance match whose basename also hashes to the key is far less likely.
+
+I've made a [pull request to mpqcli](https://github.com/thegraydot/mpqcli/pull/186) so that it can correctly show the encryption keys of files, which makes this easier for anyone wanting to look into an archive themselves. This is now part of {{highlight |text=mpqcli}} version 0.13.0.
+
+
+## New search modes: dictionary and meet-in-the-middle
+
+So far, the client has only been able to bruteforce every combination of characters from an alphabet. That works well for short names, but every additional character multiplies the search space by around 40. I've therefore added two new search modes to the client.
+
+**Dictionary search** builds the candidates out of words instead of individual characters: one word, or several with separators such as `_`, `-` or a space between them. The client comes with an English word list of about 64,000 words, and the coordinator can hand out dedicated word lists, for instance with StarCraft-related words. Long names made of real words, which are far out of reach for plain bruteforcing, can be found this way.
+
+**Meet-in-the-middle search** is for finding unknown directories, and it is what cracked `SETUPDAT_WORKING_SP`. The MPQ hash function processes a name one character at a time, and it turns out that each step can be undone if the character is known. When many files are known to be in the same directory (as they were in this copy of `SETUPDAT`), it is possible to recover what the hash state must be right after that directory. The search can then work from both ends: forward from the start, building a table of every possible beginning of the directory name and which hash state each leads to, and backward from the recovered state, rewinding possible endings of the name and looking up whether they meet any of the beginnings in the table. A 5-character table costs 1.4 GB of memory, but it means that 5 characters of the name come for free, which turns a search that would take a year of GPU time into one that takes minutes. For this to be useful, we must know that several files exist in the same directory, we need to know their basenames, and we need to have enough files to be able to recover the hash state {{dash}} in other words, it's quite special circumstances needed for it to be a useful search.
+
+Both modes are available in the [latest releases](https://github.com/sjoblomj/namebreak-bombe/releases), both when running locally and when connected to the coordinator, on CUDA, OpenCL, Metal and the CPU.
+
+
+## What we're struggling with
+
+Some targets are still stubbornly resisting:
+
+- **The "Poor Fellar's Dog" cutscene** from the Brazilian StarCraft Install.exe, a version of the music without voiceover in the `MUSIC` directory. Over 3 quintillion names have been tried by brute force, and dictionary searches of up to five words have been exhausted without a hit. The name is probably >= 13 characters long and made of words or abbreviations, or it contains some special character we haven't searched for.
+- **Two sounds in the REZ directory** of the StarCraft installers: copies of `swishlock.wav` and `swishout.wav`. Several quintillion candidates have been searched for these too.
+
+If you find this interesting, please join the search by [running namebreak-bombe](https://github.com/sjoblomj/namebreak-bombe/releases) on your machine! The [dashboard here](https://namebreak-coordinator.fly.dev/) shows the current progress on the remaining names.
