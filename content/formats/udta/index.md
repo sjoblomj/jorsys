@@ -1,5 +1,11 @@
 # UDTA Format
 
+UDTA holds the data for the units in WarCraft II: their graphics, hit points, costs, sizes, ranges, armor, damage, flags and more, with one entry per unit (see Appendix: Unit Types). The layout is the same in all versions. UDTA data is found in three places:
+
+1. The default copies: MAINDAT.WAR has two. Entry 472 holds the full 5948 bytes in the layout below, with nothing in front of them, and is the one the game uses whenever a map does not give its own unit data. Entry 0 holds 5694 bytes: the same layout without Graphics: Swamp, and with different values for some units. The game loads entry 0 when it starts and then loads entry 472 over it. Only entry 0's four Graphics lists (General, Forest, Winter and Wasteland) are kept, in a spare copy that is never used for drawing; it is only written into saved games, where loading skips it. Both entries are the same in versions 1.3, 1.33 and 1.5.
+2. PUD files (maps): a PUD can have a UDTA section, but it does not need one. In a PUD the section starts with 2 bytes in front of the data (not counted in the offsets here). The data can be 5694 bytes (without Graphics: Swamp), so the section is 5696 bytes, or the full 5948 bytes, so the section is 5950 bytes; the game accepts both. If both bytes are 0, the game reads the data that follows and uses it instead of the default copy. Otherwise the game skips the data, even though it is there, and uses the default copy (entry 472). A PUD without a UDTA section also gets the default copy. The Graphics lists (General, Forest, Winter, Wasteland and Swamp) in a PUD are always skipped, even when the rest of the data is read, so the game always uses the Graphics lists of entry 472.
+3. Saved games (.SAV files): when the game is saved, the UDTA data in use at that moment is written to the save file in the 5694-byte layout, except that the four Graphics lists written are the ones kept from entry 0. When the save is loaded, the data replaces the unit data from the map, but the Graphics lists are skipped.
+
 ## Graphics: Construction Site
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x0000}}
@@ -366,7 +372,7 @@
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x163E}}
   {{formatlbl |label=Length |value=254 bytes (2 bytes / 127 entries)}}
-  {{formatlbl |label=Description |value=The graphic this unit uses on Swamp maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset. Only present in the Beyond the Dark Portal format: with this field the UDTA data is 5948 bytes long, without it 5694 bytes (the PUD UDTA section is 2 bytes longer than that, because of the word in front of the data that tells whether the default data is used).}}
+  {{formatlbl |label=Description |value=The graphic this unit uses on Swamp maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset. Only present in the Beyond the Dark Portal format: with this field the UDTA data is 5948 bytes long, without it 5694 bytes (see the description of this section).}}
   {{formatlbl |label=Values |value=0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x0F |value=Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same.}}
