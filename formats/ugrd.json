@@ -1,12 +1,12 @@
 {
   "title": "UGRD",
-  "description": "",
+  "description": "UGRD holds the data for the upgrades and spells in WarCraft II: how long each one takes to research, what it costs, its icon, and what it gives. The layout is the same in all versions. UGRD data is found in three places:\n\n1. The default copy: entry 1 of MAINDAT.WAR holds the 780 bytes in the layout below, with nothing in front of them. It is the same in versions 1.3, 1.33 and 1.5, and the game uses it whenever a map does not give its own upgrade data.\n2. PUD files (maps): a PUD can have a UGRD section, but it does not need one. In a PUD the section starts with 2 bytes in front of the data (not counted in the offsets here), so the section is 782 bytes. If both bytes are 0, the game reads the data that follows and uses it instead of the default copy. Otherwise the game skips the data, even though it is there, and uses the default copy. A PUD without a UGRD section also gets the default copy.\n3. Saved games (.SAV files): when the game is saved, the 780 bytes in use at that moment are written to the save file, and when the save is loaded they replace the upgrade data from the map.\n\nEvery field in this section has one entry per upgrade, 52 in all (see Appendix: Upgrade and Spell types). The game handles the entries in two ways. Entries 0 to 31 are upgrades: when one is finished, the game adds one to the player's level counter chosen by Group, and that counter is what gives the bonus. Entries 32 to 51 are spells (and the Paladin and Ogre Mage upgrades): when one is finished, its Flags are added to the spells the player knows. Which way an entry is handled is decided by the command button that starts the research, not by this data.",
   "spec": [
     {
       "name": "Upgrade Time",
       "offset": "0x0000",
       "length": "52 bytes (1 byte / Upgrade)",
-      "description": "Time it takes to research this upgrade. It uses the same unit as Cost: Build Time in the UDTA section: the game doubles both, and the building's progress goes up by one each step until it reaches that. Every field in this section has one entry per upgrade, 52 in all (see Appendix: Upgrade types). The game handles the entries in two ways. Entries 0 to 31 are upgrades: when one is finished, the game adds one to the player's level counter chosen by Group, and that counter is what gives the bonus. Entries 32 to 51 are spells (and the Paladin and Ogre Mage upgrades): when one is finished, its Flags are added to the spells the player knows. Which way an entry is handled is decided by the command button that starts the research, not by this data. In a PUD, the UGRD section starts with a word in front of this data (not counted in the offsets here): if it is 0, the data is read; otherwise the data is skipped and the default upgrade data is used. The data itself is 780 bytes, so the section is 782 bytes. The default data is entry 1 of MAINDAT.WAR, which has the same 780-byte layout.",
+      "description": "Time it takes to research this upgrade. It uses the same unit as Cost: Build Time in the UDTA section: the game doubles both, and the building's progress goes up by one each step until it reaches that.",
       "values": "Integer value between 0 and 255. Entries 34 (Holy Vision), 38 (Fireball) and 43 (Eye of Kilrogg) are 0 in the default data. These three and Death Coil (46) have no research button in the game.",
       "bits": []
     },
@@ -46,7 +46,7 @@
       "name": "Group",
       "offset": "0x01D4",
       "length": "104 bytes (2 bytes / Upgrade)",
-      "description": "Only used by upgrades 0 to 31: the level counter that goes up by one for the player when the upgrade is finished. Each counter is shared by all upgrades with the same group, so for example Swords 1 and 2 both use group 1, and the research buttons show level 1 or 2 depending on the counter. The bonuses themselves come from the counters, so the group decides what the upgrade does. For entries 32 to 51 the game never reads this field; in the default data it holds the number of the spell's bit in Flags.",
+      "description": "Only used by upgrades 0 to 31: the level counter that goes up by one for the player when the upgrade is finished. Each counter is shared by all upgrades with the same group, so for example Swords 1 and 2 both use group 1, and the research buttons show level 1 or 2 depending on the counter. The upgrade data holds no bonus amounts. When an upgrade is finished, the counter is the only thing the game changes (apart from the unit changes described under Flags); the bonus amounts are built into WAR2.EXE, which reads the counter wherever it needs them. So what an upgrade gives depends only on its Group, not on its name, icon or place in the list: if Swords 1 had Group 2, researching it would raise the Shields counter and give the Shields bonus. For entries 32 to 51 the game never reads this field; in the default data it holds the number of the spell's bit in Flags.",
       "values": "Integer value between 0 and 10 for upgrades 0 to 31. The game has only 11 counters and does not check the value, so a higher value reads past the end of its list of counters.",
       "bits": [
         {
@@ -71,7 +71,7 @@
         },
         {
           "bit": "0x05",
-          "value": "Not used by any upgrade in the default data. The game reads this counter only when drawing the stats panel, so raising it has no effect on how units play."
+          "value": "Not used by any upgrade in the default data. The game reads this counter in one place only: the \"Level\" number in the panel of a selected ship. Each level of this counter adds 1 to the Level shown for Transports, and for Oil Tankers, Destroyers, Battleships, Juggernaughts, Submarines and Turtles if they have the Sea Unit flag (Unit Flags bit 0x03 in UDTA). Nothing else reads it, so it gives no bonus in play. WAR2.EXE does have a bonus amount of 10 per level for this counter in its list of upgrade bonuses, but nothing uses that amount."
         },
         {
           "bit": "0x06",
@@ -99,7 +99,7 @@
       "name": "Flags",
       "offset": "0x023C",
       "length": "208 bytes (4 bytes / Upgrade)",
-      "description": "The bit (or bits) this upgrade uses in the player's upgrade or spell bits, which are the same bits as in the ALOW section: upgrades 0 to 31 use the upgrade bits, entries 32 to 51 the spell bits. When research starts, the flags are marked as being researched for the player; when it finishes or is cancelled, the mark is removed. If the mark is already gone when the research finishes, nothing happens (no level and no refund). For upgrades 0 to 31 the flags give nothing by themselves (the bonus comes from Group). The research buttons are hidden while the bit they check is being researched, but each button checks a fixed bit, not this field; in the default data upgrade 5 (Arrows 2) has 0x01 instead of 0x02, so Arrows 2 can be started in a second Lumber Mill while the first is still researching it, and the second one to finish has no effect and its cost is lost. For entries 32 to 51 the flags are added to the spells the player knows when the research finishes; a spell's cast button is only shown when its bit is known. Two values do more when the research finishes, and only when the flags are exactly that value: 0x10000 turns all the player's Archers into Rangers and Axe Throwers into Berserkers (also those being trained), and 0x100000 turns Knights into Paladins and Ogres into Ogre Mages (also those being trained) and gives the player Holy Vision and Eye of Kilrogg if those spells are allowed.",
+      "description": "The bit (or bits) this upgrade uses in the player's upgrade or spell bits, which are the same bits as in the ALOW section of PUDs: upgrades 0 to 31 use the upgrade bits, entries 32 to 51 the spell bits. When research starts, the flags are marked as being researched for the player; when it finishes or is cancelled, the mark is removed. If the mark is already gone when the research finishes, nothing happens (no level and no refund). For upgrades 0 to 31 the flags give nothing by themselves (the bonus comes from Group). The research buttons are hidden while the bit they check is being researched, but each button checks a fixed bit, not this field; in the default data upgrade 5 (Arrows 2) has 0x01 instead of 0x02, so Arrows 2 can be started in a second Lumber Mill while the first is still researching it, and the second one to finish has no effect and its cost is lost. For entries 32 to 51 the flags are added to the spells the player knows when the research finishes; a spell's cast button is only shown when its bit is known. Two values do more when the research finishes, and only when the flags are exactly that value: 0x10000 turns all the player's Archers into Rangers and Axe Throwers into Berserkers (also those being trained), and 0x100000 turns Knights into Paladins and Ogres into Ogre Mages (also those being trained) and gives the player Holy Vision and Eye of Kilrogg if those spells are allowed.",
       "values": null,
       "bits": [
         {
@@ -187,16 +187,56 @@
           "value": "Upgrades: not checked by any research button. Spells: Knights to Paladins and Ogres to Ogre Mages (exactly 0x100000 also turns the units and gives Holy Vision and Eye of Kilrogg)."
         },
         {
-          "bit": "0x15 - 0x1F",
-          "value": "Not used by any entry in the default data."
+          "bit": "0x15",
+          "value": "Unused 0x15. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x16",
+          "value": "Unused 0x16. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x17",
+          "value": "Unused 0x17. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x18",
+          "value": "Unused 0x18. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x19",
+          "value": "Unused 0x19. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x1A",
+          "value": "Unused 0x1A. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x1B",
+          "value": "Unused 0x1B. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x1C",
+          "value": "Unused 0x1C. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x1D",
+          "value": "Unused 0x1D. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x1E",
+          "value": "Unused 0x1E. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
+        },
+        {
+          "bit": "0x1F",
+          "value": "Unused 0x1F. The game never tests this bit. If it is set, it is copied into the player's upgrade or spell bits like the other bits, but nothing checks it there."
         }
       ]
     }
   ],
   "appendices": [
     {
-      "name": "Appendix: Upgrade types",
-      "description": "The upgrade list. Every field in this section has one entry per upgrade, in this order. The order is the same as the upgrade names in STRDAT.WAR and the numbers in the Research command buttons of WAR2.EXE. Entries 0x00 to 0x1F are handled as upgrades and 0x20 to 0x33 as spells (see Upgrade Time).",
+      "name": "Appendix: Upgrade and Spell types",
+      "description": "The upgrade and spell list. Every field in this section has one entry per upgrade, in this order. The order is the same as the upgrade names in STRDAT.WAR and the numbers in the Research command buttons of WAR2.EXE. Entries 0x00 to 0x1F are handled as upgrades and 0x20 to 0x33 as spells (see the description of this section).",
       "values": null,
       "bits": [
         {
