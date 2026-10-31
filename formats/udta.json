@@ -3,94 +3,62 @@
   "description": "",
   "spec": [
     {
-      "name": "Graphics: Group",
+      "name": "Graphics: Construction Site",
       "offset": "0x0000",
       "length": "220 bytes (2 bytes / First 110 Units)",
-      "description": "Graphics group this unit uses. To be honest I sort of forgot what this does :)",
-      "values": "Integer value between 0 and 65535.",
+      "description": "The construction site graphic shown while this building is being built. The game adds 110 to the value and uses the result as an entry in the Graphics lists below, where entries 116 to 126 are the construction sites; for example 6 (entry 116) is the land construction site and 15 (entry 125) the wall construction site. Frame 0 of the construction site is shown for the first quarter of the construction and frame 1 for the second quarter; after that the building's own graphic is used.",
+      "values": "Integer value between 0 and 16. Only used while the unit is being built.",
       "bits": []
     },
     {
       "name": "Graphics: General",
       "offset": "0x00DC",
-      "length": "254 bytes (2 bytes / Unit)",
-      "description": "The graphic this unit uses in general. Most units (except the critter) specify this value as their only graphic. All buildings (and the critter) use graphics specific to tileset.",
-      "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on all tilesets. When the tileset's own Graphics list has an entry for the unit (not 0xFFFF), that one is used instead. Most units only set this one; buildings and the critter use the tileset-specific lists. Entries 0 to 109 are the units. Entries 110 to 126 are extra graphics: 110 and 111 are the peasant and peon carrying goods, 112 and 113 the peasant and peon carrying the other kind of goods, 114 and 115 the human and orc oil tanker carrying oil, and 116 to 126 (in the tileset lists) the construction sites (see Graphics: Construction Site).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
       "bits": [
         {
-          "bit": "0x0D",
-          "value": "Flag #2"
-        },
-        {
-          "bit": "0x0E",
-          "value": "Flag #1"
-        },
-        {
           "bit": "0x0F",
-          "value": "Repeat (used if this unit uses another's GFX)"
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
         }
       ]
     },
     {
       "name": "Graphics: Forest",
       "offset": "0x01DA",
-      "length": "254 bytes (2 bytes / Unit)",
-      "description": "The graphic this unit uses for Forest maps.",
-      "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Forest maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
       "bits": [
         {
-          "bit": "0x0D",
-          "value": "Flag #2"
-        },
-        {
-          "bit": "0x0E",
-          "value": "Flag #1"
-        },
-        {
           "bit": "0x0F",
-          "value": "Repeat (used if this unit uses another's GFX)"
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
         }
       ]
     },
     {
       "name": "Graphics: Winter",
       "offset": "0x02D8",
-      "length": "254 bytes (2 bytes / Unit)",
-      "description": "The graphic this unit uses for Winter maps.",
-      "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Winter maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
       "bits": [
         {
-          "bit": "0x0D",
-          "value": "Flag #2"
-        },
-        {
-          "bit": "0x0E",
-          "value": "Flag #1"
-        },
-        {
           "bit": "0x0F",
-          "value": "Repeat (used if this unit uses another's GFX)"
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
         }
       ]
     },
     {
       "name": "Graphics: Wasteland",
       "offset": "0x03D6",
-      "length": "254 bytes (2 bytes / Unit)",
-      "description": "The graphic this unit uses for Wasteland maps.",
-      "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Wasteland maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
       "bits": [
         {
-          "bit": "0x0D",
-          "value": "Flag #2"
-        },
-        {
-          "bit": "0x0E",
-          "value": "Flag #1"
-        },
-        {
           "bit": "0x0F",
-          "value": "Repeat (used if this unit uses another's GFX)"
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
         }
       ]
     },
@@ -98,8 +66,8 @@
       "name": "Range: Sight",
       "offset": "0x04D4",
       "length": "440 bytes (1 long / First 110 Units)",
-      "description": "Sight range (in tiles) of this unit.",
-      "values": "Integer value between 0 and 2^32",
+      "description": "Sight range (in tiles) of this unit: the unit reveals a square area of 2 × range + 1 tiles on each side around it. Rangers and Berserkers use 9 instead once their player has the sight upgrade (Scouting).",
+      "values": "Integer value between 0 and 9. The game uses the value as an entry in a table of 10 sight routines, so larger values are invalid. 0 works the same as 1.",
       "bits": []
     },
     {
@@ -114,7 +82,7 @@
       "name": "Magic Flag",
       "offset": "0x0768",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Flag to determine whether this unit is a spell user.",
+      "description": "Copied into the unit's mana when the unit is created or changes type. It does not make the unit a spellcaster: whether a unit regains mana over time, and whether it starts with 85 mana, is decided by the Spellcaster bit (0x11) in Unit Flags.",
       "values": null,
       "bits": [
         {
@@ -131,7 +99,7 @@
       "name": "Cost: Build Time",
       "offset": "0x07D6",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Time required to build this Unit. Multiply by 6 to obtain seconds.",
+      "description": "Time required to build or train this Unit. A higher value takes longer.",
       "values": "Integer value between 0 and 255.",
       "bits": []
     },
@@ -177,9 +145,9 @@
     },
     {
       "name": "Attack Range",
-      "offset": "0x0CF3",
+      "offset": "0x0CFE",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Minimum range this unit must be from its target to attack.",
+      "description": "Maximum distance (in tiles) from which this unit can attack its target. Rangers and Berserkers get one more once their player has the range upgrade (Longbow / Lighter Axes).",
       "values": "Integer value between 0 and 255.",
       "bits": []
     },
@@ -187,7 +155,7 @@
       "name": "React Range: Computer AI",
       "offset": "0x0D6C",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Minimum range that computer units must be from this unit in order to react to it.",
+      "description": "How far (in tiles) a computer player's unit of this type looks for enemies to attack.",
       "values": "Integer value between 0 and 255.",
       "bits": []
     },
@@ -195,7 +163,7 @@
       "name": "React Range: Human AI",
       "offset": "0x0DDA",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Minimum range this unit must be from an enemy before it reacts to the enemy.",
+      "description": "How far (in tiles) a human player's unit of this type looks for enemies to attack while it is walking somewhere, for example while patrolling. A human player's unit that is standing still only looks within its attack range.",
       "values": "Integer value between 0 and 255.",
       "bits": []
     },
@@ -220,7 +188,7 @@
         },
         {
           "bit": "0x01",
-          "value": "true (multiselecatble)"
+          "value": "true (multiselectable)"
         }
       ]
     },
@@ -228,7 +196,7 @@
       "name": "Priority / AI Treatment",
       "offset": "0x0F24",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Priority value / AI Treatment for this unit.",
+      "description": "Used when a unit picks an enemy to attack by itself. Enemies that can attack come first (those within the unit's attack range before those further away), and among those the game picks the one with the highest priority minus a penalty for distance.",
       "values": "Integer value between 0 and 255.",
       "bits": []
     },
@@ -243,7 +211,7 @@
     {
       "name": "Damage: Piercing",
       "offset": "0x1000",
-      "length": "110 bytes (1 byte / First 110 Unis)",
+      "length": "110 bytes (1 byte / First 110 Units)",
       "description": "Piercing damage dealt by this unit when it attacks.",
       "values": "Integer value between 0 and 255.",
       "bits": []
@@ -286,7 +254,7 @@
       "name": "Weapon Missile",
       "offset": "0x114A",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Missile type this unit uses when it attacks.",
+      "description": "Missile this unit fires when it attacks. 0x1D (None) means the unit attacks in melee.",
       "values": null,
       "bits": [
         {
@@ -339,7 +307,7 @@
         },
         {
           "bit": "0x0C",
-          "value": "Whirlwind"
+          "value": "Tornado (Whirlwind)"
         },
         {
           "bit": "0x0D",
@@ -387,15 +355,15 @@
         },
         {
           "bit": "0x18",
-          "value": "Small Cannon"
+          "value": "Cannon"
         },
         {
           "bit": "0x19",
-          "value": "Cannon Explosion"
+          "value": "Cannon Fire (shown at the unit that fires Cannon or Big Cannon)"
         },
         {
           "bit": "0x1A",
-          "value": "Cannon Tower Explosion"
+          "value": "Cannon Explosion (shown where Cannon or Big Cannon hits)"
         },
         {
           "bit": "0x1B",
@@ -407,7 +375,7 @@
         },
         {
           "bit": "0x1D",
-          "value": "None"
+          "value": "None (melee)"
         }
       ]
     },
@@ -415,7 +383,7 @@
       "name": "Unit Type",
       "offset": "0x11B8",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Domain unit resides in (visual only).",
+      "description": "Whether the unit is a land, air or sea unit. Not only visual: the game copies it into each unit when the unit is created, and uses it, for example, when looking for a free square to place the unit on and when a missile hits the unit.",
       "values": null,
       "bits": [
         {
@@ -436,32 +404,32 @@
       "name": "Decay Rate",
       "offset": "0x1226",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Rate at which this unit decays. Multiply by 6 to get seconds. Decay rates only apply to units created during the game, not those placed on the map at design time.",
+      "description": "How fast this unit decays. A unit with a non-zero decay rate gets a hidden timer that starts at 255. The game counts the decay rate down over and over; each time it runs out, the timer goes down by one and the unit's hit points are not affected. Once the timer reaches 0, the unit loses 5 hit points each time instead, and dies when it has fewer than 5 left. Decay rates only apply to units created during the game, not those placed on the map at design time, and never to units with the Spellcaster bit (0x11) in Unit Flags.",
       "values": "Integer value between 0 and 255. 0 means the unit never decays.",
       "bits": []
     },
     {
-      "name": "Computer Annoy Factor",
+      "name": "Repair Priority (Computer)",
       "offset": "0x1294",
-      "length": "",
-      "description": "How much this unit annoys the computer (likelihood it will be attacked).",
-      "values": "Integer value between 0 and 255.",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "How urgently a computer player repairs this building. When a computer player's peasant or peon looks for a building to repair, it considers its player's finished buildings in the same area that have less than 3/4 of their hit points, and picks the one with the highest value. This is the only place the game uses this field.",
+      "values": "Integer value between 0 and 255. Only matters for buildings.",
       "bits": []
     },
     {
       "name": "Right Click Action",
       "offset": "0x1302",
       "length": "58 bytes (1 byte / First 58 Units)",
-      "description": "Action this unit performs when you have it selected and right click with it.",
+      "description": "What this unit does when you have it selected and right click. The game turns the right click into an order depending on this value and on what was clicked.",
       "values": null,
       "bits": [
         {
           "bit": "0x00",
-          "value": "None"
+          "value": "None: nothing happens"
         },
         {
           "bit": "0x01",
-          "value": "Attack"
+          "value": "Attack: Attack an enemy unit, Attack Wall on a wall, otherwise Move. Units without the Attacks bit (0x13) in Unit Flags always Move"
         },
         {
           "bit": "0x02",
@@ -469,19 +437,19 @@
         },
         {
           "bit": "0x03",
-          "value": "Harvest"
+          "value": "Harvest: Attack an enemy unit; Harvest a gold mine or trees when not carrying anything; Return with Goods to an own building that takes what is carried; Repair a damaged own building; otherwise Move"
         },
         {
           "bit": "0x04",
-          "value": "Haul Oil"
+          "value": "Haul Oil: Harvest an own oil platform when empty; Return with Goods to an own building that takes oil when carrying oil; otherwise Move"
         },
         {
           "bit": "0x05",
-          "value": "Demolish"
+          "value": "Demolish: Demolish an enemy unit, otherwise Move"
         },
         {
           "bit": "0x06",
-          "value": "Sail"
+          "value": "Sail: the same as Move"
         }
       ]
     },
@@ -498,7 +466,7 @@
       "offset": "0x1418",
       "length": "110 bytes (1 byte / First 110 Units)",
       "description": "Domain whose units this unit can attack.",
-      "values": "(Any combination of these are valid - just add them together)",
+      "values": "Bit flags; any combination is valid (just add them together). 0 means the unit cannot attack.",
       "bits": [
         {
           "bit": "0x00",
@@ -513,7 +481,7 @@
           "value": "Sea"
         },
         {
-          "bit": "0x03",
+          "bit": "0x04",
           "value": "Air"
         }
       ]
@@ -559,11 +527,11 @@
         },
         {
           "bit": "0x08",
-          "value": "Peon"
+          "value": "Peon (runs when attacked)"
         },
         {
           "bit": "0x09",
-          "value": "Tanker"
+          "value": "Tanker (runs when attacked)"
         },
         {
           "bit": "0x0A",
@@ -579,7 +547,7 @@
         },
         {
           "bit": "0x0D",
-          "value": "Not used"
+          "value": "Leaves no remains: when a unit with this bit is killed, it is removed straight away, instead of turning into a dead body (units) or leaving a destroyed site behind (buildings). Set on the dead body and the destroyed sites in the default data"
         },
         {
           "bit": "0x0E",
@@ -627,7 +595,7 @@
         },
         {
           "bit": "0x19",
-          "value": "Volatile"
+          "value": "Sapper; Set on the Dwarven Demolition Squad and Goblin Sappers in the default data; it does not make them explode (that is the Demolish order). The flag means it is Non-combatant: Like Peon (0x08), Tanker (0x09) and Mage (0x1A): when attacked, the unit moves away instead of fighting back; it does not come to help nearby friendly units that are attacked; computer players never pick it for an attack group; and when looking for enemies it plans its path around enemy units instead of through them. The flag also gives the unit the same death sound as units with Exploding Death (0x02) and air units."
         },
         {
           "bit": "0x1A",
@@ -658,21 +626,13 @@
     {
       "name": "Graphics: Swamp",
       "offset": "0x163E",
-      "length": "252 bytes (2 bytes / Unit)",
-      "description": "The graphic this unit uses for Swamp maps.",
-      "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Swamp maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset. Only present in the Beyond the Dark Portal format: with this field the UDTA data is 5948 bytes long, without it 5694 bytes (the PUD UDTA section is 2 bytes longer than that, because of the word in front of the data that tells whether the default data is used).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
       "bits": [
         {
-          "bit": "0x0D",
-          "value": "Flag #2"
-        },
-        {
-          "bit": "0x0E",
-          "value": "Flag #1"
-        },
-        {
           "bit": "0x0F",
-          "value": "Repeat (used if this unit uses another's GFX)"
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
         }
       ]
     }
