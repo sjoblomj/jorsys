@@ -1,0 +1,413 @@
+{
+  "title": "UGRD",
+  "description": "",
+  "spec": [
+    {
+      "name": "Upgrade Time",
+      "offset": "0x0000",
+      "length": "52 bytes (1 byte / Upgrade)",
+      "description": "Time it takes to research this upgrade. It uses the same unit as Cost: Build Time in the UDTA section: the game doubles both, and the building's progress goes up by one each step until it reaches that. Every field in this section has one entry per upgrade, 52 in all: 0 Swords 1, 1 Swords 2, 2 Axes 1, 3 Axes 2 (these four at the Blacksmiths), 4 Arrows 1, 5 Arrows 2, 6 Throwing Axes 1, 7 Throwing Axes 2 (Lumber Mills), 8 and 9 Human Shields 1 and 2, 10 and 11 Orc Shields 1 and 2 (Blacksmiths), 12 and 13 Human Ship Cannons 1 and 2, 14 and 15 Orc Ship Cannons 1 and 2, 16 and 17 Human Ship Armor 1 and 2, 18 and 19 Orc Ship Armor 1 and 2 (Foundries), 20 and 21 Catapults 1 and 2, 22 and 23 Ballistas 1 and 2 (Blacksmiths), 24 Elven Ranger Training, 25 Longbow, 26 Ranger Scouting, 27 Ranger Marksmanship, 28 Troll Berserker Training, 29 Lighter Axes, 30 Berserker Scouting, 31 Berserker Regeneration (Lumber Mills), 32 Ogres to Ogre Mages, 33 Knights to Paladins, 34 Holy Vision, 35 Healing, 36 Exorcism, 37 Flame Shield, 38 Fireball, 39 Slow, 40 Invisibility, 41 Polymorph, 42 Blizzard, 43 Eye of Kilrogg, 44 Bloodlust, 45 Raise Dead, 46 Death Coil, 47 Whirlwind, 48 Haste, 49 Unholy Armor, 50 Runes, 51 Death and Decay. The game handles the entries in two ways. Entries 0 to 31 are upgrades: when one is finished, the game adds one to the player's level counter chosen by Group, and that counter is what gives the bonus. Entries 32 to 51 are spells (and the Paladin and Ogre Mage upgrades): when one is finished, its Flags are added to the spells the player knows. Which way an entry is handled is decided by the command button that starts the research, not by this data. In a PUD, the UGRD section starts with a word in front of this data (not counted in the offsets here): if it is 0, the data is read; otherwise the data is skipped and the default upgrade data is used. The data itself is 780 bytes, so the section is 782 bytes. The default data is entry 1 of MAINDAT.WAR, which has the same 780-byte layout.",
+      "values": "Integer value between 0 and 255. Entries 34 (Holy Vision), 38 (Fireball) and 43 (Eye of Kilrogg) are 0 in the default data. These three and Death Coil (46) have no research button in the game.",
+      "bits": []
+    },
+    {
+      "name": "Cost: Gold",
+      "offset": "0x0034",
+      "length": "104 bytes (2 bytes / Upgrade)",
+      "description": "Gold it costs to research this upgrade. Unlike the costs in the UDTA section, this is the actual amount; it is not multiplied by 10. The cost is taken when the research starts and given back if it is cancelled.",
+      "values": "Integer value between 0 and 65535.",
+      "bits": []
+    },
+    {
+      "name": "Cost: Lumber",
+      "offset": "0x009C",
+      "length": "104 bytes (2 bytes / Upgrade)",
+      "description": "Lumber it costs to research this upgrade. This is the actual amount; it is not multiplied by 10.",
+      "values": "Integer value between 0 and 65535.",
+      "bits": []
+    },
+    {
+      "name": "Cost: Oil",
+      "offset": "0x0104",
+      "length": "104 bytes (2 bytes / Upgrade)",
+      "description": "Oil it costs to research this upgrade. This is the actual amount; it is not multiplied by 10. Only the ship cannon upgrades (12 to 15) cost oil in the default data.",
+      "values": "Integer value between 0 and 65535.",
+      "bits": []
+    },
+    {
+      "name": "Icon",
+      "offset": "0x016C",
+      "length": "104 bytes (2 bytes / Upgrade)",
+      "description": "Icon shown in the panel of the selected building while it is researching this upgrade. The research button itself has its own icon in the command data of WAR2.EXE, so this does not change the button.",
+      "values": "Icon number, the same numbering as the icons of units and command buttons. For example 6 and 7 are the Ranger and Berserker, 10 and 11 the Paladin and Ogre Mage.",
+      "bits": []
+    },
+    {
+      "name": "Group",
+      "offset": "0x01D4",
+      "length": "104 bytes (2 bytes / Upgrade)",
+      "description": "Only used by upgrades 0 to 31: the level counter that goes up by one for the player when the upgrade is finished. Each counter is shared by all upgrades with the same group, so for example Swords 1 and 2 both use group 1, and the research buttons show level 1 or 2 depending on the counter. The bonuses themselves come from the counters, so the group decides what the upgrade does. For entries 32 to 51 the game never reads this field; in the default data it holds the number of the spell's bit in Flags.",
+      "values": "Integer value between 0 and 10 for upgrades 0 to 31. The game has only 11 counters and does not check the value, so a higher value reads past the end of its list of counters.",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Arrows and Throwing Axes (upgrades 4 to 7)."
+        },
+        {
+          "bit": "0x01",
+          "value": "Swords and Axes (upgrades 0 to 3)."
+        },
+        {
+          "bit": "0x02",
+          "value": "Shields (upgrades 8 to 11)."
+        },
+        {
+          "bit": "0x03",
+          "value": "Ship Cannons (upgrades 12 to 15)."
+        },
+        {
+          "bit": "0x04",
+          "value": "Ship Armor (upgrades 16 to 19)."
+        },
+        {
+          "bit": "0x05",
+          "value": "Not used by any upgrade in the default data. The game reads this counter only when drawing the stats panel, so raising it has no effect on how units play."
+        },
+        {
+          "bit": "0x06",
+          "value": "Catapults and Ballistas (upgrades 20 to 23)."
+        },
+        {
+          "bit": "0x07",
+          "value": "Ranger and Berserker Training (upgrades 24 and 28). Longbow, Scouting and Marksmanship (and the Troll equivalents) can only be researched once this counter is not 0."
+        },
+        {
+          "bit": "0x08",
+          "value": "Longbow and Lighter Axes (upgrades 25 and 29)."
+        },
+        {
+          "bit": "0x09",
+          "value": "Ranger and Berserker Scouting (upgrades 26 and 30)."
+        },
+        {
+          "bit": "0x0A",
+          "value": "Ranger Marksmanship and Berserker Regeneration (upgrades 27 and 31)."
+        }
+      ]
+    },
+    {
+      "name": "Flags",
+      "offset": "0x023C",
+      "length": "208 bytes (4 bytes / Upgrade)",
+      "description": "The bit (or bits) this upgrade uses in the player's upgrade or spell bits, which are the same bits as in the ALOW section: upgrades 0 to 31 use the upgrade bits, entries 32 to 51 the spell bits. When research starts, the flags are marked as being researched for the player; when it finishes or is cancelled, the mark is removed. If the mark is already gone when the research finishes, nothing happens (no level and no refund). For upgrades 0 to 31 the flags give nothing by themselves (the bonus comes from Group). The research buttons are hidden while the bit they check is being researched, but each button checks a fixed bit, not this field; in the default data upgrade 5 (Arrows 2) has 0x01 instead of 0x02, so Arrows 2 can be started in a second Lumber Mill while the first is still researching it, and the second one to finish has no effect and its cost is lost. For entries 32 to 51 the flags are added to the spells the player knows when the research finishes; a spell's cast button is only shown when its bit is known. Two values do more when the research finishes, and only when the flags are exactly that value: 0x10000 turns all the player's Archers into Rangers and Axe Throwers into Berserkers (also those being trained), and 0x100000 turns Knights into Paladins and Ogres into Ogre Mages (also those being trained) and gives the player Holy Vision and Eye of Kilrogg if those spells are allowed.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Upgrades: Arrows and Throwing Axes level 1. Spells: Holy Vision."
+        },
+        {
+          "bit": "0x01",
+          "value": "Upgrades: Arrows and Throwing Axes level 2. Spells: Healing."
+        },
+        {
+          "bit": "0x02",
+          "value": "Upgrades: Swords and Axes level 1. Spells: not used by any entry in the default data."
+        },
+        {
+          "bit": "0x03",
+          "value": "Upgrades: Swords and Axes level 2. Spells: Exorcism."
+        },
+        {
+          "bit": "0x04",
+          "value": "Upgrades: Shields level 1. Spells: Flame Shield."
+        },
+        {
+          "bit": "0x05",
+          "value": "Upgrades: Shields level 2. Spells: Fireball."
+        },
+        {
+          "bit": "0x06",
+          "value": "Upgrades: Ship Cannons level 1. Spells: Slow."
+        },
+        {
+          "bit": "0x07",
+          "value": "Upgrades: Ship Cannons level 2. Spells: Invisibility."
+        },
+        {
+          "bit": "0x08",
+          "value": "Upgrades: Ship Armor level 1. Spells: Polymorph."
+        },
+        {
+          "bit": "0x09",
+          "value": "Upgrades: Ship Armor level 2. Spells: Blizzard."
+        },
+        {
+          "bit": "0x0A",
+          "value": "Upgrades: not checked by any research button. Spells: Eye of Kilrogg."
+        },
+        {
+          "bit": "0x0B",
+          "value": "Upgrades: not checked by any research button. Spells: Bloodlust."
+        },
+        {
+          "bit": "0x0C",
+          "value": "Upgrades: Catapults and Ballistas level 1. Spells: not used by any entry in the default data."
+        },
+        {
+          "bit": "0x0D",
+          "value": "Upgrades: Catapults and Ballistas level 2. Spells: Raise Dead."
+        },
+        {
+          "bit": "0x0E",
+          "value": "Upgrades: not checked by any research button. Spells: Death Coil."
+        },
+        {
+          "bit": "0x0F",
+          "value": "Upgrades: not checked by any research button. Spells: Whirlwind."
+        },
+        {
+          "bit": "0x10",
+          "value": "Upgrades: Ranger and Berserker Training (exactly 0x10000 also turns Archers and Axe Throwers into Rangers and Berserkers). Spells: Haste."
+        },
+        {
+          "bit": "0x11",
+          "value": "Upgrades: Longbow and Lighter Axes. Spells: Unholy Armor."
+        },
+        {
+          "bit": "0x12",
+          "value": "Upgrades: Ranger and Berserker Scouting. Spells: Runes."
+        },
+        {
+          "bit": "0x13",
+          "value": "Upgrades: Ranger Marksmanship and Berserker Regeneration. Spells: Death and Decay."
+        },
+        {
+          "bit": "0x14",
+          "value": "Upgrades: not checked by any research button. Spells: Knights to Paladins and Ogres to Ogre Mages (exactly 0x100000 also turns the units and gives Holy Vision and Eye of Kilrogg)."
+        },
+        {
+          "bit": "0x15 - 0x1F",
+          "value": "Not used by any entry in the default data."
+        }
+      ]
+    }
+  ],
+  "appendices": [
+    {
+      "name": "Appendix B: Upgrade types",
+      "description": "",
+      "values": null,
+      "bits": [
+        {
+          "bit": "00",
+          "value": "sword 1"
+        },
+        {
+          "bit": "01",
+          "value": "sword 2"
+        },
+        {
+          "bit": "02",
+          "value": "axe 1"
+        },
+        {
+          "bit": "03",
+          "value": "axe 2"
+        },
+        {
+          "bit": "04",
+          "value": "arrow 1"
+        },
+        {
+          "bit": "05",
+          "value": "arrow 2"
+        },
+        {
+          "bit": "06",
+          "value": "spear 1"
+        },
+        {
+          "bit": "07",
+          "value": "spear 2"
+        },
+        {
+          "bit": "08",
+          "value": "human shield 1"
+        },
+        {
+          "bit": "09",
+          "value": "human shield 2"
+        },
+        {
+          "bit": "0a",
+          "value": "orc shield 1"
+        },
+        {
+          "bit": "0b",
+          "value": "orc shield 2"
+        },
+        {
+          "bit": "0c",
+          "value": "human ship cannon 1"
+        },
+        {
+          "bit": "0d",
+          "value": "human ship cannon 2"
+        },
+        {
+          "bit": "0e",
+          "value": "orc ship cannon 1"
+        },
+        {
+          "bit": "0f",
+          "value": "orc ship cannon 2"
+        },
+        {
+          "bit": "10",
+          "value": "human ship armor 1"
+        },
+        {
+          "bit": "11",
+          "value": "human ship armor 2"
+        },
+        {
+          "bit": "12",
+          "value": "orc ship armor 1"
+        },
+        {
+          "bit": "13",
+          "value": "orc ship armor 2"
+        },
+        {
+          "bit": "14",
+          "value": "catapult 1"
+        },
+        {
+          "bit": "15",
+          "value": "catapult 2"
+        },
+        {
+          "bit": "16",
+          "value": "ballista 1"
+        },
+        {
+          "bit": "17",
+          "value": "ballista 2"
+        },
+        {
+          "bit": "18",
+          "value": "train rangers"
+        },
+        {
+          "bit": "19",
+          "value": "longbow"
+        },
+        {
+          "bit": "1a",
+          "value": "ranger scouting"
+        },
+        {
+          "bit": "1b",
+          "value": "ranger marksmanship"
+        },
+        {
+          "bit": "1c",
+          "value": "train berserkers"
+        },
+        {
+          "bit": "1d",
+          "value": "lighter axes"
+        },
+        {
+          "bit": "1e",
+          "value": "berserker scouting"
+        },
+        {
+          "bit": "1f",
+          "value": "berserker regeneration"
+        },
+        {
+          "bit": "20",
+          "value": "train ogre-mages"
+        },
+        {
+          "bit": "21",
+          "value": "train paladins"
+        },
+        {
+          "bit": "22",
+          "value": "holy vision"
+        },
+        {
+          "bit": "23",
+          "value": "healing"
+        },
+        {
+          "bit": "24",
+          "value": "exorcism"
+        },
+        {
+          "bit": "25",
+          "value": "flame shield"
+        },
+        {
+          "bit": "26",
+          "value": "fireball"
+        },
+        {
+          "bit": "27",
+          "value": "slow"
+        },
+        {
+          "bit": "28",
+          "value": "invisibility"
+        },
+        {
+          "bit": "29",
+          "value": "polymorph"
+        },
+        {
+          "bit": "2a",
+          "value": "blizzard"
+        },
+        {
+          "bit": "2b",
+          "value": "eye of kilrogg"
+        },
+        {
+          "bit": "2c",
+          "value": "bloodlust"
+        },
+        {
+          "bit": "2d",
+          "value": "raise dead"
+        },
+        {
+          "bit": "2e",
+          "value": "death coil"
+        },
+        {
+          "bit": "2f",
+          "value": "whirlwind"
+        },
+        {
+          "bit": "30",
+          "value": "haste"
+        },
+        {
+          "bit": "31",
+          "value": "unholy armor"
+        },
+        {
+          "bit": "32",
+          "value": "runes"
+        },
+        {
+          "bit": "33",
+          "value": "death and decay"
+        }
+      ]
+    }
+  ]
+}
