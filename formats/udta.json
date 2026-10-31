@@ -639,409 +639,449 @@
   ],
   "appendices": [
     {
-      "name": "Appendix A: Unit Types",
-      "description": "",
+      "name": "Appendix: Unit Types",
+      "description": "The unit list. The per-unit fields have one entry per unit in this order: the fields with 110 entries cover 0x00 to 0x6D, and the Graphics lists have 127 entries (see Graphics: General for the extra entries after the units). The numbers are the same as in the Train and Build command buttons of WAR2.EXE. The entries marked Unused have no name in the game.",
       "values": null,
       "bits": [
         {
-          "bit": "00",
-          "value": "infantry"
+          "bit": "0x00",
+          "value": "Footman"
         },
         {
-          "bit": "01",
-          "value": "grunt"
+          "bit": "0x01",
+          "value": "Grunt"
         },
         {
-          "bit": "02",
-          "value": "peasant"
+          "bit": "0x02",
+          "value": "Peasant"
         },
         {
-          "bit": "03",
-          "value": "peon"
+          "bit": "0x03",
+          "value": "Peon"
         },
         {
-          "bit": "04",
-          "value": "ballista"
+          "bit": "0x04",
+          "value": "Ballista"
         },
         {
-          "bit": "05",
-          "value": "catapult"
+          "bit": "0x05",
+          "value": "Catapult"
         },
         {
-          "bit": "06",
-          "value": "knight"
+          "bit": "0x06",
+          "value": "Knight"
         },
         {
-          "bit": "07",
-          "value": "ogre"
+          "bit": "0x07",
+          "value": "Ogre"
         },
         {
-          "bit": "08",
-          "value": "archer"
+          "bit": "0x08",
+          "value": "Elven Archer"
         },
         {
-          "bit": "09",
-          "value": "axethrower"
+          "bit": "0x09",
+          "value": "Troll Axethrower"
         },
         {
-          "bit": "0a",
-          "value": "mage"
+          "bit": "0x0A",
+          "value": "Mage"
         },
         {
-          "bit": "0b",
-          "value": "death knight"
+          "bit": "0x0B",
+          "value": "Death Knight"
         },
         {
-          "bit": "0c",
-          "value": "paladin"
+          "bit": "0x0C",
+          "value": "Paladin"
         },
         {
-          "bit": "0d",
-          "value": "ogre-mage"
+          "bit": "0x0D",
+          "value": "Ogre-Mage"
         },
         {
-          "bit": "0e",
-          "value": "dwarves"
+          "bit": "0x0E",
+          "value": "Dwarven Demolition Squad"
         },
         {
-          "bit": "0f",
-          "value": "goblin sapper"
+          "bit": "0x0F",
+          "value": "Goblin Sappers"
         },
         {
-          "bit": "10",
-          "value": "attack peasant"
+          "bit": "0x10",
+          "value": "Attack Peasant"
         },
         {
-          "bit": "11",
-          "value": "attack peon"
+          "bit": "0x11",
+          "value": "Attack Peon"
         },
         {
-          "bit": "12",
-          "value": "ranger"
+          "bit": "0x12",
+          "value": "Ranger"
         },
         {
-          "bit": "13",
-          "value": "berserker"
+          "bit": "0x13",
+          "value": "Berserker"
         },
         {
-          "bit": "14",
-          "value": "alleria"
+          "bit": "0x14",
+          "value": "Alleria"
         },
         {
-          "bit": "15",
-          "value": "teron gorefiend"
+          "bit": "0x15",
+          "value": "Teron Gorefiend"
         },
         {
-          "bit": "16",
-          "value": "kurdan and sky'ree"
+          "bit": "0x16",
+          "value": "Kurdran and Sky'ree"
         },
         {
-          "bit": "17",
-          "value": "dentarg"
+          "bit": "0x17",
+          "value": "Dentarg"
         },
         {
-          "bit": "18",
-          "value": "khadgar"
+          "bit": "0x18",
+          "value": "Khadgar"
         },
         {
-          "bit": "19",
-          "value": "grom hellscream"
+          "bit": "0x19",
+          "value": "Grom Hellscream"
         },
         {
-          "bit": "1a",
-          "value": "human tanker"
+          "bit": "0x1A",
+          "value": "Human Oil Tanker"
         },
         {
-          "bit": "1b",
-          "value": "orc tanker"
+          "bit": "0x1B",
+          "value": "Orc Oil Tanker"
         },
         {
-          "bit": "1c",
-          "value": "human transport"
+          "bit": "0x1C",
+          "value": "Human Transport"
         },
         {
-          "bit": "1d",
-          "value": "orc transport"
+          "bit": "0x1D",
+          "value": "Orc Transport"
         },
         {
-          "bit": "1e",
-          "value": "elven destroyer"
+          "bit": "0x1E",
+          "value": "Elven Destroyer"
         },
         {
-          "bit": "1f",
-          "value": "troll destroyer"
+          "bit": "0x1F",
+          "value": "Troll Destroyer"
         },
         {
-          "bit": "20",
-          "value": "battleship"
+          "bit": "0x20",
+          "value": "Battleship"
         },
         {
-          "bit": "21",
-          "value": "juggernaught"
+          "bit": "0x21",
+          "value": "Ogre Juggernaught"
         },
         {
-          "bit": "23",
-          "value": "deathwing"
+          "bit": "0x22",
+          "value": "Unused 0x22"
         },
         {
-          "bit": "26",
-          "value": "gnomish submarine"
+          "bit": "0x23",
+          "value": "Deathwing"
         },
         {
-          "bit": "27",
-          "value": "giant turtle"
+          "bit": "0x24",
+          "value": "Unused 0x24"
         },
         {
-          "bit": "28",
-          "value": "gnomish flying machine"
+          "bit": "0x25",
+          "value": "Unused 0x25"
         },
         {
-          "bit": "29",
-          "value": "goblin zepplin"
+          "bit": "0x26",
+          "value": "Gnomish Submarine"
         },
         {
-          "bit": "2a",
-          "value": "gryphon rider"
+          "bit": "0x27",
+          "value": "Giant Turtle"
         },
         {
-          "bit": "2b",
-          "value": "dragon"
+          "bit": "0x28",
+          "value": "Gnomish Flying Machine"
         },
         {
-          "bit": "2c",
-          "value": "turalyon"
+          "bit": "0x29",
+          "value": "Goblin Zeppelin"
         },
         {
-          "bit": "2d",
-          "value": "eye of kilrogg"
+          "bit": "0x2A",
+          "value": "Gryphon Rider"
         },
         {
-          "bit": "2e",
-          "value": "danath"
+          "bit": "0x2B",
+          "value": "Dragon"
         },
         {
-          "bit": "2f",
-          "value": "khorgath bladefist"
+          "bit": "0x2C",
+          "value": "Turalyon"
         },
         {
-          "bit": "31",
-          "value": "cho'gall"
+          "bit": "0x2D",
+          "value": "Eye of Kilrogg"
         },
         {
-          "bit": "32",
-          "value": "lothar"
+          "bit": "0x2E",
+          "value": "Danath"
         },
         {
-          "bit": "33",
-          "value": "gul'dan"
+          "bit": "0x2F",
+          "value": "Korgath Bladefist"
         },
         {
-          "bit": "34",
-          "value": "uther lightbringer"
+          "bit": "0x30",
+          "value": "Unused 0x30"
         },
         {
-          "bit": "35",
-          "value": "zuljin"
+          "bit": "0x31",
+          "value": "Cho'gall"
         },
         {
-          "bit": "37",
-          "value": "skeleton"
+          "bit": "0x32",
+          "value": "Lothar"
         },
         {
-          "bit": "38",
-          "value": "daemon"
+          "bit": "0x33",
+          "value": "Gul'dan"
         },
         {
-          "bit": "39",
-          "value": "critter"
+          "bit": "0x34",
+          "value": "Uther Lightbringer"
         },
         {
-          "bit": "3a",
-          "value": "farm"
+          "bit": "0x35",
+          "value": "Zuljin"
         },
         {
-          "bit": "3b",
-          "value": "pig farm"
+          "bit": "0x36",
+          "value": "Unused 0x36"
         },
         {
-          "bit": "3c",
-          "value": "human barracks"
+          "bit": "0x37",
+          "value": "Skeleton"
         },
         {
-          "bit": "3d",
-          "value": "orc barracks"
+          "bit": "0x38",
+          "value": "Daemon"
         },
         {
-          "bit": "3e",
-          "value": "church"
+          "bit": "0x39",
+          "value": "Critter"
         },
         {
-          "bit": "3f",
-          "value": "altar of storms"
+          "bit": "0x3A",
+          "value": "Farm"
         },
         {
-          "bit": "40",
-          "value": "human scout tower"
+          "bit": "0x3B",
+          "value": "Pig Farm"
         },
         {
-          "bit": "41",
-          "value": "orc scout tower"
+          "bit": "0x3C",
+          "value": "Human Barracks"
         },
         {
-          "bit": "42",
-          "value": "stables"
+          "bit": "0x3D",
+          "value": "Orc Barracks"
         },
         {
-          "bit": "43",
-          "value": "ogre mound"
+          "bit": "0x3E",
+          "value": "Church"
         },
         {
-          "bit": "44",
-          "value": "gnomish inventor"
+          "bit": "0x3F",
+          "value": "Altar of Storms"
         },
         {
-          "bit": "45",
-          "value": "goblin alchemist"
+          "bit": "0x40",
+          "value": "Scout Tower (Human)"
         },
         {
-          "bit": "46",
-          "value": "gryphon aviary"
+          "bit": "0x41",
+          "value": "Watch Tower (Orc)"
         },
         {
-          "bit": "47",
-          "value": "dragon roost"
+          "bit": "0x42",
+          "value": "Stables"
         },
         {
-          "bit": "48",
-          "value": "human shipyard"
+          "bit": "0x43",
+          "value": "Ogre Mound"
         },
         {
-          "bit": "49",
-          "value": "orc shipyard"
+          "bit": "0x44",
+          "value": "Gnomish Inventor"
         },
         {
-          "bit": "4a",
-          "value": "town hall"
+          "bit": "0x45",
+          "value": "Goblin Alchemist"
         },
         {
-          "bit": "4b",
-          "value": "great hall"
+          "bit": "0x46",
+          "value": "Gryphon Aviary"
         },
         {
-          "bit": "4c",
-          "value": "elven lumber mill"
+          "bit": "0x47",
+          "value": "Dragon Roost"
         },
         {
-          "bit": "4d",
-          "value": "troll lumber mill"
+          "bit": "0x48",
+          "value": "Human Shipyard"
         },
         {
-          "bit": "4e",
-          "value": "human foundry"
+          "bit": "0x49",
+          "value": "Orc Shipyard"
         },
         {
-          "bit": "4f",
-          "value": "orc foundry"
+          "bit": "0x4A",
+          "value": "Town Hall"
         },
         {
-          "bit": "50",
-          "value": "mage tower"
+          "bit": "0x4B",
+          "value": "Great Hall"
         },
         {
-          "bit": "51",
-          "value": "temple of the damned"
+          "bit": "0x4C",
+          "value": "Elven Lumber Mill"
         },
         {
-          "bit": "52",
-          "value": "human blacksmith"
+          "bit": "0x4D",
+          "value": "Troll Lumber Mill"
         },
         {
-          "bit": "53",
-          "value": "orc blacksmith"
+          "bit": "0x4E",
+          "value": "Human Foundry"
         },
         {
-          "bit": "54",
-          "value": "human refinery"
+          "bit": "0x4F",
+          "value": "Orc Foundry"
         },
         {
-          "bit": "55",
-          "value": "orc refinery"
+          "bit": "0x50",
+          "value": "Mage Tower"
         },
         {
-          "bit": "56",
-          "value": "human oil well"
+          "bit": "0x51",
+          "value": "Temple of the Damned"
         },
         {
-          "bit": "57",
-          "value": "orc oil well"
+          "bit": "0x52",
+          "value": "Human Blacksmith"
         },
         {
-          "bit": "58",
-          "value": "keep"
+          "bit": "0x53",
+          "value": "Orc Blacksmith"
         },
         {
-          "bit": "59",
-          "value": "stronghold"
+          "bit": "0x54",
+          "value": "Human Refinery"
         },
         {
-          "bit": "5a",
-          "value": "castle"
+          "bit": "0x55",
+          "value": "Orc Refinery"
         },
         {
-          "bit": "5b",
-          "value": "fortress"
+          "bit": "0x56",
+          "value": "Human Oil Platform"
         },
         {
-          "bit": "5c",
-          "value": "gold mine"
+          "bit": "0x57",
+          "value": "Orc Oil Platform"
         },
         {
-          "bit": "5d",
-          "value": "oil patch"
+          "bit": "0x58",
+          "value": "Keep"
         },
         {
-          "bit": "5e",
-          "value": "human start"
+          "bit": "0x59",
+          "value": "Stronghold"
         },
         {
-          "bit": "5f",
-          "value": "orc start"
+          "bit": "0x5A",
+          "value": "Castle"
         },
         {
-          "bit": "60",
-          "value": "human guard tower"
+          "bit": "0x5B",
+          "value": "Fortress"
         },
         {
-          "bit": "61",
-          "value": "orc guard tower"
+          "bit": "0x5C",
+          "value": "Gold Mine"
         },
         {
-          "bit": "62",
-          "value": "human cannon tower"
+          "bit": "0x5D",
+          "value": "Oil Patch"
         },
         {
-          "bit": "63",
-          "value": "orc cannon tower"
+          "bit": "0x5E",
+          "value": "Human Start Location"
         },
         {
-          "bit": "64",
-          "value": "circle of power"
+          "bit": "0x5F",
+          "value": "Orc Start Location"
         },
         {
-          "bit": "65",
-          "value": "dark portal"
+          "bit": "0x60",
+          "value": "Human Guard Tower"
         },
         {
-          "bit": "66",
-          "value": "runestone"
+          "bit": "0x61",
+          "value": "Orc Guard Tower"
         },
         {
-          "bit": "67",
-          "value": "human wall"
+          "bit": "0x62",
+          "value": "Human Cannon Tower"
         },
         {
-          "bit": "68",
-          "value": "orc wall"
+          "bit": "0x63",
+          "value": "Orc Cannon Tower"
+        },
+        {
+          "bit": "0x64",
+          "value": "Circle of Power"
+        },
+        {
+          "bit": "0x65",
+          "value": "Dark Portal"
+        },
+        {
+          "bit": "0x66",
+          "value": "Runestone"
+        },
+        {
+          "bit": "0x67",
+          "value": "Wall (Human)"
+        },
+        {
+          "bit": "0x68",
+          "value": "Wall (Orc)"
+        },
+        {
+          "bit": "0x69",
+          "value": "Dead Body"
+        },
+        {
+          "bit": "0x6A",
+          "value": "Destroyed Site (1x1)"
+        },
+        {
+          "bit": "0x6B",
+          "value": "Destroyed Site (2x2)"
+        },
+        {
+          "bit": "0x6C",
+          "value": "Destroyed Site (3x3)"
+        },
+        {
+          "bit": "0x6D",
+          "value": "Destroyed Site (4x4)"
         }
       ]
     }
