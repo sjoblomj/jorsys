@@ -2,7 +2,7 @@
 
 ## Label
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0000}}
+  {{formathexlbl |label=Offset |value=0x0000}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Label displayed for this weapon in unit's status bar. Corresponds to an entry in the rez\stat_txt.tbl file.}}
   {{formatlbl |label=Values |value=Integer value from 0 to the last index of the rez\stat_txt.tbl file.}}
@@ -10,7 +10,7 @@
 
 ## Missile Sprite
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0104}}
+  {{formathexlbl |label=Offset |value=0x0104}}
   {{formatlbl |label=Length |value=520 bytes (4 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Sprite displayed when the weapon is fired. Corresponds to an entry in the flingy.dat file.}}
   {{formatlbl |label=Values |value=Integer value between 0 and the # of entries in flingy.dat}}
@@ -18,7 +18,7 @@
 
 ## Special Attack
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x030C}}
+  {{formathexlbl |label=Offset |value=0x030C}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=Spell/special effect to use with this weapon.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
@@ -72,7 +72,7 @@
 
 ## Attack Type
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x038E}}
+  {{formathexlbl |label=Offset |value=0x038E}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Restrictions for where the weapon can be used.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
@@ -92,7 +92,7 @@
 
 ## Minimum Range
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0492}}
+  {{formathexlbl |label=Offset |value=0x0492}}
   {{formatlbl |label=Length |value=520 bytes (4 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Minimum range required for this weapon.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 255.}}
@@ -100,7 +100,7 @@
 
 ## Maximum Range
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x069A}}
+  {{formathexlbl |label=Offset |value=0x069A}}
   {{formatlbl |label=Length |value=520 bytes (4 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Maximum range required to use this weapon.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 255.}}
@@ -108,7 +108,7 @@
 
 ## Upgrade Group
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x08A2}}
+  {{formathexlbl |label=Offset |value=0x08A2}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=Upgrade group which applies to this weapon.}}
   {{formatlbl |label=Values |value=Integer value between 0 and the last index of the Upgrades.dat file. Common values are:}}
@@ -128,7 +128,7 @@
 
 ## Weapon Type
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0924}}
+  {{formathexlbl |label=Offset |value=0x0924}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=The type of this weapon.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
@@ -142,7 +142,7 @@
 
 ## Weapon Behavior
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x09A6}}
+  {{formathexlbl |label=Offset |value=0x09A6}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=The behavior this weapon uses.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
@@ -161,7 +161,7 @@
 
 ## Missile Type
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0A28}}
+  {{formathexlbl |label=Offset |value=0x0A28}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=The type of missile this Weapon emulates.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
@@ -173,8 +173,7 @@
 
 ## Explosion Type
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0AAA}}
-  {{formatlbl |label=Length |value=}}
+  {{formathexlbl |label=Offset |value=0x0AAA}}
   {{formatlbl |label=Description |value=Type of explosion which occurs after the weapon hits its target.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=None}}
@@ -207,7 +206,7 @@
 
 ## Splash Value 1
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0B2C}}
+  {{formathexlbl |label=Offset |value=0x0B2C}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Smallest of 3 radii which the Explosion Type uses to deal damage.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}
@@ -215,7 +214,7 @@
 
 ## Splash Value 2
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0C30}}
+  {{formathexlbl |label=Offset |value=0x0C30}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Middle of 3 radii which the Explosion Type uses to deal damage.}}
   {{formatlbl |label=Values |value=Integer values between 0 and 65535.}}
@@ -223,7 +222,7 @@
 
 ## Splash Value 3
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0D34}}
+  {{formathexlbl |label=Offset |value=0x0D34}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Largest of 3 radii which the Explosion Type uses to deal damage.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}
@@ -231,7 +230,7 @@
 
 ## Damage Amount
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0E38}}
+  {{formathexlbl |label=Offset |value=0x0E38}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Amount of damage dealt to target. May be adjusted based on the type of unit.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}
@@ -239,7 +238,7 @@
 
 ## Damage Bonus
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0F3C}}
+  {{formathexlbl |label=Offset |value=0x0F3C}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Amount added to damage when the weapon is upgraded.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}
@@ -247,7 +246,7 @@
 
 ## Cooldown Delay
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x1040}}
+  {{formathexlbl |label=Offset |value=0x1040}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=Delay between attacks with this weapon. Lower values make the weapon attack faster, and higher values make the weapon attack slower.}}
   {{formatlbl |label=Values |value=Integer value between 1 and 255.}}
@@ -255,7 +254,7 @@
 
 ## Damage Factor
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x10C2}}
+  {{formathexlbl |label=Offset |value=0x10C2}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=The number of "copies" of this weapon a unit assigned this weapon has. To get the actual damage amount for units with more than 1 in the factor category, multiply this value by the Damage Amount.}}
   {{formatlbl |label=Values |value=Integer value from 0 to 255.}}
@@ -263,7 +262,7 @@
 
 ## Coordinate Group 1
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x1144}}
+  {{formathexlbl |label=Offset |value=0x1144}}
   {{formatlbl |label=Length |value=260 Bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Actually an x-y pair of values. The first byte is actually the X coordinate, and the second is the Y coordinate.}}
   {{formatlbl |label=Values |value=Integer values between 0 and 255 for both the X and Y parts of the coordinate.}}
@@ -271,7 +270,7 @@
 
 ## Coordinate Group 2
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x1248}}
+  {{formathexlbl |label=Offset |value=0x1248}}
   {{formatlbl |label=Length |value=260 Bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Actually an x-y pair of values. The first byte is actually the X coordinate, and the second is the Y coordinate.}}
   {{formatlbl |label=Values |value=Integer values between 0 and 255 for both the X and Y parts of the coordinate.}}
@@ -279,7 +278,7 @@
 
 ## Error Message
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x134C}}
+  {{formathexlbl |label=Offset |value=0x134C}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Index in the rez\stat_txt.tbl file which this weapon displays if it cannot be used for some reason.}}
   {{formatlbl |label=Values |value=Integer value between 0 and the last index in rez\stat_txt.tbl}}
@@ -287,7 +286,7 @@
 
 ## Icon
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x1450}}
+  {{formathexlbl |label=Offset |value=0x1450}}
   {{formatlbl |label=Length |value=260 bytes (2 bytes / Weapon)}}
   {{formatlbl |label=Description |value=Icon displayed for this weapon in the unit's status bar.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}
