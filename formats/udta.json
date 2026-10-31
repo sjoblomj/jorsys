@@ -1,6 +1,6 @@
 {
   "title": "UDTA",
-  "description": "UDTA holds the data for the units in WarCraft II: their graphics, hit points, costs, sizes, ranges, armor, damage, flags and more, with one entry per unit (see Appendix: Unit Types). The layout is the same in all versions. UDTA data is found in three places:\n\n1. The default copies: MAINDAT.WAR has two. Entry 472 holds the full 5948 bytes in the layout below, with nothing in front of them, and is the one the game uses whenever a map does not give its own unit data. Entry 0 holds 5694 bytes: the same layout without Graphics: Swamp, and with different values for some units. The game loads entry 0 when it starts and then loads entry 472 over it. Only entry 0's four Graphics lists (General, Forest, Winter and Wasteland) are kept, in a spare copy that is never used for drawing; it is only written into saved games, where loading skips it. Both entries are the same in versions 1.3, 1.33 and 1.5.\n2. PUD files (maps): a PUD can have a UDTA section, but it does not need one. In a PUD the section starts with 2 bytes in front of the data (not counted in the offsets here). The data can be 5694 bytes (without Graphics: Swamp), so the section is 5696 bytes, or the full 5948 bytes, so the section is 5950 bytes; the game accepts both. If both bytes are 0, the game reads the data that follows and uses it instead of the default copy. Otherwise the game skips the data, even though it is there, and uses the default copy (entry 472). A PUD without a UDTA section also gets the default copy. The Graphics lists (General, Forest, Winter, Wasteland and Swamp) in a PUD are always skipped, even when the rest of the data is read, so the game always uses the Graphics lists of entry 472.\n3. Saved games (.SAV files): when the game is saved, the UDTA data in use at that moment is written to the save file in the 5694-byte layout, except that the four Graphics lists written are the ones kept from entry 0. When the save is loaded, the data replaces the unit data from the map, but the Graphics lists are skipped.",
+  "description": "UDTA holds the data for the units in WarCraft II: their graphics, hit points, costs, sizes, ranges, armor, damage, flags and more, with one entry per unit (see Appendix: Unit Types). The layout is the same in all versions. UDTA data is found in three places:\n\n1. The default copies: there are two. In the DOS versions (1.3, 1.33 and 1.5) they are entries 472 and 0 of MAINDAT.WAR. In the Battle.net Edition (2.00 and 2.02) they are the files rez\\unitdata.dat and rez\\unitdato.dat in War2Dat.mpq, with the same contents. Entry 472 (rez\\unitdata.dat) holds the full 5948 bytes in the layout below, with nothing in front of them, and is the one the game uses whenever a map does not give its own unit data. Entry 0 (rez\\unitdato.dat) holds 5694 bytes: the same layout without Graphics: Swamp, and with different values for some units. The game loads entry 0 when it starts and then loads entry 472 over it. Only entry 0's four Graphics lists (General, Forest, Winter and Wasteland) are kept, in a spare copy that is never used for drawing; it is only written into saved games, where loading skips it. Both copies are the same in all five versions.\n2. PUD files (maps): a PUD can have a UDTA section, but it does not need one. In a PUD the section starts with 2 bytes in front of the data (not counted in the offsets here). The data can be 5694 bytes (without Graphics: Swamp), so the section is 5696 bytes, or the full 5948 bytes, so the section is 5950 bytes; the game accepts both. If both bytes are 0, the game reads the data that follows and uses it instead of the default copy. Otherwise the game skips the data, even though it is there, and uses the default copy (entry 472). A PUD without a UDTA section also gets the default copy. In the Battle.net Edition, the game skips the UDTA section of the map in a multiplayer game unless the game type is Use Map Settings; with the other game types that come with it (Melee, Free For All, One on One, Top vs. Bottom, Ladder and Iron Man Ladder) the default copy is used. The Graphics lists (General, Forest, Winter, Wasteland and Swamp) in a PUD are always skipped, even when the rest of the data is read, so the game always uses the Graphics lists of entry 472.\n3. Saved games (.SAV files): when the game is saved, the UDTA data in use at that moment is written to the save file in the 5694-byte layout, except that the four Graphics lists written are the ones kept from entry 0. When the save is loaded, the data replaces the unit data from the map, but the Graphics lists are skipped.",
   "spec": [
     {
       "name": "Graphics: Construction Site",
@@ -15,7 +15,7 @@
       "offset": "0x00DC",
       "length": "254 bytes (2 bytes / 127 entries)",
       "description": "The graphic this unit uses on all tilesets. When the tileset's own Graphics list has an entry for the unit (not 0xFFFF), that one is used instead. Most units only set this one; buildings and the critter use the tileset-specific lists. Entries 0 to 109 are the units. Entries 110 to 126 are extra graphics: 110 and 111 are the peasant and peon carrying lumber, 112 and 113 the peasant and peon carrying gold, 114 and 115 the human and orc oil tanker carrying oil, and 116 to 126 (in the tileset lists) the construction sites (see Graphics: Construction Site).",
-      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
       "bits": [
         {
           "bit": "0x0F",
@@ -28,7 +28,7 @@
       "offset": "0x01DA",
       "length": "254 bytes (2 bytes / 127 entries)",
       "description": "The graphic this unit uses on Forest maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
-      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
       "bits": [
         {
           "bit": "0x0F",
@@ -41,7 +41,7 @@
       "offset": "0x02D8",
       "length": "254 bytes (2 bytes / 127 entries)",
       "description": "The graphic this unit uses on Winter maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
-      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
       "bits": [
         {
           "bit": "0x0F",
@@ -54,7 +54,7 @@
       "offset": "0x03D6",
       "length": "254 bytes (2 bytes / 127 entries)",
       "description": "The graphic this unit uses on Wasteland maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
-      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
       "bits": [
         {
           "bit": "0x0F",
@@ -99,7 +99,7 @@
       "name": "Cost: Build Time",
       "offset": "0x07D6",
       "length": "110 bytes (1 byte / First 110 Units)",
-      "description": "Time required to build or train this Unit. A higher value takes longer.",
+      "description": "Time required to build or train this Unit. A higher value takes longer. In the Battle.net Edition, in a multiplayer game in Enhanced mode, a unit with Gold Storage (0x0C in Unit Flags) takes no longer to build than its race's Farm (or Pig Farm) until its player has had a building that provides food.",
       "values": "Integer value between 0 and 255.",
       "bits": []
     },
@@ -523,7 +523,7 @@
         },
         {
           "bit": "0x07",
-          "value": "Submarine Spotter; Set on the flying units, the submarines, and the scout, guard and cannon towers in the default data. Submarines (0x06) of other players near the unit become visible to its player."
+          "value": "Submarine Spotter; Set on the flying units, the submarines, and the scout, guard and cannon towers in the default data. Submarines (0x06) of other players near the unit become visible to its player. In the Battle.net Edition's Enhanced mode, a building with this bit only does this once it is finished."
         },
         {
           "bit": "0x08",
@@ -559,7 +559,7 @@
         },
         {
           "bit": "0x10",
-          "value": "Shore Building; Set on the shipyards, foundries and refineries in the default data. It must be built on the coast. Except for the foundries, it cannot be built within 4 squares of an oil patch or an oil platform (\"You cannot build too near a patch of oil\"). Submarines can attack it."
+          "value": "Shore Building; Set on the shipyards, foundries and refineries in the default data. It must be built on the coast. Except for the foundries, it cannot be built within 4 squares of an oil patch or an oil platform (\"You cannot build too near a patch of oil\"). In the Battle.net Edition's Enhanced mode, foundries cannot be built within 1 square of one. Submarines can attack it."
         },
         {
           "bit": "0x11",
@@ -595,7 +595,7 @@
         },
         {
           "bit": "0x19",
-          "value": "Sapper; Set on the Dwarven Demolition Squad and Goblin Sappers in the default data; it does not make them explode (that is the Demolish order). The flag makes it a non-combatant, like Mage (0x1A), and gives the unit the same death sound as units with Exploding Death (0x02) and air units."
+          "value": "Sapper; Set on the Dwarven Demolition Squad and Goblin Sappers in the default data; it does not make them explode (that is the Demolish order). The flag makes it a non-combatant, like Mage (0x1A), and gives the unit the same death sound as units with Exploding Death (0x02) and air units. In the Battle.net Edition's Enhanced mode, units go back to a Patrol or Attack order after fighting; a unit with this bit that has such an order to go back to does not move away from enemies but orders itself to Demolish an enemy it finds."
         },
         {
           "bit": "0x1A",
@@ -628,7 +628,7 @@
       "offset": "0x163E",
       "length": "254 bytes (2 bytes / 127 entries)",
       "description": "The graphic this unit uses on Swamp maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset. Only present in the Beyond the Dark Portal format: with this field the UDTA data is 5948 bytes long, without it 5694 bytes (see the description of this section).",
-      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference into the .war archives (the entry number plus 1000 for MAINDAT.WAR, so 1045 is entry 45 of MAINDAT.WAR).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
       "bits": [
         {
           "bit": "0x0F",
@@ -640,7 +640,7 @@
   "appendices": [
     {
       "name": "Appendix: Unit Types",
-      "description": "The unit list. The per-unit fields have one entry per unit in this order: the fields with 110 entries cover 0x00 to 0x6D, and the Graphics lists have 127 entries (see Graphics: General for the extra entries after the units). The numbers are the same as in the Train and Build command buttons of WAR2.EXE. The entries marked Unused have no name in the game.",
+      "description": "The unit list. The per-unit fields have one entry per unit in this order: the fields with 110 entries cover 0x00 to 0x6D, and the Graphics lists have 127 entries (see Graphics: General for the extra entries after the units). The numbers are the same as in the Train and Build command buttons of the game's executable (WAR2.EXE in the DOS versions, Warcraft II BNE.exe in the Battle.net Edition). The entries marked Unused have no name in the game.",
       "values": null,
       "bits": [
         {
