@@ -12,4 +12,5 @@
 ## WarCraft II
 * [MPQ](formats/mpq.html)
 * [UDTA](formats/udta.html)
+* [UGRD](formats/ugrd.html)
 * [TBL](formats/tbl.html)
