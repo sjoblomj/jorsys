@@ -118,5 +118,188 @@
       ]
     }
   ],
-  "appendices": []
+  "appendices": [
+    {
+      "name": "Appendix: Techdata list",
+      "description": "List of technologies.",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Stim Packs"
+        },
+        {
+          "bit": "0x01",
+          "value": "Lockdown"
+        },
+        {
+          "bit": "0x02",
+          "value": "EMP Shockwave"
+        },
+        {
+          "bit": "0x03",
+          "value": "Spider Mines"
+        },
+        {
+          "bit": "0x04",
+          "value": "Scanner Sweep"
+        },
+        {
+          "bit": "0x05",
+          "value": "Tank Siege Mode"
+        },
+        {
+          "bit": "0x06",
+          "value": "Defensive Matrix"
+        },
+        {
+          "bit": "0x07",
+          "value": "Irradiate"
+        },
+        {
+          "bit": "0x08",
+          "value": "Yamato Gun"
+        },
+        {
+          "bit": "0x09",
+          "value": "Cloaking Field"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Personnel Cloaking"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Burrowing"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Infestation"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Spawn Broodlings"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Dark Swarm"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Plague"
+        },
+        {
+          "bit": "0x10",
+          "value": "Consume"
+        },
+        {
+          "bit": "0x11",
+          "value": "Ensnare"
+        },
+        {
+          "bit": "0x12",
+          "value": "Parasite"
+        },
+        {
+          "bit": "0x13",
+          "value": "Psionic Storm"
+        },
+        {
+          "bit": "0x14",
+          "value": "Hallucination"
+        },
+        {
+          "bit": "0x15",
+          "value": "Recall"
+        },
+        {
+          "bit": "0x16",
+          "value": "Stasis Field"
+        },
+        {
+          "bit": "0x17",
+          "value": "Archon Warp"
+        },
+        {
+          "bit": "0x18",
+          "value": "Restoration"
+        },
+        {
+          "bit": "0x19",
+          "value": "Disruption Web"
+        },
+        {
+          "bit": "0x1A",
+          "value": "Unknown Tech26"
+        },
+        {
+          "bit": "0x1B",
+          "value": "Mind Control"
+        },
+        {
+          "bit": "0x1C",
+          "value": "Dark Archon Meld"
+        },
+        {
+          "bit": "0x1D",
+          "value": "Feedback"
+        },
+        {
+          "bit": "0x1E",
+          "value": "Optical Flare"
+        },
+        {
+          "bit": "0x1F",
+          "value": "Maelstrom"
+        },
+        {
+          "bit": "0x20",
+          "value": "Lurker Aspect"
+        },
+        {
+          "bit": "0x21",
+          "value": "Unknown Tech33"
+        },
+        {
+          "bit": "0x22",
+          "value": "Healing"
+        },
+        {
+          "bit": "0x23",
+          "value": "Unknown Tech35"
+        },
+        {
+          "bit": "0x24",
+          "value": "Unknown Tech36"
+        },
+        {
+          "bit": "0x25",
+          "value": "Unknown Tech37"
+        },
+        {
+          "bit": "0x26",
+          "value": "Unknown Tech38"
+        },
+        {
+          "bit": "0x27",
+          "value": "Unknown Tech39"
+        },
+        {
+          "bit": "0x28",
+          "value": "Unknown Tech40"
+        },
+        {
+          "bit": "0x29",
+          "value": "Unknown Tech41"
+        },
+        {
+          "bit": "0x2A",
+          "value": "Unknown Tech42"
+        },
+        {
+          "bit": "0x2B",
+          "value": "Unknown Tech43"
+        }
+      ]
+    }
+  ]
 }

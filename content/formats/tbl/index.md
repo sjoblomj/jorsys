@@ -8,7 +8,7 @@ For a converter between TBL files and TXT files, see [IronTBL](https://github.co
 
 ## String count
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0000}}
+  {{formathexlbl |label=Offset |value=0x0000}}
   {{formatlbl |label=Length |value=2 bytes}}
   {{formatlbl |label=Description |value=Number of strings in file.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}
@@ -16,7 +16,7 @@ For a converter between TBL files and TXT files, see [IronTBL](https://github.co
 
 ## Offsets
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0002}}
+  {{formathexlbl |label=Offset |value=0x0002}}
   {{formatlbl |label=Length |value=2 bytes * string count}}
   {{formatlbl |label=Description |value=Offset in the file to the corresponding string.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}

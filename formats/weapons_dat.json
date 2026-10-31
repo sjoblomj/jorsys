@@ -622,5 +622,532 @@
       "bits": []
     }
   ],
-  "appendices": []
+  "appendices": [
+    {
+      "name": "Appendix: Weapons list",
+      "description": "List of weapons.",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Gauss Rifle (Normal)"
+        },
+        {
+          "bit": "0x01",
+          "value": "Gauss Rifle (Jim Raynor-Marine)"
+        },
+        {
+          "bit": "0x02",
+          "value": "C-10 Concussion Rifle (Normal)"
+        },
+        {
+          "bit": "0x03",
+          "value": "C-10 Concussion Rifle (Sarah Kerrigan)"
+        },
+        {
+          "bit": "0x04",
+          "value": "Fragmentation Grenade (Normal)"
+        },
+        {
+          "bit": "0x05",
+          "value": "Fragmentation Grenade (Jim Raynor-Vulture)"
+        },
+        {
+          "bit": "0x06",
+          "value": "Spider Mines"
+        },
+        {
+          "bit": "0x07",
+          "value": "Twin Autocannons (Normal)"
+        },
+        {
+          "bit": "0x08",
+          "value": "Hellfire Missile Pack (Normal)"
+        },
+        {
+          "bit": "0x09",
+          "value": "Twin Autocannons (Alan Schezar)"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Hellfire Missile Pack (Alan Schezar)"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Arclite Cannon (Normal)"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Arclite Cannon (Edmund Duke)"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Fusion Cutter"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Fusion Cutter (Harvest)"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Gemini Missiles (Normal)"
+        },
+        {
+          "bit": "0x10",
+          "value": "Burst Lasers (Normal)"
+        },
+        {
+          "bit": "0x11",
+          "value": "Gemini Missiles (Tom Kazansky)"
+        },
+        {
+          "bit": "0x12",
+          "value": "Burst Lasers (Tom Kazansky)"
+        },
+        {
+          "bit": "0x13",
+          "value": "ATS Laser Battery (Normal)"
+        },
+        {
+          "bit": "0x14",
+          "value": "ATA Laser Battery (Normal)"
+        },
+        {
+          "bit": "0x15",
+          "value": "ATS Laser Battery (Norad II+Mengsk+DuGalle)"
+        },
+        {
+          "bit": "0x16",
+          "value": "ATA Laser Battery (Norad II+Mengsk+DuGalle)"
+        },
+        {
+          "bit": "0x17",
+          "value": "ATS Laser Battery (Hyperion)"
+        },
+        {
+          "bit": "0x18",
+          "value": "ATA Laser Battery (Hyperion)"
+        },
+        {
+          "bit": "0x19",
+          "value": "Flame Thrower (Normal)"
+        },
+        {
+          "bit": "0x1A",
+          "value": "Flame Thrower (Gui Montag)"
+        },
+        {
+          "bit": "0x1B",
+          "value": "Arclite Shock Cannon (Normal)"
+        },
+        {
+          "bit": "0x1C",
+          "value": "Arclite Shock Cannon (Edmund Duke)"
+        },
+        {
+          "bit": "0x1D",
+          "value": "Longbolt Missiles"
+        },
+        {
+          "bit": "0x1E",
+          "value": "Yamato Gun"
+        },
+        {
+          "bit": "0x1F",
+          "value": "Nuclear Missile"
+        },
+        {
+          "bit": "0x20",
+          "value": "Lockdown"
+        },
+        {
+          "bit": "0x21",
+          "value": "EMP Shockwave"
+        },
+        {
+          "bit": "0x22",
+          "value": "Irradiate"
+        },
+        {
+          "bit": "0x23",
+          "value": "Claws (Normal)"
+        },
+        {
+          "bit": "0x24",
+          "value": "Claws (Devouring One)"
+        },
+        {
+          "bit": "0x25",
+          "value": "Claws (Infested Kerrigan)"
+        },
+        {
+          "bit": "0x26",
+          "value": "Needle Spines (Normal)"
+        },
+        {
+          "bit": "0x27",
+          "value": "Needle Spines (Hunter Killer)"
+        },
+        {
+          "bit": "0x28",
+          "value": "Kaiser Blades (Normal)"
+        },
+        {
+          "bit": "0x29",
+          "value": "Kaiser Blades (Torrasque)"
+        },
+        {
+          "bit": "0x2A",
+          "value": "Toxic Spores (Broodling)"
+        },
+        {
+          "bit": "0x2B",
+          "value": "Spines"
+        },
+        {
+          "bit": "0x2C",
+          "value": "Spines (Harvest)"
+        },
+        {
+          "bit": "0x2D",
+          "value": "Acid Spray (Unused)"
+        },
+        {
+          "bit": "0x2E",
+          "value": "Acid Spore (Normal)"
+        },
+        {
+          "bit": "0x2F",
+          "value": "Acid Spore (Kukulza-Guardian)"
+        },
+        {
+          "bit": "0x30",
+          "value": "Glave Wurm (Normal)"
+        },
+        {
+          "bit": "0x31",
+          "value": "Glave Wurm (Kukulza-Mutalisk)"
+        },
+        {
+          "bit": "0x32",
+          "value": "Venom (Unused-Defiler)"
+        },
+        {
+          "bit": "0x33",
+          "value": "Venom (Unused-Defiler Hero)"
+        },
+        {
+          "bit": "0x34",
+          "value": "Seeker Spores"
+        },
+        {
+          "bit": "0x35",
+          "value": "Subterranean Tentacle"
+        },
+        {
+          "bit": "0x36",
+          "value": "Suicide (Infested Terran)"
+        },
+        {
+          "bit": "0x37",
+          "value": "Suicide (Scourge)"
+        },
+        {
+          "bit": "0x38",
+          "value": "Parasite"
+        },
+        {
+          "bit": "0x39",
+          "value": "Spawn Broodlings"
+        },
+        {
+          "bit": "0x3A",
+          "value": "Ensnare"
+        },
+        {
+          "bit": "0x3B",
+          "value": "Dark Swarm"
+        },
+        {
+          "bit": "0x3C",
+          "value": "Plague"
+        },
+        {
+          "bit": "0x3D",
+          "value": "Consume"
+        },
+        {
+          "bit": "0x3E",
+          "value": "Particle Beam"
+        },
+        {
+          "bit": "0x3F",
+          "value": "Particle Beam (Harvest)"
+        },
+        {
+          "bit": "0x40",
+          "value": "Psi Blades (Normal)"
+        },
+        {
+          "bit": "0x41",
+          "value": "Psi Blades (Fenix-Zealot)"
+        },
+        {
+          "bit": "0x42",
+          "value": "Phase Disruptor (Normal)"
+        },
+        {
+          "bit": "0x43",
+          "value": "Phase Disruptor (Fenix-Dragoon)"
+        },
+        {
+          "bit": "0x44",
+          "value": "Psi Assault (Normal-Unused)"
+        },
+        {
+          "bit": "0x45",
+          "value": "Psi Assault (Tassadar+Aldaris)"
+        },
+        {
+          "bit": "0x46",
+          "value": "Psionic Shockwave (Normal)"
+        },
+        {
+          "bit": "0x47",
+          "value": "Psionic Shockwave (Tassadar/Zeratul Archon)"
+        },
+        {
+          "bit": "0x48",
+          "value": "Unknown72"
+        },
+        {
+          "bit": "0x49",
+          "value": "Dual Photon Blasters (Normal)"
+        },
+        {
+          "bit": "0x4A",
+          "value": "Anti-matter Missiles (Normal)"
+        },
+        {
+          "bit": "0x4B",
+          "value": "Dual Photon Blasters (Mojo)"
+        },
+        {
+          "bit": "0x4C",
+          "value": "Anti-matter Missiles (Mojo)"
+        },
+        {
+          "bit": "0x4D",
+          "value": "Phase Disruptor Cannon (Normal)"
+        },
+        {
+          "bit": "0x4E",
+          "value": "Phase Disruptor Cannon (Danimoth)"
+        },
+        {
+          "bit": "0x4F",
+          "value": "Pulse Cannon"
+        },
+        {
+          "bit": "0x50",
+          "value": "STS Photon Cannon"
+        },
+        {
+          "bit": "0x51",
+          "value": "STA Photon Cannon"
+        },
+        {
+          "bit": "0x52",
+          "value": "Scarab"
+        },
+        {
+          "bit": "0x53",
+          "value": "Stasis Field"
+        },
+        {
+          "bit": "0x54",
+          "value": "Psi Storm"
+        },
+        {
+          "bit": "0x55",
+          "value": "Warp Blades (Zeratul)"
+        },
+        {
+          "bit": "0x56",
+          "value": "Warp Blades (Dark Templar Hero)"
+        },
+        {
+          "bit": "0x57",
+          "value": "Missiles (Unused)"
+        },
+        {
+          "bit": "0x58",
+          "value": "Laser Battery1 (Unused)"
+        },
+        {
+          "bit": "0x59",
+          "value": "Tormentor Missiles (Unused)"
+        },
+        {
+          "bit": "0x5A",
+          "value": "Bombs (Unused)"
+        },
+        {
+          "bit": "0x5B",
+          "value": "Raider Gun (Unused)"
+        },
+        {
+          "bit": "0x5C",
+          "value": "Laser Battery2 (Unused)"
+        },
+        {
+          "bit": "0x5D",
+          "value": "Laser Battery3 (Unused)"
+        },
+        {
+          "bit": "0x5E",
+          "value": "Dual Photon Blasters (Unused)"
+        },
+        {
+          "bit": "0x5F",
+          "value": "Flechette Grenade (Unused)"
+        },
+        {
+          "bit": "0x60",
+          "value": "Twin Autocannons (Floor Trap)"
+        },
+        {
+          "bit": "0x61",
+          "value": "Hellfire Missile Pack (Wall Trap)"
+        },
+        {
+          "bit": "0x62",
+          "value": "Flame Thrower (Wall Trap)"
+        },
+        {
+          "bit": "0x63",
+          "value": "Hellfire Missile Pack (Floor Trap)"
+        },
+        {
+          "bit": "0x64",
+          "value": "Neutron Flare"
+        },
+        {
+          "bit": "0x65",
+          "value": "Disruption Web"
+        },
+        {
+          "bit": "0x66",
+          "value": "Restoration"
+        },
+        {
+          "bit": "0x67",
+          "value": "Halo Rockets"
+        },
+        {
+          "bit": "0x68",
+          "value": "Corrosive Acid"
+        },
+        {
+          "bit": "0x69",
+          "value": "Mind Control"
+        },
+        {
+          "bit": "0x6A",
+          "value": "Feedback"
+        },
+        {
+          "bit": "0x6B",
+          "value": "Optical Flare"
+        },
+        {
+          "bit": "0x6C",
+          "value": "Maelstrom"
+        },
+        {
+          "bit": "0x6D",
+          "value": "Subterranean Spines"
+        },
+        {
+          "bit": "0x6E",
+          "value": "Gauss Rifle0 (Unused)"
+        },
+        {
+          "bit": "0x6F",
+          "value": "Warp Blades (Normal)"
+        },
+        {
+          "bit": "0x70",
+          "value": "C-10 Concussion Rifle (Samir Duran)"
+        },
+        {
+          "bit": "0x71",
+          "value": "C-10 Concussion Rifle (Infested Duran)"
+        },
+        {
+          "bit": "0x72",
+          "value": "Dual Photon Blasters (Artanis)"
+        },
+        {
+          "bit": "0x73",
+          "value": "Anti-matter Missiles (Artanis)"
+        },
+        {
+          "bit": "0x74",
+          "value": "C-10 Concussion Rifle (Alexei Stukov)"
+        },
+        {
+          "bit": "0x75",
+          "value": "Unknown117"
+        },
+        {
+          "bit": "0x76",
+          "value": "Unknown118"
+        },
+        {
+          "bit": "0x77",
+          "value": "Unknown119"
+        },
+        {
+          "bit": "0x78",
+          "value": "Unknown120"
+        },
+        {
+          "bit": "0x79",
+          "value": "Unknown121"
+        },
+        {
+          "bit": "0x7A",
+          "value": "Unknown122"
+        },
+        {
+          "bit": "0x7B",
+          "value": "Unknown123"
+        },
+        {
+          "bit": "0x7C",
+          "value": "Unknown124"
+        },
+        {
+          "bit": "0x7D",
+          "value": "Unknown125"
+        },
+        {
+          "bit": "0x7E",
+          "value": "Unknown126"
+        },
+        {
+          "bit": "0x7F",
+          "value": "Unknown127"
+        },
+        {
+          "bit": "0x80",
+          "value": "Unknown128"
+        },
+        {
+          "bit": "0x81",
+          "value": "Unknown129"
+        }
+      ]
+    }
+  ]
 }

@@ -519,3 +519,240 @@
   {{end-bittable}} }}
 {{end-formattable}}
 
+---
+
+## Appendix: Units list
+{{begin-formattable}}
+  {{formatlbl |label=Description |value=List of units. Most fields have one entry per unit, 228 in all (0x00 to 0xE3). Subunit 3 only has entries for the first 96 units (0x00 to 0x5F).}}
+  {{formatlbl |label=Bits |value={{begin-bittable}}
+    {{formatbitlbl |label=0x00 |value=Terran Marine}}
+    {{formatbitlbl |label=0x01 |value=Terran Ghost}}
+    {{formatbitlbl |label=0x02 |value=Terran Vulture}}
+    {{formatbitlbl |label=0x03 |value=Terran Goliath}}
+    {{formatbitlbl |label=0x04 |value=Goliath Turret}}
+    {{formatbitlbl |label=0x05 |value=Terran Siege Tank (Tank Mode)}}
+    {{formatbitlbl |label=0x06 |value=Siege Tank Turret (Tank Mode)}}
+    {{formatbitlbl |label=0x07 |value=Terran SCV}}
+    {{formatbitlbl |label=0x08 |value=Terran Wraith}}
+    {{formatbitlbl |label=0x09 |value=Terran Science Vessel}}
+    {{formatbitlbl |label=0x0A |value=Gui Montag (Firebat)}}
+    {{formatbitlbl |label=0x0B |value=Terran Dropship}}
+    {{formatbitlbl |label=0x0C |value=Terran Battlecruiser}}
+    {{formatbitlbl |label=0x0D |value=Spider Mine}}
+    {{formatbitlbl |label=0x0E |value=Nuclear Missile}}
+    {{formatbitlbl |label=0x0F |value=Terran Civilian}}
+    {{formatbitlbl |label=0x10 |value=Sarah Kerrigan (Ghost)}}
+    {{formatbitlbl |label=0x11 |value=Alan Schezar (Goliath)}}
+    {{formatbitlbl |label=0x12 |value=Alan Schezar Turret}}
+    {{formatbitlbl |label=0x13 |value=Jim Raynor (Vulture)}}
+    {{formatbitlbl |label=0x14 |value=Jim Raynor (Marine)}}
+    {{formatbitlbl |label=0x15 |value=Tom Kazansky (Wraith)}}
+    {{formatbitlbl |label=0x16 |value=Magellan (Science Vessel)}}
+    {{formatbitlbl |label=0x17 |value=Edmund Duke (Tank Mode)}}
+    {{formatbitlbl |label=0x18 |value=Edmund Duke Turret (Tank Mode)}}
+    {{formatbitlbl |label=0x19 |value=Edmund Duke (Siege Mode)}}
+    {{formatbitlbl |label=0x1A |value=Edmund Duke Turret (Siege Mode)}}
+    {{formatbitlbl |label=0x1B |value=Arcturus Mengsk (Battlecruiser)}}
+    {{formatbitlbl |label=0x1C |value=Hyperion (Battlecruiser)}}
+    {{formatbitlbl |label=0x1D |value=Norad II (Battlecruiser)}}
+    {{formatbitlbl |label=0x1E |value=Terran Siege Tank (Siege Mode)}}
+    {{formatbitlbl |label=0x1F |value=Siege Tank Turret (Siege Mode)}}
+    {{formatbitlbl |label=0x20 |value=Terran Firebat}}
+    {{formatbitlbl |label=0x21 |value=Scanner Sweep}}
+    {{formatbitlbl |label=0x22 |value=Terran Medic}}
+    {{formatbitlbl |label=0x23 |value=Zerg Larva}}
+    {{formatbitlbl |label=0x24 |value=Zerg Egg}}
+    {{formatbitlbl |label=0x25 |value=Zerg Zergling}}
+    {{formatbitlbl |label=0x26 |value=Zerg Hydralisk}}
+    {{formatbitlbl |label=0x27 |value=Zerg Ultralisk}}
+    {{formatbitlbl |label=0x28 |value=Zerg Broodling}}
+    {{formatbitlbl |label=0x29 |value=Zerg Drone}}
+    {{formatbitlbl |label=0x2A |value=Zerg Overlord}}
+    {{formatbitlbl |label=0x2B |value=Zerg Mutalisk}}
+    {{formatbitlbl |label=0x2C |value=Zerg Guardian}}
+    {{formatbitlbl |label=0x2D |value=Zerg Queen}}
+    {{formatbitlbl |label=0x2E |value=Zerg Defiler}}
+    {{formatbitlbl |label=0x2F |value=Zerg Scourge}}
+    {{formatbitlbl |label=0x30 |value=Torrasque (Ultralisk)}}
+    {{formatbitlbl |label=0x31 |value=Matriarch (Queen)}}
+    {{formatbitlbl |label=0x32 |value=Infested Terran}}
+    {{formatbitlbl |label=0x33 |value=Infested Kerrigan (Infested Terran)}}
+    {{formatbitlbl |label=0x34 |value=Unclean One (Defiler)}}
+    {{formatbitlbl |label=0x35 |value=Hunter Killer (Hydralisk)}}
+    {{formatbitlbl |label=0x36 |value=Devouring One (Zergling)}}
+    {{formatbitlbl |label=0x37 |value=Kukulza (Mutalisk)}}
+    {{formatbitlbl |label=0x38 |value=Kukulza (Guardian)}}
+    {{formatbitlbl |label=0x39 |value=Yggdrasill (Overlord)}}
+    {{formatbitlbl |label=0x3A |value=Terran Valkyrie}}
+    {{formatbitlbl |label=0x3B |value=Mutalisk Cocoon}}
+    {{formatbitlbl |label=0x3C |value=Protoss Corsair}}
+    {{formatbitlbl |label=0x3D |value=Protoss Dark Templar (Unit)}}
+    {{formatbitlbl |label=0x3E |value=Zerg Devourer}}
+    {{formatbitlbl |label=0x3F |value=Protoss Dark Archon}}
+    {{formatbitlbl |label=0x40 |value=Protoss Probe}}
+    {{formatbitlbl |label=0x41 |value=Protoss Zealot}}
+    {{formatbitlbl |label=0x42 |value=Protoss Dragoon}}
+    {{formatbitlbl |label=0x43 |value=Protoss High Templar}}
+    {{formatbitlbl |label=0x44 |value=Protoss Archon}}
+    {{formatbitlbl |label=0x45 |value=Protoss Shuttle}}
+    {{formatbitlbl |label=0x46 |value=Protoss Scout}}
+    {{formatbitlbl |label=0x47 |value=Protoss Arbiter}}
+    {{formatbitlbl |label=0x48 |value=Protoss Carrier}}
+    {{formatbitlbl |label=0x49 |value=Protoss Interceptor}}
+    {{formatbitlbl |label=0x4A |value=Protoss Dark Templar (Hero)}}
+    {{formatbitlbl |label=0x4B |value=Zeratul (Dark Templar)}}
+    {{formatbitlbl |label=0x4C |value=Tassadar/Zeratul (Archon)}}
+    {{formatbitlbl |label=0x4D |value=Fenix (Zealot)}}
+    {{formatbitlbl |label=0x4E |value=Fenix (Dragoon)}}
+    {{formatbitlbl |label=0x4F |value=Tassadar (Templar)}}
+    {{formatbitlbl |label=0x50 |value=Mojo (Scout)}}
+    {{formatbitlbl |label=0x51 |value=Warbringer (Reaver)}}
+    {{formatbitlbl |label=0x52 |value=Gantrithor (Carrier)}}
+    {{formatbitlbl |label=0x53 |value=Protoss Reaver}}
+    {{formatbitlbl |label=0x54 |value=Protoss Observer}}
+    {{formatbitlbl |label=0x55 |value=Protoss Scarab}}
+    {{formatbitlbl |label=0x56 |value=Danimoth (Arbiter)}}
+    {{formatbitlbl |label=0x57 |value=Aldaris (Templar)}}
+    {{formatbitlbl |label=0x58 |value=Artanis (Scout)}}
+    {{formatbitlbl |label=0x59 |value=Rhynadon (Badlands Critter)}}
+    {{formatbitlbl |label=0x5A |value=Bengalaas (Jungle Critter)}}
+    {{formatbitlbl |label=0x5B |value=Cargo Ship (Unused)}}
+    {{formatbitlbl |label=0x5C |value=Mercenary Gunship (Unused)}}
+    {{formatbitlbl |label=0x5D |value=Scantid (Desert Critter)}}
+    {{formatbitlbl |label=0x5E |value=Kakaru (Twilight Critter)}}
+    {{formatbitlbl |label=0x5F |value=Ragnasaur (Ashworld Critter)}}
+    {{formatbitlbl |label=0x60 |value=Ursadon (Ice World Critter)}}
+    {{formatbitlbl |label=0x61 |value=Lurker Egg}}
+    {{formatbitlbl |label=0x62 |value=Raszagal (Corsair)}}
+    {{formatbitlbl |label=0x63 |value=Samir Duran (Ghost)}}
+    {{formatbitlbl |label=0x64 |value=Alexei Stukov (Ghost)}}
+    {{formatbitlbl |label=0x65 |value=Map Revealer}}
+    {{formatbitlbl |label=0x66 |value=Gerard DuGalle (BattleCruiser)}}
+    {{formatbitlbl |label=0x67 |value=Zerg Lurker}}
+    {{formatbitlbl |label=0x68 |value=Infested Duran (Infested Terran)}}
+    {{formatbitlbl |label=0x69 |value=Disruption Web}}
+    {{formatbitlbl |label=0x6A |value=Terran Command Center}}
+    {{formatbitlbl |label=0x6B |value=Terran Comsat Station}}
+    {{formatbitlbl |label=0x6C |value=Terran Nuclear Silo}}
+    {{formatbitlbl |label=0x6D |value=Terran Supply Depot}}
+    {{formatbitlbl |label=0x6E |value=Terran Refinery}}
+    {{formatbitlbl |label=0x6F |value=Terran Barracks}}
+    {{formatbitlbl |label=0x70 |value=Terran Academy}}
+    {{formatbitlbl |label=0x71 |value=Terran Factory}}
+    {{formatbitlbl |label=0x72 |value=Terran Starport}}
+    {{formatbitlbl |label=0x73 |value=Terran Control Tower}}
+    {{formatbitlbl |label=0x74 |value=Terran Science Facility}}
+    {{formatbitlbl |label=0x75 |value=Terran Covert Ops}}
+    {{formatbitlbl |label=0x76 |value=Terran Physics Lab}}
+    {{formatbitlbl |label=0x77 |value=Starbase (Unused)}}
+    {{formatbitlbl |label=0x78 |value=Terran Machine Shop}}
+    {{formatbitlbl |label=0x79 |value=Repair Bay (Unused)}}
+    {{formatbitlbl |label=0x7A |value=Terran Engineering Bay}}
+    {{formatbitlbl |label=0x7B |value=Terran Armory}}
+    {{formatbitlbl |label=0x7C |value=Terran Missile Turret}}
+    {{formatbitlbl |label=0x7D |value=Terran Bunker}}
+    {{formatbitlbl |label=0x7E |value=Norad II (Crashed)}}
+    {{formatbitlbl |label=0x7F |value=Ion Cannon}}
+    {{formatbitlbl |label=0x80 |value=Uraj Crystal}}
+    {{formatbitlbl |label=0x81 |value=Khalis Crystal}}
+    {{formatbitlbl |label=0x82 |value=Infested Command Center}}
+    {{formatbitlbl |label=0x83 |value=Zerg Hatchery}}
+    {{formatbitlbl |label=0x84 |value=Zerg Lair}}
+    {{formatbitlbl |label=0x85 |value=Zerg Hive}}
+    {{formatbitlbl |label=0x86 |value=Zerg Nydus Canal}}
+    {{formatbitlbl |label=0x87 |value=Zerg Hydralisk Den}}
+    {{formatbitlbl |label=0x88 |value=Zerg Defiler Mound}}
+    {{formatbitlbl |label=0x89 |value=Zerg Greater Spire}}
+    {{formatbitlbl |label=0x8A |value=Zerg Queen's Nest}}
+    {{formatbitlbl |label=0x8B |value=Zerg Evolution Chamber}}
+    {{formatbitlbl |label=0x8C |value=Zerg Ultralisk Cavern}}
+    {{formatbitlbl |label=0x8D |value=Zerg Spire}}
+    {{formatbitlbl |label=0x8E |value=Zerg Spawning Pool}}
+    {{formatbitlbl |label=0x8F |value=Zerg Creep Colony}}
+    {{formatbitlbl |label=0x90 |value=Zerg Spore Colony}}
+    {{formatbitlbl |label=0x91 |value=Unused Zerg Building1}}
+    {{formatbitlbl |label=0x92 |value=Zerg Sunken Colony}}
+    {{formatbitlbl |label=0x93 |value=Zerg Overmind (With Shell)}}
+    {{formatbitlbl |label=0x94 |value=Zerg Overmind}}
+    {{formatbitlbl |label=0x95 |value=Zerg Extractor}}
+    {{formatbitlbl |label=0x96 |value=Mature Chrysalis}}
+    {{formatbitlbl |label=0x97 |value=Zerg Cerebrate}}
+    {{formatbitlbl |label=0x98 |value=Zerg Cerebrate Daggoth}}
+    {{formatbitlbl |label=0x99 |value=Unused Zerg Building2}}
+    {{formatbitlbl |label=0x9A |value=Protoss Nexus}}
+    {{formatbitlbl |label=0x9B |value=Protoss Robotics Facility}}
+    {{formatbitlbl |label=0x9C |value=Protoss Pylon}}
+    {{formatbitlbl |label=0x9D |value=Protoss Assimilator}}
+    {{formatbitlbl |label=0x9E |value=Unused Protoss Building1}}
+    {{formatbitlbl |label=0x9F |value=Protoss Observatory}}
+    {{formatbitlbl |label=0xA0 |value=Protoss Gateway}}
+    {{formatbitlbl |label=0xA1 |value=Unused Protoss Building2}}
+    {{formatbitlbl |label=0xA2 |value=Protoss Photon Cannon}}
+    {{formatbitlbl |label=0xA3 |value=Protoss Citadel of Adun}}
+    {{formatbitlbl |label=0xA4 |value=Protoss Cybernetics Core}}
+    {{formatbitlbl |label=0xA5 |value=Protoss Templar Archives}}
+    {{formatbitlbl |label=0xA6 |value=Protoss Forge}}
+    {{formatbitlbl |label=0xA7 |value=Protoss Stargate}}
+    {{formatbitlbl |label=0xA8 |value=Stasis Cell/Prison}}
+    {{formatbitlbl |label=0xA9 |value=Protoss Fleet Beacon}}
+    {{formatbitlbl |label=0xAA |value=Protoss Arbiter Tribunal}}
+    {{formatbitlbl |label=0xAB |value=Protoss Robotics Support Bay}}
+    {{formatbitlbl |label=0xAC |value=Protoss Shield Battery}}
+    {{formatbitlbl |label=0xAD |value=Khaydarin Crystal Formation}}
+    {{formatbitlbl |label=0xAE |value=Protoss Temple}}
+    {{formatbitlbl |label=0xAF |value=Xel'Naga Temple}}
+    {{formatbitlbl |label=0xB0 |value=Mineral Field (Type 1)}}
+    {{formatbitlbl |label=0xB1 |value=Mineral Field (Type 2)}}
+    {{formatbitlbl |label=0xB2 |value=Mineral Field (Type 3)}}
+    {{formatbitlbl |label=0xB3 |value=Cave (Unused)}}
+    {{formatbitlbl |label=0xB4 |value=Cave-in (Unused)}}
+    {{formatbitlbl |label=0xB5 |value=Cantina (Unused)}}
+    {{formatbitlbl |label=0xB6 |value=Mining Platform (Unused)}}
+    {{formatbitlbl |label=0xB7 |value=Independent Command Center (Unused)}}
+    {{formatbitlbl |label=0xB8 |value=Independent Starport (Unused)}}
+    {{formatbitlbl |label=0xB9 |value=Independent Jump Gate (Unused)}}
+    {{formatbitlbl |label=0xBA |value=Ruins (Unused)}}
+    {{formatbitlbl |label=0xBB |value=Khaydarin Crystal Formation (Unused)}}
+    {{formatbitlbl |label=0xBC |value=Vespene Geyser}}
+    {{formatbitlbl |label=0xBD |value=Warp Gate}}
+    {{formatbitlbl |label=0xBE |value=Psi Disrupter}}
+    {{formatbitlbl |label=0xBF |value=Zerg Marker}}
+    {{formatbitlbl |label=0xC0 |value=Terran Marker}}
+    {{formatbitlbl |label=0xC1 |value=Protoss Marker}}
+    {{formatbitlbl |label=0xC2 |value=Zerg Beacon}}
+    {{formatbitlbl |label=0xC3 |value=Terran Beacon}}
+    {{formatbitlbl |label=0xC4 |value=Protoss Beacon}}
+    {{formatbitlbl |label=0xC5 |value=Zerg Flag Beacon}}
+    {{formatbitlbl |label=0xC6 |value=Terran Flag Beacon}}
+    {{formatbitlbl |label=0xC7 |value=Protoss Flag Beacon}}
+    {{formatbitlbl |label=0xC8 |value=Power Generator}}
+    {{formatbitlbl |label=0xC9 |value=Overmind Cocoon}}
+    {{formatbitlbl |label=0xCA |value=Dark Swarm}}
+    {{formatbitlbl |label=0xCB |value=Floor Missile Trap}}
+    {{formatbitlbl |label=0xCC |value=Floor Hatch (Unused)}}
+    {{formatbitlbl |label=0xCD |value=Left Upper Level Door}}
+    {{formatbitlbl |label=0xCE |value=Right Upper Level Door}}
+    {{formatbitlbl |label=0xCF |value=Left Pit Door}}
+    {{formatbitlbl |label=0xD0 |value=Right Pit Door}}
+    {{formatbitlbl |label=0xD1 |value=Floor Gun Trap}}
+    {{formatbitlbl |label=0xD2 |value=Left Wall Missile Trap}}
+    {{formatbitlbl |label=0xD3 |value=Left Wall Flame Trap}}
+    {{formatbitlbl |label=0xD4 |value=Right Wall Missile Trap}}
+    {{formatbitlbl |label=0xD5 |value=Right Wall Flame Trap}}
+    {{formatbitlbl |label=0xD6 |value=Start Location}}
+    {{formatbitlbl |label=0xD7 |value=Flag}}
+    {{formatbitlbl |label=0xD8 |value=Young Chrysalis}}
+    {{formatbitlbl |label=0xD9 |value=Psi Emitter}}
+    {{formatbitlbl |label=0xDA |value=Data Disc}}
+    {{formatbitlbl |label=0xDB |value=Khaydarin Crystal}}
+    {{formatbitlbl |label=0xDC |value=Mineral Cluster Type 1}}
+    {{formatbitlbl |label=0xDD |value=Mineral Cluster Type 2}}
+    {{formatbitlbl |label=0xDE |value=Protoss Vespene Gas Orb Type 1}}
+    {{formatbitlbl |label=0xDF |value=Protoss Vespene Gas Orb Type 2}}
+    {{formatbitlbl |label=0xE0 |value=Zerg Vespene Gas Sac Type 1}}
+    {{formatbitlbl |label=0xE1 |value=Zerg Vespene Gas Sac Type 2}}
+    {{formatbitlbl |label=0xE2 |value=Terran Vespene Gas Tank Type 1}}
+    {{formatbitlbl |label=0xE3 |value=Terran Vespene Gas Tank Type 2}}
+  {{end-bittable}} }}
+{{end-formattable}}
+

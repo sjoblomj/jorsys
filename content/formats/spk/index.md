@@ -6,7 +6,7 @@ SPK files are the star backgrounds of the Space tileset in StarCraft I.
 
 ## Layer count
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0000}}
+  {{formathexlbl |label=Offset |value=0x0000}}
   {{formatlbl |label=Length |value=2 bytes}}
   {{formatlbl |label=Description |value=Number of layers.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}
@@ -18,7 +18,7 @@ SPK files are the star backgrounds of the Space tileset in StarCraft I.
 
 ## Image count
 {{begin-formattable}}
-  {{formatlbl |label=Offset |value=0x0002}}
+  {{formathexlbl |label=Offset |value=0x0002}}
   {{formatlbl |label=Length |value=2 bytes}}
   {{formatlbl |label=Description |value=Number of images in the current layer.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 65535.}}

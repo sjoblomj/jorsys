@@ -873,5 +873,924 @@
       ]
     }
   ],
-  "appendices": []
+  "appendices": [
+    {
+      "name": "Appendix: Units list",
+      "description": "List of units. Most fields have one entry per unit, 228 in all (0x00 to 0xE3). Subunit 3 only has entries for the first 96 units (0x00 to 0x5F).",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Terran Marine"
+        },
+        {
+          "bit": "0x01",
+          "value": "Terran Ghost"
+        },
+        {
+          "bit": "0x02",
+          "value": "Terran Vulture"
+        },
+        {
+          "bit": "0x03",
+          "value": "Terran Goliath"
+        },
+        {
+          "bit": "0x04",
+          "value": "Goliath Turret"
+        },
+        {
+          "bit": "0x05",
+          "value": "Terran Siege Tank (Tank Mode)"
+        },
+        {
+          "bit": "0x06",
+          "value": "Siege Tank Turret (Tank Mode)"
+        },
+        {
+          "bit": "0x07",
+          "value": "Terran SCV"
+        },
+        {
+          "bit": "0x08",
+          "value": "Terran Wraith"
+        },
+        {
+          "bit": "0x09",
+          "value": "Terran Science Vessel"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Gui Montag (Firebat)"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Terran Dropship"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Terran Battlecruiser"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Spider Mine"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Nuclear Missile"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Terran Civilian"
+        },
+        {
+          "bit": "0x10",
+          "value": "Sarah Kerrigan (Ghost)"
+        },
+        {
+          "bit": "0x11",
+          "value": "Alan Schezar (Goliath)"
+        },
+        {
+          "bit": "0x12",
+          "value": "Alan Schezar Turret"
+        },
+        {
+          "bit": "0x13",
+          "value": "Jim Raynor (Vulture)"
+        },
+        {
+          "bit": "0x14",
+          "value": "Jim Raynor (Marine)"
+        },
+        {
+          "bit": "0x15",
+          "value": "Tom Kazansky (Wraith)"
+        },
+        {
+          "bit": "0x16",
+          "value": "Magellan (Science Vessel)"
+        },
+        {
+          "bit": "0x17",
+          "value": "Edmund Duke (Tank Mode)"
+        },
+        {
+          "bit": "0x18",
+          "value": "Edmund Duke Turret (Tank Mode)"
+        },
+        {
+          "bit": "0x19",
+          "value": "Edmund Duke (Siege Mode)"
+        },
+        {
+          "bit": "0x1A",
+          "value": "Edmund Duke Turret (Siege Mode)"
+        },
+        {
+          "bit": "0x1B",
+          "value": "Arcturus Mengsk (Battlecruiser)"
+        },
+        {
+          "bit": "0x1C",
+          "value": "Hyperion (Battlecruiser)"
+        },
+        {
+          "bit": "0x1D",
+          "value": "Norad II (Battlecruiser)"
+        },
+        {
+          "bit": "0x1E",
+          "value": "Terran Siege Tank (Siege Mode)"
+        },
+        {
+          "bit": "0x1F",
+          "value": "Siege Tank Turret (Siege Mode)"
+        },
+        {
+          "bit": "0x20",
+          "value": "Terran Firebat"
+        },
+        {
+          "bit": "0x21",
+          "value": "Scanner Sweep"
+        },
+        {
+          "bit": "0x22",
+          "value": "Terran Medic"
+        },
+        {
+          "bit": "0x23",
+          "value": "Zerg Larva"
+        },
+        {
+          "bit": "0x24",
+          "value": "Zerg Egg"
+        },
+        {
+          "bit": "0x25",
+          "value": "Zerg Zergling"
+        },
+        {
+          "bit": "0x26",
+          "value": "Zerg Hydralisk"
+        },
+        {
+          "bit": "0x27",
+          "value": "Zerg Ultralisk"
+        },
+        {
+          "bit": "0x28",
+          "value": "Zerg Broodling"
+        },
+        {
+          "bit": "0x29",
+          "value": "Zerg Drone"
+        },
+        {
+          "bit": "0x2A",
+          "value": "Zerg Overlord"
+        },
+        {
+          "bit": "0x2B",
+          "value": "Zerg Mutalisk"
+        },
+        {
+          "bit": "0x2C",
+          "value": "Zerg Guardian"
+        },
+        {
+          "bit": "0x2D",
+          "value": "Zerg Queen"
+        },
+        {
+          "bit": "0x2E",
+          "value": "Zerg Defiler"
+        },
+        {
+          "bit": "0x2F",
+          "value": "Zerg Scourge"
+        },
+        {
+          "bit": "0x30",
+          "value": "Torrasque (Ultralisk)"
+        },
+        {
+          "bit": "0x31",
+          "value": "Matriarch (Queen)"
+        },
+        {
+          "bit": "0x32",
+          "value": "Infested Terran"
+        },
+        {
+          "bit": "0x33",
+          "value": "Infested Kerrigan (Infested Terran)"
+        },
+        {
+          "bit": "0x34",
+          "value": "Unclean One (Defiler)"
+        },
+        {
+          "bit": "0x35",
+          "value": "Hunter Killer (Hydralisk)"
+        },
+        {
+          "bit": "0x36",
+          "value": "Devouring One (Zergling)"
+        },
+        {
+          "bit": "0x37",
+          "value": "Kukulza (Mutalisk)"
+        },
+        {
+          "bit": "0x38",
+          "value": "Kukulza (Guardian)"
+        },
+        {
+          "bit": "0x39",
+          "value": "Yggdrasill (Overlord)"
+        },
+        {
+          "bit": "0x3A",
+          "value": "Terran Valkyrie"
+        },
+        {
+          "bit": "0x3B",
+          "value": "Mutalisk Cocoon"
+        },
+        {
+          "bit": "0x3C",
+          "value": "Protoss Corsair"
+        },
+        {
+          "bit": "0x3D",
+          "value": "Protoss Dark Templar (Unit)"
+        },
+        {
+          "bit": "0x3E",
+          "value": "Zerg Devourer"
+        },
+        {
+          "bit": "0x3F",
+          "value": "Protoss Dark Archon"
+        },
+        {
+          "bit": "0x40",
+          "value": "Protoss Probe"
+        },
+        {
+          "bit": "0x41",
+          "value": "Protoss Zealot"
+        },
+        {
+          "bit": "0x42",
+          "value": "Protoss Dragoon"
+        },
+        {
+          "bit": "0x43",
+          "value": "Protoss High Templar"
+        },
+        {
+          "bit": "0x44",
+          "value": "Protoss Archon"
+        },
+        {
+          "bit": "0x45",
+          "value": "Protoss Shuttle"
+        },
+        {
+          "bit": "0x46",
+          "value": "Protoss Scout"
+        },
+        {
+          "bit": "0x47",
+          "value": "Protoss Arbiter"
+        },
+        {
+          "bit": "0x48",
+          "value": "Protoss Carrier"
+        },
+        {
+          "bit": "0x49",
+          "value": "Protoss Interceptor"
+        },
+        {
+          "bit": "0x4A",
+          "value": "Protoss Dark Templar (Hero)"
+        },
+        {
+          "bit": "0x4B",
+          "value": "Zeratul (Dark Templar)"
+        },
+        {
+          "bit": "0x4C",
+          "value": "Tassadar/Zeratul (Archon)"
+        },
+        {
+          "bit": "0x4D",
+          "value": "Fenix (Zealot)"
+        },
+        {
+          "bit": "0x4E",
+          "value": "Fenix (Dragoon)"
+        },
+        {
+          "bit": "0x4F",
+          "value": "Tassadar (Templar)"
+        },
+        {
+          "bit": "0x50",
+          "value": "Mojo (Scout)"
+        },
+        {
+          "bit": "0x51",
+          "value": "Warbringer (Reaver)"
+        },
+        {
+          "bit": "0x52",
+          "value": "Gantrithor (Carrier)"
+        },
+        {
+          "bit": "0x53",
+          "value": "Protoss Reaver"
+        },
+        {
+          "bit": "0x54",
+          "value": "Protoss Observer"
+        },
+        {
+          "bit": "0x55",
+          "value": "Protoss Scarab"
+        },
+        {
+          "bit": "0x56",
+          "value": "Danimoth (Arbiter)"
+        },
+        {
+          "bit": "0x57",
+          "value": "Aldaris (Templar)"
+        },
+        {
+          "bit": "0x58",
+          "value": "Artanis (Scout)"
+        },
+        {
+          "bit": "0x59",
+          "value": "Rhynadon (Badlands Critter)"
+        },
+        {
+          "bit": "0x5A",
+          "value": "Bengalaas (Jungle Critter)"
+        },
+        {
+          "bit": "0x5B",
+          "value": "Cargo Ship (Unused)"
+        },
+        {
+          "bit": "0x5C",
+          "value": "Mercenary Gunship (Unused)"
+        },
+        {
+          "bit": "0x5D",
+          "value": "Scantid (Desert Critter)"
+        },
+        {
+          "bit": "0x5E",
+          "value": "Kakaru (Twilight Critter)"
+        },
+        {
+          "bit": "0x5F",
+          "value": "Ragnasaur (Ashworld Critter)"
+        },
+        {
+          "bit": "0x60",
+          "value": "Ursadon (Ice World Critter)"
+        },
+        {
+          "bit": "0x61",
+          "value": "Lurker Egg"
+        },
+        {
+          "bit": "0x62",
+          "value": "Raszagal (Corsair)"
+        },
+        {
+          "bit": "0x63",
+          "value": "Samir Duran (Ghost)"
+        },
+        {
+          "bit": "0x64",
+          "value": "Alexei Stukov (Ghost)"
+        },
+        {
+          "bit": "0x65",
+          "value": "Map Revealer"
+        },
+        {
+          "bit": "0x66",
+          "value": "Gerard DuGalle (BattleCruiser)"
+        },
+        {
+          "bit": "0x67",
+          "value": "Zerg Lurker"
+        },
+        {
+          "bit": "0x68",
+          "value": "Infested Duran (Infested Terran)"
+        },
+        {
+          "bit": "0x69",
+          "value": "Disruption Web"
+        },
+        {
+          "bit": "0x6A",
+          "value": "Terran Command Center"
+        },
+        {
+          "bit": "0x6B",
+          "value": "Terran Comsat Station"
+        },
+        {
+          "bit": "0x6C",
+          "value": "Terran Nuclear Silo"
+        },
+        {
+          "bit": "0x6D",
+          "value": "Terran Supply Depot"
+        },
+        {
+          "bit": "0x6E",
+          "value": "Terran Refinery"
+        },
+        {
+          "bit": "0x6F",
+          "value": "Terran Barracks"
+        },
+        {
+          "bit": "0x70",
+          "value": "Terran Academy"
+        },
+        {
+          "bit": "0x71",
+          "value": "Terran Factory"
+        },
+        {
+          "bit": "0x72",
+          "value": "Terran Starport"
+        },
+        {
+          "bit": "0x73",
+          "value": "Terran Control Tower"
+        },
+        {
+          "bit": "0x74",
+          "value": "Terran Science Facility"
+        },
+        {
+          "bit": "0x75",
+          "value": "Terran Covert Ops"
+        },
+        {
+          "bit": "0x76",
+          "value": "Terran Physics Lab"
+        },
+        {
+          "bit": "0x77",
+          "value": "Starbase (Unused)"
+        },
+        {
+          "bit": "0x78",
+          "value": "Terran Machine Shop"
+        },
+        {
+          "bit": "0x79",
+          "value": "Repair Bay (Unused)"
+        },
+        {
+          "bit": "0x7A",
+          "value": "Terran Engineering Bay"
+        },
+        {
+          "bit": "0x7B",
+          "value": "Terran Armory"
+        },
+        {
+          "bit": "0x7C",
+          "value": "Terran Missile Turret"
+        },
+        {
+          "bit": "0x7D",
+          "value": "Terran Bunker"
+        },
+        {
+          "bit": "0x7E",
+          "value": "Norad II (Crashed)"
+        },
+        {
+          "bit": "0x7F",
+          "value": "Ion Cannon"
+        },
+        {
+          "bit": "0x80",
+          "value": "Uraj Crystal"
+        },
+        {
+          "bit": "0x81",
+          "value": "Khalis Crystal"
+        },
+        {
+          "bit": "0x82",
+          "value": "Infested Command Center"
+        },
+        {
+          "bit": "0x83",
+          "value": "Zerg Hatchery"
+        },
+        {
+          "bit": "0x84",
+          "value": "Zerg Lair"
+        },
+        {
+          "bit": "0x85",
+          "value": "Zerg Hive"
+        },
+        {
+          "bit": "0x86",
+          "value": "Zerg Nydus Canal"
+        },
+        {
+          "bit": "0x87",
+          "value": "Zerg Hydralisk Den"
+        },
+        {
+          "bit": "0x88",
+          "value": "Zerg Defiler Mound"
+        },
+        {
+          "bit": "0x89",
+          "value": "Zerg Greater Spire"
+        },
+        {
+          "bit": "0x8A",
+          "value": "Zerg Queen's Nest"
+        },
+        {
+          "bit": "0x8B",
+          "value": "Zerg Evolution Chamber"
+        },
+        {
+          "bit": "0x8C",
+          "value": "Zerg Ultralisk Cavern"
+        },
+        {
+          "bit": "0x8D",
+          "value": "Zerg Spire"
+        },
+        {
+          "bit": "0x8E",
+          "value": "Zerg Spawning Pool"
+        },
+        {
+          "bit": "0x8F",
+          "value": "Zerg Creep Colony"
+        },
+        {
+          "bit": "0x90",
+          "value": "Zerg Spore Colony"
+        },
+        {
+          "bit": "0x91",
+          "value": "Unused Zerg Building1"
+        },
+        {
+          "bit": "0x92",
+          "value": "Zerg Sunken Colony"
+        },
+        {
+          "bit": "0x93",
+          "value": "Zerg Overmind (With Shell)"
+        },
+        {
+          "bit": "0x94",
+          "value": "Zerg Overmind"
+        },
+        {
+          "bit": "0x95",
+          "value": "Zerg Extractor"
+        },
+        {
+          "bit": "0x96",
+          "value": "Mature Chrysalis"
+        },
+        {
+          "bit": "0x97",
+          "value": "Zerg Cerebrate"
+        },
+        {
+          "bit": "0x98",
+          "value": "Zerg Cerebrate Daggoth"
+        },
+        {
+          "bit": "0x99",
+          "value": "Unused Zerg Building2"
+        },
+        {
+          "bit": "0x9A",
+          "value": "Protoss Nexus"
+        },
+        {
+          "bit": "0x9B",
+          "value": "Protoss Robotics Facility"
+        },
+        {
+          "bit": "0x9C",
+          "value": "Protoss Pylon"
+        },
+        {
+          "bit": "0x9D",
+          "value": "Protoss Assimilator"
+        },
+        {
+          "bit": "0x9E",
+          "value": "Unused Protoss Building1"
+        },
+        {
+          "bit": "0x9F",
+          "value": "Protoss Observatory"
+        },
+        {
+          "bit": "0xA0",
+          "value": "Protoss Gateway"
+        },
+        {
+          "bit": "0xA1",
+          "value": "Unused Protoss Building2"
+        },
+        {
+          "bit": "0xA2",
+          "value": "Protoss Photon Cannon"
+        },
+        {
+          "bit": "0xA3",
+          "value": "Protoss Citadel of Adun"
+        },
+        {
+          "bit": "0xA4",
+          "value": "Protoss Cybernetics Core"
+        },
+        {
+          "bit": "0xA5",
+          "value": "Protoss Templar Archives"
+        },
+        {
+          "bit": "0xA6",
+          "value": "Protoss Forge"
+        },
+        {
+          "bit": "0xA7",
+          "value": "Protoss Stargate"
+        },
+        {
+          "bit": "0xA8",
+          "value": "Stasis Cell/Prison"
+        },
+        {
+          "bit": "0xA9",
+          "value": "Protoss Fleet Beacon"
+        },
+        {
+          "bit": "0xAA",
+          "value": "Protoss Arbiter Tribunal"
+        },
+        {
+          "bit": "0xAB",
+          "value": "Protoss Robotics Support Bay"
+        },
+        {
+          "bit": "0xAC",
+          "value": "Protoss Shield Battery"
+        },
+        {
+          "bit": "0xAD",
+          "value": "Khaydarin Crystal Formation"
+        },
+        {
+          "bit": "0xAE",
+          "value": "Protoss Temple"
+        },
+        {
+          "bit": "0xAF",
+          "value": "Xel'Naga Temple"
+        },
+        {
+          "bit": "0xB0",
+          "value": "Mineral Field (Type 1)"
+        },
+        {
+          "bit": "0xB1",
+          "value": "Mineral Field (Type 2)"
+        },
+        {
+          "bit": "0xB2",
+          "value": "Mineral Field (Type 3)"
+        },
+        {
+          "bit": "0xB3",
+          "value": "Cave (Unused)"
+        },
+        {
+          "bit": "0xB4",
+          "value": "Cave-in (Unused)"
+        },
+        {
+          "bit": "0xB5",
+          "value": "Cantina (Unused)"
+        },
+        {
+          "bit": "0xB6",
+          "value": "Mining Platform (Unused)"
+        },
+        {
+          "bit": "0xB7",
+          "value": "Independent Command Center (Unused)"
+        },
+        {
+          "bit": "0xB8",
+          "value": "Independent Starport (Unused)"
+        },
+        {
+          "bit": "0xB9",
+          "value": "Independent Jump Gate (Unused)"
+        },
+        {
+          "bit": "0xBA",
+          "value": "Ruins (Unused)"
+        },
+        {
+          "bit": "0xBB",
+          "value": "Khaydarin Crystal Formation (Unused)"
+        },
+        {
+          "bit": "0xBC",
+          "value": "Vespene Geyser"
+        },
+        {
+          "bit": "0xBD",
+          "value": "Warp Gate"
+        },
+        {
+          "bit": "0xBE",
+          "value": "Psi Disrupter"
+        },
+        {
+          "bit": "0xBF",
+          "value": "Zerg Marker"
+        },
+        {
+          "bit": "0xC0",
+          "value": "Terran Marker"
+        },
+        {
+          "bit": "0xC1",
+          "value": "Protoss Marker"
+        },
+        {
+          "bit": "0xC2",
+          "value": "Zerg Beacon"
+        },
+        {
+          "bit": "0xC3",
+          "value": "Terran Beacon"
+        },
+        {
+          "bit": "0xC4",
+          "value": "Protoss Beacon"
+        },
+        {
+          "bit": "0xC5",
+          "value": "Zerg Flag Beacon"
+        },
+        {
+          "bit": "0xC6",
+          "value": "Terran Flag Beacon"
+        },
+        {
+          "bit": "0xC7",
+          "value": "Protoss Flag Beacon"
+        },
+        {
+          "bit": "0xC8",
+          "value": "Power Generator"
+        },
+        {
+          "bit": "0xC9",
+          "value": "Overmind Cocoon"
+        },
+        {
+          "bit": "0xCA",
+          "value": "Dark Swarm"
+        },
+        {
+          "bit": "0xCB",
+          "value": "Floor Missile Trap"
+        },
+        {
+          "bit": "0xCC",
+          "value": "Floor Hatch (Unused)"
+        },
+        {
+          "bit": "0xCD",
+          "value": "Left Upper Level Door"
+        },
+        {
+          "bit": "0xCE",
+          "value": "Right Upper Level Door"
+        },
+        {
+          "bit": "0xCF",
+          "value": "Left Pit Door"
+        },
+        {
+          "bit": "0xD0",
+          "value": "Right Pit Door"
+        },
+        {
+          "bit": "0xD1",
+          "value": "Floor Gun Trap"
+        },
+        {
+          "bit": "0xD2",
+          "value": "Left Wall Missile Trap"
+        },
+        {
+          "bit": "0xD3",
+          "value": "Left Wall Flame Trap"
+        },
+        {
+          "bit": "0xD4",
+          "value": "Right Wall Missile Trap"
+        },
+        {
+          "bit": "0xD5",
+          "value": "Right Wall Flame Trap"
+        },
+        {
+          "bit": "0xD6",
+          "value": "Start Location"
+        },
+        {
+          "bit": "0xD7",
+          "value": "Flag"
+        },
+        {
+          "bit": "0xD8",
+          "value": "Young Chrysalis"
+        },
+        {
+          "bit": "0xD9",
+          "value": "Psi Emitter"
+        },
+        {
+          "bit": "0xDA",
+          "value": "Data Disc"
+        },
+        {
+          "bit": "0xDB",
+          "value": "Khaydarin Crystal"
+        },
+        {
+          "bit": "0xDC",
+          "value": "Mineral Cluster Type 1"
+        },
+        {
+          "bit": "0xDD",
+          "value": "Mineral Cluster Type 2"
+        },
+        {
+          "bit": "0xDE",
+          "value": "Protoss Vespene Gas Orb Type 1"
+        },
+        {
+          "bit": "0xDF",
+          "value": "Protoss Vespene Gas Orb Type 2"
+        },
+        {
+          "bit": "0xE0",
+          "value": "Zerg Vespene Gas Sac Type 1"
+        },
+        {
+          "bit": "0xE1",
+          "value": "Zerg Vespene Gas Sac Type 2"
+        },
+        {
+          "bit": "0xE2",
+          "value": "Terran Vespene Gas Tank Type 1"
+        },
+        {
+          "bit": "0xE3",
+          "value": "Terran Vespene Gas Tank Type 2"
+        }
+      ]
+    }
+  ]
 }

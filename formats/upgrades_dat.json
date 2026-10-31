@@ -29,8 +29,8 @@
     {
       "name": "Cost Factor: Vespene Gas",
       "offset": "0x016E",
-      "length": "Factor Cost in Vespene Gas to research this Upgrade.",
-      "description": "",
+      "length": "122 bytes (2 bytes / Upgrade)",
+      "description": "Factor Cost in Vespene Gas to research this Upgrade.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
@@ -125,5 +125,256 @@
       ]
     }
   ],
-  "appendices": []
+  "appendices": [
+    {
+      "name": "Appendix: Upgrades list",
+      "description": "List of upgrades.",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Terran Infantry Armor"
+        },
+        {
+          "bit": "0x01",
+          "value": "Terran Vehicle Plating"
+        },
+        {
+          "bit": "0x02",
+          "value": "Terran Ship Plating"
+        },
+        {
+          "bit": "0x03",
+          "value": "Zerg Carapace"
+        },
+        {
+          "bit": "0x04",
+          "value": "Zerg Flyer Carapace"
+        },
+        {
+          "bit": "0x05",
+          "value": "Protoss Armor"
+        },
+        {
+          "bit": "0x06",
+          "value": "Protoss Plating"
+        },
+        {
+          "bit": "0x07",
+          "value": "Terran Infantry Weapons"
+        },
+        {
+          "bit": "0x08",
+          "value": "Terran Vehicle Weapons"
+        },
+        {
+          "bit": "0x09",
+          "value": "Terran Ship Weapons"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Zerg Melee Attacks"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Zerg Missile Attacks"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Zerg Flyer Attacks"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Protoss Ground Weapons"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Protoss Air Weapons"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Protoss Plasma Shields"
+        },
+        {
+          "bit": "0x10",
+          "value": "U-238 Shells"
+        },
+        {
+          "bit": "0x11",
+          "value": "Ion Thrusters"
+        },
+        {
+          "bit": "0x12",
+          "value": "Burst Lasers (Unused)"
+        },
+        {
+          "bit": "0x13",
+          "value": "Titan Reactor (SV +50)"
+        },
+        {
+          "bit": "0x14",
+          "value": "Ocular Implants"
+        },
+        {
+          "bit": "0x15",
+          "value": "Moebius Reactor (Ghost +50)"
+        },
+        {
+          "bit": "0x16",
+          "value": "Apollo Reactor (Wraith +50)"
+        },
+        {
+          "bit": "0x17",
+          "value": "Colossus Reactor (BC +50)"
+        },
+        {
+          "bit": "0x18",
+          "value": "Ventral Sacs"
+        },
+        {
+          "bit": "0x19",
+          "value": "Antennae"
+        },
+        {
+          "bit": "0x1A",
+          "value": "Pneumatized Carapace"
+        },
+        {
+          "bit": "0x1B",
+          "value": "Metabolic Boost"
+        },
+        {
+          "bit": "0x1C",
+          "value": "Adrenal Glands"
+        },
+        {
+          "bit": "0x1D",
+          "value": "Muscular Augments"
+        },
+        {
+          "bit": "0x1E",
+          "value": "Grooved Spines"
+        },
+        {
+          "bit": "0x1F",
+          "value": "Gamete Meiosis (Queen +50)"
+        },
+        {
+          "bit": "0x20",
+          "value": "Metasynaptic Node (Defiler +50)"
+        },
+        {
+          "bit": "0x21",
+          "value": "Singularity Charge"
+        },
+        {
+          "bit": "0x22",
+          "value": "Leg Enhancements"
+        },
+        {
+          "bit": "0x23",
+          "value": "Scarab Damage"
+        },
+        {
+          "bit": "0x24",
+          "value": "Reaver Capacity"
+        },
+        {
+          "bit": "0x25",
+          "value": "Gravitic Drive"
+        },
+        {
+          "bit": "0x26",
+          "value": "Sensor Array"
+        },
+        {
+          "bit": "0x27",
+          "value": "Gravitic Boosters"
+        },
+        {
+          "bit": "0x28",
+          "value": "Khaydarin Amulet (HT +50)"
+        },
+        {
+          "bit": "0x29",
+          "value": "Apial Sensors"
+        },
+        {
+          "bit": "0x2A",
+          "value": "Gravitic Thrusters"
+        },
+        {
+          "bit": "0x2B",
+          "value": "Carrier Capacity"
+        },
+        {
+          "bit": "0x2C",
+          "value": "Khaydarin Core (Arbiter +50)"
+        },
+        {
+          "bit": "0x2D",
+          "value": "Unknown Upgrade45"
+        },
+        {
+          "bit": "0x2E",
+          "value": "Unknown Upgrade46"
+        },
+        {
+          "bit": "0x2F",
+          "value": "Argus Jewel (Corsair +50)"
+        },
+        {
+          "bit": "0x30",
+          "value": "Unknown Upgrade48"
+        },
+        {
+          "bit": "0x31",
+          "value": "Argus Talisman (DA +50)"
+        },
+        {
+          "bit": "0x32",
+          "value": "Unknown Upgrade50"
+        },
+        {
+          "bit": "0x33",
+          "value": "Caduceus Reactor (Medic +50)"
+        },
+        {
+          "bit": "0x34",
+          "value": "Chitinous Plating"
+        },
+        {
+          "bit": "0x35",
+          "value": "Anabolic Synthesis"
+        },
+        {
+          "bit": "0x36",
+          "value": "Charon Booster"
+        },
+        {
+          "bit": "0x37",
+          "value": "Unknown Upgrade55"
+        },
+        {
+          "bit": "0x38",
+          "value": "Unknown Upgrade56"
+        },
+        {
+          "bit": "0x39",
+          "value": "Unknown Upgrade57"
+        },
+        {
+          "bit": "0x3A",
+          "value": "Unknown Upgrade58"
+        },
+        {
+          "bit": "0x3B",
+          "value": "Unknown Upgrade59"
+        },
+        {
+          "bit": "0x3C",
+          "value": "Unknown Upgrade60"
+        }
+      ]
+    }
+  ]
 }
