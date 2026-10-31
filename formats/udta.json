@@ -66,7 +66,7 @@
       "name": "Range: Sight",
       "offset": "0x04D4",
       "length": "440 bytes (1 long / First 110 Units)",
-      "description": "Sight range (in tiles) of this unit: the unit reveals a square area of 2 × range + 1 tiles on each side around it. Rangers and Berserkers use 9 instead once their player has the sight upgrade (Scouting).",
+      "description": "Sight range (in tiles) of this unit: the unit reveals a square area of 2 × range + 1 tiles on each side around it. Rangers and Berserkers use 9 instead once their player has the sight upgrade (Scouting). A unit with the Building bit (0x05) in Unit Flags always uses 3 while it is under construction, whatever this field holds; buildings that are on the map when it is loaded, and units outside 0x3A to 0x68, are never under construction.",
       "values": "Integer value between 0 and 9. The game uses the value as an entry in a table of 10 sight routines, so larger values are invalid. 0 works the same as 1.",
       "bits": []
     },
