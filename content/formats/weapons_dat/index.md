@@ -174,6 +174,7 @@
 ## Explosion Type
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x0AAA}}
+  {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=Type of explosion which occurs after the weapon hits its target.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=None}}

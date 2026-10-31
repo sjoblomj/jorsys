@@ -427,7 +427,7 @@
     {
       "name": "Explosion Type",
       "offset": "0x0AAA",
-      "length": "",
+      "length": "130 bytes (1 byte / Weapon)",
       "description": "Type of explosion which occurs after the weapon hits its target.",
       "values": null,
       "bits": [
