@@ -12,8 +12,14 @@ function update_formats() {
         jq -r 'map(
           "## " + .name + "\n" +
           "{{begin-formattable}}\n" +
-            "  {{formatlbl |label=Offset |value=" + .offset + "}}\n" +
-            "  {{formatlbl |label=Length |value=" + .length + "}}\n" +
+          (if (.offset // "") == "" then "" elif (.offset | test("^0x[0-9A-Fa-f]+$")) then
+            "  {{formathexlbl |label=Offset |value=" + .offset + "}}\n"
+          else
+            "  {{formatlbl |label=Offset |value=" + .offset + "}}\n"
+          end) +
+          (if (.length // "") == "" then "" else
+            "  {{formatlbl |label=Length |value=" + .length + "}}\n"
+          end) +
             "  {{formatlbl |label=Description |value=" + .description + "}}\n" +
           (if .values == null then "" else
             "  {{formatlbl |label=Values |value=" + .values + "}}\n"
