@@ -3,32 +3,32 @@
 function update_formats() {
     for f in formats/*.json; do
         file=$(basename "$f" .json)
-        title=$(echo "$file" | tr _ .)
+        title=$(jq -r '.title' "$f")
         echo "Generating format file $title into content/formats/$file/index.md"
 
         mkdir -p content/formats/"$file"
         printf "# %s Format\n\n" "$title" > content/formats/"$file"/index.md
 
-        jq -r 'map(
-          "## " + .name + "\n" +
-          "{{begin-formattable}}\n" +
-          (if (.offset // "") == "" then "" elif (.offset | test("^0x[0-9A-Fa-f]+$")) then
-            "  {{formathexlbl |label=Offset |value=" + .offset + "}}\n"
-          else
-            "  {{formatlbl |label=Offset |value=" + .offset + "}}\n"
-          end) +
-          (if (.length // "") == "" then "" else
-            "  {{formatlbl |label=Length |value=" + .length + "}}\n"
-          end) +
+        jq -r '
+          def body:
             "  {{formatlbl |label=Description |value=" + .description + "}}\n" +
-          (if .values == null then "" else
-            "  {{formatlbl |label=Values |value=" + .values + "}}\n"
-          end) +
-          (if .bits == [] then "" else
-            "  {{formatlbl |label=Bits |value={{begin-bittable}}\n" + (.bits | map("    {{formatbitlbl |label=" + .bit + " |value=" + .value + "}}") | join("\n")) + "\n  {{end-bittable}} }}\n"
-          end) +
-          "{{end-formattable}}\n"
-        ) | join("\n")' formats/"$file".json >> content/formats/"$file"/index.md
+            (if .values == null then "" else
+              "  {{formatlbl |label=Values |value=" + .values + "}}\n"
+            end) +
+            (if .bits == [] then "" else
+              "  {{formatlbl |label=Bits |value={{begin-bittable}}\n" + (.bits | map("    {{formatbitlbl |label=" + .bit + " |value=" + .value + "}}") | join("\n")) + "\n  {{end-bittable}} }}\n"
+            end);
+          def section(rows): "## " + .name + "\n{{begin-formattable}}\n" + rows + "{{end-formattable}}\n";
+
+          (if .description == "" then "" else .description + "\n\n" end) + (
+            (.spec | map(section(
+              "  {{formathexlbl |label=Offset |value=" + .offset + "}}\n" +
+              "  {{formatlbl |label=Length |value=" + .length + "}}\n" +
+              body
+            ))) +
+            (.appendices | map("---\n\n" + section(body)))
+            | join("\n")
+          )' "$f" >> content/formats/"$file"/index.md
     done
 }
 

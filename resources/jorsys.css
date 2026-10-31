@@ -628,4 +628,8 @@ a:focus-visible {
   color: var(--gold-colour);
   display: inline;
 }
+
+hr {
+  margin: 5em 5em 4em 5em;
+}
 /** </misc> **/
