@@ -1,0 +1,43 @@
+{{begin-newsitem |time=2026-11-01T21:17:46Z |title=ThunderGraft II |author=Ojan |resources=thor-small.jpg |categories=StarCraft I, WarCraft II, modding, tools |summary=ThunderGraft II early release}}
+
+Back in the day, {{highlight |text=Quantam}} (Justin Olbrantz) made an [MPQDraft](../common/software/mpqdraft.html) plugin called {{highlight |text=ThunderGraft}}. He is, I believe, somewhat of an audiophile, and he himself considered {{highlight |text=ThunderGraft}} to be "*possibly the coolest of the three modding tools I released*". While {{highlight |text=MPQDraft}} certainly was more used and more widely useful, {{highlight |text=ThunderGraft}} was a very clever tool.
+
+In short, what this tool does is allow you to play sound formats other than WAV in your mods. In addition to WAV, it supports MP3, FLAC and Ogg Vorbis.
+
+
+## Background 
+
+When Blizzard developed their games in the nineties, MP3 was far from the household name it became after Napster made music file-sharing popular in 1999. It was also patent-encumbered and relatively expensive to decode on the computers of the day. Whatever the reasons, Blizzard went another way; as {{highlight |text=Quantam}} [wrote in a little piece about it](https://qstuff.blogspot.com/2009/08/story-of-thundergraft.html): *Diablo used raw PCM WAV audio, while Starcraft introduced (and [Warcraft II and Diablo II] used) a special "WAV compression", which compressed the audio in lossy [ADPCM](https://en.wikipedia.org/wiki/Adaptive_differential_pulse-code_modulation) form, resulting in a compression ratio between 3:1 and 4:1 (though at the cost of audio quality)*.
+
+This lossy audio compression was built into the MPQ format itself; the games saw what they read and wrote to the MPQs as simply PCM WAV audio, and that's all the audio streaming API was capable of playing. Quite a strange feature of an archive format.
+
+{{highlight |text=Quantam}} continues: "*ThunderGraft exploited the fact that the audio streaming API was encapsulated in functions supplied in Storm.dll. The fact that the functions were entirely contained in Storm meant that I could cleanly capture calls to them and redirect them. For cleanliness, I opted to simply replace the streaming API in its entirety. Anything less would have been version-dependent, as it would have required all sorts of messy code modifications inside Storm's internal functions.*"
+
+As the audio engine, some custom made engine by {{highlight |text=Dark_Brood}} was originally used, later replaced by FMOD Ex. FMOD Ex is not open-source, however, and it needed to be shipped alongside {{highlight |text=ThunderGraft}}. The toolchain of {{highlight |text=ThunderGraft}} is also at least twenty years old by now.
+
+{{img |file=thor-small.jpg |title=Mårten Eskil Winge: Thor's Fight with the Giants (1872)}}
+
+I decided to [bring some life back into this project](https://github.com/sjoblomj/thundergraft). I have replaced FMOD Ex with [miniaudio](https://miniaud.io/), modernized the build environment and allowed it to be built on any platform. Miniaudio supports fewer formats than FMOD Ex did, but I think MP3, FLAC and Ogg Vorbis ought to be enough for most people {{dash}} they bring the audio quality up and the file sizes down. [Reach out](../who.html) if you think I should incorporate Opus support, though I'd rather not, to keep the code simpler.
+
+One way to use the plugin is to simply put your sound files under the original music name, for example `MUSIC\\TERRAN1.WAV` (i.e. name it WAV even though it is a different format). A more elegant way would be to remap the names using Playlists.
+
+
+## Playlists and Audio Triggers
+
+Another somewhat obscure {{highlight |text=MPQDraft}} plugin is [ShadowFlare's Playlist Plugin](https://sfsrealm.hopto.org/downloads/SFPls.html): a plugin that allows you to define playlists in your mods. Inspired by {{highlight |text=ShadowFlare}}, I decided to incorporate that functionality straight into {{highlight |text=ThunderGraft}}, so that it has support for playlists too. The format she used for her plugin is supported out of the box in order to support legacy mods, but to define playlists, you should use the [contemporary native plugin format](https://github.com/sjoblomj/thundergraft/blob/main/docs/playlists.md) instead.
+
+By using playlists, you can map one sound to a set of sounds. It can be used to play your sound file instead of the one the game wants to play, or you can set it up to play a whole set of sound files with fades and shuffles and the like.
+
+The playlist format allows pretty advanced things; it is really a little state machine, capable of reacting to sounds as if they were triggers. You can for example make it so that when a sound with a given filename is played, [the music changes to boss-fight music](https://github.com/sjoblomj/thundergraft/blob/main/docs/playlists.md#music-that-changes-when-something-happens) (indefinitely or until another sound that you configure brings the music back into another playlist). Individual StarCraft maps can have their own playlists to make different levels more fine-grained. I recommend reading [the documentation](https://github.com/sjoblomj/thundergraft/blob/main/docs/playlists.md) for inspiration about what you can do.
+
+
+## Credits
+
+As mentioned, the original version was made by {{highlight |text=Quantam}} (Justin Olbrantz). {{highlight |text=ShadowFlare}} is the inspiration for the Playlist features. The audio engine, [miniaudio](https://github.com/mackron/miniaudio), is by {{highlight |text=mackron}} (David Reid), with community contributions (including by myself as I found bugs during testing).
+
+
+## Status and download
+
+I have done limited testing, and on StarCraft only. There are still things to polish, but I figure it's good enough for now, and the more eyeballs on this, the better.
+
+A pre-built binary of the {{highlight |text=MPQDraft}} plugin and the source code are [available on GitHub](https://github.com/sjoblomj/thundergraft/releases).
