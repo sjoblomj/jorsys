@@ -1,0 +1,19 @@
+{{begin-newsitem |time=2026-11-02T22:22:58Z |title=PyMS for Python 3 |author=Ojan |categories=StarCraft I, modding, tools |summary=The PyMS modding suite is officially updated for Python 3}}
+
+For StarCraft modders, {{highlight |text=PyMS}} has been the go-to tool for a long time. It is a cross platform BroodWar modding suite written in Python, and contains 15 programs to edit most of the file types you will encounter while modding.
+
+It was originally announced in 2008 and written for Python 1.5, and at some point updated for Python 2. It has not, however, been officially updated for Python 3. This has started to cause problems, since Python 2 has been unsupported for nearly seven years. It is no longer easily installable on many systems, and it might not always be trivial to run Python 2 and Python 3 on the same machine.
+
+After a long and cumbersome effort to overhaul the code base, {{highlight |text=poiuy_qwert}} finally made the Python 3 version the official one!
+
+In {{highlight |text=poiuy_qwert}}'s own words:
+
+{{beginquote |quote-source=poiuy_qwert}}
+The old code was kind of shit and unwieldy in a lot of core places, so fixing things was a nightmare, but it generally worked and was stable enough. I could have made it python3 compatible "easily", but I didn't see the point in that unless I actually fixed some of the core issues and got some of the benefits of moving to python3 (better type hinting for example). Because I decide to do a lot of large deep re-writes and large breadth changes, I was hesitant to put it in too many hands without better testing, and with my limited time I can only dedicate that time to development not actually testing/modding. I've been stuck at "should I replace the version that is working and battle tested to be generally stable with something that is in theory much better but has much less testing so may be less stable" for a bit
+
+Anyone who ever looked at the old code will probably mostly not recognize the new code, in a good way 😅 I feel bad for the people that had to touch the old code (I know a few people threw some curses my way about it 😝 ), but I am very happy with where it is now and hope anyone touching it will be too
+{{endquote}}
+
+I am very grateful to {{highlight |text=poiuy_qwert}} for continuing to support {{highlight |text=PyMS}} for so long, and still making efforts to modernize it.
+
+Find {{highlight |text=PyMS}} [on GitHub](https://github.com/poiuyqwert/PyMS).
