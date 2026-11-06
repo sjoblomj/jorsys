@@ -14,6 +14,8 @@ The old code was kind of shit and unwieldy in a lot of core places, so fixing th
 Anyone who ever looked at the old code will probably mostly not recognize the new code, in a good way 😅 I feel bad for the people that had to touch the old code (I know a few people threw some curses my way about it 😝 ), but I am very happy with where it is now and hope anyone touching it will be too
 {{endquote}}
 
+Not only was it updated for Python 3, but it also contains a ton of other updates/fixes (see the [Change Log](https://github.com/poiuyqwert/PyMS/blob/master/Help/Programs/Change_Log.md#october-29-2026) for all the details!)
+
 I am very grateful to {{highlight |text=poiuy_qwert}} for continuing to support {{highlight |text=PyMS}} for so long, and still making efforts to modernize it.
 
 Find {{highlight |text=PyMS}} [on GitHub](https://github.com/poiuyqwert/PyMS).
