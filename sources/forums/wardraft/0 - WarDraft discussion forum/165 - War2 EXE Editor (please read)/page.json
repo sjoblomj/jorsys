@@ -1,0 +1,311 @@
+{
+  "thread_id": "165",
+  "title": "War2 EXE Editor (please read)",
+  "posts": [
+    {
+      "post": {
+        "id": "165_0",
+        "chain": "0",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165",
+        "snapshot_ts": "20020929064203",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jul  2 14:46:04 1997",
+        "iso8601": "1997-07-02T14:46:04+00:00"
+      },
+      "author": {
+        "name": "Cameron",
+        "email": "c027319@mail.idt.net",
+        "website": "http://www.geocities.com/SiliconValley/Park/1385"
+      },
+      "content": {
+        "orig": "I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc).  I see from war2hack why some people were asking about my program.. It is/was not intended for cheating.  Not only that I think shaft shafted our specs..  If you'd like to check it out please do! :)",
+        "markdown": "I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc). I see from war2hack why some people were asking about my program.. It is/was not intended for cheating. Not only that I think shaft shafted our specs.. If you'd like to check it out please do! :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_1",
+        "chain": "1",
+        "missing": true
+      },
+      "timestamp": {
+        "orig": "Wed Jul  2 18:36:51 1997",
+        "iso8601": "1997-07-02T18:36:51+00:00"
+      },
+      "author": {
+        "name": "Aceron",
+        "email": null,
+        "website": null
+      },
+      "content": null
+    },
+    {
+      "post": {
+        "id": "165_1_1",
+        "chain": "1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_1_1",
+        "snapshot_ts": "20021001040908",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jul  2 19:08:45 1997",
+        "iso8601": "1997-07-02T19:08:45+00:00"
+      },
+      "author": {
+        "name": "Cameron",
+        "email": "c027319@mail.idt.net",
+        "website": "http://www.geocities.com/SiliconValley/Park/1385"
+      },
+      "content": {
+        "orig": "\n&gt;Will it work for v1.20?\n<BR>Yes it works for all PC version 1.0 + 1.2 + 1.3 + 1.33...\n<BR>Although some features when I'm done implementing them will only work on 1.33",
+        "markdown": ">Will it work for v1.20?  \n\nYes it works for all PC version 1.0 + 1.2 + 1.3 + 1.33...  \nAlthough some features when I'm done implementing them will only work on 1.33",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_2",
+        "chain": "2",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_2",
+        "snapshot_ts": "20020719081512",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Sun Jul  6 12:05:46 1997",
+        "iso8601": "1997-07-06T12:05:46+00:00"
+      },
+      "author": {
+        "name": "darkwing",
+        "email": "war2player@aol.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nwhat can I work on for the campaign?I'm bored stiff.",
+        "markdown": "what can I work on for the campaign?I'm bored stiff.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_3",
+        "chain": "3",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_3",
+        "snapshot_ts": "20020517100101",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jul 10 18:34:38 1997",
+        "iso8601": "1997-07-10T18:34:38+00:00"
+      },
+      "author": {
+        "name": "Whizzo",
+        "email": "tgoetzma@lax.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jul  2 14:46:04 1997 (UTC) Cameron wrote:\n<BR>&gt;I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc).  I see from war2hack why some people were asking about my program.. It is/was not intended for cheating.  Not only that I think shaft shafted our specs..  If you'd like to check it out please do! :)\n<BR>\n<BR>Finnaly! I've been waiting for someone to make a\n<BR>DeHackEd for Warcraft II. Once people explore it more, I'm\n<BR>sure they'll agree that it is just as valuable a tool as\n<BR>WarDraft.\n<BR>\n<BR>On behalf of everyone, I wanna say: THANK YOU.\n<BR>\n<BR>-Whizzo",
+        "markdown": ">At Wed Jul 2 14:46:04 1997 (UTC) Cameron wrote:  \n>I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc). I see from war2hack why some people were asking about my program.. It is/was not intended for cheating. Not only that I think shaft shafted our specs.. If you'd like to check it out please do! :)  \n  \nFinnaly! I've been waiting for someone to make a  \nDeHackEd for Warcraft II. Once people explore it more, I'm  \nsure they'll agree that it is just as valuable a tool as  \nWarDraft.  \n  \nOn behalf of everyone, I wanna say: THANK YOU.  \n  \n-Whizzo",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_3_1",
+        "chain": "3_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_3_1",
+        "snapshot_ts": "20020720065357",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul 11 03:21:38 1997",
+        "iso8601": "1997-07-11T03:21:38+00:00"
+      },
+      "author": {
+        "name": "Cameron",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\na new version supported War2 v1.5 and some new features is about to come out... I'm busy right now, as soon as it is done, I will post it :)",
+        "markdown": "a new version supported War2 v1.5 and some new features is about to come out... I'm busy right now, as soon as it is done, I will post it :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_4",
+        "chain": "4",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_4",
+        "snapshot_ts": "20020720202120",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Mon Aug 25 03:39:08 1997",
+        "iso8601": "1997-08-25T03:39:08+00:00"
+      },
+      "author": {
+        "name": "CyberX (Sean)",
+        "email": "sean@storm.ca",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jul  2 14:46:04 1997 (UTC) Cameron wrote:\n<BR>&gt;I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc).  I see from war2hack why some people were asking about my program.. It is/was not intended for cheating.  Not only that I think shaft shafted our specs..  If you'd like to check it out please do! :)\n<BR> I love this Program But HOW THE HECK DO YOU ADD\n<BR>UNITS WITH IT!!!",
+        "markdown": ">At Wed Jul 2 14:46:04 1997 (UTC) Cameron wrote:  \n>I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc). I see from war2hack why some people were asking about my program.. It is/was not intended for cheating. Not only that I think shaft shafted our specs.. If you'd like to check it out please do! :)  \n\nI love this Program But HOW THE HECK DO YOU ADD  \nUNITS WITH IT!!!",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_5",
+        "chain": "5",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_5",
+        "snapshot_ts": "20020721054153",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Mar  6 11:06:38 1998",
+        "iso8601": "1998-03-06T11:06:38+00:00"
+      },
+      "author": {
+        "name": "Zippo",
+        "email": "jorsans3@etsii.upv.es",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jul  2 14:46:04 1997 (UTC) Cameron wrote:\n<BR>&gt;I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc).  I see from war2hack why some people were asking about my program.. It is/was not intended for cheating.  Not only that I think shaft shafted our specs..  If you'd like to check it out please do! :)\n<BR>\n<BR>Well. I've tried to download it but I think I have a problem with my net conection. Please, if someone can E-mail me the Warhack version for windows i would test it with the spanish version of Warcraft (I'm from Spain :)).\n<BR>\n<BR>Thanks.\n<BR>Zippo",
+        "markdown": ">At Wed Jul 2 14:46:04 1997 (UTC) Cameron wrote:  \n>I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc). I see from war2hack why some people were asking about my program.. It is/was not intended for cheating. Not only that I think shaft shafted our specs.. If you'd like to check it out please do! :)  \n  \nWell. I've tried to download it but I think I have a problem with my net conection. Please, if someone can E-mail me the Warhack version for windows i would test it with the spanish version of Warcraft (I'm from Spain :)).  \n  \nThanks.  \nZippo",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_6",
+        "chain": "6",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_6",
+        "snapshot_ts": "20020721144551",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jul 23 01:26:29 1998",
+        "iso8601": "1998-07-23T01:26:29+00:00"
+      },
+      "author": {
+        "name": "jose",
+        "email": "tracker415@aol.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\ncan u send me the exe editor",
+        "markdown": "can u send me the exe editor",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_7",
+        "chain": "7",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_7",
+        "snapshot_ts": "20020721230614",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jul 23 19:38:16 1998",
+        "iso8601": "1998-07-23T19:38:16+00:00"
+      },
+      "author": {
+        "name": "Scooter",
+        "email": "Kirill.Blinov@rus.net",
+        "website": "http://www.geocities.com/TimesSquare/Ring/9201/"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jul  2 14:46:04 1997 (UTC) Cameron wrote:\n<BR>&gt;I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc).  I see from war2hack why some people were asking about my program.. It is/was not intended for cheating.  Not only that I think shaft shafted our specs..  If you'd like to check it out please do! :)\n<BR>\n<BR>------------------------------------------------------------\n<BR>\n<BR> Oh! It is gooood! I have a lot of War2 editors and tools and wanna it to be in my collection too! And I hope it will be helpfull for my new TC! So thanks! \n<BR> How can I get this program? Or can you send it me?\n<BR>                                   Kirill (Scooter)!",
+        "markdown": ">At Wed Jul 2 14:46:04 1997 (UTC) Cameron wrote:  \n>I have just released an exe editor, it allows all kinds of cool modifications.. For instance single player walls, and the addition of new characters (we're pulling over the water elemental from War1 and allowing mage towers to build it,etc). I see from war2hack why some people were asking about my program.. It is/was not intended for cheating. Not only that I think shaft shafted our specs.. If you'd like to check it out please do! :)  \n  \n------------------------------------------------------------  \n  \nOh! It is gooood! I have a lot of War2 editors and tools and wanna it to be in my collection too! And I hope it will be helpfull for my new TC! So thanks!  \nHow can I get this program? Or can you send it me?  \nKirill (Scooter)!",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_8",
+        "chain": "8",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_8",
+        "snapshot_ts": "20020722101034",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jul 23 21:16:30 1998",
+        "iso8601": "1998-07-23T21:16:30+00:00"
+      },
+      "author": {
+        "name": "Dirk Richartz",
+        "email": "dirk.richartz@t-online.de",
+        "website": "http://www.geocities.com/TimesSquare/Maze/8889/warcraft.htm"
+      },
+      "content": {
+        "orig": "\nHi Cameron,\n<BR>\n\n\n<BR>&gt; I have just released an exe editor, it allows all kinds of cool modifications.. If you'd like to check it out please do! :) \n\n<BR>\n<BR>I would like to, but when visiting your HomePage I land on a funny chinese Site and a java-applet asks something I don't understand. I was curios and looked around a while... but nothing to find about WC-II or something alike, but I might have visited some young asian girls... (but I have found a cool animated clown-GIF ;)\n<BR>\n<BR>Can you please verify this? \n<BR>\n<BR>bye4now... Dirk\n<BR>\n<BR>-----------------------------------------------------------\n<BR>Dirk's WarCraft Site:\n<BR>http://www.geocities.com/TimesSquare/Maze/8889/warcraft.htm",
+        "markdown": "Hi Cameron,  \n  \n> I have just released an exe editor, it allows all kinds of cool modifications.. If you'd like to check it out please do! :)  \n  \nI would like to, but when visiting your HomePage I land on a funny chinese Site and a java-applet asks something I don't understand. I was curios and looked around a while... but nothing to find about WC-II or something alike, but I might have visited some young asian girls... (but I have found a cool animated clown-GIF ;)  \n  \nCan you please verify this?  \n  \nbye4now... Dirk  \n  \n-----------------------------------------------------------  \nDirk's WarCraft Site:  \nhttp://www.geocities.com/TimesSquare/Maze/8889/warcraft.htm",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_8_1",
+        "chain": "8_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_8_1",
+        "snapshot_ts": "20020529203622",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Sun Jul 26 23:35:49 1998",
+        "iso8601": "1998-07-26T23:35:49+00:00"
+      },
+      "author": {
+        "name": "redink1",
+        "email": "redink1@hotmail.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;I would like to, but when visiting your HomePage I land on a funny chinese Site and a java-applet asks something I don't understand. I was curios and looked around a while... but nothing to find about WC-II or something alike, but I might have visited some young asian girls... (but I have found a cool animated clown-GIF ;)\n<BR>&gt;\n<BR>&gt;Can you please verify this? \n<BR>\n<BR>\n<BR>I too have tried to visit the site, and it looks like Geocities took down the site, and somebody from Japan or China snatched it up already.  Perhaps Cameron will find a new server.  \n<BR>\n<BR>redink1",
+        "markdown": ">I would like to, but when visiting your HomePage I land on a funny chinese Site and a java-applet asks something I don't understand. I was curios and looked around a while... but nothing to find about WC-II or something alike, but I might have visited some young asian girls... (but I have found a cool animated clown-GIF ;)  \n>  \n>Can you please verify this?  \n  \n  \nI too have tried to visit the site, and it looks like Geocities took down the site, and somebody from Japan or China snatched it up already. Perhaps Cameron will find a new server.  \n  \nredink1",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "165_9",
+        "chain": "9",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?165_9",
+        "snapshot_ts": "20020723041328",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Mon Jul 27 17:42:32 1998",
+        "iso8601": "1998-07-27T17:42:32+00:00"
+      },
+      "author": {
+        "name": "Dirk Richartz",
+        "email": "dirk.richartz@t-online.de",
+        "website": "http://www.geocities.com/TimesSquare/Maze/8889/warcraft.htm"
+      },
+      "content": {
+        "orig": "\nCameron wrote:\n<BR>&gt;I have just released an exe editor, it allows all kinds of cool modifications.. \n<BR>\n<BR>Well, allthough that is quite nice, the given link is still useless for me. It still leads me to a site where I dont know what to do or where to go!\n<BR>\n<BR>Has anybody with a reachable site mirrored this file?\n<BR>\n<BR>bye4now... Dirk\n",
+        "markdown": "Cameron wrote:  \n>I have just released an exe editor, it allows all kinds of cool modifications..  \n  \nWell, allthough that is quite nice, the given link is still useless for me. It still leads me to a site where I dont know what to do or where to go!  \n  \nHas anybody with a reachable site mirrored this file?  \n  \nbye4now... Dirk",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

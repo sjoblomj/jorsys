@@ -1,0 +1,78 @@
+{
+  "thread_id": "155",
+  "title": "Circle of Power Color Cycling",
+  "posts": [
+    {
+      "post": {
+        "id": "155_0",
+        "chain": "0",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?155",
+        "snapshot_ts": "20020907150914",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jun 27 23:37:26 1997",
+        "iso8601": "1997-06-27T23:37:26+00:00"
+      },
+      "author": {
+        "name": "Chris Fuller",
+        "email": "dandtfuller@msn.com",
+        "website": null
+      },
+      "content": {
+        "orig": "I have recently observed that the Red color that cycles for the Circle of Power will not cycle when used in graphics other than the Circle unless the Circle is present in the same Pud.  This implies that either the Circle of Power has a unique attribute or the game actually checks to see whether or not a Circle is present.  In either case, if anyone knows how to activate the Circle color Cycling without placing a circle, please tell how.\n<BR>\n<BR>Also, I would advise anyone who has created a graphic with Red that is not for team designation check their graphic in a Pud with the Circle in it to ensure that their stuff will not flash later.\n<BR>\n<BR>Fuller",
+        "markdown": "I have recently observed that the Red color that cycles for the Circle of Power will not cycle when used in graphics other than the Circle unless the Circle is present in the same Pud. This implies that either the Circle of Power has a unique attribute or the game actually checks to see whether or not a Circle is present. In either case, if anyone knows how to activate the Circle color Cycling without placing a circle, please tell how.  \n  \nAlso, I would advise anyone who has created a graphic with Red that is not for team designation check their graphic in a Pud with the Circle in it to ensure that their stuff will not flash later.  \n  \nFuller",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "155_1",
+        "chain": "1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?155_1",
+        "snapshot_ts": "20020908021048",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Sat Jun 28 05:05:15 1997",
+        "iso8601": "1997-06-28T05:05:15+00:00"
+      },
+      "author": {
+        "name": "JQ",
+        "email": "pangannie@worldnet.att.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Fri Jun 27 23:37:26 1997 (UTC) Chris Fuller wrote:\n<BR>&gt;I have recently observed that the Red color that cycles for the Circle of Power will not cycle when used in graphics other than the Circle unless the Circle is present in the same Pud.  This implies that either the Circle of Power has a unique attribute or the game actually checks to see whether or not a Circle is present.  In either case, if anyone knows how to activate the Circle color Cycling without placing a circle, please tell how.\n<BR>\n<BR>&gt;Fuller\n<BR>\n<BR>I'm not sure since I've only had a scare number of experience with the PC wardraft (I have a mac) but I think that the circle of power cycling power cycles only after a unit is rescued on the map (just like a cop). It was this way in the lava tileset that someone made.",
+        "markdown": ">At Fri Jun 27 23:37:26 1997 (UTC) Chris Fuller wrote:  \n>I have recently observed that the Red color that cycles for the Circle of Power will not cycle when used in graphics other than the Circle unless the Circle is present in the same Pud. This implies that either the Circle of Power has a unique attribute or the game actually checks to see whether or not a Circle is present. In either case, if anyone knows how to activate the Circle color Cycling without placing a circle, please tell how.  \n  \n>Fuller  \n  \nI'm not sure since I've only had a scare number of experience with the PC wardraft (I have a mac) but I think that the circle of power cycling power cycles only after a unit is rescued on the map (just like a cop). It was this way in the lava tileset that someone made.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "155_2",
+        "chain": "2",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?155_2",
+        "snapshot_ts": "20020908135737",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Sat Jul  5 05:25:51 1997",
+        "iso8601": "1997-07-05T05:25:51+00:00"
+      },
+      "author": {
+        "name": "Brian S",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Fri Jun 27 23:37:26 1997 (UTC) Chris Fuller wrote:\n<BR>&gt;I have recently observed that the Red color that cycles for the Circle of Power will not cycle when used in graphics other than the Circle unless the Circle is present in the same Pud.  This implies that either the Circle of Power has a unique attribute or the game actually checks to see whether or not a Circle is present.  In either case, if anyone knows how to activate the Circle color Cycling without placing a circle, please tell how.\n<BR>&gt;\n<BR>&gt;Also, I would advise anyone who has created a graphic with Red that is not for team designation check their graphic in a Pud with the Circle in it to ensure that their stuff will not flash later.\n<BR>&gt;\n<BR>&gt;Fuller\n<BR>I used the circle of power reds on a wolves tounge to make it look like it was panting,",
+        "markdown": ">At Fri Jun 27 23:37:26 1997 (UTC) Chris Fuller wrote:  \n>I have recently observed that the Red color that cycles for the Circle of Power will not cycle when used in graphics other than the Circle unless the Circle is present in the same Pud. This implies that either the Circle of Power has a unique attribute or the game actually checks to see whether or not a Circle is present. In either case, if anyone knows how to activate the Circle color Cycling without placing a circle, please tell how.  \n>  \n>Also, I would advise anyone who has created a graphic with Red that is not for team designation check their graphic in a Pud with the Circle in it to ensure that their stuff will not flash later.  \n>  \n>Fuller  \n\nI used the circle of power reds on a wolves tounge to make it look like it was panting,",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

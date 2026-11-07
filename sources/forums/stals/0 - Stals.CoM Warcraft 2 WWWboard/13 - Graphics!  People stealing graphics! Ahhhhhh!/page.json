@@ -1,0 +1,58 @@
+{
+  "thread_id": "13",
+  "title": "Graphics!  People stealing graphics! Ahhhhhh!",
+  "posts": [
+    {
+      "post": {
+        "id": "13",
+        "chain": "13",
+        "url": "http://www.stals.com/war2/wwwboard/messages/13.html",
+        "snapshot_ts": "19970614103927",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "March 23, 1997 at 22:34:28",
+        "iso8601": "1997-03-23T22:34:28+00:00"
+      },
+      "author": {
+        "name": "Dioxide",
+        "email": "ericcheng@juno.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n<center><img src=\"http://www.best.com/~edcheng/dioxide/dioxnow.gif\"></center><p>\nAugh!  I hate it!  I found lots of sites that had MY<br>graphics, the ones that I spent HOURS on, and didn't<br>credit me!!!  And when I email them, they ignore me!\n<br>\n<ul><li><a href=\"http://www.best.com/~edcheng/dioxide/\">Dioxide's WarCraft II Page</a></ul>",
+        "markdown": "![](http://www.best.com/~edcheng/dioxide/dioxnow.gif)\n\nAugh! I hate it! I found lots of sites that had MY  \ngraphics, the ones that I spent HOURS on, and didn't  \ncredit me!!! And when I email them, they ignore me!  \n\n-   [Dioxide's WarCraft II Page](http://www.best.com/~edcheng/dioxide/)",
+        "images": [
+          "http://www.best.com/~edcheng/dioxide/dioxnow.gif"
+        ],
+        "links": [
+          "http://www.best.com/~edcheng/dioxide/"
+        ]
+      }
+    },
+    {
+      "post": {
+        "id": "15",
+        "chain": "13_15",
+        "url": "http://www.stals.com/war2/wwwboard/messages/15.html",
+        "snapshot_ts": "19970614104004",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "March 23, 1997 at 23:10:42",
+        "iso8601": "1997-03-23T23:10:42+00:00"
+      },
+      "author": {
+        "name": "Oren",
+        "email": "oren@stals.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: Augh!  I hate it!  I found lots of sites that had MY<br>: graphics, the ones that I spent HOURS on, and didn't<br>: credit me!!!  And when I email them, they ignore me!<p>Dioxide! You are not alone. This has happened to me too many times i've lost count! If they dont answer your emails then mailbomb them! Send them huge files and harassing letters :) But dont let it bug you too much!\n<br>",
+        "markdown": "> Augh! I hate it! I found lots of sites that had MY  \n> graphics, the ones that I spent HOURS on, and didn't  \n> credit me!!! And when I email them, they ignore me!\n\nDioxide! You are not alone. This has happened to me too many times i've lost count! If they dont answer your emails then mailbomb them! Send them huge files and harassing letters :) But dont let it bug you too much!",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

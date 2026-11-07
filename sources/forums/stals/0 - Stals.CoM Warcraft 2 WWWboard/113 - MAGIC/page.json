@@ -1,0 +1,30 @@
+{
+  "thread_id": "113",
+  "title": "MAGIC",
+  "posts": [
+    {
+      "post": {
+        "id": "113",
+        "chain": "113",
+        "url": "http://www.stals.com/war2/wwwboard/messages/113.html",
+        "snapshot_ts": "19970614093403",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 11, 1997 at 12:58:55",
+        "iso8601": "1997-05-11T12:58:55+00:00"
+      },
+      "author": {
+        "name": "BiG J MoNeY",
+        "email": "pdoc@mindspring.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nCould someone E-mail me a page all about Warcraft magic explaining not the strategies, but how each spell works?  My friend got it used from a friend (clean trade), but he couldn't get a manual.  We want to know what they do as explained in the manual.  If values and numbers could be supplied, that would be great!<p>                      Thanks!<p><p>\n<br>",
+        "markdown": "Could someone E-mail me a page all about Warcraft magic explaining not the strategies, but how each spell works? My friend got it used from a friend (clean trade), but he couldn't get a manual. We want to know what they do as explained in the manual. If values and numbers could be supplied, that would be great!\n\nThanks!",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

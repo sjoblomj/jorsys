@@ -1,0 +1,119 @@
+{
+  "thread_id": "171",
+  "title": "Problems with weapons campaign.",
+  "posts": [
+    {
+      "post": {
+        "id": "171_0",
+        "chain": "0",
+        "missing": true
+      },
+      "timestamp": {
+        "orig": "Thu Jul  3 05:18:10 1997",
+        "iso8601": "1997-07-03T05:18:10+00:00"
+      },
+      "author": {
+        "name": "Brian S",
+        "email": null,
+        "website": null
+      },
+      "content": null
+    },
+    {
+      "post": {
+        "id": "171_1",
+        "chain": "1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?171_1",
+        "snapshot_ts": "20020724091453",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jul  3 18:17:19 1997",
+        "iso8601": "1997-07-03T18:17:19+00:00"
+      },
+      "author": {
+        "name": "Dr. Jekyl",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jul  3 05:18:10 1997 (UTC) Brian S wrote:\n<BR>&gt;Cameron, you need to use transparency masks when converting the iconsets into GFX format, the current &quot;Weapons&quot; campaing didn't do that, so a bunch of the icons are all messed up ..\n<BR>&gt;they have transparent portions which make them get messed up if you choose 2 charachters in a row which have the problem..  use transparencies..\n<BR>\n<BR>To be honest, it is apparent that you are far more knowledgable in the graphics dept.  Oh, I'm pretty good at tileing, and even making nice looking gfxs, but those pallete problems, layout files, and transparency masks give me fits.  Anyway, I am putting together a campaign author's guide, and I could use a nice section on graphics conversions (hint hint).  Other areas I am weak in are artificial intelligence editing, and 278 editing.\n<BR>\n<BR>Dr. Jekyl",
+        "markdown": ">At Thu Jul 3 05:18:10 1997 (UTC) Brian S wrote:  \n>Cameron, you need to use transparency masks when converting the iconsets into GFX format, the current \"Weapons\" campaing didn't do that, so a bunch of the icons are all messed up ..  \n>they have transparent portions which make them get messed up if you choose 2 charachters in a row which have the problem.. use transparencies..  \n  \nTo be honest, it is apparent that you are far more knowledgable in the graphics dept. Oh, I'm pretty good at tileing, and even making nice looking gfxs, but those pallete problems, layout files, and transparency masks give me fits. Anyway, I am putting together a campaign author's guide, and I could use a nice section on graphics conversions (hint hint). Other areas I am weak in are artificial intelligence editing, and 278 editing.  \n  \nDr. Jekyl",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "171_1_1",
+        "chain": "1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?171_1_1",
+        "snapshot_ts": "20020531190050",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jul  3 18:51:24 1997",
+        "iso8601": "1997-07-03T18:51:24+00:00"
+      },
+      "author": {
+        "name": "Shayne Hiet-Block",
+        "email": "ivor.block@BCHYDRO.bc.ca",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jul  3 18:17:19 1997 (UTC) Dr. Jekyl wrote:\n<BR>\n<BR>&gt;Other areas I am weak in are artificial intelligence &gt;editing, and 278 editing.\n<BR>&gt;\n<BR>&gt;Dr. Jekyl\n<BR>\n<BR>If you need someone who can work on artificial intelligence editing, and 278 editing, I can help.",
+        "markdown": ">At Thu Jul 3 18:17:19 1997 (UTC) Dr. Jekyl wrote:  \n  \n>Other areas I am weak in are artificial intelligence >editing, and 278 editing.  \n>  \n>Dr. Jekyl  \n  \nIf you need someone who can work on artificial intelligence editing, and 278 editing, I can help.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "171_1_2",
+        "chain": "1_2",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?171_1_2",
+        "snapshot_ts": "20020725012617",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 04:11:41 1997",
+        "iso8601": "1997-07-04T04:11:41+00:00"
+      },
+      "author": {
+        "name": "Brian S",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jul  3 18:17:19 1997 (UTC) Dr. Jekyl wrote:\n<BR>&gt;&gt;At Thu Jul  3 05:18:10 1997 (UTC) Brian S wrote:\n<BR>&gt;&gt;Cameron, you need to use transparency masks when converting the iconsets into GFX format, the current &quot;Weapons&quot; campaing didn't do that, so a bunch of the icons are all messed up ..\n<BR>&gt;&gt;they have transparent portions which make them get messed &gt;up if you choose 2 charachters in a row which have the &gt;problem..  use transparencies..\n<BR>&gt;\n<BR>&gt;To be honest, it is apparent that you are far more &gt;knowledgable in the graphics dept.  Oh, I'm pretty good at &gt;tileing, and even making nice looking gfxs, but those &gt;pallete problems, layout files, and transparency masks give &gt;me fits.  Anyway, I am putting together a campaign author's using tranparencies with the icon sets is easier than not using them at all.. just extract the original gfx's, convert to bmp and say &quot;yes&quot; when it asks if you want to make a transparency.. then when you are converting your new iconset.bmp to gfx, just include the exact same transparency mask file which you got from the original gfx.. so instead of choosing a transparent color, you would just select the transparency mask file.. all the mask file is is just a two color bmp, the transparent parts are black, and the nontransparent parts are white..  but the icons are all square and in the exact same locations as the originals, so the exact same mask can be used..\n<BR>\n<BR>&gt;guide, and I could use a nice section on graphics &gt;conversions (hint hint).  Other areas I am weak in are \n<BR>I will probably be busy with the star wars conversion, and I am probably makeing a few units for blasted wastes also.. \n<BR>Someone made a neat gfx of a footman with the elven archers cape and head, the layout.txt was totally messed up, so portions of the graphics were missing and unrecoverable. \n<BR>but it was a good idea, chop up the original graphics and mix them up.. \n<BR>\n<BR>&gt;artificial intelligence editing, and 278 editing.\n<BR>&gt;\n<BR>&gt;Dr. Jekyl",
+        "markdown": ">At Thu Jul 3 18:17:19 1997 (UTC) Dr. Jekyl wrote:  \n>>At Thu Jul 3 05:18:10 1997 (UTC) Brian S wrote:  \n>>Cameron, you need to use transparency masks when converting the iconsets into GFX format, the current \"Weapons\" campaing didn't do that, so a bunch of the icons are all messed up ..  \n>>they have transparent portions which make them get messed >up if you choose 2 charachters in a row which have the >problem.. use transparencies..  \n>  \n>To be honest, it is apparent that you are far more >knowledgable in the graphics dept. Oh, I'm pretty good at >tileing, and even making nice looking gfxs, but those >pallete problems, layout files, and transparency masks give >me fits. Anyway, I am putting together a campaign author's using tranparencies with the icon sets is easier than not using them at all.. just extract the original gfx's, convert to bmp and say \"yes\" when it asks if you want to make a transparency.. then when you are converting your new iconset.bmp to gfx, just include the exact same transparency mask file which you got from the original gfx.. so instead of choosing a transparent color, you would just select the transparency mask file.. all the mask file is is just a two color bmp, the transparent parts are black, and the nontransparent parts are white.. but the icons are all square and in the exact same locations as the originals, so the exact same mask can be used..  \n  \n>guide, and I could use a nice section on graphics >conversions (hint hint). Other areas I am weak in are  \n\nI will probably be busy with the star wars conversion, and I am probably makeing a few units for blasted wastes also..  \nSomeone made a neat gfx of a footman with the elven archers cape and head, the layout.txt was totally messed up, so portions of the graphics were missing and unrecoverable.  \nbut it was a good idea, chop up the original graphics and mix them up..  \n  \n>artificial intelligence editing, and 278 editing.  \n>  \n>Dr. Jekyl",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "171_1_2_1",
+        "chain": "1_2_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?171_1_2_1",
+        "snapshot_ts": "20020725081207",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 16:49:42 1997",
+        "iso8601": "1997-07-04T16:49:42+00:00"
+      },
+      "author": {
+        "name": "OrcMan",
+        "email": "nlall@geocities.com",
+        "website": "http://www.stals.com/orcman/"
+      },
+      "content": {
+        "orig": "\n&gt;\n<BR>&gt;&gt;guide, and I could use a nice section on graphics &gt;conversions (hint hint).  Other areas I am weak in are \n<BR>Hey cameron, I could probly help you with that, but I am still a little bit of a beginner to it. just ICQ me if you would like my help\n<BR>\n<BR>&gt;I will probably be busy with the star wars conversion, and I am probably makeing a few units for blasted wastes also.. \n<BR>&gt;Someone made a neat gfx of a footman with the elven archers cape and head, the layout.txt was totally messed up, so portions of the graphics were missing and unrecoverable. \n<BR>&gt;but it was a good idea, chop up the original graphics and mix them up.. \n<BR>&gt;&gt;\n<BR>Yeah, I agree. I have been working on a GFX of a footman with a grunts head (harder to make than it sounds) and HellMage is working on a GFX of a mage on a Death Knight horse. Strangely enough he is calling his HellMage and I am calling mine OrcMan :)",
+        "markdown": ">  \n>>guide, and I could use a nice section on graphics >conversions (hint hint). Other areas I am weak in are  \n\nHey cameron, I could probly help you with that, but I am still a little bit of a beginner to it. just ICQ me if you would like my help  \n  \n>I will probably be busy with the star wars conversion, and I am probably makeing a few units for blasted wastes also..  \n>Someone made a neat gfx of a footman with the elven archers cape and head, the layout.txt was totally messed up, so portions of the graphics were missing and unrecoverable.  \n>but it was a good idea, chop up the original graphics and mix them up..  \n>>  \n\nYeah, I agree. I have been working on a GFX of a footman with a grunts head (harder to make than it sounds) and HellMage is working on a GFX of a mage on a Death Knight horse. Strangely enough he is calling his HellMage and I am calling mine OrcMan :)",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

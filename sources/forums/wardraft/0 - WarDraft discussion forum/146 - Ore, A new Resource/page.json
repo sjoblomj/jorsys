@@ -1,0 +1,438 @@
+{
+  "thread_id": "146",
+  "title": "Ore, A new Resource",
+  "posts": [
+    {
+      "post": {
+        "id": "146_0",
+        "chain": "0",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146",
+        "snapshot_ts": "20021020074115",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Tue Jun 24 19:46:03 1997",
+        "iso8601": "1997-06-24T19:46:03+00:00"
+      },
+      "author": {
+        "name": "Josh Barr aka DukeMan",
+        "email": "dukeman@stals.com",
+        "website": "http://www.stals.com/"
+      },
+      "content": {
+        "orig": "Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.",
+        "markdown": "Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1",
+        "chain": "1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1",
+        "snapshot_ts": "20021020073850",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Tue Jun 24 20:22:43 1997",
+        "iso8601": "1997-06-24T20:22:43+00:00"
+      },
+      "author": {
+        "name": "Brett Wood",
+        "email": "bwood@futurepoint.com",
+        "website": "http://www.students.uiuc.edu/~bwood/shipyard.html"
+      },
+      "content": {
+        "orig": "\n&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>\n<BR>Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>\n<BR>To put it another way: no.",
+        "markdown": ">At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n  \nWhoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n  \nTo put it another way: no.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1",
+        "chain": "1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1",
+        "snapshot_ts": "20020807234915",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Tue Jun 24 20:38:00 1997",
+        "iso8601": "1997-06-24T20:38:00+00:00"
+      },
+      "author": {
+        "name": "MacNick (Nick)",
+        "email": "Niklas.Hjelm.Smith@psy.umu.se",
+        "website": "http://www.geocities.com/TimesSquare/Alley/7202"
+      },
+      "content": {
+        "orig": "\n&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;\n<BR>&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;\n<BR>&gt;To put it another way: no.\n<BR>\n<BR>Do not swear please.. HELL!! Do you meen Hell as the world below uss or the Word??\n<BR>\n<BR>Sorry I can't help it to be so &quot;Must be right there and here&quot;\n<BR>\n<BR>-MacNick",
+        "markdown": ">At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>  \n>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>  \n>To put it another way: no.  \n  \nDo not swear please.. HELL!! Do you meen Hell as the world below uss or the Word??  \n  \nSorry I can't help it to be so \"Must be right there and here\"  \n  \n-MacNick",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1_1",
+        "chain": "1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1_1",
+        "snapshot_ts": "20020807235022",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Tue Jun 24 21:24:54 1997",
+        "iso8601": "1997-06-24T21:24:54+00:00"
+      },
+      "author": {
+        "name": "Brett Wood",
+        "email": "bwood@futurepoint.com",
+        "website": "http://www.students.uiuc.edu/~bwood/shipyard.html"
+      },
+      "content": {
+        "orig": "\n&gt;At Tue Jun 24 20:38:00 1997 (UTC) MacNick (Nick) wrote:\n<BR>&gt;&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;&gt;\n<BR>&gt;&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;&gt;\n<BR>&gt;&gt;To put it another way: no.\n<BR>&gt;\n<BR>&gt;Do not swear please.. HELL!! Do you meen Hell as the world below uss or the Word??\n<BR>&gt;\n<BR>&gt;Sorry I can't help it to be so &quot;Must be right there and here&quot;\n<BR>&gt;\n<BR>\n<BR>Aw heck, sorry if I offended anyone.",
+        "markdown": ">At Tue Jun 24 20:38:00 1997 (UTC) MacNick (Nick) wrote:  \n>>At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>>  \n>>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>>  \n>>To put it another way: no.  \n>  \n>Do not swear please.. HELL!! Do you meen Hell as the world below uss or the Word??  \n>  \n>Sorry I can't help it to be so \"Must be right there and here\"  \n>  \n  \nAw heck, sorry if I offended anyone.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1_1_1",
+        "chain": "1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1_1_1",
+        "snapshot_ts": "20020619210451",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 00:07:03 1997",
+        "iso8601": "1997-06-25T00:07:03+00:00"
+      },
+      "author": {
+        "name": "Dr. Jekyl",
+        "email": "pudman7@hotmail.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Tue Jun 24 21:24:54 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;At Tue Jun 24 20:38:00 1997 (UTC) MacNick (Nick) wrote:\n<BR>&gt;&gt;&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;To put it another way: no.\n<BR>&gt;&gt;\n<BR>&gt;&gt;Do not swear please.. HELL!! Do you meen Hell as the world below uss or the Word??\n<BR>&gt;&gt;\n<BR>&gt;&gt;Sorry I can't help it to be so &quot;Must be right there and here&quot;\n<BR>&gt;&gt;\n<BR>&gt;\n<BR>&gt;Aw heck, sorry if I offended anyone.\n<BR>\n<BR>It didn't offend me.  I think that is taking the profanity point a bit far.  I think that this may have something to do with Nick being Swedish, and this word may carry more impact in Sweden that it does in the good ole USA.\n<BR>\n<BR>There is a lot worse words than that one that people spread very liberally into their sentances in certain gaming chatrooms.  Heck, Nick didn't seem too offended at the idea of a Hell tile set.  He even offered ideas for the critter.  I think we all have better things to get our feathers ruffled over.  :)\n<BR>\n<BR>(Nick, Hell is not considered profanity in the USA, as far as Brett was concerned, he was not cursing)\n<BR>\n<BR>Dr. Jekyl",
+        "markdown": ">At Tue Jun 24 21:24:54 1997 (UTC) Brett Wood wrote:  \n>>At Tue Jun 24 20:38:00 1997 (UTC) MacNick (Nick) wrote:  \n>>>At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>>>  \n>>>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>>>  \n>>>To put it another way: no.  \n>>  \n>>Do not swear please.. HELL!! Do you meen Hell as the world below uss or the Word??  \n>>  \n>>Sorry I can't help it to be so \"Must be right there and here\"  \n>>  \n>  \n>Aw heck, sorry if I offended anyone.  \n  \nIt didn't offend me. I think that is taking the profanity point a bit far. I think that this may have something to do with Nick being Swedish, and this word may carry more impact in Sweden that it does in the good ole USA.  \n  \nThere is a lot worse words than that one that people spread very liberally into their sentances in certain gaming chatrooms. Heck, Nick didn't seem too offended at the idea of a Hell tile set. He even offered ideas for the critter. I think we all have better things to get our feathers ruffled over. :)  \n  \n(Nick, Hell is not considered profanity in the USA, as far as Brett was concerned, he was not cursing)  \n  \nDr. Jekyl",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1_1_1_1",
+        "chain": "1_1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1_1_1_1",
+        "snapshot_ts": "20020611033424",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 17:22:37 1997",
+        "iso8601": "1997-06-25T17:22:37+00:00"
+      },
+      "author": {
+        "name": "Chris Fuller",
+        "email": "dandtfuller@msn.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nNot only is Hell not considered a profanity to most people in the US but there is also a town of the same name near Kalamazoo, Michigan.  In fact, I've gone to Hell a couple of times in my day.\n<BR>\n<BR>Fuller",
+        "markdown": "Not only is Hell not considered a profanity to most people in the US but there is also a town of the same name near Kalamazoo, Michigan. In fact, I've gone to Hell a couple of times in my day.  \n  \nFuller",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1_1_1_1_1",
+        "chain": "1_1_1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1_1_1_1_1",
+        "snapshot_ts": "20020807235250",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 18:41:14 1997",
+        "iso8601": "1997-06-25T18:41:14+00:00"
+      },
+      "author": {
+        "name": "MacNick",
+        "email": "E-Mail",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 17:22:37 1997 (UTC) Chris Fuller wrote:\n<BR>&gt;Not only is Hell not considered a profanity to most people in the US but there is also a town of the same name near Kalamazoo, Michigan.  In fact, I've gone to Hell a couple of times in my day.\n<BR>\n<BR>Hell Hell Hell Hell, Hell there and Hell here..\n<BR>First this was about Ore then it has become to Hell??\n<BR>\n<BR>Chris, what Kind'a Hell do you mean?? Hell as the word or Hell as below uss??\n<BR>\n<BR>This talk is blowing my mind!! Hell Hell Hell Hell!! Hell...\n<BR>\n<BR>-MacNick",
+        "markdown": ">At Wed Jun 25 17:22:37 1997 (UTC) Chris Fuller wrote:  \n>Not only is Hell not considered a profanity to most people in the US but there is also a town of the same name near Kalamazoo, Michigan. In fact, I've gone to Hell a couple of times in my day.  \n  \nHell Hell Hell Hell, Hell there and Hell here..  \nFirst this was about Ore then it has become to Hell??  \n  \nChris, what Kind'a Hell do you mean?? Hell as the word or Hell as below uss??  \n  \nThis talk is blowing my mind!! Hell Hell Hell Hell!! Hell...  \n  \n-MacNick",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1_1_1_1_1_1",
+        "chain": "1_1_1_1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1_1_1_1_1_1",
+        "snapshot_ts": "20020808000525",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 19:48:44 1997",
+        "iso8601": "1997-06-25T19:48:44+00:00"
+      },
+      "author": {
+        "name": "Mr. Hyde",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;\n<BR>&gt;This talk is blowing my mind!!\n<BR>&gt;\n<BR>&gt;-MacNick\n<BR>\n<BR>That does not appear to be too difficult a thing to do.  Oh well, I did not mean to encourage a useless discussion about hell, I just meant to smooth things over in the interests of all of us better understanding each other.\n<BR>\n<BR>I really hate to see discussions like this in a forum that has so far been extremely productive.  This is the very type of thing that caused big problems in Pudland's feedback column.\n<BR>\n<BR>The subject here is Warcraft 2 editing.  If I am wrong here, someone please correct me.\n<BR>\n<BR>Mr. Hyde",
+        "markdown": ">  \n>This talk is blowing my mind!!  \n>  \n>-MacNick  \n  \nThat does not appear to be too difficult a thing to do. Oh well, I did not mean to encourage a useless discussion about hell, I just meant to smooth things over in the interests of all of us better understanding each other.  \n  \nI really hate to see discussions like this in a forum that has so far been extremely productive. This is the very type of thing that caused big problems in Pudland's feedback column.  \n  \nThe subject here is Warcraft 2 editing. If I am wrong here, someone please correct me.  \n  \nMr. Hyde",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1_1_1_1_1_1_1",
+        "chain": "1_1_1_1_1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1_1_1_1_1_1_1",
+        "snapshot_ts": "20020808001353",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 20:43:29 1997",
+        "iso8601": "1997-06-25T20:43:29+00:00"
+      },
+      "author": {
+        "name": "Josh Barr aka DukeMan",
+        "email": "realms@stals.com",
+        "website": "http://www.stals.com"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 19:48:44 1997 (UTC) Mr. Hyde wrote:\n<BR>&gt;&gt;\n<BR>&gt;&gt;This talk is blowing my mind!!\n<BR>&gt;&gt;\n<BR>&gt;&gt;-MacNick\n<BR>&gt;\n<BR>&gt;That does not appear to be too difficult a thing to do.  Oh well, I did not mean to encourage a useless discussion about hell, I just meant to smooth things over in the interests of all of us better understanding each other.\n<BR>&gt;\n<BR>&gt;I really hate to see discussions like this in a forum that has so far been extremely productive.  This is the very type of thing that caused big problems in Pudland's feedback column.\n<BR>&gt;\n<BR>&gt;The subject here is Warcraft 2 editing.  If I am wrong here, someone please correct me.\n<BR>&gt;\n<BR>&gt;Mr. Hyde\n<BR>\n<BR>Danm how did it get to Hell? DOH!!! I sayd Hell again, Shit! DOH! Now I said shit! Damnit I said it agai.... I think I'll shut up now.\n<BR>\n<BR>Josh Barr aka DukeMan",
+        "markdown": ">At Wed Jun 25 19:48:44 1997 (UTC) Mr. Hyde wrote:  \n>>  \n>>This talk is blowing my mind!!  \n>>  \n>>-MacNick  \n>  \n>That does not appear to be too difficult a thing to do. Oh well, I did not mean to encourage a useless discussion about hell, I just meant to smooth things over in the interests of all of us better understanding each other.  \n>  \n>I really hate to see discussions like this in a forum that has so far been extremely productive. This is the very type of thing that caused big problems in Pudland's feedback column.  \n>  \n>The subject here is Warcraft 2 editing. If I am wrong here, someone please correct me.  \n>  \n>Mr. Hyde  \n  \nDanm how did it get to Hell? DOH!!! I sayd Hell again, Shit! DOH! Now I said shit! Damnit I said it agai.... I think I'll shut up now.  \n  \nJosh Barr aka DukeMan",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_1_1_1_1_1_1_1_1",
+        "chain": "1_1_1_1_1_1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_1_1_1_1_1_1_1_1",
+        "snapshot_ts": "20020808000358",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jun 27 03:35:59 1997",
+        "iso8601": "1997-06-27T03:35:59+00:00"
+      },
+      "author": {
+        "name": "Scott",
+        "email": "cscotts@mindspring.com",
+        "website": "http://www.mindspring.com/~cscotts/udtaed.html"
+      },
+      "content": {
+        "orig": "\n&gt;Danm how did it get to Hell? DOH!!! I sayd Hell again, Shit! DOH! Now I said shit! Damnit I said it agai.... I think I'll shut up now.\n<BR>\n<BR>hehehehe, good idea :)",
+        "markdown": ">Danm how did it get to Hell? DOH!!! I sayd Hell again, Shit! DOH! Now I said shit! Damnit I said it agai.... I think I'll shut up now.  \n  \nhehehehe, good idea :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_2",
+        "chain": "1_2",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_2",
+        "snapshot_ts": "20020808001737",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 16:34:52 1997",
+        "iso8601": "1997-06-25T16:34:52+00:00"
+      },
+      "author": {
+        "name": "Josh Barr aka DukeMan",
+        "email": "realms@stals.com",
+        "website": "http://www.stals.com"
+      },
+      "content": {
+        "orig": "\n&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;\n<BR>&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;\n<BR>&gt;To put it another way: no.\n<BR>\n<BR>I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.\n<BR>\n<BR>Josh A.K.A DukeMan",
+        "markdown": ">At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>  \n>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>  \n>To put it another way: no.  \n  \nI was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.  \n  \nJosh A.K.A DukeMan",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_2_1",
+        "chain": "1_2_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_2_1",
+        "snapshot_ts": "20020808001921",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 18:27:24 1997",
+        "iso8601": "1997-06-25T18:27:24+00:00"
+      },
+      "author": {
+        "name": "Brett Wood",
+        "email": "bwood@futurepoint.com",
+        "website": "http://www.students.uiuc.edu/~bwood/shipyard.html"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;&gt;\n<BR>&gt;&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;&gt;\n<BR>&gt;&gt;To put it another way: no.\n<BR>&gt;\n<BR>&gt;I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.\n<BR>&gt;\n<BR>\n<BR>Well, I think that it'd be a lot harder than you might expect.  I'll be extremely impressed if you get it working.  Good luck.",
+        "markdown": ">At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>>  \n>>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>>  \n>>To put it another way: no.  \n>  \n>I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.  \n>  \n  \nWell, I think that it'd be a lot harder than you might expect. I'll be extremely impressed if you get it working. Good luck.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_2_1_1",
+        "chain": "1_2_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_2_1_1",
+        "snapshot_ts": "20020808002035",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 20:36:47 1997",
+        "iso8601": "1997-06-25T20:36:47+00:00"
+      },
+      "author": {
+        "name": "Josh Barr aka DukeMan",
+        "email": "realms@stals.com",
+        "website": "http://www.stals.com"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;To put it another way: no.\n<BR>&gt;&gt;\n<BR>&gt;&gt;I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.\n<BR>&gt;&gt;\n<BR>&gt;\n<BR>&gt;Well, I think that it'd be a lot harder than you might expect.  I'll be extremely impressed if you get it working.  Good luck.\n<BR>\n<BR>I expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).",
+        "markdown": ">At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:  \n>>At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>>>  \n>>>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>>>  \n>>>To put it another way: no.  \n>>  \n>>I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.  \n>>  \n>  \n>Well, I think that it'd be a lot harder than you might expect. I'll be extremely impressed if you get it working. Good luck.  \n  \nI expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_2_1_1_1",
+        "chain": "1_2_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_2_1_1_1",
+        "snapshot_ts": "20020829165623",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 21:29:21 1997",
+        "iso8601": "1997-06-25T21:29:21+00:00"
+      },
+      "author": {
+        "name": "Danath",
+        "email": "matt994@multipro.com",
+        "website": "http://users.multipro.com/honeycutt"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 20:36:47 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;To put it another way: no.\n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.\n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;\n<BR>&gt;&gt;Well, I think that it'd be a lot harder than you might expect.  I'll be extremely impressed if you get it working.  Good luck.\n<BR>&gt;\n<BR>&gt;I expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).\n<BR>\n<BR>Something else to consider when adding this new resource is how the computer opponents will respond to it.  I don't know much about how it is programmed, but the computer AI may not be programmed the same as it was in Alpha.  If I am wrong on this, someone correct me.\n<BR>\n<BR>--Danath(everyone check my page for some building pics)",
+        "markdown": ">At Wed Jun 25 20:36:47 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:  \n>>>At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>>>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>>>>  \n>>>>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>>>>  \n>>>>To put it another way: no.  \n>>>  \n>>>I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.  \n>>>  \n>>  \n>>Well, I think that it'd be a lot harder than you might expect. I'll be extremely impressed if you get it working. Good luck.  \n>  \n>I expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).  \n  \nSomething else to consider when adding this new resource is how the computer opponents will respond to it. I don't know much about how it is programmed, but the computer AI may not be programmed the same as it was in Alpha. If I am wrong on this, someone correct me.  \n  \n--Danath(everyone check my page for some building pics)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_2_1_1_1_1",
+        "chain": "1_2_1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_2_1_1_1_1",
+        "snapshot_ts": "20020808053546",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jun 26 15:50:27 1997",
+        "iso8601": "1997-06-26T15:50:27+00:00"
+      },
+      "author": {
+        "name": "Josh Barr aka DukeMan",
+        "email": "realms@stals.com",
+        "website": "http://www.stals.com"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 21:29:21 1997 (UTC) Danath wrote:\n<BR>&gt;&gt;At Wed Jun 25 20:36:47 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;&gt;At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;&gt;To put it another way: no.\n<BR>&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.\n<BR>&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;Well, I think that it'd be a lot harder than you might expect.  I'll be extremely impressed if you get it working.  Good luck.\n<BR>&gt;&gt;\n<BR>&gt;&gt;I expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).\n<BR>&gt;\n<BR>&gt;Something else to consider when adding this new resource is how the computer opponents will respond to it.  I don't know much about how it is programmed, but the computer AI may not be programmed the same as it was in Alpha.  If I am wrong on this, someone correct me.\n<BR>&gt;\n<BR>&gt;--Danath(everyone check my page for some building pics)\n<BR>\n<BR>Well I could use bits and pices of the ai engin in Alpha if I must.",
+        "markdown": ">At Wed Jun 25 21:29:21 1997 (UTC) Danath wrote:  \n>>At Wed Jun 25 20:36:47 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:  \n>>>>At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>>At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>>>>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>>>>>  \n>>>>>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>>>>>  \n>>>>>To put it another way: no.  \n>>>>  \n>>>>I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.  \n>>>>  \n>>>  \n>>>Well, I think that it'd be a lot harder than you might expect. I'll be extremely impressed if you get it working. Good luck.  \n>>  \n>>I expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).  \n>  \n>Something else to consider when adding this new resource is how the computer opponents will respond to it. I don't know much about how it is programmed, but the computer AI may not be programmed the same as it was in Alpha. If I am wrong on this, someone correct me.  \n>  \n>--Danath(everyone check my page for some building pics)  \n  \nWell I could use bits and pices of the ai engin in Alpha if I must.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_1_2_1_1_1_1_1",
+        "chain": "1_2_1_1_1_1_1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_1_2_1_1_1_1_1",
+        "snapshot_ts": "20020808054724",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jun 26 20:00:35 1997",
+        "iso8601": "1997-06-26T20:00:35+00:00"
+      },
+      "author": {
+        "name": "Danath",
+        "email": "matt994@multipro.com",
+        "website": "http://users.multipro.com/honeycutt"
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jun 26 15:50:27 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;At Wed Jun 25 21:29:21 1997 (UTC) Danath wrote:\n<BR>&gt;&gt;&gt;At Wed Jun 25 20:36:47 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;Whoa!  Hell, even if I had the source code in front of me this would take some doing.  The resources are such an integral part of the game, I'm sure much of the code would need to be modified. \n<BR>&gt;&gt;&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;&gt;&gt;To put it another way: no.\n<BR>&gt;&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;&gt;I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.\n<BR>&gt;&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;&gt;Well, I think that it'd be a lot harder than you might expect.  I'll be extremely impressed if you get it working.  Good luck.\n<BR>&gt;&gt;&gt;\n<BR>&gt;&gt;&gt;I expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).\n<BR>&gt;&gt;\n<BR>&gt;&gt;Something else to consider when adding this new resource is how the computer opponents will respond to it.  I don't know much about how it is programmed, but the computer AI may not be programmed the same as it was in Alpha.  If I am wrong on this, someone correct me.\n<BR>&gt;&gt;\n<BR>&gt;&gt;--Danath(everyone check my page for some building pics)\n<BR>&gt;\n<BR>&gt;Well I could use bits and pices of the ai engin in Alpha if I must.\n<BR>\n<BR>That would probably work, but you would have to know which pieces.  I am not trying to sound discouraging, I actually hope you can find a way to do this.  Good luck with adding a new resource.",
+        "markdown": ">At Thu Jun 26 15:50:27 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>At Wed Jun 25 21:29:21 1997 (UTC) Danath wrote:  \n>>>At Wed Jun 25 20:36:47 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>At Wed Jun 25 18:27:24 1997 (UTC) Brett Wood wrote:  \n>>>>>At Wed Jun 25 16:34:52 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>>>At Tue Jun 24 20:22:43 1997 (UTC) Brett Wood wrote:  \n>>>>>>>At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>>>>>>>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n>>>>>>  \n>>>>>>Whoa! Hell, even if I had the source code in front of me this would take some doing. The resources are such an integral part of the game, I'm sure much of the code would need to be modified.  \n>>>>>>  \n>>>>>>To put it another way: no.  \n>>>>>  \n>>>>>I was going to go about it this way. First I would need a few danm good exe editors which I can easily find (they are not that good with war2 but they are the best danm exe hackers your gonna find). Then I would use then Warcraft 2 alpha engin as refrence and determened which parts corasponded to the Ore. Useing that I would make any needed modifications ansd then have them insirt it into the Warcraft 2 exe file. This would still be a difficult task but it would be much easyer than going from scratch.  \n>>>>>  \n>>>>  \n>>>>Well, I think that it'd be a lot harder than you might expect. I'll be extremely impressed if you get it working. Good luck.  \n>>>  \n>>>I expect this to be vey hard (the StarWars TC and Reptiles TC will be out long beofr my campagin).  \n>>  \n>>Something else to consider when adding this new resource is how the computer opponents will respond to it. I don't know much about how it is programmed, but the computer AI may not be programmed the same as it was in Alpha. If I am wrong on this, someone correct me.  \n>>  \n>>--Danath(everyone check my page for some building pics)  \n>  \n>Well I could use bits and pices of the ai engin in Alpha if I must.  \n  \nThat would probably work, but you would have to know which pieces. I am not trying to sound discouraging, I actually hope you can find a way to do this. Good luck with adding a new resource.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_2",
+        "chain": "2",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_2",
+        "snapshot_ts": "20020808054852",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Sun Jul  6 09:25:10 1997",
+        "iso8601": "1997-07-06T09:25:10+00:00"
+      },
+      "author": {
+        "name": "darkwing",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>4 resources",
+        "markdown": ">At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n\n4 resources",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "146_3",
+        "chain": "3",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?146_3",
+        "snapshot_ts": "20020902194605",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Feb 19 03:23:34 1998",
+        "iso8601": "1998-02-19T03:23:34+00:00"
+      },
+      "author": {
+        "name": "M. Edwards aka RedBaron",
+        "email": "74201.1270",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:\n<BR>&gt;Is it possible to add a new resource to Warcraft 2? I want to add ore  to the resources making a total of 3 resources. Please I really need help.\n<BR>\n<BR>There are already 3 resources, right? Try using the Exe hacker and looking at gold mines, also QPED(Check WarDraft) may show the individual flags for the prog.\n<BR>\n<BR>Also, Red Alert fan maybe?\n<BR>Mike\n<BR>(You're not the only one who wants help)",
+        "markdown": ">At Tue Jun 24 19:46:03 1997 (UTC) Josh Barr aka DukeMan wrote:  \n>Is it possible to add a new resource to Warcraft 2? I want to add ore to the resources making a total of 3 resources. Please I really need help.  \n  \nThere are already 3 resources, right? Try using the Exe hacker and looking at gold mines, also QPED(Check WarDraft) may show the individual flags for the prog.  \n  \nAlso, Red Alert fan maybe?  \nMike  \n(You're not the only one who wants help)",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

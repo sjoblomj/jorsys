@@ -1,0 +1,30 @@
+{
+  "thread_id": "1",
+  "title": "Discussion forum",
+  "posts": [
+    {
+      "post": {
+        "id": "1_0",
+        "chain": "0",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?1",
+        "snapshot_ts": "20021020073844",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Mon May 19 23:17:07 1997",
+        "iso8601": "1997-05-19T23:17:07+00:00"
+      },
+      "author": {
+        "name": "Alexander Cech",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "Many of you requested it - so here it is: the WarDraft discussion forum.\n<BR>Please have a look at the &quot;READ THIS FIRST PAGE&quot; before you post.\n<BR>I really hope this will become a useful source for information and exchange of thoughts about WarCraft editing - it depends on you...\n<BR>\n<BR>If you have any ideas for enhancements or changes to the forum please mail them to me (e8900070@stud1.tuwien.ac.at) or post them as a reply to this message.\n<BR>\n<BR>--Alex",
+        "markdown": "Many of you requested it - so here it is: the WarDraft discussion forum.  \nPlease have a look at the \"READ THIS FIRST PAGE\" before you post.  \nI really hope this will become a useful source for information and exchange of thoughts about WarCraft editing - it depends on you...  \n  \nIf you have any ideas for enhancements or changes to the forum please mail them to me (e8900070@stud1.tuwien.ac.at) or post them as a reply to this message.  \n  \n--Alex",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

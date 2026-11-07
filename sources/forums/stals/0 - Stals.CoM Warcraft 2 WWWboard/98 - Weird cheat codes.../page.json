@@ -1,0 +1,97 @@
+{
+  "thread_id": "98",
+  "title": "Weird cheat codes...",
+  "posts": [
+    {
+      "post": {
+        "id": "98",
+        "chain": "98",
+        "url": "http://www.stals.com/war2/wwwboard/messages/98.html",
+        "snapshot_ts": "19970614094129",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 29, 1997 at 19:31:45",
+        "iso8601": "1997-04-29T19:31:45+00:00"
+      },
+      "author": {
+        "name": "Lord of Azeroth",
+        "email": "ghent-slicer@geocities.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nWhat's up with the UCLA code, and those other strange codes? They're useless!<p><b><i>--Lord of Azeroth</i></b>\n<br>\n<ul><li><a href=\"http://www.geocities.com/Area51/5393/\">Star Wars: The Yavin IV Outpost (Netscape 3.0 req'd)</a></ul>",
+        "markdown": "What's up with the UCLA code, and those other strange codes? They're useless!\n\n***--Lord of Azeroth***  \n\n-   [Star Wars: The Yavin IV Outpost (Netscape 3.0 req'd)](http://www.geocities.com/Area51/5393/)",
+        "images": [],
+        "links": [
+          "http://www.geocities.com/Area51/5393/"
+        ]
+      }
+    },
+    {
+      "post": {
+        "id": "102",
+        "chain": "98_102",
+        "url": "http://www.stals.com/war2/wwwboard/messages/102.html",
+        "snapshot_ts": "19970614094206",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 02, 1997 at 20:24:06",
+        "iso8601": "1997-05-02T20:24:06+00:00"
+      },
+      "author": {
+        "name": "Exorcist",
+        "email": "andreas@bellatlantic.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: What's up with the UCLA code, and those other strange codes? They're useless!<p>: <b><i>--Lord of Azeroth</i></b><p>I guess Blizzard just likes doing wierd stuff. When you type in<br>\"Disco\" you get a cool effect\n<br>",
+        "markdown": "> What's up with the UCLA code, and those other strange codes? They're useless!\n\n> ***--Lord of Azeroth***\n\nI guess Blizzard just likes doing wierd stuff. When you type in  \n\"Disco\" you get a cool effect",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "121",
+        "chain": "98_102_121",
+        "missing": true
+      },
+      "timestamp": {
+        "orig": "17:53:08 5/23/97",
+        "iso8601": "1997-05-23T17:53:08+00:00"
+      },
+      "author": {
+        "name": "Dragon Lord",
+        "email": null,
+        "website": null
+      },
+      "content": null
+    },
+    {
+      "post": {
+        "id": "130",
+        "chain": "98_102_121_130",
+        "url": "http://www.stals.com/war2/wwwboard/messages/130.html",
+        "snapshot_ts": "19970614094249",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 27, 1997 at 19:50:00",
+        "iso8601": "1997-05-27T19:50:00+00:00"
+      },
+      "author": {
+        "name": "Deathwing",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n: : : What's up with the UCLA code, and those other strange codes? They're useless!<p>: : : <b><i>--Lord of Azeroth</i></b><p>: : I guess Blizzard just likes doing wierd stuff. When you type in<br>: : \"Disco\" you get a cool effect<p>: COOL! I didn't know that!<p>The disco code only works with the expansion set, I'm a medival man<p>\n<br>",
+        "markdown": "> > > What's up with the UCLA code, and those other strange codes? They're useless!\n\n> > > ***--Lord of Azeroth***\n\n> > I guess Blizzard just likes doing wierd stuff. When you type in  \n> > \"Disco\" you get a cool effect\n\n> COOL! I didn't know that!\n\nThe disco code only works with the expansion set, I'm a medival man",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

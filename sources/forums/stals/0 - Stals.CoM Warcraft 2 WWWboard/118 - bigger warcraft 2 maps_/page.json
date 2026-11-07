@@ -1,0 +1,58 @@
+{
+  "thread_id": "118",
+  "title": "bigger warcraft 2 maps?",
+  "posts": [
+    {
+      "post": {
+        "id": "118",
+        "chain": "118",
+        "url": "http://www.stals.com/war2/wwwboard/messages/118.html",
+        "snapshot_ts": "19970614092850",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 21, 1997 at 01:55:36",
+        "iso8601": "1997-05-21T01:55:36+00:00"
+      },
+      "author": {
+        "name": "Vindicator",
+        "email": "pietrzak@pacific.net.sg",
+        "website": null
+      },
+      "content": {
+        "orig": "\nis there any way to hack warcraft 2 maps so that they're bigger?  128x128 just isn't big enough for me.<br>\n<br>\n<ul><li><a href=\"http://www.geocities.com/TimesSquare/Arcade/7466\">Mike's Anything Homepage</a></ul>",
+        "markdown": "is there any way to hack warcraft 2 maps so that they're bigger? 128x128 just isn't big enough for me.  \n  \n\n-   [Mike's Anything Homepage](http://www.geocities.com/TimesSquare/Arcade/7466)",
+        "images": [],
+        "links": [
+          "http://www.geocities.com/TimesSquare/Arcade/7466"
+        ]
+      }
+    },
+    {
+      "post": {
+        "id": "135",
+        "chain": "118_135",
+        "url": "http://www.stals.com/war2/wwwboard/messages/135.html",
+        "snapshot_ts": "19970614092927",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 28, 1997 at 15:35:17",
+        "iso8601": "1997-05-28T15:35:17+00:00"
+      },
+      "author": {
+        "name": "Telcontar",
+        "email": "cartho@netlink.ch",
+        "website": null
+      },
+      "content": {
+        "orig": "\n<br>: is there any way to hack warcraft 2 maps so that they're bigger?  128x128 just isn't big enough for me.<br>The upper limit of 600 units and 128 x 128 map size are made for 8 MB memory. Nowadays, more is theoretically possible but I don't think anyone can patch WC II without having the source code to make it allocate more memory. And consider that the map files would grow up to 250 KB, too.<br>Do you still want bigger maps now?<br>\n<br>\n<ul><li><a href=\"http://mordor.netlink.ch/user/cartho/warcraft\">Telcontar's Warcraft II domain</a></ul>",
+        "markdown": "> is there any way to hack warcraft 2 maps so that they're bigger? 128x128 just isn't big enough for me.  \n\nThe upper limit of 600 units and 128 x 128 map size are made for 8 MB memory. Nowadays, more is theoretically possible but I don't think anyone can patch WC II without having the source code to make it allocate more memory. And consider that the map files would grow up to 250 KB, too.  \nDo you still want bigger maps now?  \n  \n\n-   [Telcontar's Warcraft II domain](http://mordor.netlink.ch/user/cartho/warcraft)",
+        "images": [],
+        "links": [
+          "http://mordor.netlink.ch/user/cartho/warcraft"
+        ]
+      }
+    }
+  ]
+}

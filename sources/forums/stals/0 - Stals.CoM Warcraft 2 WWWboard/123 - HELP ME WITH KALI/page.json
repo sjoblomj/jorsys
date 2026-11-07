@@ -1,0 +1,82 @@
+{
+  "thread_id": "123",
+  "title": "HELP ME WITH KALI",
+  "posts": [
+    {
+      "post": {
+        "id": "123",
+        "chain": "123",
+        "url": "http://www.stals.com/war2/wwwboard/messages/123.html",
+        "snapshot_ts": "19970614092507",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 23, 1997 at 21:29:07",
+        "iso8601": "1997-05-23T21:29:07+00:00"
+      },
+      "author": {
+        "name": "Brandon",
+        "email": "Giants@PSNW.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nwhat is kali? how can i get it? is it free?  what games can i play? please help me!!!!!!!!!!\n<br>",
+        "markdown": "what is kali? how can i get it? is it free? what games can i play? please help me!!!!!!!!!!",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "125",
+        "chain": "123_125",
+        "url": "http://www.stals.com/war2/wwwboard/messages/125.html",
+        "snapshot_ts": "19970614092620",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 23, 1997 at 22:09:17",
+        "iso8601": "1997-05-23T22:09:17+00:00"
+      },
+      "author": {
+        "name": "R1chie",
+        "email": "R1chie@aol.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n<center><img src=\"http://www.geocities.com/TimesSquare/Arcade/1520/pr1.jpg\"></center><p>\n: what is kali?<br>it's sorta like an ipx/lan, but u can play anyone around the world. you will find 100's of people playing quite a few games.<p>: how can i get it? <br>goto http://www.kali.net<p>: is it free?<br>only if you don't mind being booted every 15 minutes ;). otherwise there's a $20 reg. fee and nothing more.<p>: what games can i play? : please help me!!!!!!!!!!<br>just about any, as long as it supports ipx connections.<p>\n<br>\n<ul><li><a href=\"http://www.geocities.com/TimesSquare/Arcade/1520\">My homeypage, Planet R1chie</a></ul>",
+        "markdown": "![](http://www.geocities.com/TimesSquare/Arcade/1520/pr1.jpg)\n\n> what is kali?  \n\nit's sorta like an ipx/lan, but u can play anyone around the world. you will find 100's of people playing quite a few games.\n\n> how can i get it?  \n\ngoto http://www.kali.net\n\n> is it free?  \n\nonly if you don't mind being booted every 15 minutes ;). otherwise there's a $20 reg. fee and nothing more.\n\n> what games can i play? : please help me!!!!!!!!!!  \n\njust about any, as long as it supports ipx connections.\n\n  \n\n-   [My homeypage, Planet R1chie](http://www.geocities.com/TimesSquare/Arcade/1520)",
+        "images": [
+          "http://www.geocities.com/TimesSquare/Arcade/1520/pr1.jpg"
+        ],
+        "links": [
+          "http://www.geocities.com/TimesSquare/Arcade/1520"
+        ]
+      }
+    },
+    {
+      "post": {
+        "id": "128",
+        "chain": "123_128",
+        "url": "http://www.stals.com/war2/wwwboard/messages/128.html",
+        "snapshot_ts": "19970614092543",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 27, 1997 at 19:40:14",
+        "iso8601": "1997-05-27T19:40:14+00:00"
+      },
+      "author": {
+        "name": "Deathwing",
+        "email": "apple20@ican.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\nGo to www.kali.net and you can download it there<br>You can get it for mac, Windows 95, 3.1, 3.0, and OS/2\n<br>",
+        "markdown": "Go to www.kali.net and you can download it there  \nYou can get it for mac, Windows 95, 3.1, 3.0, and OS/2",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

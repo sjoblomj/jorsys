@@ -1,0 +1,6 @@
+<section class="forumthread" data-source="${source}" data-thread-id="${threadid}">
+  <header class="forumthread-header">
+    <span class="forumthread-source">${source}</span>
+    <span class="forumthread-postcount">${postcount} post(s)</span>
+  </header>
+  <div class="forumthread-body">

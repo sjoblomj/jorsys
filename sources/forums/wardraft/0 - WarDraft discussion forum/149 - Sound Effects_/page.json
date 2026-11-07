@@ -1,0 +1,126 @@
+{
+  "thread_id": "149",
+  "title": "Sound Effects?",
+  "posts": [
+    {
+      "post": {
+        "id": "149_0",
+        "chain": "0",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?149",
+        "snapshot_ts": "20020903174309",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 22:10:51 1997",
+        "iso8601": "1997-06-25T22:10:51+00:00"
+      },
+      "author": {
+        "name": "Aceron",
+        "email": "Aceron@juno.com",
+        "website": null
+      },
+      "content": {
+        "orig": "Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.",
+        "markdown": "Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "149_1",
+        "chain": "1",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?149_1",
+        "snapshot_ts": "20020905052043",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 22:22:29 1997",
+        "iso8601": "1997-06-25T22:22:29+00:00"
+      },
+      "author": {
+        "name": "Dr. Jekyl",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:\n<BR>&gt;Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.\n<BR>\n<BR>That is only because you did not replace the axe sound effect.  I don't see why you would want to change that though.  Especially being as this would affect all the trolls as well.\n<BR>\n<BR>Anyway, you have brought up a point that seems to be a weakness in War2 editing right now.  Everyone is working on graphics, now that Rhino is widely known.\n<BR>\n<BR>Maybe some of you need to get aquainted with a utility called &quot;goldwave.&quot;  I played around with it a bit a few months ago, and it did some pretty impressive things with wav files.  It works with more types of sound files than any other utility of this type I have seen.\n<BR>\n<BR>I'll go and see if I can track down the URL for this tool.\n<BR>Dr. Jekyl",
+        "markdown": ">At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:  \n>Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.  \n  \nThat is only because you did not replace the axe sound effect. I don't see why you would want to change that though. Especially being as this would affect all the trolls as well.  \n  \nAnyway, you have brought up a point that seems to be a weakness in War2 editing right now. Everyone is working on graphics, now that Rhino is widely known.  \n  \nMaybe some of you need to get aquainted with a utility called \"goldwave.\" I played around with it a bit a few months ago, and it did some pretty impressive things with wav files. It works with more types of sound files than any other utility of this type I have seen.  \n  \nI'll go and see if I can track down the URL for this tool.  \nDr. Jekyl",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "149_2",
+        "chain": "2",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?149_2",
+        "snapshot_ts": "20020711001522",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Wed Jun 25 22:27:08 1997",
+        "iso8601": "1997-06-25T22:27:08+00:00"
+      },
+      "author": {
+        "name": "Dr. Jekyl",
+        "email": null,
+        "website": "http://home.thezone.net/goldwave/release.html"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:\n<BR>&gt;Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.\n<BR>\n<BR>Well, that didn't take long.  Just click on the url in the homepage slot to go to the download site.  See if you guys can come up with some interesting new sound effects.  This area of creativity has been neglected too long.\n<BR>\n<BR>Dr. Jekyl",
+        "markdown": ">At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:  \n>Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.  \n  \nWell, that didn't take long. Just click on the url in the homepage slot to go to the download site. See if you guys can come up with some interesting new sound effects. This area of creativity has been neglected too long.  \n  \nDr. Jekyl",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "149_3",
+        "chain": "3",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?149_3",
+        "snapshot_ts": "20020906183150",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Thu Jun 26 23:04:48 1997",
+        "iso8601": "1997-06-26T23:04:48+00:00"
+      },
+      "author": {
+        "name": "Mordraug",
+        "email": "peterhatch@juno.com",
+        "website": "http://www.geocities.com/TimesSquare/Castle/4096/warcraft.html"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:\n<BR>&gt;Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.\n<BR>\n<BR>So you want to change the sounds Zuljin makes from that of a troll to those of a grunt? I think this stuff is in the EXE, but I haven't found where yet. I'm working on it though. I think if I could just find where this is I could add in units in the unused spots.",
+        "markdown": ">At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:  \n>Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.  \n  \nSo you want to change the sounds Zuljin makes from that of a troll to those of a grunt? I think this stuff is in the EXE, but I haven't found where yet. I'm working on it though. I think if I could just find where this is I could add in units in the unused spots.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "149_4",
+        "chain": "4",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?149_4",
+        "snapshot_ts": "20020907032320",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Sun Jul  6 04:13:16 1997",
+        "iso8601": "1997-07-06T04:13:16+00:00"
+      },
+      "author": {
+        "name": "Mordraug",
+        "email": "peterhatch@juno.com",
+        "website": "http://www.geocities.com/TimesSquare/Castle/4096"
+      },
+      "content": {
+        "orig": "\n&gt;At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:\n<BR>&gt;Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.\n<BR>\n<BR>Yeah, I have now found this stuff. It's in the EXE. A future version of Cameron's WarHack utility should have this stuff, so you can change it easily. If you want a patch that changes Zuljin's sounds to those of a grunt, e-mail me and I should be able to make it.",
+        "markdown": ">At Wed Jun 25 22:10:51 1997 (UTC) Aceron wrote:  \n>Has Anyone found a way to change wich sound effecs each unit uses? Because I changed Zuljin into a grunt and he looks fine but when he does somthing it playes the troll sound effects and when he attack it plays the throwing axe sound effect.  \n  \nYeah, I have now found this stuff. It's in the EXE. A future version of Cameron's WarHack utility should have this stuff, so you can change it easily. If you want a patch that changes Zuljin's sounds to those of a grunt, e-mail me and I should be able to make it.",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

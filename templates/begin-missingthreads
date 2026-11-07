@@ -1,0 +1,3 @@
+  <details class="threadlist-missing">
+    <summary class="threadlist-missing-summary">${missingcount} thread(s) not recoverable</summary>
+    <ul class="threadlist-missing-list">

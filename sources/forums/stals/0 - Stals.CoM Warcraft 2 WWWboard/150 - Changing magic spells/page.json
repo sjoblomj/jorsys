@@ -1,0 +1,54 @@
+{
+  "thread_id": "150",
+  "title": "Changing magic spells",
+  "posts": [
+    {
+      "post": {
+        "id": "150",
+        "chain": "150",
+        "url": "http://www.stals.com/war2/wwwboard/messages/150.html",
+        "snapshot_ts": "19970614091456",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "June 08, 1997 at 15:19:34",
+        "iso8601": "1997-06-08T15:19:34+00:00"
+      },
+      "author": {
+        "name": "Zantos",
+        "email": "the_flying_goat@hotmail.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nDoes anyone know how to change the amount of damage spells do and their area of effect?\n<br>",
+        "markdown": "Does anyone know how to change the amount of damage spells do and their area of effect?",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "153",
+        "chain": "150_153",
+        "url": "http://www.stals.com/war2/wwwboard/messages/153.html",
+        "snapshot_ts": "19970614091533",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "June 11, 1997 at 21:07:42",
+        "iso8601": "1997-06-11T21:07:42+00:00"
+      },
+      "author": {
+        "name": "Oren (webmaster)",
+        "email": "oren@stals.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: Does anyone know how to change the amount of damage spells do and their area of effect?<p>Hmm... If you wanna change it in a game, Try using an editor such as PudMaster for Mac or I think The war2x editor lets you do that. If you wanna change it in a pud you made then open the pud and There is an option in Blizzards Pud Editor to change Cash values etc.\n<br>",
+        "markdown": "> Does anyone know how to change the amount of damage spells do and their area of effect?\n\nHmm... If you wanna change it in a game, Try using an editor such as PudMaster for Mac or I think The war2x editor lets you do that. If you wanna change it in a pud you made then open the pud and There is an option in Blizzards Pud Editor to change Cash values etc.",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

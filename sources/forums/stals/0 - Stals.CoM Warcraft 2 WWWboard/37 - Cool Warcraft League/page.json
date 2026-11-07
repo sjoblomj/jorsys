@@ -1,0 +1,32 @@
+{
+  "thread_id": "37",
+  "title": "Cool Warcraft League",
+  "posts": [
+    {
+      "post": {
+        "id": "37",
+        "chain": "37",
+        "url": "http://www.stals.com/war2/wwwboard/messages/37.html",
+        "snapshot_ts": "19970614102243",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "March 31, 1997 at 01:20:07",
+        "iso8601": "1997-03-31T01:20:07+00:00"
+      },
+      "author": {
+        "name": "Prowler",
+        "email": "johnc@toshiba.com.au",
+        "website": null
+      },
+      "content": {
+        "orig": "\nI'd just like to invite everyone who is interested in playing <br>War2 on kali to check out the Australian Warcraft League<br>(OzWL). It's open to anybody and it has more features than<br>any other league.  Anyway if nothing else it's worth a look.<p>\n<br>\n<ul><li><a href=\"http://war2.mpx.com.au\">OzWL</a></ul>",
+        "markdown": "I'd just like to invite everyone who is interested in playing  \nWar2 on kali to check out the Australian Warcraft League  \n(OzWL). It's open to anybody and it has more features than  \nany other league. Anyway if nothing else it's worth a look.\n\n  \n\n-   [OzWL](http://war2.mpx.com.au)",
+        "images": [],
+        "links": [
+          "http://war2.mpx.com.au"
+        ]
+      }
+    }
+  ]
+}

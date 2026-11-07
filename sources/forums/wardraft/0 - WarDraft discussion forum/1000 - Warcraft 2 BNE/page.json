@@ -1,0 +1,30 @@
+{
+  "thread_id": "1000",
+  "title": "Warcraft 2 BNE",
+  "posts": [
+    {
+      "post": {
+        "id": "1000_0",
+        "chain": "0",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?1000",
+        "snapshot_ts": "20021020073610",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Aug 23 14:04:31 2002",
+        "iso8601": "2002-08-23T14:04:31+00:00"
+      },
+      "author": {
+        "name": "StRyKeR-17",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "Hi! As you might have known, there is no &quot;DATA&quot; folder containing MAINDAT.WAR for Warcraft 2 Battle.net Edition. \n<BR>How is it possible to use WarDraft for with Warcraft 2 BNET Edition?",
+        "markdown": "Hi! As you might have known, there is no \"DATA\" folder containing MAINDAT.WAR for Warcraft 2 Battle.net Edition.  \nHow is it possible to use WarDraft for with Warcraft 2 BNET Edition?",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

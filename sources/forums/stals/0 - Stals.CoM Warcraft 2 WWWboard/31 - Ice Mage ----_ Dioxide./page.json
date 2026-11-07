@@ -1,0 +1,54 @@
+{
+  "thread_id": "31",
+  "title": "Ice Mage ----> Dioxide.",
+  "posts": [
+    {
+      "post": {
+        "id": "31",
+        "chain": "31",
+        "url": "http://www.stals.com/war2/wwwboard/messages/31.html",
+        "snapshot_ts": "19970614102838",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "March 29, 1997 at 14:51:54",
+        "iso8601": "1997-03-29T14:51:54+00:00"
+      },
+      "author": {
+        "name": "Ice Mage",
+        "email": "bpbull@direct.ca",
+        "website": null
+      },
+      "content": {
+        "orig": "\nWhat IS your E-amil address??\n<br>",
+        "markdown": "What IS your E-amil address??",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "57",
+        "chain": "31_57",
+        "url": "http://www.stals.com/war2/wwwboard/messages/57.html",
+        "snapshot_ts": "19970614102915",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 06, 1997 at 22:24:34",
+        "iso8601": "1997-04-06T22:24:34+00:00"
+      },
+      "author": {
+        "name": "Dioxide",
+        "email": "ericcheng@juno.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: What IS your E-amil address??<p>ericcheng@juno.com\n<br>",
+        "markdown": "> What IS your E-amil address??\n\nericcheng@juno.com",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

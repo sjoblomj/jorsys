@@ -9,6 +9,7 @@
   --header-colour: #deadab;
   --gold-colour: #efdcab;
   --border-colour: #909090;
+  --faint-border-colour: rgba(144, 144, 144, 0.4);
   --news-header-colour: #a1b2c3;
   --box-header-background-colour: #101010;
   --serif-font: "Georgia", serif;
@@ -116,10 +117,10 @@
     padding-right: 2%;
   }
 
-  .news-date {
+  .news-date, .forumpost-date {
     display: inline;
   }
-  .news-datetime {
+  .news-datetime, .forumpost-datetime {
     display: none;
   }
   .newsmeta {
@@ -158,6 +159,33 @@
   .postedby {
     display: none;
   }
+
+  .forumpost-body {
+    padding: 0.35em 0.35em 0.35em 0.25em;
+  }
+  .forumpost-body > .forumpost {
+    margin-left: 0.1em;
+  }
+  .forumpost-body blockquote {
+    margin-left: 0.25em;
+    padding-left: 0.4em;
+  }
+  .forumpost-header {
+    gap: 0.3em;
+  }
+  .forumpost-datetime, .forumpost-date {
+    margin-left: 0;
+    flex-basis: 100%;
+    order: 10;
+  }
+
+  .threadlist-meta {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+  .threadlist-reply {
+    margin-left: calc(var(--depth, 0) * 0.6em);
+  }
 }
 
 @media only screen and (min-width: 700px) {
@@ -187,10 +215,10 @@
     padding-right: 2%;
   }
 
-  .news-date {
+  .news-date, .forumpost-date {
     display: none;
   }
-  .news-datetime {
+  .news-datetime, .forumpost-datetime {
     display: inline;
   }
   .newsmeta {
@@ -406,6 +434,199 @@
   margin-right: auto;
 }
 /** </news styling> **/
+
+
+
+/** <forum thread styling> **/
+.forumthread {
+  margin-bottom: 2em;
+  border: 1px solid var(--border-colour);
+  background-color: var(--grey-background-colour-trans);
+}
+.forumthread-header {
+  background-color: var(--box-header-background-colour);
+  color: var(--news-header-colour);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  font-family: var(--sans-serif-font);
+  padding: 0.4em 0.5em;
+  border-bottom: 1px solid var(--border-colour);
+}
+.forumthread-source {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.forumthread-postcount {
+  font-size: 0.85em;
+  color: var(--text-colour);
+  white-space: nowrap;
+}
+.forumthread-body {
+  padding: 0.5em;
+}
+
+.forumpost {
+  display: block;
+  border: 1px solid var(--faint-border-colour);
+  margin: 0.6em 0;
+  background-color: var(--grey-background-colour);
+}
+.forumpost-body > .forumpost {
+  margin-left: 0.3em;
+}
+.forumpost-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em;
+  font-family: var(--sans-serif-font);
+  font-size: 0.85em;
+  color: var(--text-colour);
+  padding: 0.3em 0.5em;
+  background-color: var(--box-header-background-colour);
+  border-bottom: 1px solid var(--faint-border-colour);
+}
+.forumpost-author {
+  font-weight: bold;
+  color: var(--gold-colour);
+}
+.forumpost-contact {
+  display: inline-flex;
+  gap: 0.5em;
+  font-size: 0.9em;
+}
+.forumpost-email, .forumpost-website {
+  color: var(--link-colour);
+}
+.forumpost-replyto {
+  font-style: italic;
+  color: var(--text-colour);
+}
+.forumpost-replyto a {
+  color: var(--link-colour);
+}
+.forumpost-datetime, .forumpost-date {
+  margin-left: auto;
+  color: var(--text-colour);
+  white-space: nowrap;
+}
+.forumpost-permalink {
+  color: var(--text-colour);
+  text-decoration: none;
+}
+.forumpost-permalink:hover {
+  color: var(--link-hover-colour);
+}
+.forumpost-missing {
+  color: #e65656;
+  font-weight: bold;
+}
+
+.forumpost-body {
+  /* Left padding is smaller than right: a nested .forumpost also carries
+     its own margin-left (below), and the two need to add up to the same
+     gap as the right side, which has no such extra margin. */
+  padding: 0.5em 0.6em 0.5em 0.3em;
+}
+.forumpost-body:empty {
+  display: none;
+}
+.forumpost-body blockquote {
+  margin: 0.5em 0 0.5em 0.5em;
+  padding-left: 0.75em;
+}
+/** </forum thread styling> **/
+
+
+
+/** <thread list styling> **/
+.threadlist {
+  margin-bottom: 2em;
+  border: 1px solid var(--border-colour);
+  background-color: var(--grey-background-colour-trans);
+}
+.threadlist-header {
+  background-color: var(--box-header-background-colour);
+  color: var(--news-header-colour);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+  font-family: var(--sans-serif-font);
+  padding: 0.4em 0.5em;
+  border-bottom: 1px solid var(--border-colour);
+}
+.threadlist-source {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.threadlist-counts {
+  font-size: 0.85em;
+  color: var(--text-colour);
+  white-space: nowrap;
+}
+
+.threadlist-existing, .threadlist-missing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.3em 0.5em;
+}
+.threadlist-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4em 0.8em;
+  padding: 0.3em 0;
+  border-bottom: 1px solid var(--faint-border-colour);
+}
+.threadlist-item:last-child {
+  border-bottom: none;
+}
+.threadlist-title {
+  color: var(--text-colour);
+}
+.threadlist-meta {
+  margin-left: auto;
+  font-size: 0.85em;
+  color: var(--text-colour);
+  white-space: nowrap;
+}
+.threadlist-item-missing {
+  opacity: 0.7;
+}
+
+.threadlist-replies {
+  flex-basis: 100%;
+  list-style: none;
+  margin: 0.3em 0 0 0;
+  padding: 0;
+}
+.threadlist-reply {
+  margin-left: calc(var(--depth, 0) * 1em);
+  padding: 0.1em 0;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--text-colour);
+}
+
+.threadlist-missing {
+  margin: 0.5em;
+  border: 1px solid var(--faint-border-colour);
+}
+.threadlist-missing-summary {
+  cursor: pointer;
+  padding: 0.4em 0.6em;
+  font-family: var(--sans-serif-font);
+  font-size: 0.9em;
+  color: var(--news-header-colour);
+  background-color: var(--box-header-background-colour);
+}
+.threadlist-missing[open] > .threadlist-missing-summary {
+  border-bottom: 1px solid var(--faint-border-colour);
+}
+/** </thread list styling> **/
 
 
 

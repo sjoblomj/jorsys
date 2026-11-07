@@ -1,0 +1,30 @@
+{
+  "thread_id": "4",
+  "title": "Test",
+  "posts": [
+    {
+      "post": {
+        "id": "4",
+        "chain": "4",
+        "url": "http://www.stals.com/war2/wwwboard/messages/4.html",
+        "snapshot_ts": "19970506050708",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "March 22, 1997 at 20:54:28",
+        "iso8601": "1997-03-22T20:54:28+00:00"
+      },
+      "author": {
+        "name": "Stal",
+        "email": "Test@test.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nStill working?\n<br>",
+        "markdown": "Still working?",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

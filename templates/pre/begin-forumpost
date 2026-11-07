@@ -1,0 +1,26 @@
+#!/bin/bash
+# Mirrors jorsys' templates/pre/begin-newsitem: derives a human-readable
+# long-form datetime ("datetimestr", shown on wide screens) and a short
+# date-only form ("date", shown on narrow screens) from the "datetime"
+# argument, which is ISO 8601 with a "+00:00" (UTC) offset.
+awk -i inplace -i "utils.awk" '
+{
+    if ($0 ~ "{{begin-forumpost") {
+        datetime = get_parameter($0, "datetime")
+        if (datetime != "") {
+            dt = datetime
+            sub("T", " ", dt)
+            sub(/\+00:00$/, "", dt)
+            split(dt, arr, " ")
+            date = arr[1]
+            datetimestr = arr[1] " " arr[2] " UTC"
+        } else {
+            date = ""
+            datetimestr = ""
+        }
+
+        sub("{{begin-forumpost", "{{begin-forumpost |datetimestr=" datetimestr " |date=" date, $0)
+    }
+    print $0
+}
+' "$1"

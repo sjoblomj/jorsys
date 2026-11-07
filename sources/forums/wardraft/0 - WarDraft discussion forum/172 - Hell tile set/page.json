@@ -1,0 +1,167 @@
+{
+  "thread_id": "172",
+  "title": "Hell tile set",
+  "posts": [
+    {
+      "post": {
+        "id": "172_0",
+        "chain": "0",
+        "missing": true
+      },
+      "timestamp": {
+        "orig": "Thu Jul  3 18:23:11 1997",
+        "iso8601": "1997-07-03T18:23:11+00:00"
+      },
+      "author": {
+        "name": "Dr. Jekyl",
+        "email": null,
+        "website": null
+      },
+      "content": null
+    },
+    {
+      "post": {
+        "id": "172_10",
+        "chain": "10",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?172_10",
+        "snapshot_ts": "20020726042102",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 00:44:24 1997",
+        "iso8601": "1997-07-04T00:44:24+00:00"
+      },
+      "author": {
+        "name": "JQ",
+        "email": "pangannie@worldnet.att.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\r\n&gt;At Thu Jul  3 18:23:11 1997 (UTC) Dr. Jekyl wrote:\r\n<BR>\r\n<BR>&gt;The hell tile set is available at the above link.  Many changes are to be made, but this is the general idea of how it will probably be laid out.\r\n<BR>\r\n<BR>&gt;\r\n<BR>\r\n<BR>&gt;Dr. Jekyl  (cameron)\r\n<BR>\r\n<BR>\r\n<BR>\r\n<BR>Ummm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive #440 (something 40 atleast) and was missing the replacement for #441. I'm sure Brett will figure it out. (Thanx :)",
+        "markdown": ">At Thu Jul 3 18:23:11 1997 (UTC) Dr. Jekyl wrote:  \n  \n>The hell tile set is available at the above link. Many changes are to be made, but this is the general idea of how it will probably be laid out.  \n  \n>  \n  \n>Dr. Jekyl (cameron)  \n  \n  \n  \nUmmm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive \\#440 (something 40 atleast) and was missing the replacement for \\#441. I'm sure Brett will figure it out. (Thanx :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "172_11",
+        "chain": "11",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?172_11",
+        "snapshot_ts": "20020726100824",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 00:44:29 1997",
+        "iso8601": "1997-07-04T00:44:29+00:00"
+      },
+      "author": {
+        "name": "JQ",
+        "email": "pangannie@worldnet.att.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jul  3 18:23:11 1997 (UTC) Dr. Jekyl wrote:\n<BR>\n<BR>&gt;The hell tile set is available at the above link.  Many changes are to be made, but this is the general idea of how it will probably be laid out.\n<BR>\n<BR>&gt;\n<BR>\n<BR>&gt;Dr. Jekyl  (cameron)\n<BR>\n<BR>\n<BR>\n<BR>Ummm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive #440 (something 40 atleast) and was missing the replacement for #441. I'm sure Brett will figure it out. (Thanx :)",
+        "markdown": ">At Thu Jul 3 18:23:11 1997 (UTC) Dr. Jekyl wrote:  \n  \n>The hell tile set is available at the above link. Many changes are to be made, but this is the general idea of how it will probably be laid out.  \n  \n>  \n  \n>Dr. Jekyl (cameron)  \n  \n  \n  \nUmmm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive \\#440 (something 40 atleast) and was missing the replacement for \\#441. I'm sure Brett will figure it out. (Thanx :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "172_12",
+        "chain": "12",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?172_12",
+        "snapshot_ts": "20020726162334",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 00:44:34 1997",
+        "iso8601": "1997-07-04T00:44:34+00:00"
+      },
+      "author": {
+        "name": "JQ",
+        "email": "pangannie@worldnet.att.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jul  3 18:23:11 1997 (UTC) Dr. Jekyl wrote:\n<BR>\n<BR>&gt;The hell tile set is available at the above link.  Many changes are to be made, but this is the general idea of how it will probably be laid out.\n<BR>\n<BR>&gt;\n<BR>\n<BR>&gt;Dr. Jekyl  (cameron)\n<BR>\n<BR>\n<BR>\n<BR>Ummm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive #440 (something 40 atleast) and was missing the replacement for #441. I'm sure Brett will figure it out. (Thanx :)",
+        "markdown": ">At Thu Jul 3 18:23:11 1997 (UTC) Dr. Jekyl wrote:  \n  \n>The hell tile set is available at the above link. Many changes are to be made, but this is the general idea of how it will probably be laid out.  \n  \n>  \n  \n>Dr. Jekyl (cameron)  \n  \n  \n  \nUmmm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive \\#440 (something 40 atleast) and was missing the replacement for \\#441. I'm sure Brett will figure it out. (Thanx :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "172_13",
+        "chain": "13",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?172_13",
+        "snapshot_ts": "20020727022306",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 00:44:39 1997",
+        "iso8601": "1997-07-04T00:44:39+00:00"
+      },
+      "author": {
+        "name": "JQ",
+        "email": "pangannie@worldnet.att.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\r\n&gt;At Thu Jul  3 18:23:11 1997 (UTC) Dr. Jekyl wrote:\r\n<BR>\r\n<BR>&gt;The hell tile set is available at the above link.  Many changes are to be made, but this is the general idea of how it will probably be laid out.\r\n<BR>\r\n<BR>&gt;\r\n<BR>\r\n<BR>&gt;Dr. Jekyl  (cameron)\r\n<BR>\r\n<BR>\r\n<BR>\r\n<BR>Ummm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive #440 (something 40 atleast) and was missing the replacement for #441. I'm sure Brett will figure it out. (Thanx :)",
+        "markdown": ">At Thu Jul 3 18:23:11 1997 (UTC) Dr. Jekyl wrote:  \n  \n>The hell tile set is available at the above link. Many changes are to be made, but this is the general idea of how it will probably be laid out.  \n  \n>  \n  \n>Dr. Jekyl (cameron)  \n  \n  \n  \nUmmm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive \\#440 (something 40 atleast) and was missing the replacement for \\#441. I'm sure Brett will figure it out. (Thanx :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "172_14",
+        "chain": "14",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?172_14",
+        "snapshot_ts": "20020727095333",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 00:44:45 1997",
+        "iso8601": "1997-07-04T00:44:45+00:00"
+      },
+      "author": {
+        "name": "JQ",
+        "email": "pangannie@worldnet.att.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jul  3 18:23:11 1997 (UTC) Dr. Jekyl wrote:\n<BR>\n<BR>&gt;The hell tile set is available at the above link.  Many changes are to be made, but this is the general idea of how it will probably be laid out.\n<BR>\n<BR>&gt;\n<BR>\n<BR>&gt;Dr. Jekyl  (cameron)\n<BR>\n<BR>\n<BR>\n<BR>Ummm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive #440 (something 40 atleast) and was missing the replacement for #441. I'm sure Brett will figure it out. (Thanx :)",
+        "markdown": ">At Thu Jul 3 18:23:11 1997 (UTC) Dr. Jekyl wrote:  \n  \n>The hell tile set is available at the above link. Many changes are to be made, but this is the general idea of how it will probably be laid out.  \n  \n>  \n  \n>Dr. Jekyl (cameron)  \n  \n  \n  \nUmmm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive \\#440 (something 40 atleast) and was missing the replacement for \\#441. I'm sure Brett will figure it out. (Thanx :)",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "172_15",
+        "chain": "15",
+        "url": "http://www.unet.univie.ac.at:80/~a8900070/cgi-bin/wdnget.cgi?172_15",
+        "snapshot_ts": "20020727170633",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "Fri Jul  4 00:44:49 1997",
+        "iso8601": "1997-07-04T00:44:49+00:00"
+      },
+      "author": {
+        "name": "JQ",
+        "email": "pangannie@worldnet.att.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n&gt;At Thu Jul  3 18:23:11 1997 (UTC) Dr. Jekyl wrote:\n<BR>\n<BR>&gt;The hell tile set is available at the above link.  Many changes are to be made, but this is the general idea of how it will probably be laid out.\n<BR>\n<BR>&gt;\n<BR>\n<BR>&gt;Dr. Jekyl  (cameron)\n<BR>\n<BR>\n<BR>\n<BR>Ummm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive #440 (something 40 atleast) and was missing the replacement for #441. I'm sure Brett will figure it out. (Thanx :)",
+        "markdown": ">At Thu Jul 3 18:23:11 1997 (UTC) Dr. Jekyl wrote:  \n  \n>The hell tile set is available at the above link. Many changes are to be made, but this is the general idea of how it will probably be laid out.  \n  \n>  \n  \n>Dr. Jekyl (cameron)  \n  \n  \n  \nUmmm...the set doesn't seem to work for macs. (Not really that its much of a surprise). It crashes the game when it tries to load the tileset data and the tiles are grabled in the PM map editor. I think the problem may be in the coversion from a WCD to a wade (since it works on PCs). I noticed that there are 2 replacements for archive \\#440 (something 40 atleast) and was missing the replacement for \\#441. I'm sure Brett will figure it out. (Thanx :)",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

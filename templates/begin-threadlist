@@ -1,0 +1,5 @@
+<section class="threadlist">
+  <header class="threadlist-header">
+    <span class="threadlist-source">${source}</span>
+    <span class="threadlist-counts">${existingcount} fetched &middot; ${missingcount} missing</span>
+  </header>

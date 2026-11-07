@@ -1,0 +1,34 @@
+{
+  "thread_id": "84",
+  "title": "What?  Imposter!!!",
+  "posts": [
+    {
+      "post": {
+        "id": "84",
+        "chain": "84",
+        "url": "http://www.stals.com/war2/wwwboard/messages/84.html",
+        "snapshot_ts": "19970614095014",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 22, 1997 at 21:19:17",
+        "iso8601": "1997-04-22T21:19:17+00:00"
+      },
+      "author": {
+        "name": "Dioxide",
+        "email": "ericcheng@juno.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n<center><img src=\"http://www.best.com/~edcheng/dioxide/banner3.gif\"></center><p>\nThe message that \"I\" wrote regarding my page and strategies and all was not written by me.  I haven't checked this message board for a while, and once I saw that, I had to write this.<br>Please disregard all stuff written in the \"War2 Page Without Strategies?!?\" and the little add on.<br>Whoever wrote that must have been some kind of freak or something!  And how did he know my name?  How did he know the URL of my banner?  This guy must be a pro imposter. :)<br>Sorry Oren for taking up space in the Message Board.<p>-- Dioxide --\n<br>\n<ul><li><a href=\"http://www.best.com/~edcheng/dioxide/\">Dioxide's WarCraft II Page</a></ul>",
+        "markdown": "![](http://www.best.com/~edcheng/dioxide/banner3.gif)\n\nThe message that \"I\" wrote regarding my page and strategies and all was not written by me. I haven't checked this message board for a while, and once I saw that, I had to write this.  \nPlease disregard all stuff written in the \"War2 Page Without Strategies?!?\" and the little add on.  \nWhoever wrote that must have been some kind of freak or something! And how did he know my name? How did he know the URL of my banner? This guy must be a pro imposter. :)  \nSorry Oren for taking up space in the Message Board.\n\n-- Dioxide --  \n\n-   [Dioxide's WarCraft II Page](http://www.best.com/~edcheng/dioxide/)",
+        "images": [
+          "http://www.best.com/~edcheng/dioxide/banner3.gif"
+        ],
+        "links": [
+          "http://www.best.com/~edcheng/dioxide/"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "thread_id": "2",
+  "title": "Test",
+  "posts": [
+    {
+      "post": {
+        "id": "2",
+        "chain": "2",
+        "url": "http://www.stals.com/war2/wwwboard/messages/2.html",
+        "snapshot_ts": "19970614104713",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "March 22, 1997 at 20:50:23",
+        "iso8601": "1997-03-22T20:50:23+00:00"
+      },
+      "author": {
+        "name": "Stal",
+        "email": "bryan@stals.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\nTest\n<br>",
+        "markdown": "Test",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "3",
+        "chain": "2_3",
+        "url": "http://www.stals.com/war2/wwwboard/messages/3.html",
+        "snapshot_ts": "19970614104750",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "March 22, 1997 at 20:51:18",
+        "iso8601": "1997-03-22T20:51:18+00:00"
+      },
+      "author": {
+        "name": "Stal",
+        "email": "bryan@stals.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: Test<p>Test again<p>\n<br>",
+        "markdown": "> Test\n\nTest again",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

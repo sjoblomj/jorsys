@@ -1,0 +1,56 @@
+{
+  "thread_id": "68",
+  "title": "Internet gaming/ i.e. more than two person gaming",
+  "posts": [
+    {
+      "post": {
+        "id": "68",
+        "chain": "68",
+        "url": "http://www.stals.com/war2/wwwboard/messages/68.html",
+        "snapshot_ts": "19970614100327",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 13, 1997 at 04:09:03",
+        "iso8601": "1997-04-13T04:09:03+00:00"
+      },
+      "author": {
+        "name": "Blitzkrieg",
+        "email": "rojo@ite.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\n    I need help!!!   I've played Warcraft and Warcraft II for <br>quite some time now, but I've never had much of an oppotunity<br>to play on more than just a modem connection between two people.<br>How do I play blood baths with other warriors out there...\n<br>",
+        "markdown": "I need help!!! I've played Warcraft and Warcraft II for  \nquite some time now, but I've never had much of an oppotunity  \nto play on more than just a modem connection between two people.  \nHow do I play blood baths with other warriors out there...",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "71",
+        "chain": "68_71",
+        "url": "http://www.stals.com/war2/wwwboard/messages/71.html",
+        "snapshot_ts": "19970614100404",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 13, 1997 at 10:11:05",
+        "iso8601": "1997-04-13T10:11:05+00:00"
+      },
+      "author": {
+        "name": "Oren",
+        "email": "oren@stals.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n:     I need help!!!   I've played Warcraft and Warcraft II for <br>: quite some time now, but I've never had much of an oppotunity<br>: to play on more than just a modem connection between two people.<br>: How do I play blood baths with other warriors out there...<p>Try Kali. Click on the link below to get more info.\n<br>\n<ul><li><a href=\"http://www.kali.net\">Kali's Homepage</a></ul>",
+        "markdown": "> I need help!!! I've played Warcraft and Warcraft II for  \n> quite some time now, but I've never had much of an oppotunity  \n> to play on more than just a modem connection between two people.  \n> How do I play blood baths with other warriors out there...\n\nTry Kali. Click on the link below to get more info.  \n\n-   [Kali's Homepage](http://www.kali.net)",
+        "images": [],
+        "links": [
+          "http://www.kali.net"
+        ]
+      }
+    }
+  ]
+}

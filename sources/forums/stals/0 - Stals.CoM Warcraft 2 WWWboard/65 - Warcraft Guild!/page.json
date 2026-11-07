@@ -1,0 +1,60 @@
+{
+  "thread_id": "65",
+  "title": "Warcraft Guild!",
+  "posts": [
+    {
+      "post": {
+        "id": "65",
+        "chain": "65",
+        "url": "http://www.stals.com/war2/wwwboard/messages/65.html",
+        "snapshot_ts": "19970614100516",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 10, 1997 at 21:14:18",
+        "iso8601": "1997-04-10T21:14:18+00:00"
+      },
+      "author": {
+        "name": "Warcraft Conquerors Castle",
+        "email": "caesar3@ix.netcom.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n<center><img src=\"http://www.geocities.com/TimesSquare/4314/choice.jpg\"></center><p>\nAll of the cool War2 sites should form a War2 guild and share the same links page<br>and all of the war2 sites will only admit new pages if all the pages vote it worthy.<br>We can charge pages like 5.00 to join and all split the money. We can have 1 daily newsletter<br>special puds for the sites to put up and this way if any ONE war2 page steals someones graphics or text<br>we can all strike a decicve blow and doom that persons page<br>It will be cool.\n<br>",
+        "markdown": "![](http://www.geocities.com/TimesSquare/4314/choice.jpg)\n\nAll of the cool War2 sites should form a War2 guild and share the same links page  \nand all of the war2 sites will only admit new pages if all the pages vote it worthy.  \nWe can charge pages like 5.00 to join and all split the money. We can have 1 daily newsletter  \nspecial puds for the sites to put up and this way if any ONE war2 page steals someones graphics or text  \nwe can all strike a decicve blow and doom that persons page  \nIt will be cool.",
+        "images": [
+          "http://www.geocities.com/TimesSquare/4314/choice.jpg"
+        ],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "66",
+        "chain": "65_66",
+        "url": "http://www.stals.com/war2/wwwboard/messages/66.html",
+        "snapshot_ts": "19970614100553",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 11, 1997 at 13:44:06",
+        "iso8601": "1997-04-11T13:44:06+00:00"
+      },
+      "author": {
+        "name": "OrcMan",
+        "email": "nlall@geocities.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n<center><img src=\"http://www.geocities.com/TimesSquare/5998/warcraft2b.gif\"></center><p>\n: All of the cool War2 sites should form a War2 guild and share the same links page<br>: and all of the war2 sites will only admit new pages if all the pages vote it worthy.<br>: We can charge pages like 5.00 to join and all split the money. We can have 1 daily newsletter<br>: special puds for the sites to put up and this way if any ONE war2 page steals someones graphics or text<br>: we can all strike a decicve blow and doom that persons page<br>: It will be cool.<p>I think this is a great idea and we should act on it immediatly. We should name it the Pagemakers of Draenor or something like that.\n<br>\n<ul><li><a href=\"http://www.geocities.com/TimesSquare/5998/warindex.html\">OrcMan's WarCraft 2</a></ul>",
+        "markdown": "![](http://www.geocities.com/TimesSquare/5998/warcraft2b.gif)\n\n> All of the cool War2 sites should form a War2 guild and share the same links page  \n> and all of the war2 sites will only admit new pages if all the pages vote it worthy.  \n> We can charge pages like 5.00 to join and all split the money. We can have 1 daily newsletter  \n> special puds for the sites to put up and this way if any ONE war2 page steals someones graphics or text  \n> we can all strike a decicve blow and doom that persons page  \n> It will be cool.\n\nI think this is a great idea and we should act on it immediatly. We should name it the Pagemakers of Draenor or something like that.  \n\n-   [OrcMan's WarCraft 2](http://www.geocities.com/TimesSquare/5998/warindex.html)",
+        "images": [
+          "http://www.geocities.com/TimesSquare/5998/warcraft2b.gif"
+        ],
+        "links": [
+          "http://www.geocities.com/TimesSquare/5998/warindex.html"
+        ]
+      }
+    }
+  ]
+}

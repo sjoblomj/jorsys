@@ -1,0 +1,54 @@
+{
+  "thread_id": "94",
+  "title": "Pud Editor Sucks",
+  "posts": [
+    {
+      "post": {
+        "id": "94",
+        "chain": "94",
+        "url": "http://www.stals.com/war2/wwwboard/messages/94.html",
+        "snapshot_ts": "19970614094514",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 27, 1997 at 15:30:46",
+        "iso8601": "1997-04-27T15:30:46+00:00"
+      },
+      "author": {
+        "name": "Exorcist",
+        "email": "andreas@bellatlantic.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\nThe Mac Pud editor was a great idea, but when I used it, it was not that great.<br>It takes centuries for it to open games that are made already on My 100Mhz Power Mac.<br>Also it is very buggy and freezes when it feels like it. I'm trying to critize, but I would like to <br>see a new and improved version of it.\n<br>",
+        "markdown": "The Mac Pud editor was a great idea, but when I used it, it was not that great.  \nIt takes centuries for it to open games that are made already on My 100Mhz Power Mac.  \nAlso it is very buggy and freezes when it feels like it. I'm trying to critize, but I would like to  \nsee a new and improved version of it.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "96",
+        "chain": "94_96",
+        "url": "http://www.stals.com/war2/wwwboard/messages/96.html",
+        "snapshot_ts": "19970614094552",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 28, 1997 at 21:25:41",
+        "iso8601": "1997-04-28T21:25:41+00:00"
+      },
+      "author": {
+        "name": "Ryu",
+        "email": "jhuang@coastnet.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: The Mac Pud editor was a great idea, but when I used it, it was not that great.<br>: It takes centuries for it to open games that are made already on My 100Mhz Power Mac.<br>: Also it is very buggy and freezes when it feels like it. I'm trying to critize, but I would like to <br>: see a new and improved version of it.<p>Be pacient, its not even finished yet.<p>\n<br>",
+        "markdown": "> The Mac Pud editor was a great idea, but when I used it, it was not that great.  \n> It takes centuries for it to open games that are made already on My 100Mhz Power Mac.  \n> Also it is very buggy and freezes when it feels like it. I'm trying to critize, but I would like to  \n> see a new and improved version of it.\n\nBe pacient, its not even finished yet.",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

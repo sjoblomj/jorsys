@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function update_formats() {
-    for f in formats/*.json; do
+    for f in sources/formats/*.json; do
         file=$(basename "$f" .json)
         title=$(echo "$file" | tr _ .)
         echo "Generating format file $title into content/formats/$file/index.md"
@@ -22,7 +22,7 @@ function update_formats() {
             "  {{formatlbl |label=Bits |value={{begin-bittable}}\n" + (.bits | map("    {{formatbitlbl |label=" + .bit + " |value=" + .value + "}}") | join("\n")) + "\n  {{end-bittable}} }}\n"
           end) +
           "{{end-formattable}}\n"
-        ) | join("\n")' formats/"$file".json >> content/formats/"$file"/index.md
+        ) | join("\n")' sources/formats/"$file".json >> content/formats/"$file"/index.md
     done
 }
 
@@ -211,5 +211,14 @@ function update_news_and_rss() {
     '
 }
 
+function update_community_forums() {
+    echo "Generating forum discussion pages into content/community"
+    python3 sources/forum/render-tree-discussions.py \
+        --source sources/forums/wardraft \
+        --source sources/forums/stals \
+        --output-root content/community
+}
+
 update_formats
 update_news_and_rss
+update_community_forums

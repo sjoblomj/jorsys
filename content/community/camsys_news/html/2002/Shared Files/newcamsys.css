@@ -1,0 +1,132 @@
+BODY {
+	MARGIN-TOP: 2px; SCROLLBAR-FACE-COLOR: #404040; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #606060; MARGIN-LEFT: 5px; SCROLLBAR-SHADOW-COLOR: #202020; COLOR: #a0a0a0; SCROLLBAR-3DLIGHT-COLOR: #a0a0a0; SCROLLBAR-ARROW-COLOR: #a0a0a0; SCROLLBAR-TRACK-COLOR: #202020; FONT-FAMILY: Verdana, Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #000000; BACKGROUND-COLOR: #000000
+}
+A:link {
+	COLOR: #d0d0d0; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #d0d0d0; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+INPUT {
+	FONT-SIZE: 12px; BORDER-LEFT-COLOR: #404040; BORDER-BOTTOM-COLOR: #404040; COLOR: #a0a0a0; BORDER-TOP-STYLE: ridge; BORDER-TOP-COLOR: #404040; FONT-FAMILY: Verdana, Helvetica; BORDER-RIGHT-STYLE: ridge; BORDER-LEFT-STYLE: ridge; BACKGROUND-COLOR: #000000; BORDER-RIGHT-COLOR: #404040; BORDER-BOTTOM-STYLE: ridge
+}
+SELECT {
+	FONT-SIZE: 12px; BORDER-LEFT-COLOR: #404040; BORDER-BOTTOM-COLOR: #404040; COLOR: #a0a0a0; BORDER-TOP-STYLE: ridge; BORDER-TOP-COLOR: #404040; FONT-FAMILY: Verdana, Helvetica; BORDER-RIGHT-STYLE: ridge; BORDER-LEFT-STYLE: ridge; BACKGROUND-COLOR: #000000; BORDER-RIGHT-COLOR: #404040; BORDER-BOTTOM-STYLE: ridge
+}
+OPTION {
+	FONT-SIZE: 12px; BORDER-LEFT-COLOR: #404040; BORDER-BOTTOM-COLOR: #404040; COLOR: #a0a0a0; BORDER-TOP-STYLE: ridge; BORDER-TOP-COLOR: #404040; FONT-FAMILY: Verdana, Helvetica; BORDER-RIGHT-STYLE: ridge; BORDER-LEFT-STYLE: ridge; BACKGROUND-COLOR: #000000; BORDER-RIGHT-COLOR: #404040; BORDER-BOTTOM-STYLE: ridge
+}
+TEXTAREA {
+	BORDER-LEFT-COLOR: #404040; BORDER-BOTTOM-COLOR: #404040; COLOR: #a0a0a0; BORDER-TOP-STYLE: ridge; BORDER-TOP-COLOR: #404040; BORDER-RIGHT-STYLE: ridge; BORDER-LEFT-STYLE: ridge; BACKGROUND-COLOR: #000000; BORDER-RIGHT-COLOR: #404040; BORDER-BOTTOM-STYLE: ridge
+}
+FORM {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+.default_text {
+	FONT-SIZE: 12px
+}
+.default_heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px
+}
+.default_table {
+	FONT-SIZE: 12px
+}
+.default_th {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; TEXT-ALIGN: center
+}
+.default_td {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: top
+}
+.default_hr {
+	COLOR: #808080
+}
+.transparent {
+	BACKGROUND-COLOR: #000000
+}
+.table_glow {
+	BACKGROUND-COLOR: #808080
+}
+.table_lightheader {
+	COLOR: #ffffff; BACKGROUND-COLOR: #404040
+}
+.table_header {
+	BACKGROUND-COLOR: #404040
+}
+.table_border {
+	BACKGROUND-COLOR: #404040
+}
+.table_block {
+	BACKGROUND-COLOR: #101010
+}
+.table_block_dark {
+	BACKGROUND-COLOR: #101010
+}
+.table_title {
+	BACKGROUND-COLOR: #202020
+}
+.header_row {
+	BACKGROUND-COLOR: #202020
+}
+.data_row {
+	BACKGROUND-COLOR: #101010
+}
+.sticky_row {
+	COLOR: #ffffff; BACKGROUND-COLOR: #402020
+}
+.form_heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; VERTICAL-ALIGN: top
+}
+.adbanner_heading {
+	FONT-SIZE: 12px; TEXT-ALIGN: right
+}
+.slogan {
+	FONT-SIZE: 10px
+}
+.left_heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px
+}
+.center_heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; TEXT-ALIGN: center
+}
+.right_heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; TEXT-ALIGN: right
+}
+.login {
+	FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.hosted {
+	FONT-SIZE: 10px
+}
+.network {
+	FONT-SIZE: 10px
+}
+.news_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+.section_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; TEXT-ALIGN: center
+}
+.thread_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; TEXT-ALIGN: left
+}
+.details {
+	FONT-SIZE: 10px
+}
+.navbar {
+	FONT-SIZE: 10px
+}
+.disclaimer {
+	FONT-SIZE: 10px; TEXT-ALIGN: center
+}
+.copyright {
+	FONT-SIZE: 10px; TEXT-ALIGN: right
+}
+.text_glow {
+	COLOR: #ffffff
+}
+.code {
+	FONT-SIZE: 12px; FONT-FAMILY: Courier New
+}

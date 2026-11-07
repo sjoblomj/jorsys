@@ -1,0 +1,78 @@
+{
+  "thread_id": "148",
+  "title": "Pagemill 2.0",
+  "posts": [
+    {
+      "post": {
+        "id": "148",
+        "chain": "148",
+        "url": "http://www.stals.com/war2/wwwboard/messages/148.html",
+        "snapshot_ts": "19970614091610",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "June 06, 1997 at 21:29:15",
+        "iso8601": "1997-06-06T21:29:15+00:00"
+      },
+      "author": {
+        "name": "Exorcist",
+        "email": "andreas@bellatlantic.net",
+        "website": null
+      },
+      "content": {
+        "orig": "\nAnyone who is good at using Mac Page mill 2.0, i need<br>your help. How do you get the frame animation to work?<br>My page is almost complete and I need to add the animation<br>as a finishing touch, Thanks.<br>\n<br>",
+        "markdown": "Anyone who is good at using Mac Page mill 2.0, i need  \nyour help. How do you get the frame animation to work?  \nMy page is almost complete and I need to add the animation  \nas a finishing touch, Thanks.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "149",
+        "chain": "148_149",
+        "url": "http://www.stals.com/war2/wwwboard/messages/149.html",
+        "snapshot_ts": "19970614091724",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "June 08, 1997 at 13:44:49",
+        "iso8601": "1997-06-08T13:44:49+00:00"
+      },
+      "author": {
+        "name": "CyberHunter",
+        "email": "Frezzit@voicenet.com.ifyoutypethisyouareafool",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: Anyone who is good at using Mac Page mill 2.0, i need<br>: your help. How do you get the frame animation to work?<br>: My page is almost complete and I need to add the animation<br>: as a finishing touch, Thanks.<p>you could just make it a quicktime moive and then <br>pagemill will read it or you say add frame <br>anamation (makeing sure it is in the right format).  <br>WOW you got a anamation.<p>\n<br>",
+        "markdown": "> Anyone who is good at using Mac Page mill 2.0, i need  \n> your help. How do you get the frame animation to work?  \n> My page is almost complete and I need to add the animation  \n> as a finishing touch, Thanks.\n\nyou could just make it a quicktime moive and then  \npagemill will read it or you say add frame  \nanamation (makeing sure it is in the right format).  \nWOW you got a anamation.",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "152",
+        "chain": "148_152",
+        "url": "http://www.stals.com/war2/wwwboard/messages/152.html",
+        "snapshot_ts": "19970614091647",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "June 11, 1997 at 21:04:54",
+        "iso8601": "1997-06-11T21:04:54+00:00"
+      },
+      "author": {
+        "name": "Oren (webmaster)",
+        "email": "oren@stals.com",
+        "website": null
+      },
+      "content": {
+        "orig": "\n: Anyone who is good at using Mac Page mill 2.0, i need<br>: your help. How do you get the frame animation to work?<br>: My page is almost complete and I need to add the animation<br>: as a finishing touch, Thanks.<p>Frame animation? Well if you have an animated GIF already all u do is insert the image as you would do with any image. Then when you are in browser mode you should see the animation.\n<br>",
+        "markdown": "> Anyone who is good at using Mac Page mill 2.0, i need  \n> your help. How do you get the frame animation to work?  \n> My page is almost complete and I need to add the animation  \n> as a finishing touch, Thanks.\n\nFrame animation? Well if you have an animated GIF already all u do is insert the image as you would do with any image. Then when you are in browser mode you should see the animation.",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

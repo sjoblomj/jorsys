@@ -1,0 +1,7 @@
+<article class="forumpost" id="post-${anchor}">
+  <header class="forumpost-header">
+    <span class="forumpost-author">${author}</span>${contact}${replyto}
+    <time class="forumpost-datetime" datetime="${datetime}">${datetimestr}</time><time class="forumpost-date" datetime="${datetime}">${date}</time>
+    <a class="forumpost-permalink" href="${url}">#${chain}</a>
+  </header>
+  <div class="forumpost-body">

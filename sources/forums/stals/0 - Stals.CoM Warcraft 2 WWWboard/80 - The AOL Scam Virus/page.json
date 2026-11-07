@@ -1,0 +1,30 @@
+{
+  "thread_id": "80",
+  "title": "The AOL Scam Virus",
+  "posts": [
+    {
+      "post": {
+        "id": "80",
+        "chain": "80",
+        "url": "http://www.stals.com/war2/wwwboard/messages/80.html",
+        "snapshot_ts": "19970614095506",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "April 21, 1997 at 04:47:03",
+        "iso8601": "1997-04-21T04:47:03+00:00"
+      },
+      "author": {
+        "name": "Shadow Master",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>IMPORTANT<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<br>> Anyone who recieves this must send it to as many people as you can.  It<br>> is essential that this problem be reconciled as soon as possible.  A few<br>> hours ago, I opened an E-mail that had the subject heading of<br>> ao4free.com<br>> Within seconds of opening it, a window appeared and began to display my<br>> files that were being deleted.  I immediately shut down my computer, but<br>> it was too late.  This virus wiped me out.  It ate the Anti-Virus<br>> Software that comes with the Windows '95 Program along with F-Prot AVS.<br>> Neither was able to detect it.  Please be careful and send this to as<br>> many people as possible, so maybe this new virus can be eliminated.<br>> <br>> Please pass this on,...........to anyone you know<br>> <br>> Thanks<br>> \n<br>",
+        "markdown": "&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;IMPORTANT&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  \n&gt; Anyone who recieves this must send it to as many people as you can. It  \n&gt; is essential that this problem be reconciled as soon as possible. A few  \n&gt; hours ago, I opened an E-mail that had the subject heading of  \n&gt; ao4free.com  \n&gt; Within seconds of opening it, a window appeared and began to display my  \n&gt; files that were being deleted. I immediately shut down my computer, but  \n&gt; it was too late. This virus wiped me out. It ate the Anti-Virus  \n&gt; Software that comes with the Windows '95 Program along with F-Prot AVS.  \n&gt; Neither was able to detect it. Please be careful and send this to as  \n&gt; many people as possible, so maybe this new virus can be eliminated.  \n&gt;  \n&gt; Please pass this on,...........to anyone you know  \n&gt;  \n&gt; Thanks  \n&gt;",
+        "images": [],
+        "links": []
+      }
+    }
+  ]
+}

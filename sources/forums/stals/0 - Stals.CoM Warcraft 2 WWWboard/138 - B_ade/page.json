@@ -1,0 +1,56 @@
+{
+  "thread_id": "138",
+  "title": "B|ade",
+  "posts": [
+    {
+      "post": {
+        "id": "138",
+        "chain": "138",
+        "url": "http://www.stals.com/war2/wwwboard/messages/138.html",
+        "snapshot_ts": "19970614092239",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 29, 1997 at 16:08:57",
+        "iso8601": "1997-05-29T16:08:57+00:00"
+      },
+      "author": {
+        "name": "OdinX",
+        "email": "mungert@ucsub.colorado.edu",
+        "website": null
+      },
+      "content": {
+        "orig": "\nHow do you make characters like Âž×Çœ¸ÍÏ  etc. appear<br>in War 2?  You can enter them in B|ade by pressing option<br>and it's ASCII counterpart, but they will not appear<br>in War 2, yet I have seen people with them, any ideas?\n<br>",
+        "markdown": "How do you make characters like Âž×Çœ¸ÍÏ etc. appear  \nin War 2? You can enter them in B\\|ade by pressing option  \nand it's ASCII counterpart, but they will not appear  \nin War 2, yet I have seen people with them, any ideas?",
+        "images": [],
+        "links": []
+      }
+    },
+    {
+      "post": {
+        "id": "141",
+        "chain": "138_141",
+        "url": "http://www.stals.com/war2/wwwboard/messages/141.html",
+        "snapshot_ts": "19970614092315",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 31, 1997 at 15:52:05",
+        "iso8601": "1997-05-31T15:52:05+00:00"
+      },
+      "author": {
+        "name": "Dioxide",
+        "email": null,
+        "website": null
+      },
+      "content": {
+        "orig": "\nThe problem is, War2 was originally made for PCs, so all the ASCII characters are formatted<br>to the PCs' type.<br>It is almost impossible to get them without directly transporting the \"war2.ini\" from a PC<br>to the \"Warcraft II Preferences\" on a Mac.  I personally made an AppleScript because I was<br>so pissed at this that would insert the characters and colors.<p>: How do you make characters like Âž×Çœ¸ÍÏ  etc. appear<br>: in War 2?  You can enter them in B|ade by pressing option<br>: and it's ASCII counterpart, but they will not appear<br>: in War 2, yet I have seen people with them, any ideas?<p>\n<br>\n<ul><li><a href=\"http://www.best.com/~edcheng/dioxide/\">Dioxide's War2 Page</a></ul>",
+        "markdown": "The problem is, War2 was originally made for PCs, so all the ASCII characters are formatted  \nto the PCs' type.  \nIt is almost impossible to get them without directly transporting the \"war2.ini\" from a PC  \nto the \"Warcraft II Preferences\" on a Mac. I personally made an AppleScript because I was  \nso pissed at this that would insert the characters and colors.\n\n> How do you make characters like Âž×Çœ¸ÍÏ etc. appear  \n> in War 2? You can enter them in B\\|ade by pressing option  \n> and it's ASCII counterpart, but they will not appear  \n> in War 2, yet I have seen people with them, any ideas?\n\n  \n\n-   [Dioxide's War2 Page](http://www.best.com/~edcheng/dioxide/)",
+        "images": [],
+        "links": [
+          "http://www.best.com/~edcheng/dioxide/"
+        ]
+      }
+    }
+  ]
+}

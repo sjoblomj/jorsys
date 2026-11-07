@@ -1,0 +1,32 @@
+{
+  "thread_id": "109",
+  "title": "Support Mac Gaming For Free",
+  "posts": [
+    {
+      "post": {
+        "id": "109",
+        "chain": "109",
+        "url": "http://www.stals.com/war2/wwwboard/messages/109.html",
+        "snapshot_ts": "19970614093553",
+        "missing": false
+      },
+      "timestamp": {
+        "orig": "May 09, 1997 at 13:49:44",
+        "iso8601": "1997-05-09T13:49:44+00:00"
+      },
+      "author": {
+        "name": "AnimateSW",
+        "email": "eddl0002@gold.tc.umn.edu",
+        "website": null
+      },
+      "content": {
+        "orig": "\nI have put together a mac gamer's e-zine<br>tell me what you think <http://www.tc.umn.edu/nlhome/g204/eddl0002/cover.html><br>If enough come I will continue it and make it better.  <br>Also feel free to offer to write articles.\n<br>\n<ul><li><a href=\"http://www.tc.umn.edu/nlhome/g204/eddl0002/cover.html\">Mac Gamer Cover Issue</a></ul>",
+        "markdown": "I have put together a mac gamer's e-zine  \ntell me what you think  \nIf enough come I will continue it and make it better.  \nAlso feel free to offer to write articles.  \n\n-   [Mac Gamer Cover Issue](http://www.tc.umn.edu/nlhome/g204/eddl0002/cover.html)",
+        "images": [],
+        "links": [
+          "http://www.tc.umn.edu/nlhome/g204/eddl0002/cover.html"
+        ]
+      }
+    }
+  ]
+}
