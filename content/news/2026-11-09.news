@@ -1,0 +1,23 @@
+{{begin-newsitem |time=2026-11-09T16:30:19Z |title=AxeGraft revealed |author=Ojan |resources=axegraft.png |categories=StarCraft I, Warcraft II, modding, tools |summary=AxeGraft, the latest and greatest among Grafting tools, is now released}}
+
+After working like a madman for more days than I can count, I am now ready to reveal what I mentioned in the previous post: {{highlight |text=AxeGraft}}.
+
+While many things in StarCraft and Warcraft II are stored in files that are easily editable and modifiable, a fair chunk of things are built directly into the game executable themselves. Most notably, these include what buttons and abilities each unit has, what buildings can do, and what the tech-tree looks like.
+
+{{img |file=axegraft.png |title=AxeGraft}}
+
+With {{highlight |text=AxeGraft}}, this is now modifiable! It consists of an Editor where you make your edits, and a Patcher where you load a set of edits. The Editor runs directly in your browser, while the Patcher is a plugin for [MPQDraft](https://www.jorsys.org/common/software/mpqdraft.html). It has support for nearly all versions of StarCraft: Brood War <= version 1.17, and for Warcraft II: Battle.net Edition.
+
+You can just download [the code](https://github.com/sjoblomj/axegraft) and open the {{highlight |text=AxeGraft}} Editor yourself in the browser, or you can find it hosted [here](https://axegraft.fly.dev/). The Patcher is available [here](https://github.com/sjoblomj/axegraft/releases).
+
+---
+
+This is not the first such tool. For the DOS versions of Warcraft II, there was {{highlight |text=WarHack}} by {{highlight |text=Merlin}} (Cameron Burschardt). In 1999, {{highlight |text=King Arthur}} (Andy Bond) released {{highlight |text=StarGraft}} that became incredibly popular. Later came {{highlight |text=MemGraft}} by {{highlight |text=DarkWizzard}}, and {{highlight |text=FireGraft}} by {{highlight |text=DiscipleOfAdun}}. Especially this last tool has seen much popularity for many years. All of them have been closed-source though, and Windows only.
+
+So what's with all the similar tools, and how is {{highlight |text=AxeGraft}} different? What all of these have in common is that they edit a specific place in memory of the game executable. By careful reverse engineering, the authors have figured out the exact memory address of for example where a button is, and can thus change it to something else. It has been very labourious and tedious work to figure these addresses out in the past. And every time Blizzard has released a new patch, all that work is reset; the memory locations are now in different places and tool authors are either forced to start over if they want to support a new patch, or people who want to play mods are forced to downgrade their versions of the game if they want to play mods made for an older version.
+
+With AI advancements, the work of finding these offsets became pretty much automated. {{highlight |text=AxeGraft}} thus supports nearly all Brood War versions up until 1.17. I intend to write a converter tool that can take in old mods and turn them into something that {{highlight |text=AxeGraft}} can use. The format of {{highlight |text=AxeGraft}} itself is version-agnostic, so once fed a catalog file with the right offset mappings, any mod will work.
+
+---
+
+I will add more improvements when I have the time. It currently lacks support for GPTP and DatExtender, and I'm hoping to provide some way to edit the tech-tree in Warcraft II, the way you can in StarCraft. [Let me know](../who.html) if you experience any issues!
