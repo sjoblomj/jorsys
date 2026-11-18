@@ -12,43 +12,43 @@ I have over the past month optimised the client significantly, and me and {{high
 
 **WarCraft II: Battle.net Edition, War2Dat.mpq:**
 ```
-ART\\CHAT_BNE_PLAIN.PCX
+ART\CHAT_BNE_PLAIN.PCX
 ```
 
 **WarCraft II: Battle.net Edition, Install.exe:**
 ```
-MacFiles\\DF.ModuleUniverselUSBHID
-MACFILES\\DF.PATCH.TXT
-MacFiles\\RF.ModuleUniverselUSBHID
-MACFILES\\RF.PATCH.TXT
+MacFiles\DF.ModuleUniverselUSBHID
+MACFILES\DF.PATCH.TXT
+MacFiles\RF.ModuleUniverselUSBHID
+MACFILES\RF.PATCH.TXT
 ```
 
 **StarCraft Beta, StarDat.mpq:**
 ```
-GLUE\\BATTLE.NET\\ICONS\\RAD_PRESSED.PCX
-GLUE\\BATTLE.NET\\ICONS\\RAD_UNPRESSED.PCX
+GLUE\BATTLE.NET\ICONS\RAD_PRESSED.PCX
+GLUE\BATTLE.NET\ICONS\RAD_UNPRESSED.PCX
 ```
 
 **StarCraft Brazil edition, Install.exe:**
 ```
-CAMPAIGN\\EXPTERRAN\\TERRAN03\\STAREDIT\\WAV\\T3M02GAL.WAV
+CAMPAIGN\EXPTERRAN\TERRAN03\STAREDIT\WAV\T3M02GAL.WAV
 ```
 
 **Diablo II Mac Installer TOME:**
 ```
-103b\\DF.BNUpdate
-103b\\DF.Diablo II
-103b\\DF.Storm
-103b\\RF.BNUpdate
-103b\\RF.Diablo II
-103b\\RF.Storm
+103b\DF.BNUpdate
+103b\DF.Diablo II
+103b\DF.Storm
+103b\RF.BNUpdate
+103b\RF.Diablo II
+103b\RF.Storm
 
-103c\\DF.Diablo II
-103c\\RF.Diablo II
-103c\\DF.Storm
-103c\\RF.Storm
-103c\\DF.BNUpdate
-103c\\RF.BNUpdate
+103c\DF.Diablo II
+103c\RF.Diablo II
+103c\DF.Storm
+103c\RF.Storm
+103c\DF.BNUpdate
+103c\RF.BNUpdate
 
 DF.InputSprocket Extension
 RF.InputSprocket Extension
