@@ -6,7 +6,7 @@ The `War2Dat.mpq` archive of WarCraft II: Battle.net Edition has had a 99% compl
 
 Around [a year ago](../archive/may_2025.html#newsitem_2025-05-30T19:26:18Z), I made a tool, {{highlight |text=namebreak-cuda}}, which bruteforces filenames on Nvidia GPUs. While I put the heavy lifting in place, I never quite finished it then. So now, after tweaking it for a bit, I ran it for less than two hours, and it returned the missing filename:
 
-`ART\\CHAT_BNE_PLAIN.PCX`
+`ART\CHAT_BNE_PLAIN.PCX`
 
 The `War2Dat.mpq` now has complete listfiles after all these years. I was happily surprised that the search was so quick.
 

@@ -9,107 +9,107 @@ Two weeks ago, I [wrote](../archive/october_2026.html#newsitem_2026-10-10T21:46:
 
 **StarCraft: Brood War French edition, BroodDat.mpq:**
 ```
-SOUND\\PROTOSS\\DARCHON\\PDAWHT011.WAV
-SOUND\\PROTOSS\\DARCHON\\PDAWHT021.WAV
-SOUND\\PROTOSS\\DARCHON\\PDAWHT031.WAV
+SOUND\PROTOSS\DARCHON\PDAWHT011.WAV
+SOUND\PROTOSS\DARCHON\PDAWHT021.WAV
+SOUND\PROTOSS\DARCHON\PDAWHT031.WAV
 ```
 
 **StarCraft: Brood War French edition, Install.exe:**
 ```
-NEWMUSIC\\PDEFEAT.WAV
-NEWMUSIC\\PRDYROOM.WAV
-NEWMUSIC\\PROTOSS1.WAV
+NEWMUSIC\PDEFEAT.WAV
+NEWMUSIC\PRDYROOM.WAV
+NEWMUSIC\PROTOSS1.WAV
 ```
 
 **StarCraft German edition, StarDat.mpq:**
 ```
-SOUND\\TERRAN\\RAYNORM\\TMARDY00.WAV
+SOUND\TERRAN\RAYNORM\TMARDY00.WAV
 ```
 
 **StarCraft: Brood War German edition, Install.exe:**
 ```
-CAMPAIGN\\EXPTERRAN\\TERRAN07\\STAREDIT\\WAV\\T7M06STU.WAV
-FILES\\LOCALOLD.DLL
+CAMPAIGN\EXPTERRAN\TERRAN07\STAREDIT\WAV\T7M06STU.WAV
+FILES\LOCALOLD.DLL
 ```
 
 **StarCraft Brazil edition, StarDat.mpq:**
 ```
-SCRIPTS\\CRDT_LST.TXT
+SCRIPTS\CRDT_LST.TXT
 ```
 
 **StarCraft: Brood War Brazil edition, Install.exe:**
 ```
-SETUPDAT\\INST_F~1.$$$
-SETUPDAT\\STRINGS.$$$
+SETUPDAT\INST_F~1.$$$
+SETUPDAT\STRINGS.$$$
 
-setupdat_working_sp\\bwunin.exe
-setupdat_working_sp\\bwunin.pif
-setupdat_working_sp\\cleanup.ins
-setupdat_working_sp\\debug.ins
-setupdat_working_sp\\defaults.vis
-setupdat_working_sp\\directx.ins
-setupdat_working_sp\\gendefs.ins
-setupdat_working_sp\\inst.ins
-setupdat_working_sp\\inst.vis
-setupdat_working_sp\\installed.ins
-setupdat_working_sp\\instgen.ins
-setupdat_working_sp\\inst_files.ins
-setupdat_working_sp\\inst_gen.ins
-setupdat_working_sp\\inst_regs.ins
-setupdat_working_sp\\inst_sys.ins
-setupdat_working_sp\\iswinnt.ins
-setupdat_working_sp\\license.txt
-setupdat_working_sp\\mainplay.vis
-setupdat_working_sp\\noboot.dat
-setupdat_working_sp\\normal.ins
-setupdat_working_sp\\prepbrood.ins
-setupdat_working_sp\\savetemp.ins
-setupdat_working_sp\\scr_blizzard.vis
-setupdat_working_sp\\scr_isp.vis
-setupdat_working_sp\\scr_main.vis
-setupdat_working_sp\\scr_options.vis
-setupdat_working_sp\\scunin.exe
-setupdat_working_sp\\scunin.pif
-setupdat_working_sp\\setup.vis
-setupdat_working_sp\\single.ins
-setupdat_working_sp\\spawn.ins
-setupdat_working_sp\\spawn.vis
-setupdat_working_sp\\strings.ins
-setupdat_working_sp\\INST_F~1.$$$
-setupdat_working_sp\\upgrade.ins
-setupdat_working_sp\\upgrade.vis
-setupdat_working_sp\\95\\comctl32.dll
-setupdat_working_sp\\audio\\battlenetclick.wav
-setupdat_working_sp\\audio\\installermusic.wav
-setupdat_working_sp\\audio\\mousedown.wav
-setupdat_working_sp\\audio\\mouseover.wav
-setupdat_working_sp\\font\\font.ccd
-setupdat_working_sp\\font\\font16.fnt
-setupdat_working_sp\\font\\font16x.fnt
-setupdat_working_sp\\font\\font32.fnt
-setupdat_working_sp\\gen\\allied.lst
-setupdat_working_sp\\gen\\broodwar.lst
-setupdat_working_sp\\gen\\bwladder.lst
-setupdat_working_sp\\gen\\ladder.lst
-setupdat_working_sp\\gen\\oldladder.lst
-setupdat_working_sp\\gen\\webmaps.lst
-setupdat_working_sp\\images\\install.pcx
-setupdat_working_sp\\nt\\comctl32.dll
-setupdat_working_sp\\STRINGS.$$$
-setupdat_working_sp\\instcc.exe
-setupdat_working_sp\\riched20.dll
-setupdat_working_sp\\vssver.scc
+setupdat_working_sp\bwunin.exe
+setupdat_working_sp\bwunin.pif
+setupdat_working_sp\cleanup.ins
+setupdat_working_sp\debug.ins
+setupdat_working_sp\defaults.vis
+setupdat_working_sp\directx.ins
+setupdat_working_sp\gendefs.ins
+setupdat_working_sp\inst.ins
+setupdat_working_sp\inst.vis
+setupdat_working_sp\installed.ins
+setupdat_working_sp\instgen.ins
+setupdat_working_sp\inst_files.ins
+setupdat_working_sp\inst_gen.ins
+setupdat_working_sp\inst_regs.ins
+setupdat_working_sp\inst_sys.ins
+setupdat_working_sp\iswinnt.ins
+setupdat_working_sp\license.txt
+setupdat_working_sp\mainplay.vis
+setupdat_working_sp\noboot.dat
+setupdat_working_sp\normal.ins
+setupdat_working_sp\prepbrood.ins
+setupdat_working_sp\savetemp.ins
+setupdat_working_sp\scr_blizzard.vis
+setupdat_working_sp\scr_isp.vis
+setupdat_working_sp\scr_main.vis
+setupdat_working_sp\scr_options.vis
+setupdat_working_sp\scunin.exe
+setupdat_working_sp\scunin.pif
+setupdat_working_sp\setup.vis
+setupdat_working_sp\single.ins
+setupdat_working_sp\spawn.ins
+setupdat_working_sp\spawn.vis
+setupdat_working_sp\strings.ins
+setupdat_working_sp\INST_F~1.$$$
+setupdat_working_sp\upgrade.ins
+setupdat_working_sp\upgrade.vis
+setupdat_working_sp\95\comctl32.dll
+setupdat_working_sp\audio\battlenetclick.wav
+setupdat_working_sp\audio\installermusic.wav
+setupdat_working_sp\audio\mousedown.wav
+setupdat_working_sp\audio\mouseover.wav
+setupdat_working_sp\font\font.ccd
+setupdat_working_sp\font\font16.fnt
+setupdat_working_sp\font\font16x.fnt
+setupdat_working_sp\font\font32.fnt
+setupdat_working_sp\gen\allied.lst
+setupdat_working_sp\gen\broodwar.lst
+setupdat_working_sp\gen\bwladder.lst
+setupdat_working_sp\gen\ladder.lst
+setupdat_working_sp\gen\oldladder.lst
+setupdat_working_sp\gen\webmaps.lst
+setupdat_working_sp\images\install.pcx
+setupdat_working_sp\nt\comctl32.dll
+setupdat_working_sp\STRINGS.$$$
+setupdat_working_sp\instcc.exe
+setupdat_working_sp\riched20.dll
+setupdat_working_sp\vssver.scc
 ```
 
 The last one is particularly nice. The Brazilian Brood War installer contains 57 files, one after another, that turned out to be an older, Spanish working copy of the installer's `SETUPDAT` directory, but under a different name. Most of their basenames could be worked out, but the directory itself eluded us. Finding `SETUPDAT_WORKING_SP` thus gave names to the other 56 files in it as well, including its subdirectories `95`, `AUDIO`, `FONT`, `GEN`, `IMAGES` and `NT`.
 
-Also of note are `SETUPDAT\\INST_F~1.$$$`, `SETUPDAT\\STRINGS.$$$` that contain the characters `$` and `~` that we normally don't search for. These files themselves seemed to be half-done versions of other files, and some editors in the 90's would save temporary copies of files with `.$$$` extension. The `~1` part is the filesystems of the times that would trim longer file names in this way. We were lucky to have discovered these thanks to AI that tried a bunch of more or less likely patterns.
+Also of note are `SETUPDAT\INST_F~1.$$$`, `SETUPDAT\STRINGS.$$$` that contain the characters `$` and `~` that we normally don't search for. These files themselves seemed to be half-done versions of other files, and some editors in the 90's would save temporary copies of files with `.$$$` extension. The `~1` part is the filesystems of the times that would trim longer file names in this way. We were lucky to have discovered these thanks to AI that tried a bunch of more or less likely patterns.
 
 **Diablo II: Lord of Destruction Japanese edition, setup.mpq:**
 ```
-SETUPDAT\\JPN\\VSSVER.SCC
-SETUPDAT\\LOC_INSTALLED.INS
-SETUPDAT\\US_INSTALLED.INS
+SETUPDAT\JPN\VSSVER.SCC
+SETUPDAT\LOC_INSTALLED.INS
+SETUPDAT\US_INSTALLED.INS
 ```
 
 
