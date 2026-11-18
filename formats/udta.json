@@ -1,676 +1,1089 @@
-[
-  {
-    "name": "Graphics: Group",
-    "offset": "0x0000",
-    "length": "220 bytes (2 bytes / First 110 Units)",
-    "description": "Graphics group this unit uses. To be honest I sort of forgot what this does :)",
-    "values": "Integer value between 0 and 65535.",
-    "bits": []
-  },
-  {
-    "name": "Graphics: General",
-    "offset": "0x00DC",
-    "length": "254 bytes (2 bytes / Unit)",
-    "description": "The graphic this unit uses in general. Most units (except the critter) specify this value as their only graphic. All buildings (and the critter) use graphics specific to tileset.",
-    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
-    "bits": [
-      {
-        "bit": "0x0D",
-        "value": "Flag #2"
-      },
-      {
-        "bit": "0x0E",
-        "value": "Flag #1"
-      },
-      {
-        "bit": "0x0F",
-        "value": "Repeat (used if this unit uses another's GFX)"
-      }
-    ]
-  },
-  {
-    "name": "Graphics: Forest",
-    "offset": "0x01DA",
-    "length": "254 bytes (2 bytes / Unit)",
-    "description": "The graphic this unit uses for Forest maps.",
-    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
-    "bits": [
-      {
-        "bit": "0x0D",
-        "value": "Flag #2"
-      },
-      {
-        "bit": "0x0E",
-        "value": "Flag #1"
-      },
-      {
-        "bit": "0x0F",
-        "value": "Repeat (used if this unit uses another's GFX)"
-      }
-    ]
-  },
-  {
-    "name": "Graphics: Winter",
-    "offset": "0x02D8",
-    "length": "254 bytes (2 bytes / Unit)",
-    "description": "The graphic this unit uses for Winter maps.",
-    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
-    "bits": [
-      {
-        "bit": "0x0D",
-        "value": "Flag #2"
-      },
-      {
-        "bit": "0x0E",
-        "value": "Flag #1"
-      },
-      {
-        "bit": "0x0F",
-        "value": "Repeat (used if this unit uses another's GFX)"
-      }
-    ]
-  },
-  {
-    "name": "Graphics: Wasteland",
-    "offset": "0x03D6",
-    "length": "254 bytes (2 bytes / Unit)",
-    "description": "The graphic this unit uses for Wasteland maps.",
-    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
-    "bits": [
-      {
-        "bit": "0x0D",
-        "value": "Flag #2"
-      },
-      {
-        "bit": "0x0E",
-        "value": "Flag #1"
-      },
-      {
-        "bit": "0x0F",
-        "value": "Repeat (used if this unit uses another's GFX)"
-      }
-    ]
-  },
-  {
-    "name": "Range: Sight",
-    "offset": "0x04D4",
-    "length": "440 bytes (1 long / First 110 Units)",
-    "description": "Sight range (in tiles) of this unit.",
-    "values": "Integer value between 0 and 2^32",
-    "bits": []
-  },
-  {
-    "name": "Hitpoints",
-    "offset": "0x068C",
-    "length": "220 bytes (2 bytes / First 110 Units)",
-    "description": "Hitpoints for this Unit.",
-    "values": "Integer value between 0 and 65535.",
-    "bits": []
-  },
-  {
-    "name": "Magic Flag",
-    "offset": "0x0768",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Flag to determine whether this unit is a spell user.",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "false (not a magic user)"
-      },
-      {
-        "bit": "0x01",
-        "value": "true (magic user)"
-      }
-    ]
-  },
-  {
-    "name": "Cost: Build Time",
-    "offset": "0x07D6",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Time required to build this Unit. Multiply by 6 to obtain seconds.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Cost: Gold",
-    "offset": "0x0844",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "The amount of Gold required to build this Unit. Multiply by 10 to get actual value.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Cost: Lumber",
-    "offset": "0x08B2",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Amount of Lumber required to build this Unit. Multiply by 10 to obtain actual value.",
-    "values": "Integer values between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Cost: Oil",
-    "offset": "0x0920",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Amount of oil required to build this unit. Multiply by 10 to obtain actual value.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Size: Unit",
-    "offset": "0x098E",
-    "length": "440 bytes (4 bytes / First 110 Units)",
-    "description": "First two bytes are the X size (width), second two are the Y size (height).",
-    "values": "Two integer values between 0 and 65535.",
-    "bits": []
-  },
-  {
-    "name": "Size: Box",
-    "offset": "0x0B46",
-    "length": "440 bytes (4 bytes / First 110 Units)",
-    "description": "First two bytes are the X size (width), second two are the Y size (height).",
-    "values": "Two integer values between 0 and 65535.",
-    "bits": []
-  },
-  {
-    "name": "Attack Range",
-    "offset": "0x0CF3",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Minimum range this unit must be from its target to attack.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "React Range: Computer AI",
-    "offset": "0x0D6C",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Minimum range that computer units must be from this unit in order to react to it.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "React Range: Human AI",
-    "offset": "0x0DDA",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Minimum range this unit must be from an enemy before it reacts to the enemy.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Armor",
-    "offset": "0x0E48",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Amount of armor this unit has.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Multiselectable Flag",
-    "offset": "0x0EB6",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Flag which determines whether the unit can be selected with other units.",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "false (not multiselectable)"
-      },
-      {
-        "bit": "0x01",
-        "value": "true (multiselecatble)"
-      }
-    ]
-  },
-  {
-    "name": "Priority / AI Treatment",
-    "offset": "0x0F24",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Priority value / AI Treatment for this unit.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Damage: Basic",
-    "offset": "0x0F92",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Basic damage dealt by this unit when it attacks.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Damage: Piercing",
-    "offset": "0x1000",
-    "length": "110 bytes (1 byte / First 110 Unis)",
-    "description": "Piercing damage dealt by this unit when it attacks.",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Weapon Upgrade Flag",
-    "offset": "0x106E",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Flag which determines whether this unit upgrades its weapon.",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "false (no weapon upgrade)"
-      },
-      {
-        "bit": "0x01",
-        "value": "true (weapon upgrade)"
-      }
-    ]
-  },
-  {
-    "name": "Armor Upgrade Flag",
-    "offset": "0x10DC",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Flag which determines whether this unit upgrades its armor.",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "false (no armor upgrade)"
-      },
-      {
-        "bit": "0x01",
-        "value": "true (armor upgrade)"
-      }
-    ]
-  },
-  {
-    "name": "Weapon Missile",
-    "offset": "0x114A",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Missile type this unit uses when it attacks.",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "Lightning"
-      },
-      {
-        "bit": "0x01",
-        "value": "Griffon Hammer"
-      },
-      {
-        "bit": "0x02",
-        "value": "Dragon Breath and Fireball"
-      },
-      {
-        "bit": "0x03",
-        "value": "Flameshield Fireball"
-      },
-      {
-        "bit": "0x04",
-        "value": "Flame Shield"
-      },
-      {
-        "bit": "0x05",
-        "value": "Blizzard"
-      },
-      {
-        "bit": "0x06",
-        "value": "Death &amp; Decay"
-      },
-      {
-        "bit": "0x07",
-        "value": "Big Cannon"
-      },
-      {
-        "bit": "0x08",
-        "value": "Exorcism"
-      },
-      {
-        "bit": "0x09",
-        "value": "Heal Effect"
-      },
-      {
-        "bit": "0x0A",
-        "value": "Touch of Death"
-      },
-      {
-        "bit": "0x0B",
-        "value": "Rune"
-      },
-      {
-        "bit": "0x0C",
-        "value": "Whirlwind"
-      },
-      {
-        "bit": "0x0D",
-        "value": "Catapult Rock"
-      },
-      {
-        "bit": "0x0E",
-        "value": "Ballista Bolt"
-      },
-      {
-        "bit": "0x0F",
-        "value": "Arrow"
-      },
-      {
-        "bit": "0x10",
-        "value": "Axe"
-      },
-      {
-        "bit": "0x11",
-        "value": "Submarine Missile"
-      },
-      {
-        "bit": "0x12",
-        "value": "Turtle Missile"
-      },
-      {
-        "bit": "0x13",
-        "value": "Small Fire"
-      },
-      {
-        "bit": "0x14",
-        "value": "Big Fire"
-      },
-      {
-        "bit": "0x15",
-        "value": "Ballista &amp; Catapult Impact"
-      },
-      {
-        "bit": "0x16",
-        "value": "Normal Spell"
-      },
-      {
-        "bit": "0x17",
-        "value": "Explosion"
-      },
-      {
-        "bit": "0x18",
-        "value": "Small Cannon"
-      },
-      {
-        "bit": "0x19",
-        "value": "Cannon Explosion"
-      },
-      {
-        "bit": "0x1A",
-        "value": "Cannon Tower Explosion"
-      },
-      {
-        "bit": "0x1B",
-        "value": "Daemon Fire"
-      },
-      {
-        "bit": "0x1C",
-        "value": "Green Cross"
-      },
-      {
-        "bit": "0x1D",
-        "value": "None"
-      }
-    ]
-  },
-  {
-    "name": "Unit Type",
-    "offset": "0x11B8",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Domain unit resides in (visual only).",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "Land"
-      },
-      {
-        "bit": "0x01",
-        "value": "Air"
-      },
-      {
-        "bit": "0x02",
-        "value": "Sea"
-      }
-    ]
-  },
-  {
-    "name": "Decay Rate",
-    "offset": "0x1226",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Rate at which this unit decays. Multiply by 6 to get seconds. Decay rates only apply to units created during the game, not those placed on the map at design time.",
-    "values": "Integer value between 0 and 255. 0 means the unit never decays.",
-    "bits": []
-  },
-  {
-    "name": "Computer Annoy Factor",
-    "offset": "0x1294",
-    "length": "",
-    "description": "How much this unit annoys the computer (likelihood it will be attacked).",
-    "values": "Integer value between 0 and 255.",
-    "bits": []
-  },
-  {
-    "name": "Right Click Action",
-    "offset": "0x1302",
-    "length": "58 bytes (1 byte / First 58 Units)",
-    "description": "Action this unit performs when you have it selected and right click with it.",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "None"
-      },
-      {
-        "bit": "0x01",
-        "value": "Attack"
-      },
-      {
-        "bit": "0x02",
-        "value": "Move"
-      },
-      {
-        "bit": "0x03",
-        "value": "Harvest"
-      },
-      {
-        "bit": "0x04",
-        "value": "Haul Oil"
-      },
-      {
-        "bit": "0x05",
-        "value": "Demolish"
-      },
-      {
-        "bit": "0x06",
-        "value": "Sail"
-      }
-    ]
-  },
-  {
-    "name": "Point Value",
-    "offset": "0x133C",
-    "length": "220 bytes (2 bytes / First 110 Units)",
-    "description": "Point value awarded towards total score for a player which destroys this unit.",
-    "values": "Integer value between 0 and 65535.",
-    "bits": []
-  },
-  {
-    "name": "Weapon Attack Domain",
-    "offset": "0x1418",
-    "length": "110 bytes (1 byte / First 110 Units)",
-    "description": "Domain whose units this unit can attack.",
-    "values": "(Any combination of these are valid - just add them together)",
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "None"
-      },
-      {
-        "bit": "0x01",
-        "value": "Land"
-      },
-      {
-        "bit": "0x02",
-        "value": "Sea"
-      },
-      {
-        "bit": "0x03",
-        "value": "Air"
-      }
-    ]
-  },
-  {
-    "name": "Unit Flags",
-    "offset": "0x1486",
-    "length": "440 bytes (4 bytes / First 110 Units)",
-    "description": "Flags which determine special properties this unit has.",
-    "values": null,
-    "bits": [
-      {
-        "bit": "0x00",
-        "value": "Land Unit"
-      },
-      {
-        "bit": "0x01",
-        "value": "Air Unit"
-      },
-      {
-        "bit": "0x02",
-        "value": "Exploding Death"
-      },
-      {
-        "bit": "0x03",
-        "value": "Sea Unit"
-      },
-      {
-        "bit": "0x04",
-        "value": "Critter"
-      },
-      {
-        "bit": "0x05",
-        "value": "Building"
-      },
-      {
-        "bit": "0x06",
-        "value": "Submarine"
-      },
-      {
-        "bit": "0x07",
-        "value": "Submarine Spotter"
-      },
-      {
-        "bit": "0x08",
-        "value": "Peon"
-      },
-      {
-        "bit": "0x09",
-        "value": "Tanker"
-      },
-      {
-        "bit": "0x0A",
-        "value": "Transport"
-      },
-      {
-        "bit": "0x0B",
-        "value": "Oil Platform"
-      },
-      {
-        "bit": "0x0C",
-        "value": "Gold Storage"
-      },
-      {
-        "bit": "0x0D",
-        "value": "Not used"
-      },
-      {
-        "bit": "0x0E",
-        "value": "Attack Ground"
-      },
-      {
-        "bit": "0x0F",
-        "value": "Undead"
-      },
-      {
-        "bit": "0x10",
-        "value": "Shore Building"
-      },
-      {
-        "bit": "0x11",
-        "value": "Spellcaster"
-      },
-      {
-        "bit": "0x12",
-        "value": "Lumber Storage"
-      },
-      {
-        "bit": "0x13",
-        "value": "Attacks"
-      },
-      {
-        "bit": "0x14",
-        "value": "Tower"
-      },
-      {
-        "bit": "0x15",
-        "value": "Oil Patch"
-      },
-      {
-        "bit": "0x16",
-        "value": "Gold Mine"
-      },
-      {
-        "bit": "0x17",
-        "value": "Hero"
-      },
-      {
-        "bit": "0x18",
-        "value": "Oil Storage"
-      },
-      {
-        "bit": "0x19",
-        "value": "Volatile"
-      },
-      {
-        "bit": "0x1A",
-        "value": "Mage (runs when attacked)"
-      },
-      {
-        "bit": "0x1B",
-        "value": "Organic"
-      },
-      {
-        "bit": "0x1C",
-        "value": "Not used"
-      },
-      {
-        "bit": "0x1D",
-        "value": "Not used"
-      },
-      {
-        "bit": "0x1E",
-        "value": "Not used"
-      },
-      {
-        "bit": "0x1F",
-        "value": "Not used"
-      }
-    ]
-  },
-  {
-    "name": "Graphics: Swamp",
-    "offset": "0x163E",
-    "length": "252 bytes (2 bytes / Unit)",
-    "description": "The graphic this unit uses for Swamp maps.",
-    "values": "Bits 0 to 12 store the entry in the .war archives. There's probably a table somewhere that converts this to MPQ files.",
-    "bits": [
-      {
-        "bit": "0x0D",
-        "value": "Flag #2"
-      },
-      {
-        "bit": "0x0E",
-        "value": "Flag #1"
-      },
-      {
-        "bit": "0x0F",
-        "value": "Repeat (used if this unit uses another's GFX)"
-      }
-    ]
-  }
-]
+{
+  "title": "UDTA",
+  "description": "UDTA holds the data for the units in WarCraft II: their graphics, hit points, costs, sizes, ranges, armor, damage, flags and more, with one entry per unit (see Appendix: Unit Types). The layout is the same in all versions. UDTA data is found in three places:\n\n1. The default copies: there are two. In the DOS versions (1.3, 1.33 and 1.5) they are entries 472 and 0 of MAINDAT.WAR. In the Battle.net Edition (2.00 and 2.02) they are the files rez\\unitdata.dat and rez\\unitdato.dat in War2Dat.mpq, with the same contents. Entry 472 (rez\\unitdata.dat) holds the full 5948 bytes in the layout below, with nothing in front of them, and is the one the game uses whenever a map does not give its own unit data. Entry 0 (rez\\unitdato.dat) holds 5694 bytes: the same layout without Graphics: Swamp, and with different values for some units. The game loads entry 0 when it starts and then loads entry 472 over it. Only entry 0's four Graphics lists (General, Forest, Winter and Wasteland) are kept, in a spare copy that is never used for drawing; it is only written into saved games, where loading skips it. Both copies are the same in all five versions.\n2. PUD files (maps): a PUD can have a UDTA section, but it does not need one. In a PUD the section starts with 2 bytes in front of the data (not counted in the offsets here). The data can be 5694 bytes (without Graphics: Swamp), so the section is 5696 bytes, or the full 5948 bytes, so the section is 5950 bytes; the game accepts both. If both bytes are 0, the game reads the data that follows and uses it instead of the default copy. Otherwise the game skips the data, even though it is there, and uses the default copy (entry 472). A PUD without a UDTA section also gets the default copy. In the Battle.net Edition, the game skips the UDTA section of the map in a multiplayer game unless the game type is Use Map Settings; with the other game types that come with it (Melee, Free For All, One on One, Top vs. Bottom, Ladder and Iron Man Ladder) the default copy is used. The Graphics lists (General, Forest, Winter, Wasteland and Swamp) in a PUD are always skipped, even when the rest of the data is read, so the game always uses the Graphics lists of entry 472.\n3. Saved games (.SAV files): when the game is saved, the UDTA data in use at that moment is written to the save file in the 5694-byte layout, except that the four Graphics lists written are the ones kept from entry 0. When the save is loaded, the data replaces the unit data from the map, but the Graphics lists are skipped.",
+  "spec": [
+    {
+      "name": "Graphics: Construction Site",
+      "offset": "0x0000",
+      "length": "220 bytes (2 bytes / First 110 Units)",
+      "description": "The construction site graphic shown while this building is being built. The game adds 110 to the value and uses the result as an entry in the Graphics lists below, where entries 116 to 126 are the construction sites; for example 6 (entry 116) is the land construction site and 15 (entry 125) the wall construction site. Frame 0 of the construction site is shown for the first quarter of the construction and frame 1 for the second quarter; after that the building's own graphic is used.",
+      "values": "Integer value between 0 and 16. Only used while the unit is being built.",
+      "bits": []
+    },
+    {
+      "name": "Graphics: General",
+      "offset": "0x00DC",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on all tilesets. When the tileset's own Graphics list has an entry for the unit (not 0xFFFF), that one is used instead. Most units only set this one; buildings and the critter use the tileset-specific lists. Entries 0 to 109 are the units. Entries 110 to 126 are extra graphics: 110 and 111 are the peasant and peon carrying lumber, 112 and 113 the peasant and peon carrying gold, 114 and 115 the human and orc oil tanker carrying oil, and 116 to 126 (in the tileset lists) the construction sites (see Graphics: Construction Site).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
+      "bits": [
+        {
+          "bit": "0x0F",
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
+        }
+      ]
+    },
+    {
+      "name": "Graphics: Forest",
+      "offset": "0x01DA",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Forest maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
+      "bits": [
+        {
+          "bit": "0x0F",
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
+        }
+      ]
+    },
+    {
+      "name": "Graphics: Winter",
+      "offset": "0x02D8",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Winter maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
+      "bits": [
+        {
+          "bit": "0x0F",
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
+        }
+      ]
+    },
+    {
+      "name": "Graphics: Wasteland",
+      "offset": "0x03D6",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Wasteland maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset.",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
+      "bits": [
+        {
+          "bit": "0x0F",
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
+        }
+      ]
+    },
+    {
+      "name": "Range: Sight",
+      "offset": "0x04D4",
+      "length": "440 bytes (1 long / First 110 Units)",
+      "description": "Sight range (in tiles) of this unit: the unit reveals a square area of 2 × range + 1 tiles on each side around it. Rangers and Berserkers use 9 instead once their player has the sight upgrade (Scouting). A unit with the Building bit (0x05) in Unit Flags always uses 3 while it is under construction, whatever this field holds; buildings that are on the map when it is loaded, and units outside 0x3A to 0x68, are never under construction.",
+      "values": "Integer value between 0 and 9. The game uses the value as an entry in a table of 10 sight routines, so larger values are invalid. 0 works the same as 1.",
+      "bits": []
+    },
+    {
+      "name": "Hitpoints",
+      "offset": "0x068C",
+      "length": "220 bytes (2 bytes / First 110 Units)",
+      "description": "Hitpoints for this Unit.",
+      "values": "Integer value between 0 and 65535.",
+      "bits": []
+    },
+    {
+      "name": "Magic Flag",
+      "offset": "0x0768",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Copied into the unit's mana when the unit is created or changes type. It does not make the unit a spellcaster: whether a unit regains mana over time, and whether it starts with 85 mana, is decided by the Spellcaster bit (0x11) in Unit Flags.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "false (not a magic user)"
+        },
+        {
+          "bit": "0x01",
+          "value": "true (magic user)"
+        }
+      ]
+    },
+    {
+      "name": "Cost: Build Time",
+      "offset": "0x07D6",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Time required to build or train this Unit. A higher value takes longer. In the Battle.net Edition, in a multiplayer game in Enhanced mode, a unit with Gold Storage (0x0C in Unit Flags) takes no longer to build than its race's Farm (or Pig Farm) until its player has had a building that provides food.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Cost: Gold",
+      "offset": "0x0844",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "The amount of Gold required to build this Unit. Multiply by 10 to get actual value.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Cost: Lumber",
+      "offset": "0x08B2",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Amount of Lumber required to build this Unit. Multiply by 10 to obtain actual value.",
+      "values": "Integer values between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Cost: Oil",
+      "offset": "0x0920",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Amount of oil required to build this unit. Multiply by 10 to obtain actual value.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Size: Unit",
+      "offset": "0x098E",
+      "length": "440 bytes (4 bytes / First 110 Units)",
+      "description": "First two bytes are the X size (width), second two are the Y size (height).",
+      "values": "Two integer values between 0 and 65535.",
+      "bits": []
+    },
+    {
+      "name": "Size: Box",
+      "offset": "0x0B46",
+      "length": "440 bytes (4 bytes / First 110 Units)",
+      "description": "First two bytes are the X size (width), second two are the Y size (height).",
+      "values": "Two integer values between 0 and 65535.",
+      "bits": []
+    },
+    {
+      "name": "Attack Range",
+      "offset": "0x0CFE",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Maximum distance (in tiles) from which this unit can attack its target. Rangers and Berserkers get one more once their player has the range upgrade (Longbow / Lighter Axes).",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "React Range: Computer AI",
+      "offset": "0x0D6C",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "How far (in tiles) a computer player's unit of this type looks for enemies to attack.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "React Range: Human AI",
+      "offset": "0x0DDA",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "How far (in tiles) a human player's unit of this type looks for enemies to attack while it is walking somewhere, for example while patrolling. A human player's unit that is standing still only looks within its attack range.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Armor",
+      "offset": "0x0E48",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Amount of armor this unit has.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Multiselectable Flag",
+      "offset": "0x0EB6",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Flag which determines whether the unit can be selected with other units.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "false (not multiselectable)"
+        },
+        {
+          "bit": "0x01",
+          "value": "true (multiselectable)"
+        }
+      ]
+    },
+    {
+      "name": "Priority / AI Treatment",
+      "offset": "0x0F24",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Used when a unit picks an enemy to attack by itself. Enemies that can attack come first (those within the unit's attack range before those further away), and among those the game picks the one with the highest priority minus a penalty for distance.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Damage: Basic",
+      "offset": "0x0F92",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Basic damage dealt by this unit when it attacks.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Damage: Piercing",
+      "offset": "0x1000",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Piercing damage dealt by this unit when it attacks.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Weapon Upgrade Flag",
+      "offset": "0x106E",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Flag which determines whether this unit upgrades its weapon.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "false (no weapon upgrade)"
+        },
+        {
+          "bit": "0x01",
+          "value": "true (weapon upgrade)"
+        }
+      ]
+    },
+    {
+      "name": "Armor Upgrade Flag",
+      "offset": "0x10DC",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Flag which determines whether this unit upgrades its armor.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "false (no armor upgrade)"
+        },
+        {
+          "bit": "0x01",
+          "value": "true (armor upgrade)"
+        }
+      ]
+    },
+    {
+      "name": "Weapon Missile",
+      "offset": "0x114A",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Missile this unit fires when it attacks. 0x1D (None) means the unit attacks in melee.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Lightning"
+        },
+        {
+          "bit": "0x01",
+          "value": "Griffon Hammer"
+        },
+        {
+          "bit": "0x02",
+          "value": "Dragon Breath and Fireball"
+        },
+        {
+          "bit": "0x03",
+          "value": "Flameshield Fireball"
+        },
+        {
+          "bit": "0x04",
+          "value": "Flame Shield"
+        },
+        {
+          "bit": "0x05",
+          "value": "Blizzard"
+        },
+        {
+          "bit": "0x06",
+          "value": "Death &amp; Decay"
+        },
+        {
+          "bit": "0x07",
+          "value": "Big Cannon"
+        },
+        {
+          "bit": "0x08",
+          "value": "Exorcism"
+        },
+        {
+          "bit": "0x09",
+          "value": "Heal Effect"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Touch of Death"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Rune"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Tornado (Whirlwind)"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Catapult Rock"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Ballista Bolt"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Arrow"
+        },
+        {
+          "bit": "0x10",
+          "value": "Axe"
+        },
+        {
+          "bit": "0x11",
+          "value": "Submarine Missile"
+        },
+        {
+          "bit": "0x12",
+          "value": "Turtle Missile"
+        },
+        {
+          "bit": "0x13",
+          "value": "Small Fire"
+        },
+        {
+          "bit": "0x14",
+          "value": "Big Fire"
+        },
+        {
+          "bit": "0x15",
+          "value": "Ballista &amp; Catapult Impact"
+        },
+        {
+          "bit": "0x16",
+          "value": "Normal Spell"
+        },
+        {
+          "bit": "0x17",
+          "value": "Explosion"
+        },
+        {
+          "bit": "0x18",
+          "value": "Cannon"
+        },
+        {
+          "bit": "0x19",
+          "value": "Cannon Fire (shown at the unit that fires Cannon or Big Cannon)"
+        },
+        {
+          "bit": "0x1A",
+          "value": "Cannon Explosion (shown where Cannon or Big Cannon hits)"
+        },
+        {
+          "bit": "0x1B",
+          "value": "Daemon Fire"
+        },
+        {
+          "bit": "0x1C",
+          "value": "Green Cross"
+        },
+        {
+          "bit": "0x1D",
+          "value": "None (melee)"
+        }
+      ]
+    },
+    {
+      "name": "Unit Type",
+      "offset": "0x11B8",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Whether the unit is a land, air or sea unit. Not only visual: the game copies it into each unit when the unit is created, and uses it, for example, when looking for a free square to place the unit on and when a missile hits the unit.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Land"
+        },
+        {
+          "bit": "0x01",
+          "value": "Air"
+        },
+        {
+          "bit": "0x02",
+          "value": "Sea"
+        }
+      ]
+    },
+    {
+      "name": "Decay Rate",
+      "offset": "0x1226",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "How fast this unit decays. A unit with a non-zero decay rate gets a hidden timer that starts at 255. The game counts the decay rate down over and over; each time it runs out, the timer goes down by one and the unit's hit points are not affected. Once the timer reaches 0, the unit loses 5 hit points each time instead, and dies when it has fewer than 5 left. Decay rates only apply to units created during the game, not those placed on the map at design time, and never to units with the Spellcaster bit (0x11) in Unit Flags.",
+      "values": "Integer value between 0 and 255. 0 means the unit never decays.",
+      "bits": []
+    },
+    {
+      "name": "Repair Priority (Computer)",
+      "offset": "0x1294",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "How urgently a computer player repairs this building. When a computer player's peasant or peon looks for a building to repair, it considers its player's finished buildings in the same area that have less than 3/4 of their hit points, and picks the one with the highest value. This is the only place the game uses this field.",
+      "values": "Integer value between 0 and 255. Only matters for buildings.",
+      "bits": []
+    },
+    {
+      "name": "Right Click Action",
+      "offset": "0x1302",
+      "length": "58 bytes (1 byte / First 58 Units)",
+      "description": "What this unit does when you have it selected and right click. The game turns the right click into an order depending on this value and on what was clicked.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "None: nothing happens"
+        },
+        {
+          "bit": "0x01",
+          "value": "Attack: Attack an enemy unit, Attack Wall on a wall, otherwise Move. Units without the Attacks bit (0x13) in Unit Flags always Move"
+        },
+        {
+          "bit": "0x02",
+          "value": "Move"
+        },
+        {
+          "bit": "0x03",
+          "value": "Harvest: Attack an enemy unit; Harvest a gold mine or trees when not carrying anything; Return with Goods to an own building that takes what is carried; Repair a damaged own building; otherwise Move"
+        },
+        {
+          "bit": "0x04",
+          "value": "Haul Oil: Harvest an own oil platform when empty; Return with Goods to an own building that takes oil when carrying oil; otherwise Move"
+        },
+        {
+          "bit": "0x05",
+          "value": "Demolish: Demolish an enemy unit, otherwise Move"
+        },
+        {
+          "bit": "0x06",
+          "value": "Sail: the same as Move"
+        }
+      ]
+    },
+    {
+      "name": "Point Value",
+      "offset": "0x133C",
+      "length": "220 bytes (2 bytes / First 110 Units)",
+      "description": "Point value awarded towards total score for a player which destroys this unit.",
+      "values": "Integer value between 0 and 65535.",
+      "bits": []
+    },
+    {
+      "name": "Weapon Attack Domain",
+      "offset": "0x1418",
+      "length": "110 bytes (1 byte / First 110 Units)",
+      "description": "Domain whose units this unit can attack.",
+      "values": "Bit flags; any combination is valid (just add them together). 0 means the unit cannot attack.",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "None"
+        },
+        {
+          "bit": "0x01",
+          "value": "Land"
+        },
+        {
+          "bit": "0x02",
+          "value": "Sea"
+        },
+        {
+          "bit": "0x04",
+          "value": "Air"
+        }
+      ]
+    },
+    {
+      "name": "Unit Flags",
+      "offset": "0x1486",
+      "length": "440 bytes (4 bytes / First 110 Units)",
+      "description": "Flags which determine special properties this unit has.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Land Unit; Set on all land units in the default data. It has no effect of its own; it only counts as one of the mobile-unit bits. Bits 0x00 to 0x04 together mark a unit as a mobile unit rather than a building: much of the game only checks whether any of them is set (e.g. only such units respond to right clicks). Whether a unit moves on land, sea or in the air is decided by the Unit Type field, not by this bit."
+        },
+        {
+          "bit": "0x01",
+          "value": "Air Unit; Set on the flying units (Kurdran, Deathwing, Gnomish Flying Machine, Goblin Zeppelin, Gryphon Rider, Dragon, Eye of Kilrogg, Daemon) in the default data. When a unit picks an enemy to attack by itself, air units (and submarines) within its attack range are preferred over everything else; an air unit does not pick enemy air units that cannot attack. The flag also gives the unit the same death sound as units with Exploding Death (0x02), and computer players count it as an air unit when forming attack groups. Bits 0x00 to 0x04 together mark a unit as a mobile unit rather than a building: much of the game only checks whether any of them is set (e.g. only such units respond to right clicks)."
+        },
+        {
+          "bit": "0x02",
+          "value": "Exploding Death; Set on the Ballista and Catapult in the default data. The unit explodes when killed (missile 23, Explosion), uses the death sound shared with air units, and does not play the idle animation (turning around now and then) when standing still. Its basic damage is increased by the Ballista/Catapult weapon upgrade, by 15 for each level, instead of the normal weapon upgrade. Bits 0x00 to 0x04 together mark a unit as a mobile unit rather than a building: much of the game only checks whether any of them is set (e.g. only such units respond to right clicks)."
+        },
+        {
+          "bit": "0x03",
+          "value": "Sea Unit; Set on the ships in the default data. Its weapon and armor upgrades come from the ship upgrades: 5 extra basic damage and 5 extra armor for each level, instead of 2 for land units. While standing still, the unit bobs up and down. A sea unit that returns with goods delivers oil. Submarines can attack it, and computer players count it as a sea unit when forming attack groups. Bits 0x00 to 0x04 together mark a unit as a mobile unit rather than a building: much of the game only checks whether any of them is set (e.g. only such units respond to right clicks)."
+        },
+        {
+          "bit": "0x04",
+          "value": "Critter; Set on the Critter, Skeleton and Daemon in the default data. When the player's unit with this bit is attacked, the \"under attack\" warning is not given. When the game places such a unit next to a spot (as for Raise Dead, the daemon and Polymorph), missile 22 (Normal Spell) is shown on it. Bits 0x00 to 0x04 together mark a unit as a mobile unit rather than a building: much of the game only checks whether any of them is set (e.g. only such units respond to right clicks)."
+        },
+        {
+          "bit": "0x05",
+          "value": "Building; Set on all buildings, the gold mine, the oil patch, the Circle of Power, the Dark Portal, the Runestone, walls and the destroyed sites in the default data. A peasant or peon right-clicked on a damaged own building repairs it, and computer players' workers repair such buildings by themselves. While the player's own building is being built or is busy, the progress bar is shown when it is selected. When one is attacked, the warning sound for buildings is used instead of the one for units."
+        },
+        {
+          "bit": "0x06",
+          "value": "Submarine; Set on the Gnomish Submarine and Giant Turtle in the default data. The unit cannot be seen by other players, except when one of their units with Submarine Spotter (0x07) is close enough. It can only attack sea units (0x03), oil platforms (0x0B) and shore buildings (0x10). When a unit picks an enemy to attack by itself, submarines within its attack range are preferred like air units."
+        },
+        {
+          "bit": "0x07",
+          "value": "Submarine Spotter; Set on the flying units, the submarines, and the scout, guard and cannon towers in the default data. Submarines (0x06) of other players near the unit become visible to its player. In the Battle.net Edition's Enhanced mode, a building with this bit only does this once it is finished."
+        },
+        {
+          "bit": "0x08",
+          "value": "Peon; Set on the Peasant and Peon in the default data. While carrying goods, the unit is drawn with the graphics for carrying lumber or gold (Graphics entries 110 to 113). A computer player's unit with this bit looks for damaged buildings to repair when it is idle. The flag also makes it a non-combatant, like Mage (0x1A)."
+        },
+        {
+          "bit": "0x09",
+          "value": "Tanker; Set on the human and orc Oil Tanker in the default data. While carrying oil, the unit is drawn with the graphic for a full tanker (Graphics entries 114 and 115). The flag also makes it a non-combatant, like Mage (0x1A)."
+        },
+        {
+          "bit": "0x0A",
+          "value": "Transport; Set on the human and orc Transport in the default data. The unit carries up to six passengers: a friendly unit moved onto it boards it, and Unload Passengers puts them ashore. Peasants and peons can repair it like a building."
+        },
+        {
+          "bit": "0x0B",
+          "value": "Oil Platform; Set on the human and orc Oil Platform in the default data. It must be built on top of an oil patch, and takes over the oil left in the patch. Tankers harvest oil from it. Submarines can attack it. Shipyards and refineries cannot be built within 4 squares of it. Computer players' workers do not repair it."
+        },
+        {
+          "bit": "0x0C",
+          "value": "Gold Storage; Set on the Town Hall, Great Hall, Keep, Stronghold, Castle and Fortress in the default data. Peasants and peons deliver both gold and lumber to it. It cannot be built within 3 squares of a gold mine (0x16) (\"You cannot build a townhall too near a goldmine\")."
+        },
+        {
+          "bit": "0x0D",
+          "value": "Leaves no remains; Set on the dead body and the destroyed sites in the default data. When a unit with this bit is killed, it is removed straight away, instead of turning into a dead body (units) or leaving a destroyed site behind (buildings)."
+        },
+        {
+          "bit": "0x0E",
+          "value": "Attack Ground; Set on the Ballista, Catapult, Battleship and Juggernaught in the default data. Only units with this bit can be given the Attack Ground order, and the Attack Ground button is shown when one of the selected units has it. While attacking an enemy it found by itself, the unit holds fire when units of its own player are within one square of the target."
+        },
+        {
+          "bit": "0x0F",
+          "value": "Undead; Set on the Death Knight, Teron Gorefiend, Gul'dan and the Skeleton in the default data. Exorcism damages only units with this bit."
+        },
+        {
+          "bit": "0x10",
+          "value": "Shore Building; Set on the shipyards, foundries and refineries in the default data. It must be built on the coast. Except for the foundries, it cannot be built within 4 squares of an oil patch or an oil platform (\"You cannot build too near a patch of oil\"). In the Battle.net Edition's Enhanced mode, foundries cannot be built within 1 square of one. Submarines can attack it."
+        },
+        {
+          "bit": "0x11",
+          "value": "Spellcaster; Set on the Mage, Death Knight, Paladin, Ogre-Mage and the heroes that use mana (Teron Gorefiend, Dentarg, Khadgar, Turalyon, Cho'gall, Gul'dan, Uther Lightbringer) in the default data. The unit has mana: it starts with 85 when created and regains it over time, and the stats panel shows it as \"Magic:\". Units with this bit never decay (see Decay Rate)."
+        },
+        {
+          "bit": "0x12",
+          "value": "Lumber Storage; Set on the Elven Lumber Mill and Troll Lumber Mill in the default data. Peasants and peons deliver lumber (but not gold) to it."
+        },
+        {
+          "bit": "0x13",
+          "value": "Attacks; Set on all units that can fight, and the guard and cannon towers, in the default data. Right click Attack (see Right Click Action) only gives an attack order to units with this bit. When a unit picks an enemy to attack by itself, enemies with this bit are preferred over those without it. Only units with this bit come to help when a nearby friendly unit is attacked, and computer players only pick units with this bit for attack groups."
+        },
+        {
+          "bit": "0x14",
+          "value": "Tower; Set on the guard and cannon towers in the default data. When finished or upgraded, the building starts in the Tower Guard action, attacking enemies in range. Towers do not come to help when a nearby friendly unit is attacked."
+        },
+        {
+          "bit": "0x15",
+          "value": "Oil Patch; Set on the oil patch in the default data. Shipyards and refineries cannot be built within 4 squares of it. (Whether an oil platform is built on an oil patch is checked by the unit number, not by this bit.)"
+        },
+        {
+          "bit": "0x16",
+          "value": "Gold Mine; Set on the gold mine in the default data. Its only use: buildings with Gold Storage (0x0C) cannot be built within 3 squares of it. (Harvesting checks the unit number of the gold mine, not this bit.)"
+        },
+        {
+          "bit": "0x17",
+          "value": "Hero; Set on Cho'gall, Lothar, Gul'dan, Uther Lightbringer and Zul'jin in the default data. When the level's Rescue Table entry requires a special unit (0x1000), one of the rescued units must have this bit."
+        },
+        {
+          "bit": "0x18",
+          "value": "Oil Storage; Set on the shipyards and refineries in the default data. A tanker carrying oil that is right-clicked on it returns its oil there."
+        },
+        {
+          "bit": "0x19",
+          "value": "Sapper; Set on the Dwarven Demolition Squad and Goblin Sappers in the default data; it does not make them explode (that is the Demolish order). The flag makes it a non-combatant, like Mage (0x1A), and gives the unit the same death sound as units with Exploding Death (0x02) and air units. In the Battle.net Edition's Enhanced mode, units go back to a Patrol or Attack order after fighting; a unit with this bit that has such an order to go back to does not move away from enemies but orders itself to Demolish an enemy it finds."
+        },
+        {
+          "bit": "0x1A",
+          "value": "Mage; Set on the Mage, Death Knight, Teron Gorefiend and Khadgar in the default data. The flag only means it is Non-combatant: when attacked, the unit moves away instead of fighting back; it does not come to help nearby friendly units that are attacked; computer players never pick it for an attack group; and when looking for enemies it plans its path around enemy units instead of through them. Peon (0x08), Tanker (0x09) and Sapper (0x19) also make a unit a non-combatant."
+        },
+        {
+          "bit": "0x1B",
+          "value": "Organic; Set on all living units in the default data (not on ballistas, catapults, ships, the Gnomish Flying Machine, the Goblin Zeppelin or the Eye of Kilrogg). Healing, Bloodlust, Polymorph and Death Coil only affect units with this bit."
+        },
+        {
+          "bit": "0x1C",
+          "value": "Unused; Not set on any unit in the default data, and the game never checks it."
+        },
+        {
+          "bit": "0x1D",
+          "value": "Unused; Not set on any unit in the default data, and the game never checks it."
+        },
+        {
+          "bit": "0x1E",
+          "value": "Unused; Not set on any unit in the default data, and the game never checks it."
+        },
+        {
+          "bit": "0x1F",
+          "value": "Unused; Not set on any unit in the default data, and the game never checks it."
+        }
+      ]
+    },
+    {
+      "name": "Graphics: Swamp",
+      "offset": "0x163E",
+      "length": "254 bytes (2 bytes / 127 entries)",
+      "description": "The graphic this unit uses on Swamp maps. 0xFFFF means the unit uses its Graphics: General entry on this tileset. Only present in the Beyond the Dark Portal format: with this field the UDTA data is 5948 bytes long, without it 5694 bytes (see the description of this section).",
+      "values": "0xFFFF means no graphic. Otherwise bits 0 to 14 are a file reference: an entry number of MAINDAT.WAR plus 1000, so 1045 is entry 45. The DOS versions load that entry from MAINDAT.WAR. The Battle.net Edition looks the number up in a table of file names in the executable (1045 is Art\\Unit\\Human\\grunt.grp, the same graphic as entry 45) and loads that file from War2Dat.mpq. Only 1033 to 1191, 1252 to 1276 and 1470 to 1527 are in that table, and a few of them have no file name (1067, 1068, 1071 to 1079, 1187, 1471 and 1472); any other value gives the unit no graphic.",
+      "bits": [
+        {
+          "bit": "0x0F",
+          "value": "Reuse: instead of loading the graphic again, use the one already loaded for an earlier entry in the same list whose bits 0 to 14 are the same."
+        }
+      ]
+    }
+  ],
+  "appendices": [
+    {
+      "name": "Appendix: Unit Types",
+      "description": "The unit list. The per-unit fields have one entry per unit in this order: the fields with 110 entries cover 0x00 to 0x6D, and the Graphics lists have 127 entries (see Graphics: General for the extra entries after the units). The numbers are the same as in the Train and Build command buttons of the game's executable (WAR2.EXE in the DOS versions, Warcraft II BNE.exe in the Battle.net Edition). The entries marked Unused have no name in the game.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Footman"
+        },
+        {
+          "bit": "0x01",
+          "value": "Grunt"
+        },
+        {
+          "bit": "0x02",
+          "value": "Peasant"
+        },
+        {
+          "bit": "0x03",
+          "value": "Peon"
+        },
+        {
+          "bit": "0x04",
+          "value": "Ballista"
+        },
+        {
+          "bit": "0x05",
+          "value": "Catapult"
+        },
+        {
+          "bit": "0x06",
+          "value": "Knight"
+        },
+        {
+          "bit": "0x07",
+          "value": "Ogre"
+        },
+        {
+          "bit": "0x08",
+          "value": "Elven Archer"
+        },
+        {
+          "bit": "0x09",
+          "value": "Troll Axethrower"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Mage"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Death Knight"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Paladin"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Ogre-Mage"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Dwarven Demolition Squad"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Goblin Sappers"
+        },
+        {
+          "bit": "0x10",
+          "value": "Attack Peasant"
+        },
+        {
+          "bit": "0x11",
+          "value": "Attack Peon"
+        },
+        {
+          "bit": "0x12",
+          "value": "Ranger"
+        },
+        {
+          "bit": "0x13",
+          "value": "Berserker"
+        },
+        {
+          "bit": "0x14",
+          "value": "Alleria"
+        },
+        {
+          "bit": "0x15",
+          "value": "Teron Gorefiend"
+        },
+        {
+          "bit": "0x16",
+          "value": "Kurdran and Sky'ree"
+        },
+        {
+          "bit": "0x17",
+          "value": "Dentarg"
+        },
+        {
+          "bit": "0x18",
+          "value": "Khadgar"
+        },
+        {
+          "bit": "0x19",
+          "value": "Grom Hellscream"
+        },
+        {
+          "bit": "0x1A",
+          "value": "Human Oil Tanker"
+        },
+        {
+          "bit": "0x1B",
+          "value": "Orc Oil Tanker"
+        },
+        {
+          "bit": "0x1C",
+          "value": "Human Transport"
+        },
+        {
+          "bit": "0x1D",
+          "value": "Orc Transport"
+        },
+        {
+          "bit": "0x1E",
+          "value": "Elven Destroyer"
+        },
+        {
+          "bit": "0x1F",
+          "value": "Troll Destroyer"
+        },
+        {
+          "bit": "0x20",
+          "value": "Battleship"
+        },
+        {
+          "bit": "0x21",
+          "value": "Ogre Juggernaught"
+        },
+        {
+          "bit": "0x22",
+          "value": "Unused 0x22"
+        },
+        {
+          "bit": "0x23",
+          "value": "Deathwing"
+        },
+        {
+          "bit": "0x24",
+          "value": "Unused 0x24"
+        },
+        {
+          "bit": "0x25",
+          "value": "Unused 0x25"
+        },
+        {
+          "bit": "0x26",
+          "value": "Gnomish Submarine"
+        },
+        {
+          "bit": "0x27",
+          "value": "Giant Turtle"
+        },
+        {
+          "bit": "0x28",
+          "value": "Gnomish Flying Machine"
+        },
+        {
+          "bit": "0x29",
+          "value": "Goblin Zeppelin"
+        },
+        {
+          "bit": "0x2A",
+          "value": "Gryphon Rider"
+        },
+        {
+          "bit": "0x2B",
+          "value": "Dragon"
+        },
+        {
+          "bit": "0x2C",
+          "value": "Turalyon"
+        },
+        {
+          "bit": "0x2D",
+          "value": "Eye of Kilrogg"
+        },
+        {
+          "bit": "0x2E",
+          "value": "Danath"
+        },
+        {
+          "bit": "0x2F",
+          "value": "Korgath Bladefist"
+        },
+        {
+          "bit": "0x30",
+          "value": "Unused 0x30"
+        },
+        {
+          "bit": "0x31",
+          "value": "Cho'gall"
+        },
+        {
+          "bit": "0x32",
+          "value": "Lothar"
+        },
+        {
+          "bit": "0x33",
+          "value": "Gul'dan"
+        },
+        {
+          "bit": "0x34",
+          "value": "Uther Lightbringer"
+        },
+        {
+          "bit": "0x35",
+          "value": "Zuljin"
+        },
+        {
+          "bit": "0x36",
+          "value": "Unused 0x36"
+        },
+        {
+          "bit": "0x37",
+          "value": "Skeleton"
+        },
+        {
+          "bit": "0x38",
+          "value": "Daemon"
+        },
+        {
+          "bit": "0x39",
+          "value": "Critter"
+        },
+        {
+          "bit": "0x3A",
+          "value": "Farm"
+        },
+        {
+          "bit": "0x3B",
+          "value": "Pig Farm"
+        },
+        {
+          "bit": "0x3C",
+          "value": "Human Barracks"
+        },
+        {
+          "bit": "0x3D",
+          "value": "Orc Barracks"
+        },
+        {
+          "bit": "0x3E",
+          "value": "Church"
+        },
+        {
+          "bit": "0x3F",
+          "value": "Altar of Storms"
+        },
+        {
+          "bit": "0x40",
+          "value": "Scout Tower (Human)"
+        },
+        {
+          "bit": "0x41",
+          "value": "Watch Tower (Orc)"
+        },
+        {
+          "bit": "0x42",
+          "value": "Stables"
+        },
+        {
+          "bit": "0x43",
+          "value": "Ogre Mound"
+        },
+        {
+          "bit": "0x44",
+          "value": "Gnomish Inventor"
+        },
+        {
+          "bit": "0x45",
+          "value": "Goblin Alchemist"
+        },
+        {
+          "bit": "0x46",
+          "value": "Gryphon Aviary"
+        },
+        {
+          "bit": "0x47",
+          "value": "Dragon Roost"
+        },
+        {
+          "bit": "0x48",
+          "value": "Human Shipyard"
+        },
+        {
+          "bit": "0x49",
+          "value": "Orc Shipyard"
+        },
+        {
+          "bit": "0x4A",
+          "value": "Town Hall"
+        },
+        {
+          "bit": "0x4B",
+          "value": "Great Hall"
+        },
+        {
+          "bit": "0x4C",
+          "value": "Elven Lumber Mill"
+        },
+        {
+          "bit": "0x4D",
+          "value": "Troll Lumber Mill"
+        },
+        {
+          "bit": "0x4E",
+          "value": "Human Foundry"
+        },
+        {
+          "bit": "0x4F",
+          "value": "Orc Foundry"
+        },
+        {
+          "bit": "0x50",
+          "value": "Mage Tower"
+        },
+        {
+          "bit": "0x51",
+          "value": "Temple of the Damned"
+        },
+        {
+          "bit": "0x52",
+          "value": "Human Blacksmith"
+        },
+        {
+          "bit": "0x53",
+          "value": "Orc Blacksmith"
+        },
+        {
+          "bit": "0x54",
+          "value": "Human Refinery"
+        },
+        {
+          "bit": "0x55",
+          "value": "Orc Refinery"
+        },
+        {
+          "bit": "0x56",
+          "value": "Human Oil Platform"
+        },
+        {
+          "bit": "0x57",
+          "value": "Orc Oil Platform"
+        },
+        {
+          "bit": "0x58",
+          "value": "Keep"
+        },
+        {
+          "bit": "0x59",
+          "value": "Stronghold"
+        },
+        {
+          "bit": "0x5A",
+          "value": "Castle"
+        },
+        {
+          "bit": "0x5B",
+          "value": "Fortress"
+        },
+        {
+          "bit": "0x5C",
+          "value": "Gold Mine"
+        },
+        {
+          "bit": "0x5D",
+          "value": "Oil Patch"
+        },
+        {
+          "bit": "0x5E",
+          "value": "Human Start Location"
+        },
+        {
+          "bit": "0x5F",
+          "value": "Orc Start Location"
+        },
+        {
+          "bit": "0x60",
+          "value": "Human Guard Tower"
+        },
+        {
+          "bit": "0x61",
+          "value": "Orc Guard Tower"
+        },
+        {
+          "bit": "0x62",
+          "value": "Human Cannon Tower"
+        },
+        {
+          "bit": "0x63",
+          "value": "Orc Cannon Tower"
+        },
+        {
+          "bit": "0x64",
+          "value": "Circle of Power"
+        },
+        {
+          "bit": "0x65",
+          "value": "Dark Portal"
+        },
+        {
+          "bit": "0x66",
+          "value": "Runestone"
+        },
+        {
+          "bit": "0x67",
+          "value": "Wall (Human)"
+        },
+        {
+          "bit": "0x68",
+          "value": "Wall (Orc)"
+        },
+        {
+          "bit": "0x69",
+          "value": "Dead Body"
+        },
+        {
+          "bit": "0x6A",
+          "value": "Destroyed Site (1x1)"
+        },
+        {
+          "bit": "0x6B",
+          "value": "Destroyed Site (2x2)"
+        },
+        {
+          "bit": "0x6C",
+          "value": "Destroyed Site (3x3)"
+        },
+        {
+          "bit": "0x6D",
+          "value": "Destroyed Site (4x4)"
+        }
+      ]
+    }
+  ]
+}

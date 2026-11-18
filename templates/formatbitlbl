@@ -1,1 +1,1 @@
-<dt class="formatbitlbl">${label}</dt><dd>${value}</dd>
+<dt class="formatbitlbl hexvalue">${label}</dt><dd>${value}</dd>

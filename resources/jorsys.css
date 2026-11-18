@@ -459,18 +459,23 @@ blockquote {
   display: grid;
   grid-template-columns: auto 1fr;
 }
+.formattable dt {
+  padding: 1ex 1ex 1ex 1em;
+}
+.formattable dd {
+  padding: 1ex 1em 1ex 0;
+  text-align: justify;
+}
+.bittable dt {
+  padding: 0.2ex;
+}
+.bittable dd {
+  padding: 0.2ex;
+  text-align: justify;
+}
 .formatlbl {
   text-align: right;
-  vertical-align: top;
   font-weight: bold;
-  padding-right: 1em;
-  width: 7em;
-}
-.formatbitlbl {
-  text-align: right;
-  vertical-align: top;
-  font-weight: bold;
-  padding-right: 1em;
 }
 .formatbox {
   padding: 0 1em 1em 1em;
@@ -481,6 +486,11 @@ blockquote {
 .formatbox-title {
   font-size: 1.5em;
   text-decoration: underline;
+}
+.hexvalue {
+  font-family: var(--monospace-font);
+  font-size: math;
+  font-weight: bold;
 }
 /** </format table and box styling> **/
 
@@ -617,5 +627,9 @@ a:focus-visible {
 .gold {
   color: var(--gold-colour);
   display: inline;
+}
+
+hr {
+  margin: 5em 5em 4em 5em;
 }
 /** </misc> **/
