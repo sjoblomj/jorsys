@@ -1,0 +1,12 @@
+{{begin-newsitem |time=2026-11-18T22:11:19Z |title=Updated UDTA specs, added UGRD specs |author=Ojan |categories=WarCraft II, modding, formats |summary=Format specs for Warcraft II updated and made available}}
+
+The specs for the UDTA and UGRD files of Warcraft II are now available on the [formats page](../formats.html).
+
+The UDTA file controls the properties of units, such as hitpoints, graphics, cost, and various flags like whether they are spellcasters and can detect submarines and much more. The UGRD file is similar but for upgrades; it controls things like costs, time, groups and flags. These files exist in both the DOS versions of the game, the Battle.net Edition, as well as inside PUDs (maps).
+
+The files have both been checked against decompiled versions of the games, and are thus {{dash}} I believe {{dash}} more thorough and correct than most other similar specs out there (if there are even any available online these days).
+
+* [UDTA file format specs](../formats/udta.html)
+* [UGRD file format specs](../formats/ugrd.html)
+
+See the [formats page](../formats.html) for all specs currently available.
