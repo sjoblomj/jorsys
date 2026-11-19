@@ -21,7 +21,7 @@ Damage is dealt in steps. A bullet deals (Damage + Bonus × the player's level o
   {{formathexlbl |label=Offset |value=0x0104}}
   {{formatlbl |label=Length |value=520 bytes (4 bytes / Weapon)}}
   {{formatlbl |label=Description |value=The bullet the weapon fires: an entry of flingy.dat. Only the low 16 bits are used. 0 means the weapon fires no bullet; melee weapons (claws, blades, Toxic Spores and Psi Blades) have 0 and deal their damage straight from the unit's animation script instead.}}
-  {{formatlbl |label=Values |value=Integer value between 0 and the last entry of flingy.dat (not checked).}}
+  {{formatlbl |label=Values |value=Integer value between 0 and 208, the last entry of flingy.dat. Higher values are not rejected: the game reads the bullet's settings from the memory after the flingy.dat tables.}}
 {{end-formattable}}
 
 ## Unused (Technology)
@@ -73,7 +73,7 @@ Damage is dealt in steps. A bullet deals (Damage + Bonus × the player's level o
   {{formathexlbl |label=Offset |value=0x08A2}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=The upgrade (upgrades.dat) whose level multiplies Bonus. Its level is also printed on the weapon's icon in the status panel. Upgrade 60 is used for weapons no upgrade affects; the game has no special case for it (no one can research it, so its level stays 0), but StarEdit greys out the Bonus field for it, or for any upgrade whose Max Level is 0.}}
-  {{formatlbl |label=Values |value=Integer value between 0 and 60 (not checked). Common values are:}}
+  {{formatlbl |label=Values |value=Integer value between 0 and 60. Higher values are not rejected: the game reads the level from the memory after the player's upgrade levels (first the levels of the following players, then unrelated data). Common values are:}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x07 |value=Terran Infantry Weapons}}
     {{formatbitlbl |label=0x08 |value=Terran Vehicle Weapons}}
@@ -93,7 +93,7 @@ Damage is dealt in steps. A bullet deals (Damage + Bonus × the player's level o
   {{formathexlbl |label=Offset |value=0x0924}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
   {{formatlbl |label=Description |value=How the damage is scaled by the target's size (Size in units.dat), and whether armor applies. The factors are: independent 0% for every size; explosive 50% against small, 75% against medium, 100% against large; concussive 100%, 50%, 25%; normal and ignore armor 100% for every size. Units of size 0 (independent) get 0% from every class. Because a hit the shields took none of deals at least half a hit point, a 0% hit still deals half a hit point. Class 0 drains shields normally but does not show the shield hit flash. Class 4 skips both the shield upgrade and the armor reduction.}}
-  {{formatlbl |label=Values |value=Values above 4 are not checked and read the factors from whatever follows the table.}}
+  {{formatlbl |label=Values |value=Values above 4 are not rejected: they are treated like classes 1 to 3 (the shield upgrade and armor apply), and their factors are read from the unrelated data after the table.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=Independent: 0% (half a hit point per hit)}}
     {{formatbitlbl |label=0x01 |value=Explosive}}
@@ -210,7 +210,7 @@ Damage is dealt in steps. A bullet deals (Damage + Bonus × the player's level o
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x1040}}
   {{formatlbl |label=Length |value=130 bytes (1 byte / Weapon)}}
-  {{formatlbl |label=Description |value=Frames between attacks. The game adds to it for acid spores on the unit (max(3, cooldown ÷ 8) for each), then multiplies by 1.25 if the unit is slowed (Ensnare) or by 0.5 if it is sped up (Stim Packs or Adrenal Glands), keeps the result between 5 and 250, and adds a random −1 to +2. Irradiate's cooldown (weapon 34) is also how long Irradiate lasts. A cooldown of 0 makes the computer AI's strength calculation divide by zero (read in the code, not tried).}}
+  {{formatlbl |label=Description |value=Frames between attacks. The game adds to it for acid spores on the unit (max(3, cooldown ÷ 8) for each), then multiplies by 1.25 if the unit is slowed (Ensnare) or by 0.5 if it is sped up (Stim Packs or Adrenal Glands), keeps the result between 5 and 250, and adds a random −1 to +2. Irradiate's cooldown (weapon 34) is also how long Irradiate lasts. A cooldown of 0 on a weapon that any unit type with hit points or shields has as its ground or air weapon (or that of its turret) stops the game with a division by zero whenever a game starts: the game then builds the computer AI's table of unit strengths, dividing by the cooldown of each of those weapons.}}
   {{formatlbl |label=Values |value=Integer value between 1 and 255. Values below 5 act like 5 and above 250 like 250, apart from the random change.}}
 {{end-formattable}}
 

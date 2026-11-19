@@ -39,7 +39,7 @@
         },
         {
           "bit": "0x08",
-          "value": "Used by the game while the sound loads; the sound will not play while it is set, so set in the file it most likely keeps the sound from ever playing"
+          "value": "Used by the game while the sound loads. Set in the file, it keeps the sound from ever playing: the play routine returns at once for a sound that has it, and only a load started by that routine clears it"
         },
         {
           "bit": "0x10",

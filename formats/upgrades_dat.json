@@ -79,7 +79,7 @@
       "offset": "0x044A",
       "length": "61 bytes (1 byte / Upgrade)",
       "description": "Only used by StarEdit, which lists the upgrades under their race in the upgrade settings of a map, and leaves out upgrades with the value 3. The game itself never reads this field.",
-      "values": "Values above 3 are not checked by StarEdit.",
+      "values": "Values above 3 are not rejected by StarEdit: it uses the value as an index into its three race headings and takes the heading from whatever follows them in memory, which differs between versions and between its two dialogs that list the upgrades. Where that is zero (the value 4 in one of the two dialogs of StarEdit 1.15.0), the upgrade is listed at the top level, outside the races.",
       "bits": [
         {
           "bit": "0x00",

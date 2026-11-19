@@ -112,7 +112,7 @@
       "offset": "0x1290",
       "length": "228 bytes (1 byte / Unit)",
       "description": "The first order of a unit that belongs to a computer player, when it is completed or given to that player.",
-      "values": "An entry of orders.dat. Not checked.",
+      "values": "An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.",
       "bits": []
     },
     {
@@ -120,7 +120,7 @@
       "offset": "0x1374",
       "length": "228 bytes (1 byte / Unit)",
       "description": "The first order of a unit that belongs to any other player (not neutral or rescuable), when it is completed or given to that player. Powerups always start with it.",
-      "values": "An entry of orders.dat. Not checked.",
+      "values": "An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.",
       "bits": []
     },
     {
@@ -128,7 +128,7 @@
       "offset": "0x1458",
       "length": "228 bytes (1 byte / Unit)",
       "description": "The order a unit goes back to when an order ends and nothing else is queued (in a Bunker, the Bunker guard order instead). Turrets of the unit get the turret type's order.",
-      "values": "An entry of orders.dat. Not checked.",
+      "values": "An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.",
       "bits": []
     },
     {
@@ -136,7 +136,7 @@
       "offset": "0x153C",
       "length": "228 bytes (1 byte / Unit)",
       "description": "The order a unit uses to attack a unit, on the ground or in the air: when told to attack a unit, when right-clicking an enemy, and when it picks a target by itself. 23 (Nothing) means the unit cannot attack.",
-      "values": "An entry of orders.dat. Not checked.",
+      "values": "An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.",
       "bits": []
     },
     {
@@ -144,7 +144,7 @@
       "offset": "0x1620",
       "length": "228 bytes (1 byte / Unit)",
       "description": "The order a unit uses when told to attack a place on the ground rather than a unit. 23 (Nothing) means it cannot.",
-      "values": "An entry of orders.dat. Not checked.",
+      "values": "An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.",
       "bits": []
     },
     {
@@ -399,7 +399,7 @@
       "offset": "0x21B4",
       "length": "228 bytes (1 byte / Unit)",
       "description": "The unit's size, which together with the attacking weapon's Damage Class (weapons.dat) sets how much of the damage it takes. Size 0 takes 0% from every weapon, so each hit only deals the minimum of half a hit point (or nothing, if shields took part of it).",
-      "values": "Values above 3 are not checked and read the factors from whatever follows the table.",
+      "values": "Values above 3 are not rejected: the game reads past the four factors of the weapon's damage class, into the rows of the following classes and, after the last class, into unrelated data.",
       "bits": [
         {
           "bit": "0x00",
@@ -637,7 +637,7 @@
       "name": "Supply Required",
       "offset": "0x42F4",
       "length": "228 bytes (1 byte / Unit)",
-      "description": "Supply this unit uses, in half units: 2 is 1 supply, and the Zergling's 1 is half (the pair from one egg uses 2). Not checked for units with flag 0x01000000. The status panel shows (value + 1) / 2.",
+      "description": "Supply this unit uses, in half units: 2 is 1 supply, and the Zergling's 1 is half (the pair from one egg uses 2). The game skips the supply check for units with flag 0x01000000 (No Supply Check). The status panel shows (value + 1) / 2.",
       "values": "Integer value between 0 and 255.",
       "bits": []
     },

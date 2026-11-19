@@ -83,7 +83,7 @@ Upgrades 0 to 45 are those of the original StarCraft and 46 to 60 were added by 
   {{formathexlbl |label=Offset |value=0x044A}}
   {{formatlbl |label=Length |value=61 bytes (1 byte / Upgrade)}}
   {{formatlbl |label=Description |value=Only used by StarEdit, which lists the upgrades under their race in the upgrade settings of a map, and leaves out upgrades with the value 3. The game itself never reads this field.}}
-  {{formatlbl |label=Values |value=Values above 3 are not checked by StarEdit.}}
+  {{formatlbl |label=Values |value=Values above 3 are not rejected by StarEdit: it uses the value as an index into its three race headings and takes the heading from whatever follows them in memory, which differs between versions and between its two dialogs that list the upgrades. Where that is zero (the value 4 in one of the two dialogs of StarEdit 1.15.0), the upgrade is listed at the top level, outside the races.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=Zerg}}
     {{formatbitlbl |label=0x01 |value=Terran}}

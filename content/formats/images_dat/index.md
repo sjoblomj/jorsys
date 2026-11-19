@@ -61,7 +61,7 @@ Outside Brood War, the game and StarEdit only load the files of images 0 to 754;
   {{formathexlbl |label=Offset |value=0x1F38}}
   {{formatlbl |label=Length |value=999 bytes (1 byte / Image)}}
   {{formatlbl |label=Description |value=How the image is drawn. Values 2 to 7, 12 and 16 are set by the game while it runs and are not used in the shipped file.}}
-  {{formatlbl |label=Values |value=Values above 17 are not checked and most likely crash the game when the image is drawn.}}
+  {{formatlbl |label=Values |value=Values above 17 are not rejected: the game takes the image's update and drawing routines from the memory after its two tables of 18. In 1.05, 1.15.0 and 1.17 none of the values 18 to 255 finds a drawing routine there, and most find something that is not code at all, so that calling it crashes the game (in 1.15.0, the value 18 gets the number 8 as the address of its drawing routine).}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=Normal. The only value that cloaking and hallucination change}}
     {{formatbitlbl |label=0x01 |value=Normal, but stays normal on a cloaked or hallucinated unit (blood splats, Shield Battery charge, Installation doodads)}}
@@ -89,7 +89,7 @@ Outside Brood War, the game and StarEdit only load the files of images 0 to 754;
   {{formathexlbl |label=Offset |value=0x231F}}
   {{formatlbl |label=Length |value=999 bytes (1 byte / Image)}}
   {{formatlbl |label=Description |value=For Draw Function 9 only: which colour table the image is drawn through. Each table is loaded with the map from Tileset\<tileset>\<name>.pcx; every drawn pixel becomes table[GRP pixel, screen pixel]. Ignored for other draw functions.}}
-  {{formatlbl |label=Values |value=Values above 7 read past the list of tables. 0 with Draw Function 9 has no table and most likely crashes the game.}}
+  {{formatlbl |label=Values |value=Values above 7 are not rejected: the game takes the table's address from the memory after its list of seven, which is unrelated data. 0 with Draw Function 9 has no table: the image gets a null table address, and the game crashes with an access violation when it draws the first pixel of the image.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=None}}
     {{formatbitlbl |label=0x01 |value=ofire (orange fire and glows)}}
@@ -114,7 +114,7 @@ Outside Brood War, the game and StarEdit only load the files of images 0 to 754;
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x36A2}}
   {{formatlbl |label=Length |value=3996 bytes (4 bytes / Image)}}
-  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. Where the shield flash (image 424) appears when the unit's shields are hit: the file has one list per direction the unit faces (17), with 32 points for the directions the hit comes from (not mirrored). The game uses it without checking for 0, but only for units with shields. Most unit images have protoss\mshield.los.}}
+  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. Where the shield flash (image 424) appears when the unit's shields are hit: the file has one list per direction the unit faces (17), with 32 points for the directions the hit comes from (not mirrored). The game does not test for 0 before using it, but it only uses it for units with shields; if such a unit's image had 0, the game would read through a null address and crash with an access violation. Most unit images have protoss\mshield.los.}}
   {{formatlbl |label=Values |value=Integer value between 0 and the number of strings in arr\images.tbl.}}
 {{end-formattable}}
 
@@ -122,7 +122,7 @@ Outside Brood War, the game and StarEdit only load the files of images 0 to 754;
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x463E}}
   {{formatlbl |label=Length |value=3996 bytes (4 bytes / Image)}}
-  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Used for the muzzle flashes of units firing from inside a Bunker (the bunker's own file, terran\pillbox.loa, one point for each of 8 directions) and by animation script commands that place graphics at an overlay point (imgoluselo and the like) with overlay 0. Not checked for 0.}}
+  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Used for the muzzle flashes of units firing from inside a Bunker (the bunker's own file, terran\pillbox.loa, one point for each of 8 directions) and by animation script commands that place graphics at an overlay point (imgoluselo and the like) with overlay 0. Neither use tests for 0: with 0 the game reads through a null address and crashes with an access violation.}}
   {{formatlbl |label=Values |value=Integer value between 0 and the number of strings in arr\images.tbl.}}
 {{end-formattable}}
 
@@ -138,7 +138,7 @@ Outside Brood War, the game and StarEdit only load the files of images 0 to 754;
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x6576}}
   {{formatlbl |label=Length |value=3996 bytes (4 bytes / Image)}}
-  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Point 0 is where things attached to the image sit: the turret of a unit with a subunit (Siege Tank, Goliath), and overlays created by the animation script commands imgolorig and switchul. creategasoverlays n puts geyser smoke at point n. Also used by the *uselo script commands with overlay 2. Not checked for 0.}}
+  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Point 0 is where things attached to the image sit: the turret of a unit with a subunit (Siege Tank, Goliath), and overlays created by the animation script commands imgolorig and switchul. creategasoverlays n puts geyser smoke at point n. Also used by the *uselo script commands with overlay 2. None of these uses tests for 0: with 0 the game reads through a null address and crashes with an access violation.}}
   {{formatlbl |label=Values |value=Integer value between 0 and the number of strings in arr\images.tbl.}}
 {{end-formattable}}
 
@@ -146,7 +146,7 @@ Outside Brood War, the game and StarEdit only load the files of images 0 to 754;
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x7512}}
   {{formatlbl |label=Length |value=3996 bytes (4 bytes / Image)}}
-  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Where dust appears when a building lands: dust sprites at points 0 to 8 and mirrored ones at points 16 to 24. 0 means no dust. Points 0 and 1 are also where the two units hatch from a Zergling or Scourge egg (zerg\zzebirth.lob, zerg\zavbirth.lob); that use is not checked for 0.}}
+  {{formatlbl |label=Description |value=A file number in arr\images.tbl, counting from 1; 0 means none. The game loads unit\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Where dust appears when a building lands: dust sprites at points 0 to 8 and mirrored ones at points 16 to 24. 0 means no dust. Points 0 and 1 are also where the two units hatch from a Zergling or Scourge egg (zerg\zzebirth.lob, zerg\zavbirth.lob); that use does not test for 0, and with 0 the game reads through a null address and crashes with an access violation.}}
   {{formatlbl |label=Values |value=Integer value between 0 and the number of strings in arr\images.tbl.}}
 {{end-formattable}}
 

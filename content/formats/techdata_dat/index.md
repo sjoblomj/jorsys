@@ -75,7 +75,7 @@ Technologies 0 to 23 are those of the original StarCraft and 24 to 43 were added
   {{formathexlbl |label=Offset |value=0x02C0}}
   {{formatlbl |label=Length |value=44 bytes (1 byte / Technology)}}
   {{formatlbl |label=Description |value=Only used by StarEdit, which lists the technologies under their race in the technology settings of a map, and leaves out technologies with the value 3. The game itself never reads this field.}}
-  {{formatlbl |label=Values |value=Values above 3 are not checked by StarEdit.}}
+  {{formatlbl |label=Values |value=Values above 3 are not rejected by StarEdit: it uses the value as an index into its three race headings and takes the heading from whatever follows them in memory, which differs between versions. Where that is zero (the value 4 in StarEdit 1.15.0), the technology is listed at the top level, outside the races.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=Zerg}}
     {{formatbitlbl |label=0x01 |value=Terran}}

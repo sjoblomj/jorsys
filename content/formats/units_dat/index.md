@@ -108,7 +108,7 @@ A map can replace some fields. Its unit settings (the CHK section UNIS in StarCr
   {{formathexlbl |label=Offset |value=0x1290}}
   {{formatlbl |label=Length |value=228 bytes (1 byte / Unit)}}
   {{formatlbl |label=Description |value=The first order of a unit that belongs to a computer player, when it is completed or given to that player.}}
-  {{formatlbl |label=Values |value=An entry of orders.dat. Not checked.}}
+  {{formatlbl |label=Values |value=An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.}}
 {{end-formattable}}
 
 ## Order: Human Idle
@@ -116,7 +116,7 @@ A map can replace some fields. Its unit settings (the CHK section UNIS in StarCr
   {{formathexlbl |label=Offset |value=0x1374}}
   {{formatlbl |label=Length |value=228 bytes (1 byte / Unit)}}
   {{formatlbl |label=Description |value=The first order of a unit that belongs to any other player (not neutral or rescuable), when it is completed or given to that player. Powerups always start with it.}}
-  {{formatlbl |label=Values |value=An entry of orders.dat. Not checked.}}
+  {{formatlbl |label=Values |value=An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.}}
 {{end-formattable}}
 
 ## Order: Return to Idle
@@ -124,7 +124,7 @@ A map can replace some fields. Its unit settings (the CHK section UNIS in StarCr
   {{formathexlbl |label=Offset |value=0x1458}}
   {{formatlbl |label=Length |value=228 bytes (1 byte / Unit)}}
   {{formatlbl |label=Description |value=The order a unit goes back to when an order ends and nothing else is queued (in a Bunker, the Bunker guard order instead). Turrets of the unit get the turret type's order.}}
-  {{formatlbl |label=Values |value=An entry of orders.dat. Not checked.}}
+  {{formatlbl |label=Values |value=An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.}}
 {{end-formattable}}
 
 ## Order: Attack Unit
@@ -132,7 +132,7 @@ A map can replace some fields. Its unit settings (the CHK section UNIS in StarCr
   {{formathexlbl |label=Offset |value=0x153C}}
   {{formatlbl |label=Length |value=228 bytes (1 byte / Unit)}}
   {{formatlbl |label=Description |value=The order a unit uses to attack a unit, on the ground or in the air: when told to attack a unit, when right-clicking an enemy, and when it picks a target by itself. 23 (Nothing) means the unit cannot attack.}}
-  {{formatlbl |label=Values |value=An entry of orders.dat. Not checked.}}
+  {{formatlbl |label=Values |value=An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.}}
 {{end-formattable}}
 
 ## Order: Attack Location
@@ -140,7 +140,7 @@ A map can replace some fields. Its unit settings (the CHK section UNIS in StarCr
   {{formathexlbl |label=Offset |value=0x1620}}
   {{formatlbl |label=Length |value=228 bytes (1 byte / Unit)}}
   {{formatlbl |label=Description |value=The order a unit uses when told to attack a place on the ground rather than a unit. 23 (Nothing) means it cannot.}}
-  {{formatlbl |label=Values |value=An entry of orders.dat. Not checked.}}
+  {{formatlbl |label=Values |value=An entry of orders.dat (0 to 188). Higher values are not rejected: the game reads such an order's settings from the memory after the orders.dat tables, and none of its order routines runs for the number.}}
 {{end-formattable}}
 
 ## Ground Weapon
@@ -267,7 +267,7 @@ A map can replace some fields. Its unit settings (the CHK section UNIS in StarCr
   {{formathexlbl |label=Offset |value=0x21B4}}
   {{formatlbl |label=Length |value=228 bytes (1 byte / Unit)}}
   {{formatlbl |label=Description |value=The unit's size, which together with the attacking weapon's Damage Class (weapons.dat) sets how much of the damage it takes. Size 0 takes 0% from every weapon, so each hit only deals the minimum of half a hit point (or nothing, if shields took part of it).}}
-  {{formatlbl |label=Values |value=Values above 3 are not checked and read the factors from whatever follows the table.}}
+  {{formatlbl |label=Values |value=Values above 3 are not rejected: the game reads past the four factors of the weapon's damage class, into the rows of the following classes and, after the last class, into unrelated data.}}
   {{formatlbl |label=Bits |value={{begin-bittable}}
     {{formatbitlbl |label=0x00 |value=Independent (0% from all weapons)}}
     {{formatbitlbl |label=0x01 |value=Small: Explosive 50%, Concussive 100%}}
@@ -450,7 +450,7 @@ A map can replace some fields. Its unit settings (the CHK section UNIS in StarCr
 {{begin-formattable}}
   {{formathexlbl |label=Offset |value=0x42F4}}
   {{formatlbl |label=Length |value=228 bytes (1 byte / Unit)}}
-  {{formatlbl |label=Description |value=Supply this unit uses, in half units: 2 is 1 supply, and the Zergling's 1 is half (the pair from one egg uses 2). Not checked for units with flag 0x01000000. The status panel shows (value + 1) / 2.}}
+  {{formatlbl |label=Description |value=Supply this unit uses, in half units: 2 is 1 supply, and the Zergling's 1 is half (the pair from one egg uses 2). The game skips the supply check for units with flag 0x01000000 (No Supply Check). The status panel shows (value + 1) / 2.}}
   {{formatlbl |label=Values |value=Integer value between 0 and 255.}}
 {{end-formattable}}
 

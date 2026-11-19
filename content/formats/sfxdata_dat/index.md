@@ -30,7 +30,7 @@ The game plays sounds on 8 channels. When all of them are busy, Priority and the
     {{formatbitlbl |label=0x01 |value=Preload: loaded in advance (the sounds of the player's race at the start of a game, and the menu sounds) and kept loaded, outside the 4 MB sound cache}}
     {{formatbitlbl |label=0x02 |value=One per unit type: not played while a sound with this flag is playing for a unit of the same type (unit speech)}}
     {{formatbitlbl |label=0x04 |value=Used by the game: marks a recently used sound, which is spared once when the cache is cleared}}
-    {{formatbitlbl |label=0x08 |value=Used by the game while the sound loads; the sound will not play while it is set, so set in the file it most likely keeps the sound from ever playing}}
+    {{formatbitlbl |label=0x08 |value=Used by the game while the sound loads. Set in the file, it keeps the sound from ever playing: the play routine returns at once for a sound that has it, and only a load started by that routine clears it}}
     {{formatbitlbl |label=0x10 |value=One at a time: not played while the same sound is playing}}
     {{formatbitlbl |label=0x20 |value=Never replaced by another sound (see Priority)}}
     {{formatbitlbl |label=0x40 |value=Not used}}
