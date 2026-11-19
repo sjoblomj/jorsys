@@ -1,262 +1,77 @@
 {
   "title": "weapons.dat",
-  "description": "",
+  "description": "weapons.dat holds the data for the weapons units attack with, and for the spells that work by firing a weapon (see Appendix: Weapons list): the bullet each fires, what it can target, its range, damage and how the damage is dealt, its cooldown, and the name, icon and error message shown for it. It is the file arr\\weapons.dat in the game's MPQ archives and is 5460 bytes long. Each field below is a list with one entry for each of the 130 weapons, and the lists are stored one after another with nothing in between, so the offsets are from the start of the file. The layout is the same in every version from 1.04 to 1.17, of both StarCraft and Brood War, and StarEdit reads the file in the same layout. StarCraft 1.00 to 1.03 used an older, shorter layout with 100 weapons (4200 bytes). That older file is still in StarDat.mpq in later versions, but it is never loaded: the newer copy in patch_rt.mpq (or, in 1.05 to 1.07, BrooDat.mpq) is found first. The patch_rt.mpq copy is the same in 1.08 to 1.17; the BrooDat.mpq copy differs from it only in the maximum range of weapon 7 (160 instead of 192) and the damage of weapons 84 (16 instead of 14) and 103 (5 instead of 6). The game loads the file again each time a game starts, before the map's own settings are applied. Fields are read in order, and the game stops with a file error if the file is longer than the layout. A shorter file that ends exactly where a field ends loads without an error; the fields after the end then keep whatever they held before.\n\nWhich weapons a unit uses is set in units.dat (Ground Weapon and Air Weapon). Weapon number 130 means \"no weapon\" there; it has no entry in this file. No field is checked against the size of the table it points into, so out-of-range values read whatever follows in memory.\n\nA map can replace Damage and Bonus. Its unit settings (the CHK section UNIS in StarCraft maps and UNIx in Brood War maps) hold them for each weapon, and for every unit whose \"use default settings\" flag is clear, they are copied into the unit's ground and air weapon (those of its turret, if it has one). Weapons of units left at their defaults keep the values of this file. Saved games store Damage and Bonus as well.\n\nDamage is dealt in steps. A bullet deals (Damage + Bonus × the player's level of the Damage Upgrade) hit points, divided where a splash or bounce says so. The target's shields take it first, less the shield upgrade level (unless the damage class is 4); what is left is reduced by the target's armor plus its armor upgrade level (again unless the class is 4), then multiplied by the factor for the damage class and the target's size (see Damage Class). If the shields took none of the hit, it deals at least half a hit point.",
   "spec": [
     {
       "name": "Label",
       "offset": "0x0000",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Label displayed for this weapon in unit's status bar. Corresponds to an entry in the rez\\stat_txt.tbl file.",
-      "values": "Integer value from 0 to the last index of the rez\\stat_txt.tbl file.",
+      "description": "Name of the weapon: a string number in rez\\stat_txt.tbl, counting from 1. Shown in the tooltip of the weapon icon in a selected unit's status panel, together with the damage. StarEdit shows it in the unit settings.",
+      "values": "Integer value between 1 and the number of strings in rez\\stat_txt.tbl.",
       "bits": []
     },
     {
-      "name": "Missile Sprite",
+      "name": "Graphics",
       "offset": "0x0104",
       "length": "520 bytes (4 bytes / Weapon)",
-      "description": "Sprite displayed when the weapon is fired. Corresponds to an entry in the flingy.dat file.",
-      "values": "Integer value between 0 and the # of entries in flingy.dat",
+      "description": "The bullet the weapon fires: an entry of flingy.dat. Only the low 16 bits are used. 0 means the weapon fires no bullet; melee weapons (claws, blades, Toxic Spores and Psi Blades) have 0 and deal their damage straight from the unit's animation script instead.",
+      "values": "Integer value between 0 and the last entry of flingy.dat (not checked).",
       "bits": []
     },
     {
-      "name": "Special Attack",
+      "name": "Unused (Technology)",
       "offset": "0x030C",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "Spell/special effect to use with this weapon.",
-      "values": null,
-      "bits": [
-        {
-          "bit": "0x00",
-          "value": "Nothing"
-        },
-        {
-          "bit": "0x01",
-          "value": "Lockdown"
-        },
-        {
-          "bit": "0x02",
-          "value": "EMP Shockwave"
-        },
-        {
-          "bit": "0x03",
-          "value": "Spider Mines"
-        },
-        {
-          "bit": "0x04",
-          "value": "Normal"
-        },
-        {
-          "bit": "0x05",
-          "value": "No Damage"
-        },
-        {
-          "bit": "0x06",
-          "value": "No Damage"
-        },
-        {
-          "bit": "0x07",
-          "value": "Irradiate"
-        },
-        {
-          "bit": "0x08",
-          "value": "Yamato Gun"
-        },
-        {
-          "bit": "0x09",
-          "value": "No Damage"
-        },
-        {
-          "bit": "0x0A",
-          "value": "No Damage"
-        },
-        {
-          "bit": "0x0B",
-          "value": "No Damage"
-        },
-        {
-          "bit": "0x0C",
-          "value": "No Damage"
-        },
-        {
-          "bit": "0x0D",
-          "value": "Broodling"
-        },
-        {
-          "bit": "0x0E",
-          "value": "Dark Swarm"
-        },
-        {
-          "bit": "0x0F",
-          "value": "Plague"
-        },
-        {
-          "bit": "0x10",
-          "value": "Consume"
-        },
-        {
-          "bit": "0x11",
-          "value": "Ensnare"
-        },
-        {
-          "bit": "0x12",
-          "value": "Parasite"
-        },
-        {
-          "bit": "0x13",
-          "value": "Psi Storm"
-        },
-        {
-          "bit": "0x14",
-          "value": "Normal"
-        },
-        {
-          "bit": "0x15",
-          "value": "Normal"
-        },
-        {
-          "bit": "0x16",
-          "value": "Stasis"
-        },
-        {
-          "bit": "0x17",
-          "value": "1/4 Damage"
-        },
-        {
-          "bit": "0x18",
-          "value": "Restoration"
-        },
-        {
-          "bit": "0x19",
-          "value": "Disruption Web"
-        },
-        {
-          "bit": "0x1A",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x1B",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x1C",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x1D",
-          "value": "Feedback"
-        },
-        {
-          "bit": "0x1E",
-          "value": "Optical Flare"
-        },
-        {
-          "bit": "0x1F",
-          "value": "Maelstrom/Spines"
-        },
-        {
-          "bit": "0x20",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x21",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x22",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x23",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x24",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x25",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x26",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x27",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x28",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x29",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x2A",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x2B",
-          "value": "Unknown"
-        },
-        {
-          "bit": "0x2C",
-          "value": "None"
-        }
-      ]
+      "description": "Not used: no code in StarCraft or StarEdit reads this field (checked in 1.05, 1.15.0 and 1.17). In the shipped file it holds the techdata.dat number of the spell the weapon belongs to (for example 1 for Lockdown and 19 for Psionic Storm), and 44, \"no technology\", for ordinary weapons.",
+      "values": "Any value; ignored.",
+      "bits": []
     },
     {
-      "name": "Attack Type",
+      "name": "Target Flags",
       "offset": "0x038E",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Restrictions for where the weapon can be used.",
-      "values": null,
+      "description": "What the weapon may be used against. Each bit is a condition the target must meet; the weapon can hit a unit only if it is in the air and bit 0x0001 is set, or on the ground and 0x0002 is set, and all the other set bits allow it. Units that cannot be hit (invincible or in stasis) are always refused. The same test decides which units a splash hurts, so a ground-only splash never hurts air units.",
+      "values": "Bit flags; add together. In the shipped file: 0x0001 air only, 0x0002 ground only, 0x0003 both, 0x0012 Spider Mines, 0x0013 Parasite, 0x0017 Lockdown, 0x0043 most area spells, 0x0053 Psionic Storm, 0x00B2 Spawn Broodling, 0x011B Consume.",
       "bits": [
         {
           "bit": "0x0001",
-          "value": "Air Only"
+          "value": "Can hit units in the air"
         },
         {
           "bit": "0x0002",
-          "value": "Ground Only"
-        },
-        {
-          "bit": "0x0003",
-          "value": "Air and Ground"
+          "value": "Can hit units on the ground"
         },
         {
           "bit": "0x0004",
-          "value": "Units Only (No Buildings)"
+          "value": "Target must be mechanical (units.dat flag 0x40000000)"
         },
         {
-          "bit": "0x0012",
-          "value": "Ground Units (No Hover or Buildings)"
+          "bit": "0x0008",
+          "value": "Target must be organic (units.dat flag 0x10000)"
         },
         {
-          "bit": "0x0013",
-          "value": "Ground Units Only (No Buildings"
+          "bit": "0x0010",
+          "value": "Target must not be a building (units.dat flag 0x1)"
         },
         {
-          "bit": "0x0019",
-          "value": "Mechanical Only"
+          "bit": "0x0020",
+          "value": "Target must not be robotic (units.dat flag 0x4000)"
         },
         {
-          "bit": "0x0043",
-          "value": "Non-mechanical Only"
+          "bit": "0x0040",
+          "value": "Can be aimed at a position on the ground rather than a unit"
         },
         {
-          "bit": "0x0053",
-          "value": "Ground, Ground Units"
+          "bit": "0x0080",
+          "value": "Target must be organic or mechanical"
         },
         {
-          "bit": "0x00B2",
-          "value": "Ground Units (No Buildings, No Archon)"
+          "bit": "0x0100",
+          "value": "Target must belong to the attacking player"
         },
         {
-          "bit": "0x011B",
-          "value": "Owned Units (Consume)"
+          "bit": "0x0200 to 0x8000",
+          "value": "Not used"
         }
       ]
     },
@@ -264,77 +79,77 @@
       "name": "Minimum Range",
       "offset": "0x0492",
       "length": "520 bytes (4 bytes / Weapon)",
-      "description": "Minimum range required for this weapon.",
-      "values": "Integer value between 0 and 255.",
+      "description": "Closest distance, in pixels, at which the weapon can be used; the distance is measured between the edges of the attacker's and the target's dimensions (units.dat). 0 means no minimum. Only the Siege Tank's Arclite Shock Cannon has one in the shipped file (64).",
+      "values": "Integer value between 0 and 4294967295.",
       "bits": []
     },
     {
       "name": "Maximum Range",
       "offset": "0x069A",
       "length": "520 bytes (4 bytes / Weapon)",
-      "description": "Maximum range required to use this weapon.",
-      "values": "Integer value between 0 and 255.",
+      "description": "Furthest distance, in pixels, at which the weapon can be used, measured like Minimum Range. Some units add to it: +64 in a Bunker, and the range upgrades, which depend on the unit type, not on the weapon (Marine +32 with U-238 Shells, Goliath +96 for its Hellfire Missile Pack with Charon Booster, Hydralisk +32 with Grooved Spines, Dragoon +64 with Singularity Charge, and, in Brood War games, Alan Schezar's Hellfire Missile Pack +96 and Fenix as Dragoon +64). When units.dat is loaded, each unit's Target Acquisition Range is raised to at least this value ÷ 32 for its ground and air weapon. Bullets with Behaviour 9 fly this far plus 20 pixels.",
+      "values": "Integer value between 0 and 4294967295. The shipped values run from 2 to 384.",
       "bits": []
     },
     {
-      "name": "Upgrade Group",
+      "name": "Damage Upgrade",
       "offset": "0x08A2",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "Upgrade group which applies to this weapon.",
-      "values": "Integer value between 0 and the last index of the Upgrades.dat file. Common values are:",
+      "description": "The upgrade (upgrades.dat) whose level multiplies Bonus. Its level is also printed on the weapon's icon in the status panel. Upgrade 60 is used for weapons no upgrade affects; the game has no special case for it (no one can research it, so its level stays 0), but StarEdit greys out the Bonus field for it, or for any upgrade whose Max Level is 0.",
+      "values": "Integer value between 0 and 60 (not checked). Common values are:",
       "bits": [
         {
           "bit": "0x07",
-          "value": "Terran Infantry"
+          "value": "Terran Infantry Weapons"
         },
         {
           "bit": "0x08",
-          "value": "Terran Vehicle"
+          "value": "Terran Vehicle Weapons"
         },
         {
           "bit": "0x09",
-          "value": "Terran Ship"
+          "value": "Terran Ship Weapons"
         },
         {
           "bit": "0x0A",
-          "value": "Zerg Melee"
+          "value": "Zerg Melee Attacks"
         },
         {
           "bit": "0x0B",
-          "value": "Zerg Missile"
+          "value": "Zerg Missile Attacks"
         },
         {
           "bit": "0x0C",
-          "value": "Zerg Flyer"
+          "value": "Zerg Flyer Attacks"
         },
         {
           "bit": "0x0D",
-          "value": "Protoss Ground"
+          "value": "Protoss Ground Weapons"
         },
         {
           "bit": "0x0E",
-          "value": "Protoss Air"
+          "value": "Protoss Air Weapons"
         },
         {
           "bit": "0x23",
-          "value": "Scarab"
+          "value": "Scarab Damage"
         },
         {
           "bit": "0x3C",
-          "value": "No upgrades"
+          "value": "None (no upgrade)"
         }
       ]
     },
     {
-      "name": "Weapon Type",
+      "name": "Damage Class",
       "offset": "0x0924",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "The type of this weapon.",
-      "values": null,
+      "description": "How the damage is scaled by the target's size (Size in units.dat), and whether armor applies. The factors are: independent 0% for every size; explosive 50% against small, 75% against medium, 100% against large; concussive 100%, 50%, 25%; normal and ignore armor 100% for every size. Units of size 0 (independent) get 0% from every class. Because a hit the shields took none of deals at least half a hit point, a 0% hit still deals half a hit point. Class 0 drains shields normally but does not show the shield hit flash. Class 4 skips both the shield upgrade and the armor reduction.",
+      "values": "Values above 4 are not checked and read the factors from whatever follows the table.",
       "bits": [
         {
           "bit": "0x00",
-          "value": "Unknown"
+          "value": "Independent: 0% (half a hit point per hit)"
         },
         {
           "bit": "0x01",
@@ -350,86 +165,73 @@
         },
         {
           "bit": "0x04",
-          "value": "Special"
+          "value": "Ignore Armor"
         }
       ]
     },
     {
-      "name": "Weapon Behavior",
+      "name": "Behaviour",
       "offset": "0x09A6",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "The behavior this weapon uses.",
-      "values": null,
+      "description": "How the bullet is fired and moves. Behaviours 0, 1, 2 and 7 roll whether the shot misses (the chance depends on, for example, attacking up a cliff or into Dark Swarm); a missed shot lands 30 pixels short and deals no damage to the target. Bullets of all behaviours except 2 and 4 start at the unit, moved by Forward Offset and Upward Offset.",
+      "values": "Values of 10 and above make the bullet fail to appear, so the weapon does nothing.",
       "bits": [
         {
           "bit": "0x00",
-          "value": "Flies to target"
+          "value": "Flies to the position the target had when it fired"
         },
         {
           "bit": "0x01",
-          "value": "Seeks Target"
+          "value": "Follows the target (homing), unless it missed"
         },
         {
           "bit": "0x02",
-          "value": "Appears on Target"
+          "value": "Appears on the target and hits at once"
         },
         {
           "bit": "0x03",
-          "value": "Unknown"
+          "value": "Stays at the target position and deals its damage every 7 frames until Lifetime runs out (Psionic Storm)"
         },
         {
           "bit": "0x04",
-          "value": "Persistant Explosion"
+          "value": "Appears at the position the unit was ordered to target and hits at once"
         },
         {
           "bit": "0x05",
-          "value": "Normal hit"
+          "value": "Hits at once from where the attacker stands (melee and short-range weapons)"
         },
         {
           "bit": "0x06",
-          "value": "Suicide"
+          "value": "Kills the attacking unit (Scourge, Infested Terran)"
         },
         {
           "bit": "0x07",
-          "value": "Bounce"
+          "value": "Bounces: hits up to 3 targets, each later hit dealing a third of the one before (Glave Wurm)"
         },
         {
           "bit": "0x08",
-          "value": "Spin around (Halo)"
+          "value": "Spreads its shots around the target in turn (Halo Rockets)"
         },
         {
           "bit": "0x09",
-          "value": "Bursts thru ground (Sub. Spines)"
+          "value": "Flies straight ahead to Maximum Range plus 20 pixels (Subterranean Spines)"
         }
       ]
     },
     {
-      "name": "Missile Type",
+      "name": "Lifetime",
       "offset": "0x0A28",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "The type of missile this Weapon emulates.",
-      "values": null,
-      "bits": [
-        {
-          "bit": "0x1E",
-          "value": "Homing"
-        },
-        {
-          "bit": "0x3C",
-          "value": "Bouncing"
-        },
-        {
-          "bit": "0xFF",
-          "value": "Normal"
-        }
-      ]
+      "description": "How long the bullet can last, in frames. A flying bullet (Behaviour 0, 1, 8 or 9) is removed when it arrives or after this many frames, whichever comes first; a Behaviour 3 bullet lasts this long and deals its damage every 7 frames (Psionic Storm's 60 gives 9 ticks). Other behaviours do not use it.",
+      "values": "Integer value between 0 and 255. Shipped: 30 for Hellfire and Anti-matter Missiles, 60 for Glave Wurm, Seeker Spores, Psionic Storm and Tormentor Missiles, 255 otherwise.",
+      "bits": []
     },
     {
-      "name": "Explosion Type",
+      "name": "Damage Type",
       "offset": "0x0AAA",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "Type of explosion which occurs after the weapon hits its target.",
-      "values": null,
+      "description": "What happens when the bullet hits (or, for Behaviour 3, at each tick). The spells that are weapons (Lockdown, EMP Shockwave and so on) are cast through this field.",
+      "values": "Values 19, 20, 23 and anything above 24 stop the game with the fatal error \"CBullet: Damage\". Mind Control and Feedback have 19 and 20 in the shipped file, but those spells never fire a bullet.",
       "bits": [
         {
           "bit": "0x00",
@@ -437,23 +239,23 @@
         },
         {
           "bit": "0x01",
-          "value": "Normal"
+          "value": "Damage the target"
         },
         {
           "bit": "0x02",
-          "value": "Radial Splash"
+          "value": "Splash: damage every unit around, including the attacker's own (see Splash Radius)"
         },
         {
           "bit": "0x03",
-          "value": "Line Splash"
+          "value": "Enemy splash: as 2, but the attacker's own units other than the target are spared"
         },
         {
           "bit": "0x04",
-          "value": "Lockdown"
+          "value": "Lockdown the target (131 frames)"
         },
         {
           "bit": "0x05",
-          "value": "Unknown"
+          "value": "Nuclear missile: splash as 2, with damage max(500, ⅔ of the unit's maximum hit points plus shields); Damage and Bonus are ignored"
         },
         {
           "bit": "0x06",
@@ -461,11 +263,11 @@
         },
         {
           "bit": "0x07",
-          "value": "Spawn Broodlings"
+          "value": "Spawn Broodling"
         },
         {
           "bit": "0x08",
-          "value": "EMP Shockwave"
+          "value": "EMP Shockwave, with the radius taken from Splash Radius: Inner of weapon 33, whatever this weapon has"
         },
         {
           "bit": "0x09",
@@ -481,7 +283,7 @@
         },
         {
           "bit": "0x0C",
-          "value": "Stasis"
+          "value": "Stasis Field"
         },
         {
           "bit": "0x0D",
@@ -489,11 +291,11 @@
         },
         {
           "bit": "0x0E",
-          "value": "Radial Splash"
+          "value": "Consume"
         },
         {
           "bit": "0x0F",
-          "value": "Line Splash"
+          "value": "Damage the target even if the shot missed (Yamato Gun)"
         },
         {
           "bit": "0x10",
@@ -505,15 +307,15 @@
         },
         {
           "bit": "0x12",
-          "value": "Corrosive Acid"
+          "value": "Damage the target, then add acid spores around it (Devourer)"
         },
         {
           "bit": "0x13",
-          "value": "Mind Control"
+          "value": "Fatal error (Mind Control)"
         },
         {
           "bit": "0x14",
-          "value": "Feedback"
+          "value": "Fatal error (Feedback)"
         },
         {
           "bit": "0x15",
@@ -525,107 +327,123 @@
         },
         {
           "bit": "0x17",
-          "value": "Unknown"
+          "value": "Fatal error"
         },
         {
           "bit": "0x18",
-          "value": "Air Splash"
+          "value": "Air splash: as described under Splash Radius"
         }
       ]
     },
     {
-      "name": "Splash Value 1",
+      "name": "Splash Radius: Inner",
       "offset": "0x0B2C",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Smallest of 3 radii which the Explosion Type uses to deal damage.",
+      "description": "For a splash (Damage Type 2, 3 or 5), the distance in pixels from the bullet to the edge of a unit within which it takes full damage. Beyond the inner radius, units take half damage within the middle radius and a quarter within the outer radius, and burrowed units are only hit within the inner radius. For the air splash (Damage Type 24): the target takes full damage if it is within the inner radius, otherwise one random enemy within the outer radius does; then every other unit takes half within the middle radius or a quarter within the outer one. Subterranean Spines (weapon 109) hit only within the inner radius, each unit once per attack. Every unit hurt must pass the Target Flags.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
     {
-      "name": "Splash Value 2",
+      "name": "Splash Radius: Middle",
       "offset": "0x0C30",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Middle of 3 radii which the Explosion Type uses to deal damage.",
-      "values": "Integer values between 0 and 65535.",
+      "description": "For a splash, the distance in pixels within which a unit takes half damage (see Splash Radius: Inner).",
+      "values": "Integer value between 0 and 65535.",
       "bits": []
     },
     {
-      "name": "Splash Value 3",
+      "name": "Splash Radius: Outer",
       "offset": "0x0D34",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Largest of 3 radii which the Explosion Type uses to deal damage.",
+      "description": "For a splash, the distance in pixels within which a unit takes a quarter of the damage (see Splash Radius: Inner). The Infested Terran also walks up to this distance of weapon 54 before exploding.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
     {
-      "name": "Damage Amount",
+      "name": "Damage",
       "offset": "0x0E38",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Amount of damage dealt to target. May be adjusted based on the type of unit.",
+      "description": "Damage of one hit, in hit points, before upgrades, armor and size. Some spells read it through fixed weapon numbers: Irradiate (weapon 34) spreads its damage over its cooldown, and Plague (weapon 60) deals it over 76 ticks, skipping any tick that would kill. The status panel shows it multiplied by Damage Factor. A map's unit settings can replace it.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
     {
-      "name": "Damage Bonus",
+      "name": "Bonus",
       "offset": "0x0F3C",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Amount added to damage when the weapon is upgraded.",
+      "description": "Damage added for each level of the Damage Upgrade. A map's unit settings can replace it.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
     {
-      "name": "Cooldown Delay",
+      "name": "Cooldown",
       "offset": "0x1040",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "Delay between attacks with this weapon. Lower values make the weapon attack faster, and higher values make the weapon attack slower.",
-      "values": "Integer value between 1 and 255.",
+      "description": "Frames between attacks. The game adds to it for acid spores on the unit (max(3, cooldown ÷ 8) for each), then multiplies by 1.25 if the unit is slowed (Ensnare) or by 0.5 if it is sped up (Stim Packs or Adrenal Glands), keeps the result between 5 and 250, and adds a random −1 to +2. Irradiate's cooldown (weapon 34) is also how long Irradiate lasts. A cooldown of 0 makes the computer AI's strength calculation divide by zero (read in the code, not tried).",
+      "values": "Integer value between 1 and 255. Values below 5 act like 5 and above 250 like 250, apart from the random change.",
       "bits": []
     },
     {
       "name": "Damage Factor",
       "offset": "0x10C2",
       "length": "130 bytes (1 byte / Weapon)",
-      "description": "The number of \"copies\" of this weapon a unit assigned this weapon has. To get the actual damage amount for units with more than 1 in the factor category, multiply this value by the Damage Amount.",
-      "values": "Integer value from 0 to 255.",
+      "description": "With 2, every attack fires a second bullet right after the first (Hellfire and Anti-matter Missiles, Halo Rockets); any other value fires one. The status panel multiplies Damage and Bonus by it, except that it always uses 2 for the Firebat, the Zealot and their heroes and 1 for the Valkyrie. StarEdit multiplies it by units.dat's Max Hits to show the damage.",
+      "values": "Integer value between 0 and 255.",
       "bits": []
     },
     {
-      "name": "Coordinate Group 1",
+      "name": "Attack Angle",
       "offset": "0x1144",
-      "length": "260 Bytes (2 bytes / Weapon)",
-      "description": "Actually an x-y pair of values. The first byte is actually the X coordinate, and the second is the Y coordinate.",
-      "values": "Integer values between 0 and 255 for both the X and Y parts of the coordinate.",
+      "length": "130 bytes (1 byte / Weapon)",
+      "description": "How far, in 256ths of a full turn, the unit may face away from its target and still fire. 128 or more means any direction; 0 means it must face the target exactly. The Lurker ignores it. Workers also use their ground weapon's value to decide whether they face a building to repair or build it.",
+      "values": "Integer value between 0 and 255.",
       "bits": []
     },
     {
-      "name": "Coordinate Group 2",
+      "name": "Launch Spin",
+      "offset": "0x11C6",
+      "length": "130 bytes (1 byte / Weapon)",
+      "description": "Turns the bullet's starting direction by this many 256ths of a turn, to the left and right in turn for successive bullets from the same unit, which makes homing missiles curve. 0 means straight.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Forward Offset",
       "offset": "0x1248",
-      "length": "260 Bytes (2 bytes / Weapon)",
-      "description": "Actually an x-y pair of values. The first byte is actually the X coordinate, and the second is the Y coordinate.",
-      "values": "Integer values between 0 and 255 for both the X and Y parts of the coordinate.",
+      "length": "130 bytes (1 byte / Weapon)",
+      "description": "How many pixels in front of the unit the bullet starts. The animation script command attkshiftproj changes it for the weapon while a game runs (the Lurker uses it); the file is reloaded for the next game.",
+      "values": "Integer value between 0 and 255.",
+      "bits": []
+    },
+    {
+      "name": "Upward Offset",
+      "offset": "0x12CA",
+      "length": "130 bytes (1 byte / Weapon)",
+      "description": "How many pixels above the unit the bullet starts.",
+      "values": "Integer value between 0 and 255.",
       "bits": []
     },
     {
       "name": "Error Message",
       "offset": "0x134C",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Index in the rez\\stat_txt.tbl file which this weapon displays if it cannot be used for some reason.",
-      "values": "Integer value between 0 and the last index in rez\\stat_txt.tbl",
+      "description": "Message shown when a unit is ordered to use the weapon on a target it cannot hit: a string number in rez\\stat_txt.tbl, counting from 1 (879 is \"Unable to attack target.\"). Targets in stasis or that cannot be hit get fixed messages instead.",
+      "values": "Integer value between 1 and the number of strings in rez\\stat_txt.tbl.",
       "bits": []
     },
     {
       "name": "Icon",
       "offset": "0x1450",
       "length": "260 bytes (2 bytes / Weapon)",
-      "description": "Icon displayed for this weapon in the unit's status bar.",
-      "values": "Integer value between 0 and 65535.",
+      "description": "Frame of unit\\cmdbtns\\cmdicons.grp shown for the weapon in a selected unit's status panel.",
+      "values": "Integer value between 0 and the last frame of cmdicons.grp.",
       "bits": []
     }
   ],
   "appendices": [
     {
       "name": "Appendix: Weapons list",
-      "description": "List of weapons.",
+      "description": "The weapon list. Every field of the file has one entry for each of these, in this order. Weapon 130 means \"no weapon\" in units.dat and has no entry here.",
       "bits": [
         {
           "bit": "0x00",

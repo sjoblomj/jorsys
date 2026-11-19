@@ -1,0 +1,995 @@
+{
+  "title": "orders.dat",
+  "description": "orders.dat holds the data of the orders: the things a unit can be doing, such as moving, attacking, harvesting, casting a spell or building (see Appendix: Orders list). units.dat's order fields, the command buttons and the game's own code start orders by number, and this file gives each order's properties: how it is queued and interrupted, what it targets, the weapon and technology of a spell, the button it highlights and its requirements. It is the file arr\\orders.dat in the game's MPQ archives and is 4158 bytes long. Each field below is a list with one entry for each of the 189 orders, and the lists are stored one after another with nothing in between, so the offsets are from the start of the file. StarEdit does not use it. The layout is the same in every version from 1.04 to 1.17, of both StarCraft and Brood War. StarCraft 1.00 to 1.03 used an older layout with 176 orders (3872 bytes); the older file is still in StarDat.mpq in later versions but is never loaded, because the copy in BrooDat.mpq (or patch_rt.mpq) is found first. The game loads the file again each time a game starts, together with units.dat. Fields are read in order, and the game stops with a file error if the file is longer than the layout. A shorter file that ends exactly where a field ends loads without an error; the fields after the end then keep whatever they held before. No field is checked when the game uses it, so an out-of-range value reads whatever follows the table it points into.\n\nFive fields are read by no code in any version from 1.04 to 1.17 (Label and four flags); they are marked Unused below.",
+  "spec": [
+    {
+      "name": "Label",
+      "offset": "0x0000",
+      "length": "378 bytes (2 bytes / Order)",
+      "description": "Not used by the game. It holds the order's name as a string number in rez\\stat_txt.tbl, counting from 1 (order 0 is string 903, \"Die\"); seven spell orders point at button strings instead.",
+      "values": "Integer value between 0 and the number of strings in rez\\stat_txt.tbl; ignored.",
+      "bits": []
+    },
+    {
+      "name": "Attack Order",
+      "offset": "0x017A",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "Marks an order that attacks its target. For spells and target clicks, the target is checked with the order's Weapon if this is set, and with the technology's target rules otherwise. An attacking unit also drops a target that becomes allied, keeps its current target when choosing targets, and is not counted as idle by the computer AI.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "No"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "Unused",
+      "offset": "0x0237",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "Not used: no code reads it. Shipped 1 for orders that run while the unit does something else (Train, Build Add-on, Cloak and others).",
+      "values": "Any value; ignored.",
+      "bits": []
+    },
+    {
+      "name": "Unused",
+      "offset": "0x02F4",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "Not used: no code reads it. Shipped 0 only for the turret orders.",
+      "values": "Any value; ignored.",
+      "bits": []
+    },
+    {
+      "name": "Pass to Turret",
+      "offset": "0x03B1",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "When a unit with a turret (subunit) starts this order from its queue, the turret gets the same order and target. The unit's own guard and attack orders (units.dat) are always passed on as the turret's guard and attack orders, whatever this says.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "The turret keeps its order"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "The turret gets the same order"
+        }
+      ]
+    },
+    {
+      "name": "Unused",
+      "offset": "0x046E",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "Not used: no code reads it.",
+      "values": "Any value; ignored.",
+      "bits": []
+    },
+    {
+      "name": "Interruptible",
+      "offset": "0x052B",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "0 makes the order run until it ends by itself: orders given in the meantime wait in the queue, except Die. When a new order is given, interruptible orders at the end of the queue are removed; a non-interruptible one stays and the new order goes after it. Shipped 0 for, among others, Die, Lift Off, Siege Mode, Burrow and the harvesting steps.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Not interruptible"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "Interruptible"
+        }
+      ]
+    },
+    {
+      "name": "Brake Before",
+      "offset": "0x05E8",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "Read for the next order in a unit's queue each time the unit gets a move target: if that order has 0, the unit does not brake at the end of its move but goes through the point at speed. Shipped 0 for Move, so a chain of queued moves is not slowed at each point. With nothing queued the unit always brakes.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "The unit keeps its speed into this order"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "The unit brakes before this order"
+        }
+      ]
+    },
+    {
+      "name": "Queueable",
+      "offset": "0x06A5",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "Whether the order can be queued with Shift. A queued order is added after the current one, unless the unit is guarding, doing nothing, picking up, patrolling or acting as a Medic, in which case it replaces it. A unit can have at most 8 queued orders that have an Icon.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Always replaces the current order"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "Can be queued"
+        }
+      ]
+    },
+    {
+      "name": "Keep Target When Disabled",
+      "offset": "0x0762",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "When the unit is hit by Lockdown, Stasis Field or Maelstrom, it forgets the target unit of its order unless this is set. Shipped 1 for building, repairing, entering a Nydus Canal, harvesting and healing.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Forget the target"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "Keep the target"
+        }
+      ]
+    },
+    {
+      "name": "Obstructable",
+      "offset": "0x081F",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "For a target on the ground, the clicked point is moved to a nearby place where the unit, or the group, fits. 0 keeps the exact point: spells and attacks on the ground use 0.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Exact point"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "Moved to where the units fit"
+        }
+      ]
+    },
+    {
+      "name": "Flee When Attacked",
+      "offset": "0x08DC",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "A unit doing this order that is attacked by something it cannot fight back (or a worker under attack) moves away from the attacker. Shipped 1 for guarding, patrolling, Carrier and critter orders and a few others.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Stays"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "Flees"
+        }
+      ]
+    },
+    {
+      "name": "Unused",
+      "offset": "0x0999",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "Not used: no code reads it. Shipped 1 for most orders that move the unit.",
+      "values": "Any value; ignored.",
+      "bits": []
+    },
+    {
+      "name": "Weapon",
+      "offset": "0x0A56",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "The weapon (weapons.dat) of a spell or ability: the weapon fired by the animation script command castspell, and the range and cooldown when the spell is cast. 130 means none. With Attack Order set, any value other than 130 is used as a weapon without a check.",
+      "values": "A weapon, or 130 for none.",
+      "bits": []
+    },
+    {
+      "name": "Technology",
+      "offset": "0x0B13",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "The technology (techdata.dat) of a spell or ability. 44 means none. It sets the energy the order costs, the target rules of spells without Attack Order, and replaces this order's own requirements with the technology's use requirements. A value from 45 to 255 makes the order impossible to give by clicking a target.",
+      "values": "A technology, or 44 for none.",
+      "bits": []
+    },
+    {
+      "name": "Animation",
+      "offset": "0x0BD0",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "The animation (entry of the unit's animation script) played when the spell is cast. Shipped 7 (CastSpell) for the 19 spell orders and 28 for the rest, which never use it.",
+      "values": "Integer value between 0 and 27.",
+      "bits": []
+    },
+    {
+      "name": "Icon",
+      "offset": "0x0C8D",
+      "length": "378 bytes (2 bytes / Order)",
+      "description": "The command button lit up while a unit does this order: the visible button with this icon (frame of cmdicons.grp) is drawn highlighted. 0xFFFF means none, and the turret's order is used instead (also when the value is 229, Stop, and the turret's order has an icon). Only orders with an icon count towards the limit of 8 queued orders.",
+      "values": "Integer value between 0 and the last frame of cmdicons.grp, or 0xFFFF for none.",
+      "bits": []
+    },
+    {
+      "name": "Requirements",
+      "offset": "0x0E07",
+      "length": "378 bytes (2 bytes / Order)",
+      "description": "Where this order's requirements (what must be true for a unit to be given it) start in the game's built-in requirement list (the order requirements, inside the executable, not in any data file), as a position in that list. 0 means the order has no requirements entry and is never allowed. The game fills this field in itself: whenever it checks a order whose entry holds 0xFFFF, it walks the built-in list, stores the position for every order listed there (replacing what the file had), and sets every entry still 0xFFFF to 0. So a value other than 0xFFFF only survives for orders that have no entry in the built-in list, or if the file has no 0xFFFF at all, and it then picks (part of) an existing entry of the list; nothing checks it. The shipped file has 0xFFFF everywhere, so the game always uses its built-in list. Orders with a Technology use that technology's requirements instead.",
+      "values": "0xFFFF (let the game fill it in).",
+      "bits": []
+    },
+    {
+      "name": "Obscured Order",
+      "offset": "0x0F81",
+      "length": "189 bytes (1 byte / Order)",
+      "description": "For the orders a unit gets when it is told to act on a unit hidden by the fog of war (Attack, Repair, Gather and so on, chosen by the button): once the unit gets there and sees the target, it is given this order on it (for Attack, its own attack order from units.dat). 189 means the order cannot target a unit under the fog, so the click counts as a click on the ground. In the shipped file every order holds its own number, except the fog orders, which hold the order they turn into.",
+      "values": "An order, or 189 for none.",
+      "bits": []
+    }
+  ],
+  "appendices": [
+    {
+      "name": "Appendix: Orders list",
+      "description": "Every order, with the name the game's Label field points to (rez\\stat_txt.tbl). Some names are misleading: order 6, \"Ignore\", is the Move order.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Die"
+        },
+        {
+          "bit": "0x01",
+          "value": "Stop"
+        },
+        {
+          "bit": "0x02",
+          "value": "Guard"
+        },
+        {
+          "bit": "0x03",
+          "value": "Player Guard"
+        },
+        {
+          "bit": "0x04",
+          "value": "Turret Guard"
+        },
+        {
+          "bit": "0x05",
+          "value": "Bunker Guard"
+        },
+        {
+          "bit": "0x06",
+          "value": "Ignore"
+        },
+        {
+          "bit": "0x07",
+          "value": "Reaver Stop"
+        },
+        {
+          "bit": "0x08",
+          "value": "Attack"
+        },
+        {
+          "bit": "0x09",
+          "value": "Attack"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Attack Unit"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Attack Fixed Range"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Attack Tile"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Hover"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Attack Move"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Infest Mine"
+        },
+        {
+          "bit": "0x10",
+          "value": "Nothing"
+        },
+        {
+          "bit": "0x11",
+          "value": "Powerup"
+        },
+        {
+          "bit": "0x12",
+          "value": "Tower"
+        },
+        {
+          "bit": "0x13",
+          "value": "Tower"
+        },
+        {
+          "bit": "0x14",
+          "value": "Vulture Mine"
+        },
+        {
+          "bit": "0x15",
+          "value": "Stay In Range"
+        },
+        {
+          "bit": "0x16",
+          "value": "Turret Attack"
+        },
+        {
+          "bit": "0x17",
+          "value": "Nothing"
+        },
+        {
+          "bit": "0x18",
+          "value": "Nothing"
+        },
+        {
+          "bit": "0x19",
+          "value": "Drone Start Build"
+        },
+        {
+          "bit": "0x1A",
+          "value": "Drone Build"
+        },
+        {
+          "bit": "0x1B",
+          "value": "Infest Mine"
+        },
+        {
+          "bit": "0x1C",
+          "value": "Infest Mine"
+        },
+        {
+          "bit": "0x1D",
+          "value": "Infest Mine"
+        },
+        {
+          "bit": "0x1E",
+          "value": "Build"
+        },
+        {
+          "bit": "0x1F",
+          "value": "Build"
+        },
+        {
+          "bit": "0x20",
+          "value": "Build"
+        },
+        {
+          "bit": "0x21",
+          "value": "Build"
+        },
+        {
+          "bit": "0x22",
+          "value": "Repair"
+        },
+        {
+          "bit": "0x23",
+          "value": "Repair"
+        },
+        {
+          "bit": "0x24",
+          "value": "Place Add-On"
+        },
+        {
+          "bit": "0x25",
+          "value": "Build Add-On"
+        },
+        {
+          "bit": "0x26",
+          "value": "Train"
+        },
+        {
+          "bit": "0x27",
+          "value": "Rally Point"
+        },
+        {
+          "bit": "0x28",
+          "value": "Rally Point"
+        },
+        {
+          "bit": "0x29",
+          "value": "Zerg Birth"
+        },
+        {
+          "bit": "0x2A",
+          "value": "Morph"
+        },
+        {
+          "bit": "0x2B",
+          "value": "Morph"
+        },
+        {
+          "bit": "0x2C",
+          "value": "Build Self"
+        },
+        {
+          "bit": "0x2D",
+          "value": "Zerg Build Self"
+        },
+        {
+          "bit": "0x2E",
+          "value": "Build"
+        },
+        {
+          "bit": "0x2F",
+          "value": "Enter Nydus Canal"
+        },
+        {
+          "bit": "0x30",
+          "value": "Build Self"
+        },
+        {
+          "bit": "0x31",
+          "value": "Follow"
+        },
+        {
+          "bit": "0x32",
+          "value": "Carrier"
+        },
+        {
+          "bit": "0x33",
+          "value": "Carrier Ignore"
+        },
+        {
+          "bit": "0x34",
+          "value": "Carrier Stop"
+        },
+        {
+          "bit": "0x35",
+          "value": "Carrier Attack"
+        },
+        {
+          "bit": "0x36",
+          "value": "Carrier Attack"
+        },
+        {
+          "bit": "0x37",
+          "value": "Carrier Ignore"
+        },
+        {
+          "bit": "0x38",
+          "value": "Carrier Fight"
+        },
+        {
+          "bit": "0x39",
+          "value": "Hold Position"
+        },
+        {
+          "bit": "0x3A",
+          "value": "Reaver"
+        },
+        {
+          "bit": "0x3B",
+          "value": "Reaver Attack"
+        },
+        {
+          "bit": "0x3C",
+          "value": "Reaver Attack"
+        },
+        {
+          "bit": "0x3D",
+          "value": "Reaver Fight"
+        },
+        {
+          "bit": "0x3E",
+          "value": "Reaver Hold"
+        },
+        {
+          "bit": "0x3F",
+          "value": "Train Fighter"
+        },
+        {
+          "bit": "0x40",
+          "value": "Strafe Unit"
+        },
+        {
+          "bit": "0x41",
+          "value": "Strafe Unit"
+        },
+        {
+          "bit": "0x42",
+          "value": "Recharge Shields"
+        },
+        {
+          "bit": "0x43",
+          "value": "Recharge Shields"
+        },
+        {
+          "bit": "0x44",
+          "value": "Shield Battery"
+        },
+        {
+          "bit": "0x45",
+          "value": "Return"
+        },
+        {
+          "bit": "0x46",
+          "value": "Drone Land"
+        },
+        {
+          "bit": "0x47",
+          "value": "Building Land"
+        },
+        {
+          "bit": "0x48",
+          "value": "Building Lift Off"
+        },
+        {
+          "bit": "0x49",
+          "value": "Drone Lift Off"
+        },
+        {
+          "bit": "0x4A",
+          "value": "Lift Off"
+        },
+        {
+          "bit": "0x4B",
+          "value": "Reasearch Tech"
+        },
+        {
+          "bit": "0x4C",
+          "value": "Upgrade"
+        },
+        {
+          "bit": "0x4D",
+          "value": "Larva"
+        },
+        {
+          "bit": "0x4E",
+          "value": "Spawning Larva"
+        },
+        {
+          "bit": "0x4F",
+          "value": "Harvest"
+        },
+        {
+          "bit": "0x50",
+          "value": "Harvest"
+        },
+        {
+          "bit": "0x51",
+          "value": "Harvest Gas"
+        },
+        {
+          "bit": "0x52",
+          "value": "Harvest Gas"
+        },
+        {
+          "bit": "0x53",
+          "value": "Harvest Gas"
+        },
+        {
+          "bit": "0x54",
+          "value": "Return Gas"
+        },
+        {
+          "bit": "0x55",
+          "value": "Harvest Minerals"
+        },
+        {
+          "bit": "0x56",
+          "value": "Harvest Minerals"
+        },
+        {
+          "bit": "0x57",
+          "value": "Harvest Minerals"
+        },
+        {
+          "bit": "0x58",
+          "value": "Harvest"
+        },
+        {
+          "bit": "0x59",
+          "value": "Harvest"
+        },
+        {
+          "bit": "0x5A",
+          "value": "Return Minerals"
+        },
+        {
+          "bit": "0x5B",
+          "value": "Harvest"
+        },
+        {
+          "bit": "0x5C",
+          "value": "Enter Transport"
+        },
+        {
+          "bit": "0x5D",
+          "value": "Pick Up"
+        },
+        {
+          "bit": "0x5E",
+          "value": "Pick Up"
+        },
+        {
+          "bit": "0x5F",
+          "value": "Pick Up"
+        },
+        {
+          "bit": "0x60",
+          "value": "Pick Up"
+        },
+        {
+          "bit": "0x61",
+          "value": "Powerup"
+        },
+        {
+          "bit": "0x62",
+          "value": "Siege Mode"
+        },
+        {
+          "bit": "0x63",
+          "value": "Tank Mode"
+        },
+        {
+          "bit": "0x64",
+          "value": "Watch Target"
+        },
+        {
+          "bit": "0x65",
+          "value": "Initing Creep Growth"
+        },
+        {
+          "bit": "0x66",
+          "value": "Spread Creep"
+        },
+        {
+          "bit": "0x67",
+          "value": "Stopping Creep Growth"
+        },
+        {
+          "bit": "0x68",
+          "value": "Guardian Aspect"
+        },
+        {
+          "bit": "0x69",
+          "value": "Warping Archon"
+        },
+        {
+          "bit": "0x6A",
+          "value": "Completing Archon Summon"
+        },
+        {
+          "bit": "0x6B",
+          "value": "Hold Position"
+        },
+        {
+          "bit": "0x6C",
+          "value": "Hold Position"
+        },
+        {
+          "bit": "0x6D",
+          "value": "Cloak"
+        },
+        {
+          "bit": "0x6E",
+          "value": "Decloak"
+        },
+        {
+          "bit": "0x6F",
+          "value": "Unload"
+        },
+        {
+          "bit": "0x70",
+          "value": "Move Unload"
+        },
+        {
+          "bit": "0x71",
+          "value": "Fire Yamato Gun"
+        },
+        {
+          "bit": "0x72",
+          "value": "Fire Yamato Gun"
+        },
+        {
+          "bit": "0x73",
+          "value": "Magna Pulse"
+        },
+        {
+          "bit": "0x74",
+          "value": "Burrow"
+        },
+        {
+          "bit": "0x75",
+          "value": "Burrowed"
+        },
+        {
+          "bit": "0x76",
+          "value": "Unburrow"
+        },
+        {
+          "bit": "0x77",
+          "value": "Dark Swarm"
+        },
+        {
+          "bit": "0x78",
+          "value": "Cast Parasite"
+        },
+        {
+          "bit": "0x79",
+          "value": "Summon Broodlings"
+        },
+        {
+          "bit": "0x7A",
+          "value": "EMP Shockwave"
+        },
+        {
+          "bit": "0x7B",
+          "value": "Nuke Wait"
+        },
+        {
+          "bit": "0x7C",
+          "value": "Nuke Train"
+        },
+        {
+          "bit": "0x7D",
+          "value": "Nuke Launch"
+        },
+        {
+          "bit": "0x7E",
+          "value": "Nuke Paint"
+        },
+        {
+          "bit": "0x7F",
+          "value": "Nuke Unit"
+        },
+        {
+          "bit": "0x80",
+          "value": "Nuke Ground"
+        },
+        {
+          "bit": "0x81",
+          "value": "Nuke Track"
+        },
+        {
+          "bit": "0x82",
+          "value": "Initializing Arbiter"
+        },
+        {
+          "bit": "0x83",
+          "value": "Cloaking nearby units"
+        },
+        {
+          "bit": "0x84",
+          "value": "Place Mine"
+        },
+        {
+          "bit": "0x85",
+          "value": "Right Click Action"
+        },
+        {
+          "bit": "0x86",
+          "value": "Sap Unit"
+        },
+        {
+          "bit": "0x87",
+          "value": "Sap Location"
+        },
+        {
+          "bit": "0x88",
+          "value": "Hold Position"
+        },
+        {
+          "bit": "0x89",
+          "value": "Teleport"
+        },
+        {
+          "bit": "0x8A",
+          "value": "Teleport to Location"
+        },
+        {
+          "bit": "0x8B",
+          "value": "Place Scanner"
+        },
+        {
+          "bit": "0x8C",
+          "value": "Scanner"
+        },
+        {
+          "bit": "0x8D",
+          "value": "Defensive Matrix"
+        },
+        {
+          "bit": "0x8E",
+          "value": "Psionic Storm"
+        },
+        {
+          "bit": "0x8F",
+          "value": "Irradiate"
+        },
+        {
+          "bit": "0x90",
+          "value": "Plague"
+        },
+        {
+          "bit": "0x91",
+          "value": "Consume"
+        },
+        {
+          "bit": "0x92",
+          "value": "Ensnare"
+        },
+        {
+          "bit": "0x93",
+          "value": "Stasis Field"
+        },
+        {
+          "bit": "0x94",
+          "value": "Hallucination"
+        },
+        {
+          "bit": "0x95",
+          "value": "Hallucination"
+        },
+        {
+          "bit": "0x96",
+          "value": "Reset Collision"
+        },
+        {
+          "bit": "0x97",
+          "value": "Reset Collision"
+        },
+        {
+          "bit": "0x98",
+          "value": "Patrol"
+        },
+        {
+          "bit": "0x99",
+          "value": "CTF COP Init"
+        },
+        {
+          "bit": "0x9A",
+          "value": "CTF COP"
+        },
+        {
+          "bit": "0x9B",
+          "value": "CTF COP"
+        },
+        {
+          "bit": "0x9C",
+          "value": "Computer AI"
+        },
+        {
+          "bit": "0x9D",
+          "value": "Atk Move EP"
+        },
+        {
+          "bit": "0x9E",
+          "value": "Harass Move"
+        },
+        {
+          "bit": "0x9F",
+          "value": "AI Patrol"
+        },
+        {
+          "bit": "0xA0",
+          "value": "Guard Post"
+        },
+        {
+          "bit": "0xA1",
+          "value": "Rescue Passive"
+        },
+        {
+          "bit": "0xA2",
+          "value": "Neutral"
+        },
+        {
+          "bit": "0xA3",
+          "value": "Computer Return"
+        },
+        {
+          "bit": "0xA4",
+          "value": "Initing Psi Provider"
+        },
+        {
+          "bit": "0xA5",
+          "value": "Self Destructing"
+        },
+        {
+          "bit": "0xA6",
+          "value": "Critter"
+        },
+        {
+          "bit": "0xA7",
+          "value": "Hidden Gun"
+        },
+        {
+          "bit": "0xA8",
+          "value": "Open Door"
+        },
+        {
+          "bit": "0xA9",
+          "value": "Close Door"
+        },
+        {
+          "bit": "0xAA",
+          "value": "Hide Trap"
+        },
+        {
+          "bit": "0xAB",
+          "value": "Reveal Trap"
+        },
+        {
+          "bit": "0xAC",
+          "value": "Enable Doodad"
+        },
+        {
+          "bit": "0xAD",
+          "value": "Disable Doodad"
+        },
+        {
+          "bit": "0xAE",
+          "value": "Warp In"
+        },
+        {
+          "bit": "0xAF",
+          "value": "Medic"
+        },
+        {
+          "bit": "0xB0",
+          "value": "Medic Heal"
+        },
+        {
+          "bit": "0xB1",
+          "value": "Heal Move"
+        },
+        {
+          "bit": "0xB2",
+          "value": "Medic Hold Position"
+        },
+        {
+          "bit": "0xB3",
+          "value": "Medic Heal"
+        },
+        {
+          "bit": "0xB4",
+          "value": "Restoration"
+        },
+        {
+          "bit": "0xB5",
+          "value": "Cast Disruption Web"
+        },
+        {
+          "bit": "0xB6",
+          "value": "Cast Mind Control"
+        },
+        {
+          "bit": "0xB7",
+          "value": "Warping Dark Archon"
+        },
+        {
+          "bit": "0xB8",
+          "value": "Cast Feedback"
+        },
+        {
+          "bit": "0xB9",
+          "value": "Cast Optical Flare"
+        },
+        {
+          "bit": "0xBA",
+          "value": "Cast Shockwave"
+        },
+        {
+          "bit": "0xBB",
+          "value": "Junk Yard Dog"
+        },
+        {
+          "bit": "0xBC",
+          "value": "Fatal"
+        }
+      ]
+    }
+  ]
+}

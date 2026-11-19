@@ -98,6 +98,13 @@
   <div class="menuheader">StarCraft Specs</div>
   <ul>
     <li><a href="${nesting}formats/mpq.html">MPQ</a></li>
+    <li><a href="${nesting}formats/mapdata_dat.html">Campaigns</a></li>
+    <li><a href="${nesting}formats/flingy_dat.html">Flingy</a></li>
+    <li><a href="${nesting}formats/images_dat.html">Images</a></li>
+    <li><a href="${nesting}formats/orders_dat.html">Orders</a></li>
+    <li><a href="${nesting}formats/portdata_dat.html">Portraits</a></li>
+    <li><a href="${nesting}formats/sfxdata_dat.html">Sounds</a></li>
+    <li><a href="${nesting}formats/sprites_dat.html">Sprites</a></li>
     <li><a href="${nesting}formats/techdata_dat.html">Technology</a></li>
     <li><a href="${nesting}formats/units_dat.html">Units</a></li>
     <li><a href="${nesting}formats/upgrades_dat.html">Upgrades</a></li>

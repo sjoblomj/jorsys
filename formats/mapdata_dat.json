@@ -1,0 +1,283 @@
+{
+  "title": "mapdata.dat",
+  "description": "mapdata.dat gives the folder of each campaign mission (see Appendix: Missions list). The entry number is the game's mission number: 0 means no mission, 1 is the Terran tutorial and 64 the last mission of the Brood War Zerg campaign. Which missions make up each campaign, in what order, and their races and cinematics are fixed in the executable; this file only gives each mission's folder. It is the file arr\\mapdata.dat in the game's MPQ archives and is 260 bytes long, one 4-byte entry for each of the 65 missions. StarEdit does not use it. The layout is the same in every version from 1.04 to 1.17, of both StarCraft and Brood War. StarCraft 1.00 to 1.03 used an older layout with 32 missions (128 bytes); the older file is still in StarDat.mpq in later versions but is never loaded, because the copy in BrooDat.mpq (or patch_rt.mpq) is found first. The game loads the file once, when the program starts. Fields are read in order, and the game stops with a file error if the file is longer than the layout. A shorter file that ends exactly where a field ends loads without an error; the fields after the end then keep whatever they held before. No field is checked when the game uses it, so an out-of-range value reads whatever follows the table it points into.\n\nThe game loads a mission's map from <folder>\\staredit\\scenario.chk in its MPQ archives, and the sounds played by its briefing and its triggers from <folder>\\<the file name in the map>. It also uses the last part of each folder to find the mission that belongs to a map file of the same name (.scm files among the original missions, others among the Brood War missions).",
+  "spec": [
+    {
+      "name": "Mission Folder",
+      "offset": "0x0000",
+      "length": "260 bytes (4 bytes / Mission)",
+      "description": "A string number in arr\\mapdata.tbl, counting from 1: 1 is the first string. The game turns it into the string itself when it loads the file. Only the lowest 16 bits are used; 0 means no string, and a number beyond the last string gives an empty string. The string is the mission's folder, for example campaign\\terran\\terran01.",
+      "values": "Integer value between 0 and the number of strings in arr\\mapdata.tbl. In the shipped file, entry n holds n + 1.",
+      "bits": []
+    }
+  ],
+  "appendices": [
+    {
+      "name": "Appendix: Missions list",
+      "description": "Every mission number, with its folder from arr\\mapdata.tbl in the shipped data. Entry 0 points to the string null and is never loaded. There are no terran07 and terran10 folders.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "null"
+        },
+        {
+          "bit": "0x01",
+          "value": "campaign\\terran\\tutorial"
+        },
+        {
+          "bit": "0x02",
+          "value": "campaign\\terran\\terran01"
+        },
+        {
+          "bit": "0x03",
+          "value": "campaign\\terran\\terran02"
+        },
+        {
+          "bit": "0x04",
+          "value": "campaign\\terran\\terran03"
+        },
+        {
+          "bit": "0x05",
+          "value": "campaign\\terran\\terran04"
+        },
+        {
+          "bit": "0x06",
+          "value": "campaign\\terran\\terran05"
+        },
+        {
+          "bit": "0x07",
+          "value": "campaign\\terran\\terran06"
+        },
+        {
+          "bit": "0x08",
+          "value": "campaign\\terran\\terran08"
+        },
+        {
+          "bit": "0x09",
+          "value": "campaign\\terran\\terran09"
+        },
+        {
+          "bit": "0x0A",
+          "value": "campaign\\terran\\terran11"
+        },
+        {
+          "bit": "0x0B",
+          "value": "campaign\\terran\\terran12"
+        },
+        {
+          "bit": "0x0C",
+          "value": "campaign\\zerg\\zerg01"
+        },
+        {
+          "bit": "0x0D",
+          "value": "campaign\\zerg\\zerg02"
+        },
+        {
+          "bit": "0x0E",
+          "value": "campaign\\zerg\\zerg03"
+        },
+        {
+          "bit": "0x0F",
+          "value": "campaign\\zerg\\zerg04"
+        },
+        {
+          "bit": "0x10",
+          "value": "campaign\\zerg\\zerg05"
+        },
+        {
+          "bit": "0x11",
+          "value": "campaign\\zerg\\zerg06"
+        },
+        {
+          "bit": "0x12",
+          "value": "campaign\\zerg\\zerg07"
+        },
+        {
+          "bit": "0x13",
+          "value": "campaign\\zerg\\zerg08"
+        },
+        {
+          "bit": "0x14",
+          "value": "campaign\\zerg\\zerg09"
+        },
+        {
+          "bit": "0x15",
+          "value": "campaign\\zerg\\zerg10"
+        },
+        {
+          "bit": "0x16",
+          "value": "campaign\\protoss\\protoss01"
+        },
+        {
+          "bit": "0x17",
+          "value": "campaign\\protoss\\protoss02"
+        },
+        {
+          "bit": "0x18",
+          "value": "campaign\\protoss\\protoss03"
+        },
+        {
+          "bit": "0x19",
+          "value": "campaign\\protoss\\protoss04"
+        },
+        {
+          "bit": "0x1A",
+          "value": "campaign\\protoss\\protoss05"
+        },
+        {
+          "bit": "0x1B",
+          "value": "campaign\\protoss\\protoss06"
+        },
+        {
+          "bit": "0x1C",
+          "value": "campaign\\protoss\\protoss07"
+        },
+        {
+          "bit": "0x1D",
+          "value": "campaign\\protoss\\protoss08"
+        },
+        {
+          "bit": "0x1E",
+          "value": "campaign\\protoss\\protoss09"
+        },
+        {
+          "bit": "0x1F",
+          "value": "campaign\\protoss\\protoss10"
+        },
+        {
+          "bit": "0x20",
+          "value": "campaign\\expprotoss\\protoss01"
+        },
+        {
+          "bit": "0x21",
+          "value": "campaign\\expprotoss\\protoss02"
+        },
+        {
+          "bit": "0x22",
+          "value": "campaign\\expprotoss\\protoss03"
+        },
+        {
+          "bit": "0x23",
+          "value": "campaign\\expprotoss\\protoss04"
+        },
+        {
+          "bit": "0x24",
+          "value": "campaign\\expprotoss\\protoss05"
+        },
+        {
+          "bit": "0x25",
+          "value": "campaign\\expprotoss\\protoss06"
+        },
+        {
+          "bit": "0x26",
+          "value": "campaign\\expprotoss\\protoss07"
+        },
+        {
+          "bit": "0x27",
+          "value": "campaign\\expprotoss\\protoss08"
+        },
+        {
+          "bit": "0x28",
+          "value": "campaign\\expterran\\terran01"
+        },
+        {
+          "bit": "0x29",
+          "value": "campaign\\expterran\\terran02"
+        },
+        {
+          "bit": "0x2A",
+          "value": "campaign\\expterran\\terran03"
+        },
+        {
+          "bit": "0x2B",
+          "value": "campaign\\expterran\\terran04"
+        },
+        {
+          "bit": "0x2C",
+          "value": "campaign\\expterran\\terran05a"
+        },
+        {
+          "bit": "0x2D",
+          "value": "campaign\\expterran\\terran05b"
+        },
+        {
+          "bit": "0x2E",
+          "value": "campaign\\expterran\\terran06"
+        },
+        {
+          "bit": "0x2F",
+          "value": "campaign\\expterran\\terran07"
+        },
+        {
+          "bit": "0x30",
+          "value": "campaign\\expterran\\terran08"
+        },
+        {
+          "bit": "0x31",
+          "value": "campaign\\expzerg\\zerg01"
+        },
+        {
+          "bit": "0x32",
+          "value": "campaign\\expzerg\\zerg02"
+        },
+        {
+          "bit": "0x33",
+          "value": "campaign\\expzerg\\zerg03"
+        },
+        {
+          "bit": "0x34",
+          "value": "campaign\\expzerg\\zerg04a"
+        },
+        {
+          "bit": "0x35",
+          "value": "campaign\\expzerg\\zerg04b"
+        },
+        {
+          "bit": "0x36",
+          "value": "campaign\\expzerg\\zerg04c"
+        },
+        {
+          "bit": "0x37",
+          "value": "campaign\\expzerg\\zerg04d"
+        },
+        {
+          "bit": "0x38",
+          "value": "campaign\\expzerg\\zerg04e"
+        },
+        {
+          "bit": "0x39",
+          "value": "campaign\\expzerg\\zerg04f"
+        },
+        {
+          "bit": "0x3A",
+          "value": "campaign\\expzerg\\zerg05"
+        },
+        {
+          "bit": "0x3B",
+          "value": "campaign\\expzerg\\zerg06"
+        },
+        {
+          "bit": "0x3C",
+          "value": "campaign\\expzerg\\zerg07"
+        },
+        {
+          "bit": "0x3D",
+          "value": "campaign\\expzerg\\zerg08"
+        },
+        {
+          "bit": "0x3E",
+          "value": "campaign\\expzerg\\zerg09"
+        },
+        {
+          "bit": "0x3F",
+          "value": "campaign\\expzerg\\bonus"
+        },
+        {
+          "bit": "0x40",
+          "value": "campaign\\expzerg\\zerg10"
+        }
+      ]
+    }
+  ]
+}

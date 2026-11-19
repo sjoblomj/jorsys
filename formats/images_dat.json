@@ -1,0 +1,4265 @@
+{
+  "title": "images.dat",
+  "description": "images.dat holds the data of every image: one GRP graphic with its animation script, drawn as part of a sprite. A unit is usually several images: its body, its shadow, and overlays such as engine glows and turrets (see Appendix: Images list). Each entry gives the GRP file, how it turns and is clicked, whether it plays its full animation script, how it is drawn, its animation script, and six lists of points (overlay files) where other graphics attach. It is the file arr\\images.dat in the game's MPQ archives and is 37962 bytes long. Each field below is a list with one entry for each of the 999 images, and the lists are stored one after another with nothing in between, so the offsets are from the start of the file. StarEdit also reads the file. The layout is the same in every version from 1.04 to 1.17, of both StarCraft and Brood War. StarCraft 1.00 to 1.03 used an older layout with 755 images (28690 bytes); the older file is still in StarDat.mpq in later versions but is never loaded, because the copy in BrooDat.mpq (or patch_rt.mpq) is found first. The game loads the file once, when the program starts, together with scripts\\iscript.bin and arr\\images.tbl. Fields are read in order, and the game stops with a file error if the file is longer than the layout. A shorter file that ends exactly where a field ends loads without an error; the fields after the end then keep whatever they held before. No field is checked when the game uses it, so an out-of-range value reads whatever follows the table it points into.\n\nOutside Brood War, the game and StarEdit only load the files of images 0 to 754; the higher images then have no graphics.",
+  "spec": [
+    {
+      "name": "GRP File",
+      "offset": "0x0000",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "A file number in arr\\images.tbl, counting from 1; 0 means none. The game loads unit\\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. Nothing checks that an image has a GRP before drawing it.",
+      "values": "Integer value between 0 and the number of strings in arr\\images.tbl.",
+      "bits": []
+    },
+    {
+      "name": "Graphic Turns",
+      "offset": "0x0F9C",
+      "length": "999 bytes (1 byte / Image)",
+      "description": "Whether the image turns with its unit. If set, the GRP must have 17 frames for each animation frame: 17 directions over the right half of a turn, with the left half drawn mirrored. If clear, the frame is only what the animation script chooses. Only the lowest bit counts.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Does not turn"
+        },
+        {
+          "bit": "0x01",
+          "value": "Turns (17 directions, mirrored)"
+        }
+      ]
+    },
+    {
+      "name": "Clickable",
+      "offset": "0x1383",
+      "length": "999 bytes (1 byte / Image)",
+      "description": "Whether the image counts for clicking on its unit. The area that can be clicked is the box around the current frames of all clickable images of the sprite; if none is clickable, clicking the unit does not work reliably. Within that box, units with units.dat flag 0x100 can be clicked on a visible pixel of any clickable image, others only on a visible pixel of their main image. Only the lowest bit counts.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Not clickable"
+        },
+        {
+          "bit": "0x01",
+          "value": "Clickable"
+        }
+      ]
+    },
+    {
+      "name": "Use Full Animation Script",
+      "offset": "0x176A",
+      "length": "999 bytes (1 byte / Image)",
+      "description": "If clear, the image only plays the Init and Death entries of its animation script and ignores requests for the others (walking, attacking and so on). Only the lowest bit counts.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Init and Death only"
+        },
+        {
+          "bit": "0x01",
+          "value": "All animations"
+        }
+      ]
+    },
+    {
+      "name": "Draw If Cloaked",
+      "offset": "0x1B51",
+      "length": "999 bytes (1 byte / Image)",
+      "description": "0 hides the image while its unit is cloaked (shadows, engine glows). It also stops animation script commands that create a sprite (sprul, spruluselo) from creating one with this image while the unit is cloaked. Only images with Draw Function 0 get the cloaked look; visible images with another draw function keep drawing normally. StarEdit uses it when showing cloaked preplaced units.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Hidden while cloaked"
+        },
+        {
+          "bit": "0x01 and up",
+          "value": "Shown while cloaked"
+        }
+      ]
+    },
+    {
+      "name": "Draw Function",
+      "offset": "0x1F38",
+      "length": "999 bytes (1 byte / Image)",
+      "description": "How the image is drawn. Values 2 to 7, 12 and 16 are set by the game while it runs and are not used in the shipped file.",
+      "values": "Values above 17 are not checked and most likely crash the game when the image is drawn.",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "Normal. The only value that cloaking and hallucination change"
+        },
+        {
+          "bit": "0x01",
+          "value": "Normal, but stays normal on a cloaked or hallucinated unit (blood splats, Shield Battery charge, Installation doodads)"
+        },
+        {
+          "bit": "0x02",
+          "value": "Cloaking (used by the game while a unit cloaks)"
+        },
+        {
+          "bit": "0x03",
+          "value": "Cloaked (used by the game)"
+        },
+        {
+          "bit": "0x04",
+          "value": "Decloaking (used by the game)"
+        },
+        {
+          "bit": "0x05",
+          "value": "Cloaking, seen through (used by the game)"
+        },
+        {
+          "bit": "0x06",
+          "value": "Cloaked, seen through (used by the game)"
+        },
+        {
+          "bit": "0x07",
+          "value": "Decloaking, seen through (used by the game)"
+        },
+        {
+          "bit": "0x08",
+          "value": "EMP shockwave distortion"
+        },
+        {
+          "bit": "0x09",
+          "value": "Colour remapping through the table chosen by Remapping (glows, fire, explosions)"
+        },
+        {
+          "bit": "0x0A",
+          "value": "Shadow: darkens what is underneath"
+        },
+        {
+          "bit": "0x0B",
+          "value": "Health bar: draws the hit point, shield and energy bar instead of the GRP"
+        },
+        {
+          "bit": "0x0C",
+          "value": "Protoss warp-in texture (used by the game)"
+        },
+        {
+          "bit": "0x0D",
+          "value": "Selection circle"
+        },
+        {
+          "bit": "0x0E",
+          "value": "Normal, in the colour of the player who owns the sprite (the Flag)"
+        },
+        {
+          "bit": "0x0F",
+          "value": "Draws only a green outline of the frame (building placement box)"
+        },
+        {
+          "bit": "0x10",
+          "value": "Hallucination (used by the game)"
+        },
+        {
+          "bit": "0x11",
+          "value": "Protoss warp-in fade"
+        }
+      ]
+    },
+    {
+      "name": "Remapping",
+      "offset": "0x231F",
+      "length": "999 bytes (1 byte / Image)",
+      "description": "For Draw Function 9 only: which colour table the image is drawn through. Each table is loaded with the map from Tileset\\<tileset>\\<name>.pcx; every drawn pixel becomes table[GRP pixel, screen pixel]. Ignored for other draw functions.",
+      "values": "Values above 7 read past the list of tables. 0 with Draw Function 9 has no table and most likely crashes the game.",
+      "bits": [
+        {
+          "bit": "0x00",
+          "value": "None"
+        },
+        {
+          "bit": "0x01",
+          "value": "ofire (orange fire and glows)"
+        },
+        {
+          "bit": "0x02",
+          "value": "gfire (green fire)"
+        },
+        {
+          "bit": "0x03",
+          "value": "bfire (blue fire, Protoss glows, shield hit)"
+        },
+        {
+          "bit": "0x04",
+          "value": "bexpl (blue explosions)"
+        },
+        {
+          "bit": "0x05",
+          "value": "trans50 (50% translucency, also used for cloaking)"
+        },
+        {
+          "bit": "0x06",
+          "value": "red (one row only, so most GRP colours read past it)"
+        },
+        {
+          "bit": "0x07",
+          "value": "green (one row only, like red)"
+        }
+      ]
+    },
+    {
+      "name": "Animation Script",
+      "offset": "0x2706",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "The animation script (in scripts\\iscript.bin) that runs the image. It is an ID that the game looks up in the script file's header, not a position; an ID that is not there stops the game with the fatal error \"script %d does not exist\". Several images can share a script.",
+      "values": "Integer value between 0 and 65535; must be an ID in iscript.bin.",
+      "bits": []
+    },
+    {
+      "name": "Shield Overlay",
+      "offset": "0x36A2",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "A file number in arr\\images.tbl, counting from 1; 0 means none. The game loads unit\\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. Where the shield flash (image 424) appears when the unit's shields are hit: the file has one list per direction the unit faces (17), with 32 points for the directions the hit comes from (not mirrored). The game uses it without checking for 0, but only for units with shields. Most unit images have protoss\\mshield.los.",
+      "values": "Integer value between 0 and the number of strings in arr\\images.tbl.",
+      "bits": []
+    },
+    {
+      "name": "Attack Overlay",
+      "offset": "0x463E",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "A file number in arr\\images.tbl, counting from 1; 0 means none. The game loads unit\\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Used for the muzzle flashes of units firing from inside a Bunker (the bunker's own file, terran\\pillbox.loa, one point for each of 8 directions) and by animation script commands that place graphics at an overlay point (imgoluselo and the like) with overlay 0. Not checked for 0.",
+      "values": "Integer value between 0 and the number of strings in arr\\images.tbl.",
+      "bits": []
+    },
+    {
+      "name": "Damage Overlay",
+      "offset": "0x55DA",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "A file number in arr\\images.tbl, counting from 1; 0 means none. The game loads unit\\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Where the fires appear on a damaged building: none above 2/3 of its hit points, then more and larger fires as the hit points drop, at random points of the list. Up to 22 points of the first frame count. 0 means the unit never shows damage fires.",
+      "values": "Integer value between 0 and the number of strings in arr\\images.tbl.",
+      "bits": []
+    },
+    {
+      "name": "Special Overlay",
+      "offset": "0x6576",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "A file number in arr\\images.tbl, counting from 1; 0 means none. The game loads unit\\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Point 0 is where things attached to the image sit: the turret of a unit with a subunit (Siege Tank, Goliath), and overlays created by the animation script commands imgolorig and switchul. creategasoverlays n puts geyser smoke at point n. Also used by the *uselo script commands with overlay 2. Not checked for 0.",
+      "values": "Integer value between 0 and the number of strings in arr\\images.tbl.",
+      "bits": []
+    },
+    {
+      "name": "Landing Dust Overlay",
+      "offset": "0x7512",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "A file number in arr\\images.tbl, counting from 1; 0 means none. The game loads unit\\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Where dust appears when a building lands: dust sprites at points 0 to 8 and mirrored ones at points 16 to 24. 0 means no dust. Points 0 and 1 are also where the two units hatch from a Zergling or Scourge egg (zerg\\zzebirth.lob, zerg\\zavbirth.lob); that use is not checked for 0.",
+      "values": "Integer value between 0 and the number of strings in arr\\images.tbl.",
+      "bits": []
+    },
+    {
+      "name": "Lift-off Dust Overlay",
+      "offset": "0x84AE",
+      "length": "3996 bytes (4 bytes / Image)",
+      "description": "A file number in arr\\images.tbl, counting from 1; 0 means none. The game loads unit\\<string> when the program starts, and stops with a fatal error if the file cannot be opened. An image with the same value as an earlier image in the same field shares its file. The file is a list of points: for each frame of the image's GRP, a number of (x, y) offsets in pixels from the image, as signed bytes; x is mirrored with the image, and (127, 127) means no point. Where dust appears when a building lifts off, used like Landing Dust Overlay. 0 means no dust. StarEdit shows it for buildings placed lifted.",
+      "values": "Integer value between 0 and the number of strings in arr\\images.tbl.",
+      "bits": []
+    }
+  ],
+  "appendices": [
+    {
+      "name": "Appendix: Images list",
+      "description": "Every image, with its GRP file from arr\\images.tbl in the shipped data (all under unit\\). Images 755 to 998 only exist in Brood War.",
+      "values": null,
+      "bits": [
+        {
+          "bit": "0x000",
+          "value": "zerg\\avenger.grp"
+        },
+        {
+          "bit": "0x001",
+          "value": "zerg\\avenger.grp"
+        },
+        {
+          "bit": "0x002",
+          "value": "zerg\\zavBirth.grp"
+        },
+        {
+          "bit": "0x003",
+          "value": "zerg\\zavDeath.grp"
+        },
+        {
+          "bit": "0x004",
+          "value": "zerg\\zavExplo.grp"
+        },
+        {
+          "bit": "0x005",
+          "value": "zerg\\brood.grp"
+        },
+        {
+          "bit": "0x006",
+          "value": "zerg\\zbrShad.grp"
+        },
+        {
+          "bit": "0x007",
+          "value": "zerg\\zbrDeath.grp"
+        },
+        {
+          "bit": "0x008",
+          "value": "zerg\\bugguy.grp"
+        },
+        {
+          "bit": "0x009",
+          "value": "zerg\\zbgShad.grp"
+        },
+        {
+          "bit": "0x00A",
+          "value": "thingy\\zbgExplo.grp"
+        },
+        {
+          "bit": "0x00B",
+          "value": "zerg\\cocoon.grp"
+        },
+        {
+          "bit": "0x00C",
+          "value": "zerg\\cocoon.grp"
+        },
+        {
+          "bit": "0x00D",
+          "value": "zerg\\defiler.grp"
+        },
+        {
+          "bit": "0x00E",
+          "value": "zerg\\defiler.grp"
+        },
+        {
+          "bit": "0x00F",
+          "value": "zerg\\zdebirth.grp"
+        },
+        {
+          "bit": "0x010",
+          "value": "zerg\\zdeDeath.grp"
+        },
+        {
+          "bit": "0x011",
+          "value": "zerg\\drone.grp"
+        },
+        {
+          "bit": "0x012",
+          "value": "zerg\\drone.grp"
+        },
+        {
+          "bit": "0x013",
+          "value": "zerg\\zdrbirth.grp"
+        },
+        {
+          "bit": "0x014",
+          "value": "zerg\\zdrDeath.grp"
+        },
+        {
+          "bit": "0x015",
+          "value": "zerg\\egg.grp"
+        },
+        {
+          "bit": "0x016",
+          "value": "zerg\\zegShad.grp"
+        },
+        {
+          "bit": "0x017",
+          "value": "zerg\\zegspawn.grp"
+        },
+        {
+          "bit": "0x018",
+          "value": "zerg\\zegDeath.grp"
+        },
+        {
+          "bit": "0x019",
+          "value": "zerg\\guardian.grp"
+        },
+        {
+          "bit": "0x01A",
+          "value": "zerg\\guardian.grp"
+        },
+        {
+          "bit": "0x01B",
+          "value": "zerg\\cocoon.grp"
+        },
+        {
+          "bit": "0x01C",
+          "value": "zerg\\zguDeath.grp"
+        },
+        {
+          "bit": "0x01D",
+          "value": "zerg\\hydra.grp"
+        },
+        {
+          "bit": "0x01E",
+          "value": "zerg\\zhyShad.grp"
+        },
+        {
+          "bit": "0x01F",
+          "value": "zerg\\zhybirth.grp"
+        },
+        {
+          "bit": "0x020",
+          "value": "zerg\\zhyDeath.grp"
+        },
+        {
+          "bit": "0x021",
+          "value": "zerg\\uikerr.grp"
+        },
+        {
+          "bit": "0x022",
+          "value": "zerg\\uikShad.grp"
+        },
+        {
+          "bit": "0x023",
+          "value": "thingy\\spooge.grp"
+        },
+        {
+          "bit": "0x024",
+          "value": "zerg\\larva.grp"
+        },
+        {
+          "bit": "0x025",
+          "value": "zerg\\zlaDeath.grp"
+        },
+        {
+          "bit": "0x026",
+          "value": "zerg\\mutalid.grp"
+        },
+        {
+          "bit": "0x027",
+          "value": "zerg\\mutalid.grp"
+        },
+        {
+          "bit": "0x028",
+          "value": "zerg\\zmubirth.grp"
+        },
+        {
+          "bit": "0x029",
+          "value": "zerg\\zmuDeath.grp"
+        },
+        {
+          "bit": "0x02A",
+          "value": "zerg\\overlord.grp"
+        },
+        {
+          "bit": "0x02B",
+          "value": "zerg\\overlord.grp"
+        },
+        {
+          "bit": "0x02C",
+          "value": "zerg\\zovBirth.grp"
+        },
+        {
+          "bit": "0x02D",
+          "value": "zerg\\zovDeath.grp"
+        },
+        {
+          "bit": "0x02E",
+          "value": "zerg\\queen.grp"
+        },
+        {
+          "bit": "0x02F",
+          "value": "zerg\\queen.grp"
+        },
+        {
+          "bit": "0x030",
+          "value": "zerg\\zquDeath.grp"
+        },
+        {
+          "bit": "0x031",
+          "value": "zerg\\zquBirth.grp"
+        },
+        {
+          "bit": "0x032",
+          "value": "zerg\\ultra.grp"
+        },
+        {
+          "bit": "0x033",
+          "value": "zerg\\zulShad.grp"
+        },
+        {
+          "bit": "0x034",
+          "value": "zerg\\zulbirth.grp"
+        },
+        {
+          "bit": "0x035",
+          "value": "zerg\\zulDeath.grp"
+        },
+        {
+          "bit": "0x036",
+          "value": "zerg\\zergling.grp"
+        },
+        {
+          "bit": "0x037",
+          "value": "zerg\\zzeShad.grp"
+        },
+        {
+          "bit": "0x038",
+          "value": "zerg\\zzebirth.grp"
+        },
+        {
+          "bit": "0x039",
+          "value": "zerg\\zzeDeath.grp"
+        },
+        {
+          "bit": "0x03A",
+          "value": "thingy\\zAirDthL.grp"
+        },
+        {
+          "bit": "0x03B",
+          "value": "thingy\\zAirDthS.grp"
+        },
+        {
+          "bit": "0x03C",
+          "value": "thingy\\zBldDthS.grp"
+        },
+        {
+          "bit": "0x03D",
+          "value": "zerg\\UCereb.grp"
+        },
+        {
+          "bit": "0x03E",
+          "value": "zerg\\zucShad.grp"
+        },
+        {
+          "bit": "0x03F",
+          "value": "terran\\control.grp"
+        },
+        {
+          "bit": "0x040",
+          "value": "zerg\\chrysal.grp"
+        },
+        {
+          "bit": "0x041",
+          "value": "zerg\\zchShad.grp"
+        },
+        {
+          "bit": "0x042",
+          "value": "zerg\\cerebrat.grp"
+        },
+        {
+          "bit": "0x043",
+          "value": "zerg\\zceShad.grp"
+        },
+        {
+          "bit": "0x044",
+          "value": "zerg\\fcolony.grp"
+        },
+        {
+          "bit": "0x045",
+          "value": "zerg\\zfcShad.grp"
+        },
+        {
+          "bit": "0x046",
+          "value": "zerg\\hatchery.grp"
+        },
+        {
+          "bit": "0x047",
+          "value": "zerg\\zhaShad.grp"
+        },
+        {
+          "bit": "0x048",
+          "value": "Zerg\\Hive.grp"
+        },
+        {
+          "bit": "0x049",
+          "value": "zerg\\zhiShad.grp"
+        },
+        {
+          "bit": "0x04A",
+          "value": "zerg\\Lair.grp"
+        },
+        {
+          "bit": "0x04B",
+          "value": "zerg\\zlrShad.grp"
+        },
+        {
+          "bit": "0x04C",
+          "value": "zerg\\Lurker.grp"
+        },
+        {
+          "bit": "0x04D",
+          "value": "zerg\\zluShad.grp"
+        },
+        {
+          "bit": "0x04E",
+          "value": "neutral\\kerrChry.grp"
+        },
+        {
+          "bit": "0x04F",
+          "value": "neutral\\nkoShad.grp"
+        },
+        {
+          "bit": "0x050",
+          "value": "zerg\\MutaCham.grp"
+        },
+        {
+          "bit": "0x051",
+          "value": "zerg\\zmcShad.grp"
+        },
+        {
+          "bit": "0x052",
+          "value": "zerg\\Mutapit.grp"
+        },
+        {
+          "bit": "0x053",
+          "value": "zerg\\zmhShad.grp"
+        },
+        {
+          "bit": "0x054",
+          "value": "zerg\\nest.grp"
+        },
+        {
+          "bit": "0x055",
+          "value": "zerg\\zneShad.grp"
+        },
+        {
+          "bit": "0x056",
+          "value": "zerg\\NydusPit.grp"
+        },
+        {
+          "bit": "0x057",
+          "value": "zerg\\znyShad.grp"
+        },
+        {
+          "bit": "0x058",
+          "value": "zerg\\Over1.grp"
+        },
+        {
+          "bit": "0x059",
+          "value": "zerg\\Over2.grp"
+        },
+        {
+          "bit": "0x05A",
+          "value": "zerg\\Over2.grp"
+        },
+        {
+          "bit": "0x05B",
+          "value": "zerg\\RCluster.grp"
+        },
+        {
+          "bit": "0x05C",
+          "value": "zerg\\zrcShad.grp"
+        },
+        {
+          "bit": "0x05D",
+          "value": "zerg\\Extract.grp"
+        },
+        {
+          "bit": "0x05E",
+          "value": "zerg\\zreShad.grp"
+        },
+        {
+          "bit": "0x05F",
+          "value": "zerg\\Snakey.grp"
+        },
+        {
+          "bit": "0x060",
+          "value": "zerg\\zsbShad.grp"
+        },
+        {
+          "bit": "0x061",
+          "value": "zerg\\spire.grp"
+        },
+        {
+          "bit": "0x062",
+          "value": "zerg\\zspShad.grp"
+        },
+        {
+          "bit": "0x063",
+          "value": "zerg\\SColony.grp"
+        },
+        {
+          "bit": "0x064",
+          "value": "zerg\\zscShad.grp"
+        },
+        {
+          "bit": "0x065",
+          "value": "zerg\\Infest03.grp"
+        },
+        {
+          "bit": "0x066",
+          "value": "zerg\\ZBuild.grp"
+        },
+        {
+          "bit": "0x067",
+          "value": "zerg\\ZBuild.grp"
+        },
+        {
+          "bit": "0x068",
+          "value": "zerg\\ZBuild.grp"
+        },
+        {
+          "bit": "0x069",
+          "value": "zerg\\ZBuild.grp"
+        },
+        {
+          "bit": "0x06A",
+          "value": "zerg\\ZBShad.grp"
+        },
+        {
+          "bit": "0x06B",
+          "value": "zerg\\zSpawn01.grp"
+        },
+        {
+          "bit": "0x06C",
+          "value": "zerg\\zSpawn02.grp"
+        },
+        {
+          "bit": "0x06D",
+          "value": "zerg\\zSpawn03.grp"
+        },
+        {
+          "bit": "0x06E",
+          "value": "thingy\\ZRubbleS.grp"
+        },
+        {
+          "bit": "0x06F",
+          "value": "thingy\\ZRubbleL.grp"
+        },
+        {
+          "bit": "0x070",
+          "value": "protoss\\carrier.grp"
+        },
+        {
+          "bit": "0x071",
+          "value": "protoss\\carrier.grp"
+        },
+        {
+          "bit": "0x072",
+          "value": "thingy\\pcaGlow.grp"
+        },
+        {
+          "bit": "0x073",
+          "value": "protoss\\carrier.grp"
+        },
+        {
+          "bit": "0x074",
+          "value": "protoss\\Intercep.grp"
+        },
+        {
+          "bit": "0x075",
+          "value": "protoss\\Intercep.grp"
+        },
+        {
+          "bit": "0x076",
+          "value": "protoss\\shuttle.grp"
+        },
+        {
+          "bit": "0x077",
+          "value": "protoss\\shuttle.grp"
+        },
+        {
+          "bit": "0x078",
+          "value": "thingy\\pshGlow.grp"
+        },
+        {
+          "bit": "0x079",
+          "value": "protoss\\shuttle.grp"
+        },
+        {
+          "bit": "0x07A",
+          "value": "protoss\\dragoon.grp"
+        },
+        {
+          "bit": "0x07B",
+          "value": "protoss\\pdrShad.grp"
+        },
+        {
+          "bit": "0x07C",
+          "value": "protoss\\pdrDeath.grp"
+        },
+        {
+          "bit": "0x07D",
+          "value": "protoss\\dragoon.grp"
+        },
+        {
+          "bit": "0x07E",
+          "value": "protoss\\templar.grp"
+        },
+        {
+          "bit": "0x07F",
+          "value": "protoss\\pteShad.grp"
+        },
+        {
+          "bit": "0x080",
+          "value": "protoss\\templar.grp"
+        },
+        {
+          "bit": "0x081",
+          "value": "protoss\\dtemplar.grp"
+        },
+        {
+          "bit": "0x082",
+          "value": "protoss\\arbiter.grp"
+        },
+        {
+          "bit": "0x083",
+          "value": "protoss\\arbiter.grp"
+        },
+        {
+          "bit": "0x084",
+          "value": "thingy\\pabGlow.grp"
+        },
+        {
+          "bit": "0x085",
+          "value": "protoss\\arbiter.grp"
+        },
+        {
+          "bit": "0x086",
+          "value": "protoss\\archon.grp"
+        },
+        {
+          "bit": "0x087",
+          "value": "protoss\\archonT.grp"
+        },
+        {
+          "bit": "0x088",
+          "value": "protoss\\archonT2.grp"
+        },
+        {
+          "bit": "0x089",
+          "value": "protoss\\probe.grp"
+        },
+        {
+          "bit": "0x08A",
+          "value": "protoss\\probe.grp"
+        },
+        {
+          "bit": "0x08B",
+          "value": "protoss\\probe.grp"
+        },
+        {
+          "bit": "0x08C",
+          "value": "protoss\\scout.grp"
+        },
+        {
+          "bit": "0x08D",
+          "value": "protoss\\scout.grp"
+        },
+        {
+          "bit": "0x08E",
+          "value": "thingy\\pscGlow.grp"
+        },
+        {
+          "bit": "0x08F",
+          "value": "protoss\\scout.grp"
+        },
+        {
+          "bit": "0x090",
+          "value": "protoss\\trilob.grp"
+        },
+        {
+          "bit": "0x091",
+          "value": "protoss\\ptrShad.grp"
+        },
+        {
+          "bit": "0x092",
+          "value": "protoss\\trilob.grp"
+        },
+        {
+          "bit": "0x093",
+          "value": "protoss\\sapper.grp"
+        },
+        {
+          "bit": "0x094",
+          "value": "protoss\\witness.grp"
+        },
+        {
+          "bit": "0x095",
+          "value": "protoss\\witness.grp"
+        },
+        {
+          "bit": "0x096",
+          "value": "protoss\\witness.grp"
+        },
+        {
+          "bit": "0x097",
+          "value": "protoss\\zealot.grp"
+        },
+        {
+          "bit": "0x098",
+          "value": "protoss\\pzeShad.grp"
+        },
+        {
+          "bit": "0x099",
+          "value": "protoss\\zealot.grp"
+        },
+        {
+          "bit": "0x09A",
+          "value": "protoss\\zealot.grp"
+        },
+        {
+          "bit": "0x09B",
+          "value": "protoss\\archives.grp"
+        },
+        {
+          "bit": "0x09C",
+          "value": "protoss\\archives.grp"
+        },
+        {
+          "bit": "0x09D",
+          "value": "protoss\\pacShad.grp"
+        },
+        {
+          "bit": "0x09E",
+          "value": "protoss\\assim.grp"
+        },
+        {
+          "bit": "0x09F",
+          "value": "protoss\\assim.grp"
+        },
+        {
+          "bit": "0x0A0",
+          "value": "protoss\\pasShad.grp"
+        },
+        {
+          "bit": "0x0A1",
+          "value": "protoss\\beacon.grp"
+        },
+        {
+          "bit": "0x0A2",
+          "value": "protoss\\beacon.grp"
+        },
+        {
+          "bit": "0x0A3",
+          "value": "protoss\\pbeShad.grp"
+        },
+        {
+          "bit": "0x0A4",
+          "value": "protoss\\citadel.grp"
+        },
+        {
+          "bit": "0x0A5",
+          "value": "protoss\\citadel.grp"
+        },
+        {
+          "bit": "0x0A6",
+          "value": "protoss\\pciShad.grp"
+        },
+        {
+          "bit": "0x0A7",
+          "value": "protoss\\forge.grp"
+        },
+        {
+          "bit": "0x0A8",
+          "value": "protoss\\forgeT.grp"
+        },
+        {
+          "bit": "0x0A9",
+          "value": "protoss\\forge.grp"
+        },
+        {
+          "bit": "0x0AA",
+          "value": "protoss\\pfoShad.grp"
+        },
+        {
+          "bit": "0x0AB",
+          "value": "protoss\\gateway.grp"
+        },
+        {
+          "bit": "0x0AC",
+          "value": "protoss\\gateway.grp"
+        },
+        {
+          "bit": "0x0AD",
+          "value": "protoss\\pgaShad.grp"
+        },
+        {
+          "bit": "0x0AE",
+          "value": "protoss\\gencore.grp"
+        },
+        {
+          "bit": "0x0AF",
+          "value": "protoss\\gencore.grp"
+        },
+        {
+          "bit": "0x0B0",
+          "value": "protoss\\gencoreT.grp"
+        },
+        {
+          "bit": "0x0B1",
+          "value": "protoss\\pgcShad.grp"
+        },
+        {
+          "bit": "0x0B2",
+          "value": "neutral\\Khyad01.grp"
+        },
+        {
+          "bit": "0x0B3",
+          "value": "protoss\\nexus.grp"
+        },
+        {
+          "bit": "0x0B4",
+          "value": "protoss\\nexus.grp"
+        },
+        {
+          "bit": "0x0B5",
+          "value": "protoss\\pneGlow.grp"
+        },
+        {
+          "bit": "0x0B6",
+          "value": "protoss\\pneShad.grp"
+        },
+        {
+          "bit": "0x0B7",
+          "value": "protoss\\photon.grp"
+        },
+        {
+          "bit": "0x0B8",
+          "value": "protoss\\ppbShad.grp"
+        },
+        {
+          "bit": "0x0B9",
+          "value": "protoss\\photon.grp"
+        },
+        {
+          "bit": "0x0BA",
+          "value": "protoss\\prism.grp"
+        },
+        {
+          "bit": "0x0BB",
+          "value": "protoss\\prism.grp"
+        },
+        {
+          "bit": "0x0BC",
+          "value": "protoss\\pauShad.grp"
+        },
+        {
+          "bit": "0x0BD",
+          "value": "protoss\\pylon.grp"
+        },
+        {
+          "bit": "0x0BE",
+          "value": "protoss\\pylon.grp"
+        },
+        {
+          "bit": "0x0BF",
+          "value": "protoss\\ppyShad.grp"
+        },
+        {
+          "bit": "0x0C0",
+          "value": "protoss\\robotic.grp"
+        },
+        {
+          "bit": "0x0C1",
+          "value": "protoss\\robotic.grp"
+        },
+        {
+          "bit": "0x0C2",
+          "value": "protoss\\proShad.grp"
+        },
+        {
+          "bit": "0x0C3",
+          "value": "protoss\\sbattery.grp"
+        },
+        {
+          "bit": "0x0C4",
+          "value": "protoss\\pbaGlow.grp"
+        },
+        {
+          "bit": "0x0C5",
+          "value": "protoss\\sbattery.grp"
+        },
+        {
+          "bit": "0x0C6",
+          "value": "protoss\\pbaShad.grp"
+        },
+        {
+          "bit": "0x0C7",
+          "value": "protoss\\stargate.grp"
+        },
+        {
+          "bit": "0x0C8",
+          "value": "protoss\\psgGlow.grp"
+        },
+        {
+          "bit": "0x0C9",
+          "value": "protoss\\stargate.grp"
+        },
+        {
+          "bit": "0x0CA",
+          "value": "protoss\\psgShad.grp"
+        },
+        {
+          "bit": "0x0CB",
+          "value": "neutral\\stasis.grp"
+        },
+        {
+          "bit": "0x0CC",
+          "value": "protoss\\stasis.grp"
+        },
+        {
+          "bit": "0x0CD",
+          "value": "protoss\\stasis.grp"
+        },
+        {
+          "bit": "0x0CE",
+          "value": "protoss\\pstShad.grp"
+        },
+        {
+          "bit": "0x0CF",
+          "value": "neutral\\temple.grp"
+        },
+        {
+          "bit": "0x0D0",
+          "value": "protoss\\warp.grp"
+        },
+        {
+          "bit": "0x0D1",
+          "value": "protoss\\warp.grp"
+        },
+        {
+          "bit": "0x0D2",
+          "value": "protoss\\texture.grp"
+        },
+        {
+          "bit": "0x0D3",
+          "value": "protoss\\pb1Glow.grp"
+        },
+        {
+          "bit": "0x0D4",
+          "value": "protoss\\pwaShad.grp"
+        },
+        {
+          "bit": "0x0D5",
+          "value": "thingy\\tBangS.grp"
+        },
+        {
+          "bit": "0x0D6",
+          "value": "thingy\\tBangL.grp"
+        },
+        {
+          "bit": "0x0D7",
+          "value": "thingy\\tBangX.grp"
+        },
+        {
+          "bit": "0x0D8",
+          "value": "thingy\\PRubbleS.grp"
+        },
+        {
+          "bit": "0x0D9",
+          "value": "thingy\\PRubbleL.grp"
+        },
+        {
+          "bit": "0x0DA",
+          "value": "terran\\BattleCr.grp"
+        },
+        {
+          "bit": "0x0DB",
+          "value": "terran\\BattleCr.grp"
+        },
+        {
+          "bit": "0x0DC",
+          "value": "thingy\\tbaGlow.grp"
+        },
+        {
+          "bit": "0x0DD",
+          "value": "neutral\\civilian.grp"
+        },
+        {
+          "bit": "0x0DE",
+          "value": "neutral\\nciShad.grp"
+        },
+        {
+          "bit": "0x0DF",
+          "value": "terran\\dropship.grp"
+        },
+        {
+          "bit": "0x0E0",
+          "value": "terran\\dropship.grp"
+        },
+        {
+          "bit": "0x0E1",
+          "value": "thingy\\tdrGlow.grp"
+        },
+        {
+          "bit": "0x0E2",
+          "value": "terran\\firebat.grp"
+        },
+        {
+          "bit": "0x0E3",
+          "value": "terran\\tfbShad.grp"
+        },
+        {
+          "bit": "0x0E4",
+          "value": "terran\\ghost.grp"
+        },
+        {
+          "bit": "0x0E5",
+          "value": "terran\\tghShad.grp"
+        },
+        {
+          "bit": "0x0E6",
+          "value": "terran\\tghDeath.grp"
+        },
+        {
+          "bit": "0x0E7",
+          "value": "terran\\ghost.grp"
+        },
+        {
+          "bit": "0x0E8",
+          "value": "thingy\\NukeBeam.grp"
+        },
+        {
+          "bit": "0x0E9",
+          "value": "thingy\\NukeTarg.grp"
+        },
+        {
+          "bit": "0x0EA",
+          "value": "terran\\goliath.grp"
+        },
+        {
+          "bit": "0x0EB",
+          "value": "terran\\goliathT.grp"
+        },
+        {
+          "bit": "0x0EC",
+          "value": "terran\\tgoShad.grp"
+        },
+        {
+          "bit": "0x0ED",
+          "value": "terran\\ughost.grp"
+        },
+        {
+          "bit": "0x0EE",
+          "value": "terran\\ughShad.grp"
+        },
+        {
+          "bit": "0x0EF",
+          "value": "terran\\marine.grp"
+        },
+        {
+          "bit": "0x0F0",
+          "value": "terran\\tmaShad.grp"
+        },
+        {
+          "bit": "0x0F1",
+          "value": "terran\\tmaDeath.grp"
+        },
+        {
+          "bit": "0x0F2",
+          "value": "terran\\marine.grp"
+        },
+        {
+          "bit": "0x0F3",
+          "value": "terran\\phoenix.grp"
+        },
+        {
+          "bit": "0x0F4",
+          "value": "terran\\phoenix.grp"
+        },
+        {
+          "bit": "0x0F5",
+          "value": "thingy\\tphGlow.grp"
+        },
+        {
+          "bit": "0x0F6",
+          "value": "terran\\marine.grp"
+        },
+        {
+          "bit": "0x0F7",
+          "value": "terran\\SCV.grp"
+        },
+        {
+          "bit": "0x0F8",
+          "value": "terran\\SCV.grp"
+        },
+        {
+          "bit": "0x0F9",
+          "value": "thingy\\tscGlow.grp"
+        },
+        {
+          "bit": "0x0FA",
+          "value": "terran\\tank.grp"
+        },
+        {
+          "bit": "0x0FB",
+          "value": "terran\\tankt.grp"
+        },
+        {
+          "bit": "0x0FC",
+          "value": "terran\\ttaShad.grp"
+        },
+        {
+          "bit": "0x0FD",
+          "value": "terran\\stank.grp"
+        },
+        {
+          "bit": "0x0FE",
+          "value": "terran\\stankt.grp"
+        },
+        {
+          "bit": "0x0FF",
+          "value": "terran\\tstShad.grp"
+        },
+        {
+          "bit": "0x100",
+          "value": "terran\\Vulture.grp"
+        },
+        {
+          "bit": "0x101",
+          "value": "terran\\Vulture.grp"
+        },
+        {
+          "bit": "0x102",
+          "value": "terran\\Spider.grp"
+        },
+        {
+          "bit": "0x103",
+          "value": "terran\\tsmShad.grp"
+        },
+        {
+          "bit": "0x104",
+          "value": "terran\\wessel.grp"
+        },
+        {
+          "bit": "0x105",
+          "value": "terran\\wesselt.grp"
+        },
+        {
+          "bit": "0x106",
+          "value": "terran\\tveShad.grp"
+        },
+        {
+          "bit": "0x107",
+          "value": "terran\\Academy.grp"
+        },
+        {
+          "bit": "0x108",
+          "value": "terran\\AcademyT.grp"
+        },
+        {
+          "bit": "0x109",
+          "value": "terran\\tacShad.grp"
+        },
+        {
+          "bit": "0x10A",
+          "value": "terran\\TBarrack.grp"
+        },
+        {
+          "bit": "0x10B",
+          "value": "terran\\tbrShad.grp"
+        },
+        {
+          "bit": "0x10C",
+          "value": "terran\\chemlab.grp"
+        },
+        {
+          "bit": "0x10D",
+          "value": "terran\\chemlabT.grp"
+        },
+        {
+          "bit": "0x10E",
+          "value": "terran\\tclShad.grp"
+        },
+        {
+          "bit": "0x10F",
+          "value": "terran\\ComSat.grp"
+        },
+        {
+          "bit": "0x110",
+          "value": "terran\\ComSatC.grp"
+        },
+        {
+          "bit": "0x111",
+          "value": "terran\\ComSatT.grp"
+        },
+        {
+          "bit": "0x112",
+          "value": "terran\\tcsShad.grp"
+        },
+        {
+          "bit": "0x113",
+          "value": "terran\\control.grp"
+        },
+        {
+          "bit": "0x114",
+          "value": "terran\\controlT.grp"
+        },
+        {
+          "bit": "0x115",
+          "value": "terran\\tccShad.grp"
+        },
+        {
+          "bit": "0x116",
+          "value": "terran\\Depot.grp"
+        },
+        {
+          "bit": "0x117",
+          "value": "terran\\DepotT.grp"
+        },
+        {
+          "bit": "0x118",
+          "value": "terran\\tdeShad.grp"
+        },
+        {
+          "bit": "0x119",
+          "value": "terran\\DryDocks.grp"
+        },
+        {
+          "bit": "0x11A",
+          "value": "terran\\DryDockC.grp"
+        },
+        {
+          "bit": "0x11B",
+          "value": "terran\\DryDockT.grp"
+        },
+        {
+          "bit": "0x11C",
+          "value": "terran\\tddShad.grp"
+        },
+        {
+          "bit": "0x11D",
+          "value": "terran\\factory.grp"
+        },
+        {
+          "bit": "0x11E",
+          "value": "terran\\factoryT.grp"
+        },
+        {
+          "bit": "0x11F",
+          "value": "terran\\tfaShad.grp"
+        },
+        {
+          "bit": "0x120",
+          "value": "terran\\GeneLab.grp"
+        },
+        {
+          "bit": "0x121",
+          "value": "terran\\GeneLabC.grp"
+        },
+        {
+          "bit": "0x122",
+          "value": "terran\\GeneLabT.grp"
+        },
+        {
+          "bit": "0x123",
+          "value": "terran\\tglShad.grp"
+        },
+        {
+          "bit": "0x124",
+          "value": "neutral\\ion.grp"
+        },
+        {
+          "bit": "0x125",
+          "value": "terran\\machines.grp"
+        },
+        {
+          "bit": "0x126",
+          "value": "terran\\machineC.grp"
+        },
+        {
+          "bit": "0x127",
+          "value": "terran\\tmsShad.grp"
+        },
+        {
+          "bit": "0x128",
+          "value": "terran\\missile.grp"
+        },
+        {
+          "bit": "0x129",
+          "value": "terran\\missileT.grp"
+        },
+        {
+          "bit": "0x12A",
+          "value": "terran\\tmiShad.grp"
+        },
+        {
+          "bit": "0x12B",
+          "value": "neutral\\Cbattle.grp"
+        },
+        {
+          "bit": "0x12C",
+          "value": "neutral\\cbaShad.grp"
+        },
+        {
+          "bit": "0x12D",
+          "value": "terran\\physics.grp"
+        },
+        {
+          "bit": "0x12E",
+          "value": "terran\\physicsC.grp"
+        },
+        {
+          "bit": "0x12F",
+          "value": "terran\\tplShad.grp"
+        },
+        {
+          "bit": "0x130",
+          "value": "terran\\PillBox.grp"
+        },
+        {
+          "bit": "0x131",
+          "value": "terran\\tpbShad.grp"
+        },
+        {
+          "bit": "0x132",
+          "value": "terran\\PillBoxT.grp"
+        },
+        {
+          "bit": "0x133",
+          "value": "terran\\refinery.grp"
+        },
+        {
+          "bit": "0x134",
+          "value": "terran\\treShad.grp"
+        },
+        {
+          "bit": "0x135",
+          "value": "terran\\research.grp"
+        },
+        {
+          "bit": "0x136",
+          "value": "terran\\ResearcT.grp"
+        },
+        {
+          "bit": "0x137",
+          "value": "terran\\trlShad.grp"
+        },
+        {
+          "bit": "0x138",
+          "value": "terran\\nukesilo.grp"
+        },
+        {
+          "bit": "0x139",
+          "value": "terran\\NukeSilC.grp"
+        },
+        {
+          "bit": "0x13A",
+          "value": "terran\\NukeSilT.grp"
+        },
+        {
+          "bit": "0x13B",
+          "value": "terran\\tnsShad.grp"
+        },
+        {
+          "bit": "0x13C",
+          "value": "terran\\nukemiss.grp"
+        },
+        {
+          "bit": "0x13D",
+          "value": "terran\\nukemiss.grp"
+        },
+        {
+          "bit": "0x13E",
+          "value": "thingy\\NukeHit.grp"
+        },
+        {
+          "bit": "0x13F",
+          "value": "terran\\starport.grp"
+        },
+        {
+          "bit": "0x140",
+          "value": "terran\\StarpoT.grp"
+        },
+        {
+          "bit": "0x141",
+          "value": "terran\\tspShad.grp"
+        },
+        {
+          "bit": "0x142",
+          "value": "terran\\weaponpl.grp"
+        },
+        {
+          "bit": "0x143",
+          "value": "terran\\weaponpT.grp"
+        },
+        {
+          "bit": "0x144",
+          "value": "terran\\twpShad.grp"
+        },
+        {
+          "bit": "0x145",
+          "value": "terran\\TBldLrg.grp"
+        },
+        {
+          "bit": "0x146",
+          "value": "terran\\tb2Shad.grp"
+        },
+        {
+          "bit": "0x147",
+          "value": "terran\\tBldMed.grp"
+        },
+        {
+          "bit": "0x148",
+          "value": "terran\\tb3Shad.grp"
+        },
+        {
+          "bit": "0x149",
+          "value": "terran\\TBldSml.grp"
+        },
+        {
+          "bit": "0x14A",
+          "value": "terran\\TBldSml.grp"
+        },
+        {
+          "bit": "0x14B",
+          "value": "terran\\tb1Shad.grp"
+        },
+        {
+          "bit": "0x14C",
+          "value": "thingy\\tBangS.grp"
+        },
+        {
+          "bit": "0x14D",
+          "value": "thingy\\tBangL.grp"
+        },
+        {
+          "bit": "0x14E",
+          "value": "thingy\\tBangX.grp"
+        },
+        {
+          "bit": "0x14F",
+          "value": "thingy\\RubbleS.grp"
+        },
+        {
+          "bit": "0x150",
+          "value": "thingy\\RubbleL.grp"
+        },
+        {
+          "bit": "0x151",
+          "value": "thingy\\Dswarm.grp"
+        },
+        {
+          "bit": "0x152",
+          "value": "neutral\\Acritter.grp"
+        },
+        {
+          "bit": "0x153",
+          "value": "neutral\\nacShad.grp"
+        },
+        {
+          "bit": "0x154",
+          "value": "neutral\\Bcritter.grp"
+        },
+        {
+          "bit": "0x155",
+          "value": "neutral\\nbcShad.grp"
+        },
+        {
+          "bit": "0x156",
+          "value": "neutral\\Jcritter.grp"
+        },
+        {
+          "bit": "0x157",
+          "value": "neutral\\njcShad.grp"
+        },
+        {
+          "bit": "0x158",
+          "value": "neutral\\geyser.grp"
+        },
+        {
+          "bit": "0x159",
+          "value": "neutral\\geyser.grp"
+        },
+        {
+          "bit": "0x15A",
+          "value": "neutral\\geyShad.grp"
+        },
+        {
+          "bit": "0x15B",
+          "value": "neutral\\min01.grp"
+        },
+        {
+          "bit": "0x15C",
+          "value": "neutral\\min01Sha.grp"
+        },
+        {
+          "bit": "0x15D",
+          "value": "neutral\\min02.grp"
+        },
+        {
+          "bit": "0x15E",
+          "value": "neutral\\min02Sha.grp"
+        },
+        {
+          "bit": "0x15F",
+          "value": "neutral\\min03.grp"
+        },
+        {
+          "bit": "0x160",
+          "value": "neutral\\min03Sha.grp"
+        },
+        {
+          "bit": "0x161",
+          "value": "protoss\\scout.grp"
+        },
+        {
+          "bit": "0x162",
+          "value": "zerg\\zmarker.grp"
+        },
+        {
+          "bit": "0x163",
+          "value": "zerg\\zCirGlow.grp"
+        },
+        {
+          "bit": "0x164",
+          "value": "terran\\tMarker.grp"
+        },
+        {
+          "bit": "0x165",
+          "value": "terran\\tCirGlow.grp"
+        },
+        {
+          "bit": "0x166",
+          "value": "protoss\\pMarker.grp"
+        },
+        {
+          "bit": "0x167",
+          "value": "protoss\\pCirGlow.grp"
+        },
+        {
+          "bit": "0x168",
+          "value": "thingy\\eldFire.grp"
+        },
+        {
+          "bit": "0x169",
+          "value": "thingy\\eldSmall.grp"
+        },
+        {
+          "bit": "0x16A",
+          "value": "thingy\\eldMed.grp"
+        },
+        {
+          "bit": "0x16B",
+          "value": "thingy\\eldLarge.grp"
+        },
+        {
+          "bit": "0x16C",
+          "value": "thingy\\esfHit.grp"
+        },
+        {
+          "bit": "0x16D",
+          "value": "thingy\\esfSmall.grp"
+        },
+        {
+          "bit": "0x16E",
+          "value": "thingy\\esfSmall.grp"
+        },
+        {
+          "bit": "0x16F",
+          "value": "thingy\\esfLarge.grp"
+        },
+        {
+          "bit": "0x170",
+          "value": "thingy\\sbaSmall.grp"
+        },
+        {
+          "bit": "0x171",
+          "value": "thingy\\sbaSmall.grp"
+        },
+        {
+          "bit": "0x172",
+          "value": "thingy\\sbaLarge.grp"
+        },
+        {
+          "bit": "0x173",
+          "value": "thingy\\edmFronS.grp"
+        },
+        {
+          "bit": "0x174",
+          "value": "thingy\\edmFronM.grp"
+        },
+        {
+          "bit": "0x175",
+          "value": "thingy\\edmFronL.grp"
+        },
+        {
+          "bit": "0x176",
+          "value": "thingy\\edmBackS.grp"
+        },
+        {
+          "bit": "0x177",
+          "value": "thingy\\edmBackM.grp"
+        },
+        {
+          "bit": "0x178",
+          "value": "thingy\\edmBackL.grp"
+        },
+        {
+          "bit": "0x179",
+          "value": "thingy\\edmHitS.grp"
+        },
+        {
+          "bit": "0x17A",
+          "value": "thingy\\edmHitM.grp"
+        },
+        {
+          "bit": "0x17B",
+          "value": "thingy\\edmHitL.grp"
+        },
+        {
+          "bit": "0x17C",
+          "value": "thingy\\eradLrg.grp"
+        },
+        {
+          "bit": "0x17D",
+          "value": "thingy\\eradLrg.grp"
+        },
+        {
+          "bit": "0x17E",
+          "value": "thingy\\eradLrg.grp"
+        },
+        {
+          "bit": "0x17F",
+          "value": "thingy\\Ensnare.grp"
+        },
+        {
+          "bit": "0x180",
+          "value": "thingy\\ensGooS.grp"
+        },
+        {
+          "bit": "0x181",
+          "value": "thingy\\ensGooM.grp"
+        },
+        {
+          "bit": "0x182",
+          "value": "thingy\\ensGooL.grp"
+        },
+        {
+          "bit": "0x183",
+          "value": "thingy\\ebbCloud.grp"
+        },
+        {
+          "bit": "0x184",
+          "value": "thingy\\ebbHitS.grp"
+        },
+        {
+          "bit": "0x185",
+          "value": "thingy\\ebbHitM.grp"
+        },
+        {
+          "bit": "0x186",
+          "value": "thingy\\ebbHitL.grp"
+        },
+        {
+          "bit": "0x187",
+          "value": "thingy\\recall.grp"
+        },
+        {
+          "bit": "0x188",
+          "value": "neutral\\Flag.grp"
+        },
+        {
+          "bit": "0x189",
+          "value": "neutral\\KerrEgg.grp"
+        },
+        {
+          "bit": "0x18A",
+          "value": "neutral\\PsiEmit.grp"
+        },
+        {
+          "bit": "0x18B",
+          "value": "neutral\\DataDisk.grp"
+        },
+        {
+          "bit": "0x18C",
+          "value": "neutral\\KhChunk.grp"
+        },
+        {
+          "bit": "0x18D",
+          "value": "neutral\\OreChunk.grp"
+        },
+        {
+          "bit": "0x18E",
+          "value": "neutral\\OreChunk.grp"
+        },
+        {
+          "bit": "0x18F",
+          "value": "neutral\\GasOrb.grp"
+        },
+        {
+          "bit": "0x190",
+          "value": "neutral\\GasOrb.grp"
+        },
+        {
+          "bit": "0x191",
+          "value": "neutral\\GasSac.grp"
+        },
+        {
+          "bit": "0x192",
+          "value": "neutral\\GasSac.grp"
+        },
+        {
+          "bit": "0x193",
+          "value": "neutral\\GasTank.grp"
+        },
+        {
+          "bit": "0x194",
+          "value": "neutral\\GasTank.grp"
+        },
+        {
+          "bit": "0x195",
+          "value": "neutral\\norShad.grp"
+        },
+        {
+          "bit": "0x196",
+          "value": "neutral\\ngoShad.grp"
+        },
+        {
+          "bit": "0x197",
+          "value": "neutral\\ngsShad.grp"
+        },
+        {
+          "bit": "0x198",
+          "value": "neutral\\ngcShad.grp"
+        },
+        {
+          "bit": "0x199",
+          "value": "neutral\\nddShad.grp"
+        },
+        {
+          "bit": "0x19A",
+          "value": "neutral\\nddSha2.grp"
+        },
+        {
+          "bit": "0x19B",
+          "value": "neutral\\nflShad.grp"
+        },
+        {
+          "bit": "0x19C",
+          "value": "neutral\\nflSha2.grp"
+        },
+        {
+          "bit": "0x19D",
+          "value": "neutral\\nkhShad.grp"
+        },
+        {
+          "bit": "0x19E",
+          "value": "neutral\\nkhSha2.grp"
+        },
+        {
+          "bit": "0x19F",
+          "value": "neutral\\nkeShad.grp"
+        },
+        {
+          "bit": "0x1A0",
+          "value": "neutral\\nkeSha2.grp"
+        },
+        {
+          "bit": "0x1A1",
+          "value": "neutral\\npsShad.grp"
+        },
+        {
+          "bit": "0x1A2",
+          "value": "neutral\\npsSha2.grp"
+        },
+        {
+          "bit": "0x1A3",
+          "value": "thingy\\plasma.grp"
+        },
+        {
+          "bit": "0x1A4",
+          "value": "thingy\\PlasDrip.grp"
+        },
+        {
+          "bit": "0x1A5",
+          "value": "thingy\\flamer.grp"
+        },
+        {
+          "bit": "0x1A6",
+          "value": "thingy\\smoke.grp"
+        },
+        {
+          "bit": "0x1A7",
+          "value": "thingy\\bDust.grp"
+        },
+        {
+          "bit": "0x1A8",
+          "value": "thingy\\pshield.grp"
+        },
+        {
+          "bit": "0x1A9",
+          "value": "thingy\\explo2.grp"
+        },
+        {
+          "bit": "0x1AA",
+          "value": "thingy\\dbl_exp.grp"
+        },
+        {
+          "bit": "0x1AB",
+          "value": "thingy\\HKexplod.grp"
+        },
+        {
+          "bit": "0x1AC",
+          "value": "thingy\\small.grp"
+        },
+        {
+          "bit": "0x1AD",
+          "value": "thingy\\tmnExplo.grp"
+        },
+        {
+          "bit": "0x1AE",
+          "value": "thingy\\GeySmok1.grp"
+        },
+        {
+          "bit": "0x1AF",
+          "value": "thingy\\GeySmok2.grp"
+        },
+        {
+          "bit": "0x1B0",
+          "value": "thingy\\GeySmok3.grp"
+        },
+        {
+          "bit": "0x1B1",
+          "value": "thingy\\GeySmok4.grp"
+        },
+        {
+          "bit": "0x1B2",
+          "value": "thingy\\GeySmok5.grp"
+        },
+        {
+          "bit": "0x1B3",
+          "value": "thingy\\GeySmoS1.grp"
+        },
+        {
+          "bit": "0x1B4",
+          "value": "thingy\\GeySmoS1.grp"
+        },
+        {
+          "bit": "0x1B5",
+          "value": "thingy\\GeySmoS1.grp"
+        },
+        {
+          "bit": "0x1B6",
+          "value": "thingy\\GeySmoS1.grp"
+        },
+        {
+          "bit": "0x1B7",
+          "value": "thingy\\GeySmoS1.grp"
+        },
+        {
+          "bit": "0x1B8",
+          "value": "thingy\\efgHit.grp"
+        },
+        {
+          "bit": "0x1B9",
+          "value": "thingy\\GreSmoke.grp"
+        },
+        {
+          "bit": "0x1BA",
+          "value": "thingy\\HKexplod.grp"
+        },
+        {
+          "bit": "0x1BB",
+          "value": "thingy\\HKTrail.grp"
+        },
+        {
+          "bit": "0x1BC",
+          "value": "thingy\\psaExplo.grp"
+        },
+        {
+          "bit": "0x1BD",
+          "value": "thingy\\blackx.grp"
+        },
+        {
+          "bit": "0x1BE",
+          "value": "thingy\\elbBat.grp"
+        },
+        {
+          "bit": "0x1BF",
+          "value": "thingy\\elbHit.grp"
+        },
+        {
+          "bit": "0x1C0",
+          "value": "thingy\\elbMuzz.grp"
+        },
+        {
+          "bit": "0x1C1",
+          "value": "thingy\\pteglow.grp"
+        },
+        {
+          "bit": "0x1C2",
+          "value": "thingy\\oFireC.grp"
+        },
+        {
+          "bit": "0x1C3",
+          "value": "thingy\\oFireF.grp"
+        },
+        {
+          "bit": "0x1C4",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1C5",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1C6",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1C7",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1C8",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1C9",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1CA",
+          "value": "thingy\\bblood01.grp"
+        },
+        {
+          "bit": "0x1CB",
+          "value": "thingy\\bblood02.grp"
+        },
+        {
+          "bit": "0x1CC",
+          "value": "thingy\\bblood03.grp"
+        },
+        {
+          "bit": "0x1CD",
+          "value": "thingy\\bblood04.grp"
+        },
+        {
+          "bit": "0x1CE",
+          "value": "thingy\\bblood01.grp"
+        },
+        {
+          "bit": "0x1CF",
+          "value": "thingy\\bblood02.grp"
+        },
+        {
+          "bit": "0x1D0",
+          "value": "thingy\\bblood03.grp"
+        },
+        {
+          "bit": "0x1D1",
+          "value": "thingy\\bblood04.grp"
+        },
+        {
+          "bit": "0x1D2",
+          "value": "thingy\\oFireC.grp"
+        },
+        {
+          "bit": "0x1D3",
+          "value": "thingy\\oFireF.grp"
+        },
+        {
+          "bit": "0x1D4",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1D5",
+          "value": "thingy\\oFireC.grp"
+        },
+        {
+          "bit": "0x1D6",
+          "value": "thingy\\oFireF.grp"
+        },
+        {
+          "bit": "0x1D7",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1D8",
+          "value": "thingy\\oFireC.grp"
+        },
+        {
+          "bit": "0x1D9",
+          "value": "thingy\\oFireF.grp"
+        },
+        {
+          "bit": "0x1DA",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1DB",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1DC",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1DD",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1DE",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1DF",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1E0",
+          "value": "thingy\\bblood01.grp"
+        },
+        {
+          "bit": "0x1E1",
+          "value": "thingy\\bblood02.grp"
+        },
+        {
+          "bit": "0x1E2",
+          "value": "thingy\\bblood03.grp"
+        },
+        {
+          "bit": "0x1E3",
+          "value": "thingy\\bblood04.grp"
+        },
+        {
+          "bit": "0x1E4",
+          "value": "thingy\\bblood01.grp"
+        },
+        {
+          "bit": "0x1E5",
+          "value": "thingy\\bblood02.grp"
+        },
+        {
+          "bit": "0x1E6",
+          "value": "thingy\\bblood03.grp"
+        },
+        {
+          "bit": "0x1E7",
+          "value": "thingy\\bblood04.grp"
+        },
+        {
+          "bit": "0x1E8",
+          "value": "thingy\\oFireC.grp"
+        },
+        {
+          "bit": "0x1E9",
+          "value": "thingy\\oFireF.grp"
+        },
+        {
+          "bit": "0x1EA",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1EB",
+          "value": "thingy\\oFireC.grp"
+        },
+        {
+          "bit": "0x1EC",
+          "value": "thingy\\oFireF.grp"
+        },
+        {
+          "bit": "0x1ED",
+          "value": "thingy\\oFireV.grp"
+        },
+        {
+          "bit": "0x1EE",
+          "value": "thingy\\dust01.grp"
+        },
+        {
+          "bit": "0x1EF",
+          "value": "thingy\\dust02.grp"
+        },
+        {
+          "bit": "0x1F0",
+          "value": "thingy\\dust03.grp"
+        },
+        {
+          "bit": "0x1F1",
+          "value": "thingy\\dust04.grp"
+        },
+        {
+          "bit": "0x1F2",
+          "value": "thingy\\dust05.grp"
+        },
+        {
+          "bit": "0x1F3",
+          "value": "thingy\\dust06.grp"
+        },
+        {
+          "bit": "0x1F4",
+          "value": "thingy\\dust07.grp"
+        },
+        {
+          "bit": "0x1F5",
+          "value": "thingy\\dust08.grp"
+        },
+        {
+          "bit": "0x1F6",
+          "value": "thingy\\dust09.grp"
+        },
+        {
+          "bit": "0x1F7",
+          "value": "bullet\\circle14.grp"
+        },
+        {
+          "bit": "0x1F8",
+          "value": "bullet\\zspark.grp"
+        },
+        {
+          "bit": "0x1F9",
+          "value": "bullet\\PDripHit.grp"
+        },
+        {
+          "bit": "0x1FA",
+          "value": "bullet\\Tentacle.grp"
+        },
+        {
+          "bit": "0x1FB",
+          "value": "thingy\\ep2Fire.grp"
+        },
+        {
+          "bit": "0x1FC",
+          "value": "thingy\\etgHit.grp"
+        },
+        {
+          "bit": "0x1FD",
+          "value": "thingy\\ep3Shot.grp"
+        },
+        {
+          "bit": "0x1FE",
+          "value": "thingy\\ep3Burst.grp"
+        },
+        {
+          "bit": "0x1FF",
+          "value": "bullet\\spores.grp"
+        },
+        {
+          "bit": "0x200",
+          "value": "thingy\\SporeHit.grp"
+        },
+        {
+          "bit": "0x201",
+          "value": "thingy\\SpoTrail.grp"
+        },
+        {
+          "bit": "0x202",
+          "value": "thingy\\gSmoke.grp"
+        },
+        {
+          "bit": "0x203",
+          "value": "bullet\\Spore2.grp"
+        },
+        {
+          "bit": "0x204",
+          "value": "bullet\\parasite.grp"
+        },
+        {
+          "bit": "0x205",
+          "value": "thingy\\consume.grp"
+        },
+        {
+          "bit": "0x206",
+          "value": "thingy\\eplMuzz.grp"
+        },
+        {
+          "bit": "0x207",
+          "value": "bullet\\pspark.grp"
+        },
+        {
+          "bit": "0x208",
+          "value": "bullet\\ephFire.grp"
+        },
+        {
+          "bit": "0x209",
+          "value": "bullet\\hks.grp"
+        },
+        {
+          "bit": "0x20A",
+          "value": "bullet\\blastcan.grp"
+        },
+        {
+          "bit": "0x20B",
+          "value": "bullet\\dragbull.grp"
+        },
+        {
+          "bit": "0x20C",
+          "value": "bullet\\epbBul.grp"
+        },
+        {
+          "bit": "0x20D",
+          "value": "thingy\\psiStorm.grp"
+        },
+        {
+          "bit": "0x20E",
+          "value": "bullet\\scvspark.grp"
+        },
+        {
+          "bit": "0x20F",
+          "value": "bullet\\tspark.grp"
+        },
+        {
+          "bit": "0x210",
+          "value": "bullet\\gemini.grp"
+        },
+        {
+          "bit": "0x211",
+          "value": "bullet\\missile.grp"
+        },
+        {
+          "bit": "0x212",
+          "value": "thingy\\ecaHit.grp"
+        },
+        {
+          "bit": "0x213",
+          "value": "thingy\\ecaHit.grp"
+        },
+        {
+          "bit": "0x214",
+          "value": "bullet\\grenade.grp"
+        },
+        {
+          "bit": "0x215",
+          "value": "thingy\\mushroom.grp"
+        },
+        {
+          "bit": "0x216",
+          "value": "thingy\\elbfire.grp"
+        },
+        {
+          "bit": "0x217",
+          "value": "thingy\\elbfireW.grp"
+        },
+        {
+          "bit": "0x218",
+          "value": "thingy\\ettFlash.grp"
+        },
+        {
+          "bit": "0x219",
+          "value": "thingy\\esiFire.grp"
+        },
+        {
+          "bit": "0x21A",
+          "value": "thingy\\tveGlowB.grp"
+        },
+        {
+          "bit": "0x21B",
+          "value": "thingy\\tveGlowO.grp"
+        },
+        {
+          "bit": "0x21C",
+          "value": "thingy\\tveGlowW.grp"
+        },
+        {
+          "bit": "0x21D",
+          "value": "bullet\\eycBull.grp"
+        },
+        {
+          "bit": "0x21E",
+          "value": "bullet\\eycBull.grp"
+        },
+        {
+          "bit": "0x21F",
+          "value": "thingy\\eycBlast.grp"
+        },
+        {
+          "bit": "0x220",
+          "value": "thingy\\eycHit.grp"
+        },
+        {
+          "bit": "0x221",
+          "value": "thingy\\halmind.grp"
+        },
+        {
+          "bit": "0x222",
+          "value": "thingy\\eveCast.grp"
+        },
+        {
+          "bit": "0x223",
+          "value": "thingy\\emsHit.grp"
+        },
+        {
+          "bit": "0x224",
+          "value": "thingy\\emsHit.grp"
+        },
+        {
+          "bit": "0x225",
+          "value": "thingy\\emsBeam.grp"
+        },
+        {
+          "bit": "0x226",
+          "value": "thingy\\elect02a.grp"
+        },
+        {
+          "bit": "0x227",
+          "value": "thingy\\elect02.grp"
+        },
+        {
+          "bit": "0x228",
+          "value": "thingy\\elect02a.grp"
+        },
+        {
+          "bit": "0x229",
+          "value": "thingy\\elect02.grp"
+        },
+        {
+          "bit": "0x22A",
+          "value": "bullet\\missile.grp"
+        },
+        {
+          "bit": "0x22B",
+          "value": "thingy\\emp.grp"
+        },
+        {
+          "bit": "0x22C",
+          "value": "thingy\\empl.grp"
+        },
+        {
+          "bit": "0x22D",
+          "value": "thingy\\ehaMed.grp"
+        },
+        {
+          "bit": "0x22E",
+          "value": "thingy\\ehaMed.grp"
+        },
+        {
+          "bit": "0x22F",
+          "value": "thingy\\ehaMed.grp"
+        },
+        {
+          "bit": "0x230",
+          "value": "thingy\\blackx.grp"
+        },
+        {
+          "bit": "0x231",
+          "value": "thingy\\o022.grp"
+        },
+        {
+          "bit": "0x232",
+          "value": "thingy\\o032.grp"
+        },
+        {
+          "bit": "0x233",
+          "value": "thingy\\o048.grp"
+        },
+        {
+          "bit": "0x234",
+          "value": "thingy\\o062.grp"
+        },
+        {
+          "bit": "0x235",
+          "value": "thingy\\o072.grp"
+        },
+        {
+          "bit": "0x236",
+          "value": "thingy\\o094.grp"
+        },
+        {
+          "bit": "0x237",
+          "value": "thingy\\o110.grp"
+        },
+        {
+          "bit": "0x238",
+          "value": "thingy\\o122.grp"
+        },
+        {
+          "bit": "0x239",
+          "value": "thingy\\o146.grp"
+        },
+        {
+          "bit": "0x23A",
+          "value": "thingy\\o224.grp"
+        },
+        {
+          "bit": "0x23B",
+          "value": "thingy\\od022.grp"
+        },
+        {
+          "bit": "0x23C",
+          "value": "thingy\\od032.grp"
+        },
+        {
+          "bit": "0x23D",
+          "value": "thingy\\od048.grp"
+        },
+        {
+          "bit": "0x23E",
+          "value": "thingy\\od062.grp"
+        },
+        {
+          "bit": "0x23F",
+          "value": "thingy\\od072.grp"
+        },
+        {
+          "bit": "0x240",
+          "value": "thingy\\od094.grp"
+        },
+        {
+          "bit": "0x241",
+          "value": "thingy\\od110.grp"
+        },
+        {
+          "bit": "0x242",
+          "value": "thingy\\od122.grp"
+        },
+        {
+          "bit": "0x243",
+          "value": "thingy\\od146.grp"
+        },
+        {
+          "bit": "0x244",
+          "value": "thingy\\od224.grp"
+        },
+        {
+          "bit": "0x245",
+          "value": "thingy\\blackx.grp"
+        },
+        {
+          "bit": "0x246",
+          "value": "neutral\\maprev.grp"
+        },
+        {
+          "bit": "0x247",
+          "value": "thingy\\blackx.grp"
+        },
+        {
+          "bit": "0x248",
+          "value": "thingy\\Juice01.grp"
+        },
+        {
+          "bit": "0x249",
+          "value": "thingy\\Juice02.grp"
+        },
+        {
+          "bit": "0x24A",
+          "value": "thingy\\Juice01.grp"
+        },
+        {
+          "bit": "0x24B",
+          "value": "thingy\\Juice02.grp"
+        },
+        {
+          "bit": "0x24C",
+          "value": "thingy\\StartLoc.grp"
+        },
+        {
+          "bit": "0x24D",
+          "value": "thingy\\tileset\\AshWorld\\rock01.grp"
+        },
+        {
+          "bit": "0x24E",
+          "value": "thingy\\tileset\\AshWorld\\Rock1Sha.grp"
+        },
+        {
+          "bit": "0x24F",
+          "value": "thingy\\tileset\\AshWorld\\rock02.grp"
+        },
+        {
+          "bit": "0x250",
+          "value": "thingy\\tileset\\AshWorld\\Rock2Sha.grp"
+        },
+        {
+          "bit": "0x251",
+          "value": "thingy\\tileset\\AshWorld\\rock03.grp"
+        },
+        {
+          "bit": "0x252",
+          "value": "thingy\\tileset\\AshWorld\\Rock3Sha.grp"
+        },
+        {
+          "bit": "0x253",
+          "value": "thingy\\tileset\\AshWorld\\rock04.grp"
+        },
+        {
+          "bit": "0x254",
+          "value": "thingy\\tileset\\AshWorld\\Rock4Sha.grp"
+        },
+        {
+          "bit": "0x255",
+          "value": "thingy\\tileset\\AshWorld\\rock05.grp"
+        },
+        {
+          "bit": "0x256",
+          "value": "thingy\\tileset\\AshWorld\\Rock5Sha.grp"
+        },
+        {
+          "bit": "0x257",
+          "value": "thingy\\tileset\\AshWorld\\LALRoc01.grp"
+        },
+        {
+          "bit": "0x258",
+          "value": "thingy\\tileset\\AshWorld\\LALRoc02.grp"
+        },
+        {
+          "bit": "0x259",
+          "value": "thingy\\tileset\\AshWorld\\HASRoc01.grp"
+        },
+        {
+          "bit": "0x25A",
+          "value": "thingy\\tileset\\AshWorld\\HASRoc02.grp"
+        },
+        {
+          "bit": "0x25B",
+          "value": "thingy\\tileset\\AshWorld\\HASRoc03.grp"
+        },
+        {
+          "bit": "0x25C",
+          "value": "thingy\\tileset\\AshWorld\\HASRoc04.grp"
+        },
+        {
+          "bit": "0x25D",
+          "value": "thingy\\tileset\\AshWorld\\HASRoc05.grp"
+        },
+        {
+          "bit": "0x25E",
+          "value": "thingy\\tileset\\AshWorld\\HASRoc06.grp"
+        },
+        {
+          "bit": "0x25F",
+          "value": "thingy\\tileset\\AshWorld\\RORock01.grp"
+        },
+        {
+          "bit": "0x260",
+          "value": "thingy\\tileset\\AshWorld\\RORock02.grp"
+        },
+        {
+          "bit": "0x261",
+          "value": "thingy\\tileset\\AshWorld\\RORock03.grp"
+        },
+        {
+          "bit": "0x262",
+          "value": "thingy\\tileset\\Jungle\\HDRock01.grp"
+        },
+        {
+          "bit": "0x263",
+          "value": "thingy\\tileset\\Jungle\\HDRock1s.grp"
+        },
+        {
+          "bit": "0x264",
+          "value": "thingy\\tileset\\Jungle\\HDRock02.grp"
+        },
+        {
+          "bit": "0x265",
+          "value": "thingy\\tileset\\Jungle\\HDRock2s.grp"
+        },
+        {
+          "bit": "0x266",
+          "value": "thingy\\tileset\\Jungle\\HDRock03.grp"
+        },
+        {
+          "bit": "0x267",
+          "value": "thingy\\tileset\\Jungle\\HDRock3s.grp"
+        },
+        {
+          "bit": "0x268",
+          "value": "thingy\\tileset\\Jungle\\HDRock04.grp"
+        },
+        {
+          "bit": "0x269",
+          "value": "thingy\\tileset\\Jungle\\HDRock4s.grp"
+        },
+        {
+          "bit": "0x26A",
+          "value": "thingy\\tileset\\Jungle\\JUbush01.grp"
+        },
+        {
+          "bit": "0x26B",
+          "value": "thingy\\tileset\\Jungle\\JUbush1S.grp"
+        },
+        {
+          "bit": "0x26C",
+          "value": "thingy\\tileset\\Jungle\\JUbush03.grp"
+        },
+        {
+          "bit": "0x26D",
+          "value": "thingy\\tileset\\Jungle\\JUbush3s.grp"
+        },
+        {
+          "bit": "0x26E",
+          "value": "thingy\\tileset\\Jungle\\JUbush05.grp"
+        },
+        {
+          "bit": "0x26F",
+          "value": "thingy\\tileset\\Jungle\\JUbush5s.grp"
+        },
+        {
+          "bit": "0x270",
+          "value": "thingy\\tileset\\Jungle\\LDtree01.grp"
+        },
+        {
+          "bit": "0x271",
+          "value": "thingy\\tileset\\Jungle\\LDtree1s.grp"
+        },
+        {
+          "bit": "0x272",
+          "value": "thingy\\tileset\\Jungle\\LDtree02.grp"
+        },
+        {
+          "bit": "0x273",
+          "value": "thingy\\tileset\\Jungle\\LDtree2s.grp"
+        },
+        {
+          "bit": "0x274",
+          "value": "thingy\\tileset\\Jungle\\LDtree03.grp"
+        },
+        {
+          "bit": "0x275",
+          "value": "thingy\\tileset\\Jungle\\LDtree3s.grp"
+        },
+        {
+          "bit": "0x276",
+          "value": "thingy\\tileset\\Jungle\\LDtree04.grp"
+        },
+        {
+          "bit": "0x277",
+          "value": "thingy\\tileset\\Jungle\\LDtree4s.grp"
+        },
+        {
+          "bit": "0x278",
+          "value": "thingy\\tileset\\Jungle\\tree01.grp"
+        },
+        {
+          "bit": "0x279",
+          "value": "thingy\\tileset\\Jungle\\tree1sha.grp"
+        },
+        {
+          "bit": "0x27A",
+          "value": "thingy\\tileset\\Jungle\\tree02.grp"
+        },
+        {
+          "bit": "0x27B",
+          "value": "thingy\\tileset\\Jungle\\tree2sha.grp"
+        },
+        {
+          "bit": "0x27C",
+          "value": "thingy\\tileset\\Jungle\\tree03.grp"
+        },
+        {
+          "bit": "0x27D",
+          "value": "thingy\\tileset\\Jungle\\tree3sha.grp"
+        },
+        {
+          "bit": "0x27E",
+          "value": "thingy\\tileset\\Jungle\\tree04.grp"
+        },
+        {
+          "bit": "0x27F",
+          "value": "thingy\\tileset\\Jungle\\tree4sha.grp"
+        },
+        {
+          "bit": "0x280",
+          "value": "thingy\\tileset\\Jungle\\dd025.grp"
+        },
+        {
+          "bit": "0x281",
+          "value": "thingy\\tileset\\Jungle\\dd026.grp"
+        },
+        {
+          "bit": "0x282",
+          "value": "thingy\\tileset\\Jungle\\dd027.grp"
+        },
+        {
+          "bit": "0x283",
+          "value": "thingy\\tileset\\Jungle\\dd028.grp"
+        },
+        {
+          "bit": "0x284",
+          "value": "thingy\\tileset\\Jungle\\dd029.grp"
+        },
+        {
+          "bit": "0x285",
+          "value": "thingy\\tileset\\Jungle\\dd030.grp"
+        },
+        {
+          "bit": "0x286",
+          "value": "thingy\\tileset\\Jungle\\dd031.grp"
+        },
+        {
+          "bit": "0x287",
+          "value": "thingy\\tileset\\Jungle\\dd055.grp"
+        },
+        {
+          "bit": "0x288",
+          "value": "thingy\\tileset\\Jungle\\dd056.grp"
+        },
+        {
+          "bit": "0x289",
+          "value": "thingy\\tileset\\Jungle\\dd075.grp"
+        },
+        {
+          "bit": "0x28A",
+          "value": "thingy\\tileset\\Jungle\\dd076.grp"
+        },
+        {
+          "bit": "0x28B",
+          "value": "thingy\\tileset\\Jungle\\dd077.grp"
+        },
+        {
+          "bit": "0x28C",
+          "value": "thingy\\tileset\\Jungle\\dd078.grp"
+        },
+        {
+          "bit": "0x28D",
+          "value": "thingy\\tileset\\Jungle\\dd079.grp"
+        },
+        {
+          "bit": "0x28E",
+          "value": "thingy\\tileset\\Jungle\\dd080.grp"
+        },
+        {
+          "bit": "0x28F",
+          "value": "thingy\\tileset\\Jungle\\dd081.grp"
+        },
+        {
+          "bit": "0x290",
+          "value": "thingy\\tileset\\Jungle\\dd091.grp"
+        },
+        {
+          "bit": "0x291",
+          "value": "thingy\\tileset\\Jungle\\dd203.grp"
+        },
+        {
+          "bit": "0x292",
+          "value": "thingy\\tileset\\Jungle\\dd204.grp"
+        },
+        {
+          "bit": "0x293",
+          "value": "thingy\\tileset\\Jungle\\dd205.grp"
+        },
+        {
+          "bit": "0x294",
+          "value": "thingy\\tileset\\Jungle\\dd206.grp"
+        },
+        {
+          "bit": "0x295",
+          "value": "thingy\\tileset\\Jungle\\dd207.grp"
+        },
+        {
+          "bit": "0x296",
+          "value": "thingy\\tileset\\Jungle\\dd209.grp"
+        },
+        {
+          "bit": "0x297",
+          "value": "thingy\\tileset\\Jungle\\dd210.grp"
+        },
+        {
+          "bit": "0x298",
+          "value": "thingy\\tileset\\Jungle\\dd211.grp"
+        },
+        {
+          "bit": "0x299",
+          "value": "thingy\\tileset\\Platform\\Dish01.grp"
+        },
+        {
+          "bit": "0x29A",
+          "value": "thingy\\tileset\\Platform\\Dish1Sha.grp"
+        },
+        {
+          "bit": "0x29B",
+          "value": "thingy\\tileset\\Platform\\Dish02.grp"
+        },
+        {
+          "bit": "0x29C",
+          "value": "thingy\\tileset\\Platform\\Dish2Sha.grp"
+        },
+        {
+          "bit": "0x29D",
+          "value": "thingy\\tileset\\Platform\\Dish03.grp"
+        },
+        {
+          "bit": "0x29E",
+          "value": "thingy\\tileset\\Platform\\Dish3Sha.grp"
+        },
+        {
+          "bit": "0x29F",
+          "value": "thingy\\tileset\\Platform\\Glob01.grp"
+        },
+        {
+          "bit": "0x2A0",
+          "value": "thingy\\tileset\\Platform\\Glob1Sha.grp"
+        },
+        {
+          "bit": "0x2A1",
+          "value": "thingy\\tileset\\Platform\\Glob02.grp"
+        },
+        {
+          "bit": "0x2A2",
+          "value": "thingy\\tileset\\Platform\\Glob2Sha.grp"
+        },
+        {
+          "bit": "0x2A3",
+          "value": "thingy\\tileset\\Platform\\Glob03.grp"
+        },
+        {
+          "bit": "0x2A4",
+          "value": "thingy\\tileset\\Platform\\Glob3Sha.grp"
+        },
+        {
+          "bit": "0x2A5",
+          "value": "thingy\\tileset\\Platform\\Towr01.grp"
+        },
+        {
+          "bit": "0x2A6",
+          "value": "thingy\\tileset\\Platform\\Towr02.grp"
+        },
+        {
+          "bit": "0x2A7",
+          "value": "thingy\\tileset\\Platform\\tree01.grp"
+        },
+        {
+          "bit": "0x2A8",
+          "value": "thingy\\tileset\\Platform\\tree02.grp"
+        },
+        {
+          "bit": "0x2A9",
+          "value": "thingy\\tileset\\Platform\\LBSign01.grp"
+        },
+        {
+          "bit": "0x2AA",
+          "value": "thingy\\tileset\\Platform\\LBSign02.grp"
+        },
+        {
+          "bit": "0x2AB",
+          "value": "thingy\\tileset\\Platform\\LBSign03.grp"
+        },
+        {
+          "bit": "0x2AC",
+          "value": "thingy\\tileset\\Platform\\LBSign04.grp"
+        },
+        {
+          "bit": "0x2AD",
+          "value": "thingy\\tileset\\Platform\\LBSign05.grp"
+        },
+        {
+          "bit": "0x2AE",
+          "value": "thingy\\tileset\\Platform\\LBSign06.grp"
+        },
+        {
+          "bit": "0x2AF",
+          "value": "thingy\\tileset\\Platform\\LBSign07.grp"
+        },
+        {
+          "bit": "0x2B0",
+          "value": "thingy\\tileset\\Platform\\LBSign08.grp"
+        },
+        {
+          "bit": "0x2B1",
+          "value": "thingy\\tileset\\Platform\\SPThin01.grp"
+        },
+        {
+          "bit": "0x2B2",
+          "value": "thingy\\tileset\\Platform\\refinery.grp"
+        },
+        {
+          "bit": "0x2B3",
+          "value": "thingy\\tileset\\Badlands\\HDRock01.grp"
+        },
+        {
+          "bit": "0x2B4",
+          "value": "thingy\\tileset\\Badlands\\HDRock1S.grp"
+        },
+        {
+          "bit": "0x2B5",
+          "value": "thingy\\tileset\\Badlands\\HDRock02.grp"
+        },
+        {
+          "bit": "0x2B6",
+          "value": "thingy\\tileset\\Badlands\\HDRock2S.grp"
+        },
+        {
+          "bit": "0x2B7",
+          "value": "thingy\\tileset\\Badlands\\HDRock03.grp"
+        },
+        {
+          "bit": "0x2B8",
+          "value": "thingy\\tileset\\Badlands\\HDRock3S.grp"
+        },
+        {
+          "bit": "0x2B9",
+          "value": "thingy\\tileset\\Badlands\\HDRock04.grp"
+        },
+        {
+          "bit": "0x2BA",
+          "value": "thingy\\tileset\\Badlands\\HDRock4S.grp"
+        },
+        {
+          "bit": "0x2BB",
+          "value": "thingy\\tileset\\Badlands\\HDRock05.grp"
+        },
+        {
+          "bit": "0x2BC",
+          "value": "thingy\\tileset\\Badlands\\HDRock06.grp"
+        },
+        {
+          "bit": "0x2BD",
+          "value": "thingy\\tileset\\Badlands\\HDRock07.grp"
+        },
+        {
+          "bit": "0x2BE",
+          "value": "thingy\\tileset\\Badlands\\HDRock08.grp"
+        },
+        {
+          "bit": "0x2BF",
+          "value": "thingy\\tileset\\Badlands\\HDVent01.grp"
+        },
+        {
+          "bit": "0x2C0",
+          "value": "thingy\\tileset\\Badlands\\HDTree01.grp"
+        },
+        {
+          "bit": "0x2C1",
+          "value": "thingy\\tileset\\Badlands\\LDTree1S.grp"
+        },
+        {
+          "bit": "0x2C2",
+          "value": "thingy\\tileset\\Badlands\\HDTree02.grp"
+        },
+        {
+          "bit": "0x2C3",
+          "value": "thingy\\tileset\\Badlands\\LDTree2S.grp"
+        },
+        {
+          "bit": "0x2C4",
+          "value": "thingy\\tileset\\Badlands\\HDTree03.grp"
+        },
+        {
+          "bit": "0x2C5",
+          "value": "thingy\\tileset\\Badlands\\LDTree3S.grp"
+        },
+        {
+          "bit": "0x2C6",
+          "value": "thingy\\tileset\\Badlands\\HDTree04.grp"
+        },
+        {
+          "bit": "0x2C7",
+          "value": "thingy\\tileset\\Badlands\\LDTree4S.grp"
+        },
+        {
+          "bit": "0x2C8",
+          "value": "thingy\\tileset\\Badlands\\HGTree01.grp"
+        },
+        {
+          "bit": "0x2C9",
+          "value": "thingy\\tileset\\Badlands\\LCShop01.grp"
+        },
+        {
+          "bit": "0x2CA",
+          "value": "thingy\\tileset\\Badlands\\LCShop02.grp"
+        },
+        {
+          "bit": "0x2CB",
+          "value": "thingy\\tileset\\Badlands\\LCShop03.grp"
+        },
+        {
+          "bit": "0x2CC",
+          "value": "thingy\\tileset\\Badlands\\LCShop04.grp"
+        },
+        {
+          "bit": "0x2CD",
+          "value": "thingy\\tileset\\Badlands\\LCShop05.grp"
+        },
+        {
+          "bit": "0x2CE",
+          "value": "thingy\\tileset\\Badlands\\LCShop06.grp"
+        },
+        {
+          "bit": "0x2CF",
+          "value": "thingy\\tileset\\Badlands\\LCShop07.grp"
+        },
+        {
+          "bit": "0x2D0",
+          "value": "thingy\\tileset\\Badlands\\LCShop08.grp"
+        },
+        {
+          "bit": "0x2D1",
+          "value": "thingy\\tileset\\Badlands\\LCShop09.grp"
+        },
+        {
+          "bit": "0x2D2",
+          "value": "thingy\\tileset\\Badlands\\LCShopAA.grp"
+        },
+        {
+          "bit": "0x2D3",
+          "value": "thingy\\tileset\\Badlands\\LCSign01.grp"
+        },
+        {
+          "bit": "0x2D4",
+          "value": "thingy\\tileset\\Badlands\\LCSign02.grp"
+        },
+        {
+          "bit": "0x2D5",
+          "value": "thingy\\tileset\\Badlands\\LCSign03.grp"
+        },
+        {
+          "bit": "0x2D6",
+          "value": "thingy\\tileset\\Badlands\\LCSign04.grp"
+        },
+        {
+          "bit": "0x2D7",
+          "value": "thingy\\tileset\\Badlands\\LCSign05.grp"
+        },
+        {
+          "bit": "0x2D8",
+          "value": "thingy\\tileset\\Badlands\\LCSign06.grp"
+        },
+        {
+          "bit": "0x2D9",
+          "value": "thingy\\tileset\\Badlands\\LCSign07.grp"
+        },
+        {
+          "bit": "0x2DA",
+          "value": "thingy\\tileset\\Badlands\\LCSign08.grp"
+        },
+        {
+          "bit": "0x2DB",
+          "value": "thingy\\tileset\\Badlands\\LCSign09.grp"
+        },
+        {
+          "bit": "0x2DC",
+          "value": "thingy\\tileset\\Badlands\\LCSignAA.grp"
+        },
+        {
+          "bit": "0x2DD",
+          "value": "thingy\\tileset\\Badlands\\LCSignBB.grp"
+        },
+        {
+          "bit": "0x2DE",
+          "value": "thingy\\tileset\\Badlands\\LCSignCC.grp"
+        },
+        {
+          "bit": "0x2DF",
+          "value": "thingy\\tileset\\install\\CLPlate2.grp"
+        },
+        {
+          "bit": "0x2E0",
+          "value": "thingy\\tileset\\install\\CLPlate1.grp"
+        },
+        {
+          "bit": "0x2E1",
+          "value": "thingy\\tileset\\install\\CLPlat1T.grp"
+        },
+        {
+          "bit": "0x2E2",
+          "value": "thingy\\tileset\\install\\DCGun1.grp"
+        },
+        {
+          "bit": "0x2E3",
+          "value": "thingy\\tileset\\install\\DCGun1.grp"
+        },
+        {
+          "bit": "0x2E4",
+          "value": "thingy\\tileset\\install\\DCGun2.grp"
+        },
+        {
+          "bit": "0x2E5",
+          "value": "thingy\\tileset\\install\\DCGun2.grp"
+        },
+        {
+          "bit": "0x2E6",
+          "value": "thingy\\tileset\\install\\CRDoor1.grp"
+        },
+        {
+          "bit": "0x2E7",
+          "value": "thingy\\tileset\\install\\CRDoor1.grp"
+        },
+        {
+          "bit": "0x2E8",
+          "value": "thingy\\tileset\\install\\DCFan1.grp"
+        },
+        {
+          "bit": "0x2E9",
+          "value": "thingy\\tileset\\install\\DCFan1.grp"
+        },
+        {
+          "bit": "0x2EA",
+          "value": "thingy\\tileset\\install\\DICran1.grp"
+        },
+        {
+          "bit": "0x2EB",
+          "value": "thingy\\tileset\\install\\DICran2.grp"
+        },
+        {
+          "bit": "0x2EC",
+          "value": "thingy\\tileset\\install\\DICran3.grp"
+        },
+        {
+          "bit": "0x2ED",
+          "value": "thingy\\tileset\\install\\DICran4.grp"
+        },
+        {
+          "bit": "0x2EE",
+          "value": "thingy\\tileset\\install\\DIDoor1.grp"
+        },
+        {
+          "bit": "0x2EF",
+          "value": "thingy\\tileset\\install\\DIDoor1.grp"
+        },
+        {
+          "bit": "0x2F0",
+          "value": "thingy\\tileset\\install\\DIGear1.grp"
+        },
+        {
+          "bit": "0x2F1",
+          "value": "thingy\\tileset\\install\\DIGear2.grp"
+        },
+        {
+          "bit": "0x2F2",
+          "value": "thingy\\tileset\\install\\DIHatc1.grp"
+        },
+        {
+          "bit": "0x2F3",
+          "value": "thingy\\tileset\\twilight\\Ldarch.grp"
+        },
+        {
+          "bit": "0x2F4",
+          "value": "thingy\\tileset\\twilight\\Lddrill.grp"
+        },
+        {
+          "bit": "0x2F5",
+          "value": "thingy\\tileset\\twilight\\Ldxel01.grp"
+        },
+        {
+          "bit": "0x2F6",
+          "value": "thingy\\tileset\\twilight\\Ldxel02.grp"
+        },
+        {
+          "bit": "0x2F7",
+          "value": "thingy\\tileset\\twilight\\Ldxel03.grp"
+        },
+        {
+          "bit": "0x2F8",
+          "value": "thingy\\tileset\\twilight\\Ldxel04.grp"
+        },
+        {
+          "bit": "0x2F9",
+          "value": "thingy\\tileset\\twilight\\Ldxel05.grp"
+        },
+        {
+          "bit": "0x2FA",
+          "value": "thingy\\tileset\\twilight\\Ldxel06.grp"
+        },
+        {
+          "bit": "0x2FB",
+          "value": "thingy\\tileset\\twilight\\Ldxeltur.grp"
+        },
+        {
+          "bit": "0x2FC",
+          "value": "thingy\\tileset\\twilight\\JTree01.grp"
+        },
+        {
+          "bit": "0x2FD",
+          "value": "thingy\\tileset\\twilight\\JTree02.grp"
+        },
+        {
+          "bit": "0x2FE",
+          "value": "thingy\\tileset\\twilight\\JTree03.grp"
+        },
+        {
+          "bit": "0x2FF",
+          "value": "thingy\\tileset\\twilight\\JTree04.grp"
+        },
+        {
+          "bit": "0x300",
+          "value": "thingy\\tileset\\twilight\\JTree05.grp"
+        },
+        {
+          "bit": "0x301",
+          "value": "thingy\\tileset\\twilight\\rstatue.grp"
+        },
+        {
+          "bit": "0x302",
+          "value": "thingy\\tileset\\twilight\\rstatue.grp"
+        },
+        {
+          "bit": "0x303",
+          "value": "thingy\\tileset\\ice\\HDbld01.grp"
+        },
+        {
+          "bit": "0x304",
+          "value": "thingy\\tileset\\ice\\SHDbld01.grp"
+        },
+        {
+          "bit": "0x305",
+          "value": "thingy\\tileset\\ice\\HDbld02.grp"
+        },
+        {
+          "bit": "0x306",
+          "value": "thingy\\tileset\\ice\\SHDbld02.grp"
+        },
+        {
+          "bit": "0x307",
+          "value": "thingy\\tileset\\ice\\HDbld03.grp"
+        },
+        {
+          "bit": "0x308",
+          "value": "thingy\\tileset\\ice\\SHDbld03.grp"
+        },
+        {
+          "bit": "0x309",
+          "value": "thingy\\tileset\\ice\\HDbld04.grp"
+        },
+        {
+          "bit": "0x30A",
+          "value": "thingy\\tileset\\ice\\SHDbld04.grp"
+        },
+        {
+          "bit": "0x30B",
+          "value": "thingy\\tileset\\ice\\HDradarl.grp"
+        },
+        {
+          "bit": "0x30C",
+          "value": "thingy\\tileset\\ice\\SHDradrl.grp"
+        },
+        {
+          "bit": "0x30D",
+          "value": "thingy\\tileset\\ice\\HDradarR.grp"
+        },
+        {
+          "bit": "0x30E",
+          "value": "thingy\\tileset\\ice\\SHDradrR.grp"
+        },
+        {
+          "bit": "0x30F",
+          "value": "thingy\\tileset\\ice\\HDRock01.grp"
+        },
+        {
+          "bit": "0x310",
+          "value": "thingy\\tileset\\ice\\SHDRck01.grp"
+        },
+        {
+          "bit": "0x311",
+          "value": "thingy\\tileset\\ice\\HDRock02.grp"
+        },
+        {
+          "bit": "0x312",
+          "value": "thingy\\tileset\\ice\\SHDRck02.grp"
+        },
+        {
+          "bit": "0x313",
+          "value": "thingy\\tileset\\ice\\HDSTre01.grp"
+        },
+        {
+          "bit": "0x314",
+          "value": "thingy\\tileset\\ice\\HDSTre02.grp"
+        },
+        {
+          "bit": "0x315",
+          "value": "thingy\\tileset\\ice\\HDSTre03.grp"
+        },
+        {
+          "bit": "0x316",
+          "value": "thingy\\tileset\\ice\\HDSTre04.grp"
+        },
+        {
+          "bit": "0x317",
+          "value": "thingy\\tileset\\ice\\HDSpire.grp"
+        },
+        {
+          "bit": "0x318",
+          "value": "thingy\\tileset\\ice\\SHDSpire.grp"
+        },
+        {
+          "bit": "0x319",
+          "value": "thingy\\tileset\\ice\\HDTwr01.grp"
+        },
+        {
+          "bit": "0x31A",
+          "value": "thingy\\tileset\\ice\\SHDTwr01.grp"
+        },
+        {
+          "bit": "0x31B",
+          "value": "thingy\\tileset\\ice\\HDTwr02.grp"
+        },
+        {
+          "bit": "0x31C",
+          "value": "thingy\\tileset\\ice\\SHDTwr02.grp"
+        },
+        {
+          "bit": "0x31D",
+          "value": "thingy\\tileset\\ice\\LDBTre01.grp"
+        },
+        {
+          "bit": "0x31E",
+          "value": "thingy\\tileset\\ice\\SLDBTre1.grp"
+        },
+        {
+          "bit": "0x31F",
+          "value": "thingy\\tileset\\ice\\LDBTre02.grp"
+        },
+        {
+          "bit": "0x320",
+          "value": "thingy\\tileset\\ice\\SLDBTre2.grp"
+        },
+        {
+          "bit": "0x321",
+          "value": "thingy\\tileset\\ice\\LDBTre03.grp"
+        },
+        {
+          "bit": "0x322",
+          "value": "thingy\\tileset\\ice\\SLDBTre3.grp"
+        },
+        {
+          "bit": "0x323",
+          "value": "thingy\\tileset\\ice\\LDBTre04.grp"
+        },
+        {
+          "bit": "0x324",
+          "value": "thingy\\tileset\\ice\\SLDBTre4.grp"
+        },
+        {
+          "bit": "0x325",
+          "value": "thingy\\tileset\\ice\\LDbld01.grp"
+        },
+        {
+          "bit": "0x326",
+          "value": "thingy\\tileset\\ice\\SLDbld01.grp"
+        },
+        {
+          "bit": "0x327",
+          "value": "thingy\\tileset\\ice\\LDbld02.grp"
+        },
+        {
+          "bit": "0x328",
+          "value": "thingy\\tileset\\ice\\SLDbld02.grp"
+        },
+        {
+          "bit": "0x329",
+          "value": "thingy\\tileset\\ice\\LDComm.grp"
+        },
+        {
+          "bit": "0x32A",
+          "value": "thingy\\tileset\\ice\\SLDComm.grp"
+        },
+        {
+          "bit": "0x32B",
+          "value": "thingy\\tileset\\ice\\LDDtre01.grp"
+        },
+        {
+          "bit": "0x32C",
+          "value": "thingy\\tileset\\ice\\SLDDtre1.grp"
+        },
+        {
+          "bit": "0x32D",
+          "value": "thingy\\tileset\\ice\\LDDtre02.grp"
+        },
+        {
+          "bit": "0x32E",
+          "value": "thingy\\tileset\\ice\\SLDDtre2.grp"
+        },
+        {
+          "bit": "0x32F",
+          "value": "thingy\\tileset\\ice\\LDDish.grp"
+        },
+        {
+          "bit": "0x330",
+          "value": "thingy\\tileset\\ice\\SLDDish.grp"
+        },
+        {
+          "bit": "0x331",
+          "value": "thingy\\tileset\\ice\\LDRdr01.grp"
+        },
+        {
+          "bit": "0x332",
+          "value": "thingy\\tileset\\ice\\SLDRdr01.grp"
+        },
+        {
+          "bit": "0x333",
+          "value": "thingy\\tileset\\ice\\LDRdr02.grp"
+        },
+        {
+          "bit": "0x334",
+          "value": "thingy\\tileset\\ice\\SLDRdr02.grp"
+        },
+        {
+          "bit": "0x335",
+          "value": "thingy\\tileset\\ice\\LDRdr03.grp"
+        },
+        {
+          "bit": "0x336",
+          "value": "thingy\\tileset\\ice\\SLDRdr03.grp"
+        },
+        {
+          "bit": "0x337",
+          "value": "thingy\\tileset\\ice\\LDRck01.grp"
+        },
+        {
+          "bit": "0x338",
+          "value": "thingy\\tileset\\ice\\SLDRck01.grp"
+        },
+        {
+          "bit": "0x339",
+          "value": "thingy\\tileset\\ice\\LDRck02.grp"
+        },
+        {
+          "bit": "0x33A",
+          "value": "thingy\\tileset\\ice\\SLDRck02.grp"
+        },
+        {
+          "bit": "0x33B",
+          "value": "thingy\\tileset\\ice\\HDPipes.grp"
+        },
+        {
+          "bit": "0x33C",
+          "value": "thingy\\tileset\\ice\\SHDPipes.grp"
+        },
+        {
+          "bit": "0x33D",
+          "value": "thingy\\tileset\\ice\\LDthing.grp"
+        },
+        {
+          "bit": "0x33E",
+          "value": "thingy\\tileset\\ice\\SLDthing.grp"
+        },
+        {
+          "bit": "0x33F",
+          "value": "thingy\\tileset\\ice\\LDsmrock.grp"
+        },
+        {
+          "bit": "0x340",
+          "value": "thingy\\tileset\\ice\\HDPipes.grp"
+        },
+        {
+          "bit": "0x341",
+          "value": "thingy\\tileset\\ice\\SHDPipes.grp"
+        },
+        {
+          "bit": "0x342",
+          "value": "thingy\\tileset\\ice\\HDRadr02.grp"
+        },
+        {
+          "bit": "0x343",
+          "value": "thingy\\tileset\\ice\\SHDRadr2.grp"
+        },
+        {
+          "bit": "0x344",
+          "value": "thingy\\tileset\\ice\\LDRck01.grp"
+        },
+        {
+          "bit": "0x345",
+          "value": "thingy\\tileset\\ice\\SLDRck01.grp"
+        },
+        {
+          "bit": "0x346",
+          "value": "thingy\\tileset\\ice\\LDRck02.grp"
+        },
+        {
+          "bit": "0x347",
+          "value": "thingy\\tileset\\ice\\SLDRck02.grp"
+        },
+        {
+          "bit": "0x348",
+          "value": "thingy\\tileset\\ice\\HDRadr02.grp"
+        },
+        {
+          "bit": "0x349",
+          "value": "thingy\\tileset\\ice\\JGant1.grp"
+        },
+        {
+          "bit": "0x34A",
+          "value": "thingy\\tileset\\ice\\JGant1.grp"
+        },
+        {
+          "bit": "0x34B",
+          "value": "thingy\\tileset\\ice\\RJBTree1.grp"
+        },
+        {
+          "bit": "0x34C",
+          "value": "thingy\\tileset\\ice\\sRJBTre1.grp"
+        },
+        {
+          "bit": "0x34D",
+          "value": "thingy\\tileset\\ice\\RJBTree2.grp"
+        },
+        {
+          "bit": "0x34E",
+          "value": "thingy\\tileset\\ice\\sRJBTre2.grp"
+        },
+        {
+          "bit": "0x34F",
+          "value": "thingy\\tileset\\ice\\RJBTree3.grp"
+        },
+        {
+          "bit": "0x350",
+          "value": "thingy\\tileset\\ice\\sRJBTre3.grp"
+        },
+        {
+          "bit": "0x351",
+          "value": "thingy\\tileset\\ice\\RJBTree4.grp"
+        },
+        {
+          "bit": "0x352",
+          "value": "thingy\\tileset\\ice\\sRJBTre4.grp"
+        },
+        {
+          "bit": "0x353",
+          "value": "thingy\\tileset\\desert\\HDBANT.grp"
+        },
+        {
+          "bit": "0x354",
+          "value": "thingy\\tileset\\desert\\HDBBROKE.grp"
+        },
+        {
+          "bit": "0x355",
+          "value": "thingy\\tileset\\desert\\SHDBBRKE.grp"
+        },
+        {
+          "bit": "0x356",
+          "value": "thingy\\tileset\\desert\\HDBGAS.grp"
+        },
+        {
+          "bit": "0x357",
+          "value": "thingy\\tileset\\desert\\SHDBGAS.grp"
+        },
+        {
+          "bit": "0x358",
+          "value": "thingy\\tileset\\desert\\HDBMED.grp"
+        },
+        {
+          "bit": "0x359",
+          "value": "thingy\\tileset\\desert\\SHDBMED.grp"
+        },
+        {
+          "bit": "0x35A",
+          "value": "thingy\\tileset\\desert\\HDBMOSS.grp"
+        },
+        {
+          "bit": "0x35B",
+          "value": "thingy\\tileset\\desert\\SHDBMOSS.grp"
+        },
+        {
+          "bit": "0x35C",
+          "value": "thingy\\tileset\\desert\\HDBTENT.grp"
+        },
+        {
+          "bit": "0x35D",
+          "value": "thingy\\tileset\\desert\\SHDBTENT.grp"
+        },
+        {
+          "bit": "0x35E",
+          "value": "thingy\\tileset\\desert\\HDPLNT03.grp"
+        },
+        {
+          "bit": "0x35F",
+          "value": "thingy\\tileset\\desert\\SHDPLNT3.grp"
+        },
+        {
+          "bit": "0x360",
+          "value": "thingy\\tileset\\desert\\JGBROKE.grp"
+        },
+        {
+          "bit": "0x361",
+          "value": "thingy\\tileset\\desert\\SJGBROKE.grp"
+        },
+        {
+          "bit": "0x362",
+          "value": "thingy\\tileset\\desert\\JGBGAS.grp"
+        },
+        {
+          "bit": "0x363",
+          "value": "thingy\\tileset\\desert\\SJGBGAS.grp"
+        },
+        {
+          "bit": "0x364",
+          "value": "thingy\\tileset\\desert\\JGBGEN.grp"
+        },
+        {
+          "bit": "0x365",
+          "value": "thingy\\tileset\\desert\\SJGBGEN.grp"
+        },
+        {
+          "bit": "0x366",
+          "value": "thingy\\tileset\\desert\\JGBSGN.grp"
+        },
+        {
+          "bit": "0x367",
+          "value": "thingy\\tileset\\desert\\SJGBSGN.grp"
+        },
+        {
+          "bit": "0x368",
+          "value": "thingy\\tileset\\desert\\JGBTENT.grp"
+        },
+        {
+          "bit": "0x369",
+          "value": "thingy\\tileset\\desert\\SJGBTENT.grp"
+        },
+        {
+          "bit": "0x36A",
+          "value": "thingy\\tileset\\desert\\JGBCOMM.grp"
+        },
+        {
+          "bit": "0x36B",
+          "value": "thingy\\tileset\\desert\\SJGBCOMM.grp"
+        },
+        {
+          "bit": "0x36C",
+          "value": "thingy\\tileset\\desert\\JGBFACT.grp"
+        },
+        {
+          "bit": "0x36D",
+          "value": "thingy\\tileset\\desert\\SJGBFACT.grp"
+        },
+        {
+          "bit": "0x36E",
+          "value": "thingy\\tileset\\desert\\JGBRED.grp"
+        },
+        {
+          "bit": "0x36F",
+          "value": "thingy\\tileset\\desert\\SJGBRED.grp"
+        },
+        {
+          "bit": "0x370",
+          "value": "thingy\\tileset\\desert\\JGPLNT01.grp"
+        },
+        {
+          "bit": "0x371",
+          "value": "thingy\\tileset\\desert\\JGPLNT02.grp"
+        },
+        {
+          "bit": "0x372",
+          "value": "thingy\\tileset\\desert\\SJGPLNT2.grp"
+        },
+        {
+          "bit": "0x373",
+          "value": "thingy\\tileset\\desert\\LDBAZ.grp"
+        },
+        {
+          "bit": "0x374",
+          "value": "thingy\\tileset\\desert\\SLDBAZ.grp"
+        },
+        {
+          "bit": "0x375",
+          "value": "thingy\\tileset\\desert\\LDBGAS.grp"
+        },
+        {
+          "bit": "0x376",
+          "value": "thingy\\tileset\\desert\\SLDBGAS.grp"
+        },
+        {
+          "bit": "0x377",
+          "value": "thingy\\tileset\\desert\\LDBGREN.grp"
+        },
+        {
+          "bit": "0x378",
+          "value": "thingy\\tileset\\desert\\SLDBGREN.grp"
+        },
+        {
+          "bit": "0x379",
+          "value": "thingy\\tileset\\desert\\LDBNEON.grp"
+        },
+        {
+          "bit": "0x37A",
+          "value": "thingy\\tileset\\desert\\LDBSUKY.grp"
+        },
+        {
+          "bit": "0x37B",
+          "value": "thingy\\tileset\\desert\\SLDBSUKY.grp"
+        },
+        {
+          "bit": "0x37C",
+          "value": "thingy\\tileset\\desert\\LDBTENT.grp"
+        },
+        {
+          "bit": "0x37D",
+          "value": "thingy\\tileset\\desert\\SLDBTENT.grp"
+        },
+        {
+          "bit": "0x37E",
+          "value": "thingy\\tileset\\desert\\Ldneon.grp"
+        },
+        {
+          "bit": "0x37F",
+          "value": "thingy\\tileset\\desert\\HDLbox01.grp"
+        },
+        {
+          "bit": "0x380",
+          "value": "thingy\\tileset\\desert\\SHDLbox1.grp"
+        },
+        {
+          "bit": "0x381",
+          "value": "thingy\\tileset\\desert\\HDMachn2.grp"
+        },
+        {
+          "bit": "0x382",
+          "value": "thingy\\tileset\\desert\\LDLbox01.grp"
+        },
+        {
+          "bit": "0x383",
+          "value": "thingy\\tileset\\desert\\SLDLbox1.grp"
+        },
+        {
+          "bit": "0x384",
+          "value": "thingy\\tileset\\desert\\LDMachn1.grp"
+        },
+        {
+          "bit": "0x385",
+          "value": "thingy\\tileset\\desert\\SLDMchn1.grp"
+        },
+        {
+          "bit": "0x386",
+          "value": "thingy\\tileset\\desert\\LDPlnt04.grp"
+        },
+        {
+          "bit": "0x387",
+          "value": "thingy\\tileset\\desert\\SLDPlnt4.grp"
+        },
+        {
+          "bit": "0x388",
+          "value": "thingy\\tileset\\desert\\HDLbox01.grp"
+        },
+        {
+          "bit": "0x389",
+          "value": "thingy\\tileset\\desert\\SHDLbox1.grp"
+        },
+        {
+          "bit": "0x38A",
+          "value": "thingy\\tileset\\desert\\HDMachn2.grp"
+        },
+        {
+          "bit": "0x38B",
+          "value": "thingy\\tileset\\desert\\LDLbox01.grp"
+        },
+        {
+          "bit": "0x38C",
+          "value": "thingy\\tileset\\desert\\SLDLbox1.grp"
+        },
+        {
+          "bit": "0x38D",
+          "value": "thingy\\tileset\\desert\\LDMachn1.grp"
+        },
+        {
+          "bit": "0x38E",
+          "value": "thingy\\tileset\\desert\\SLDMchn1.grp"
+        },
+        {
+          "bit": "0x38F",
+          "value": "thingy\\tileset\\desert\\Tgas.grp"
+        },
+        {
+          "bit": "0x390",
+          "value": "thingy\\tileset\\desert\\sarlacc.grp"
+        },
+        {
+          "bit": "0x391",
+          "value": "protoss\\scout.grp"
+        },
+        {
+          "bit": "0x392",
+          "value": "zerg\\Lurkegg.grp"
+        },
+        {
+          "bit": "0x393",
+          "value": "zerg\\devour.grp"
+        },
+        {
+          "bit": "0x394",
+          "value": "zerg\\devour.grp"
+        },
+        {
+          "bit": "0x395",
+          "value": "thingy\\zDvbirth.grp"
+        },
+        {
+          "bit": "0x396",
+          "value": "zerg\\zdvDeath.grp"
+        },
+        {
+          "bit": "0x397",
+          "value": "zerg\\zLubirth.grp"
+        },
+        {
+          "bit": "0x398",
+          "value": "zerg\\zLurker.grp"
+        },
+        {
+          "bit": "0x399",
+          "value": "zerg\\Zlurker.grp"
+        },
+        {
+          "bit": "0x39A",
+          "value": "zerg\\zZluShad.grp"
+        },
+        {
+          "bit": "0x39B",
+          "value": "zerg\\XOvermnd.grp"
+        },
+        {
+          "bit": "0x39C",
+          "value": "zerg\\ZovShad.grp"
+        },
+        {
+          "bit": "0x39D",
+          "value": "protoss\\darchn.grp"
+        },
+        {
+          "bit": "0x39E",
+          "value": "protoss\\darchnT.grp"
+        },
+        {
+          "bit": "0x39F",
+          "value": "protoss\\darchnT2.grp"
+        },
+        {
+          "bit": "0x3A0",
+          "value": "protoss\\PdaDeath.grp"
+        },
+        {
+          "bit": "0x3A1",
+          "value": "protoss\\corsair.grp"
+        },
+        {
+          "bit": "0x3A2",
+          "value": "protoss\\corsair.grp"
+        },
+        {
+          "bit": "0x3A3",
+          "value": "thingy\\pcsGlow.grp"
+        },
+        {
+          "bit": "0x3A4",
+          "value": "thingy\\elbFireC.grp"
+        },
+        {
+          "bit": "0x3A5",
+          "value": "protoss\\dtemplar.grp"
+        },
+        {
+          "bit": "0x3A6",
+          "value": "protoss\\XwarpGat.grp"
+        },
+        {
+          "bit": "0x3A7",
+          "value": "protoss\\pwgShad.grp"
+        },
+        {
+          "bit": "0x3A8",
+          "value": "protoss\\XwarpFir.grp"
+        },
+        {
+          "bit": "0x3A9",
+          "value": "protoss\\XelTempl.grp"
+        },
+        {
+          "bit": "0x3AA",
+          "value": "protoss\\pxtShad.grp"
+        },
+        {
+          "bit": "0x3AB",
+          "value": "terran\\bomber.grp"
+        },
+        {
+          "bit": "0x3AC",
+          "value": "terran\\bomber.grp"
+        },
+        {
+          "bit": "0x3AD",
+          "value": "thingy\\tbmGlow.grp"
+        },
+        {
+          "bit": "0x3AE",
+          "value": "thingy\\tbmGlow.grp"
+        },
+        {
+          "bit": "0x3AF",
+          "value": "thingy\\tbmAfter.grp"
+        },
+        {
+          "bit": "0x3B0",
+          "value": "terran\\medic.grp"
+        },
+        {
+          "bit": "0x3B1",
+          "value": "terran\\tmeShad.grp"
+        },
+        {
+          "bit": "0x3B2",
+          "value": "terran\\tmeDeath.grp"
+        },
+        {
+          "bit": "0x3B3",
+          "value": "neutral\\PsiDisr.grp"
+        },
+        {
+          "bit": "0x3B4",
+          "value": "neutral\\tpdShad.grp"
+        },
+        {
+          "bit": "0x3B5",
+          "value": "neutral\\Generate.grp"
+        },
+        {
+          "bit": "0x3B6",
+          "value": "neutral\\tgnShad.grp"
+        },
+        {
+          "bit": "0x3B7",
+          "value": "thingy\\Disrupt.grp"
+        },
+        {
+          "bit": "0x3B8",
+          "value": "neutral\\Kcritter.grp"
+        },
+        {
+          "bit": "0x3B9",
+          "value": "neutral\\nckShad.grp"
+        },
+        {
+          "bit": "0x3BA",
+          "value": "neutral\\Scritter.grp"
+        },
+        {
+          "bit": "0x3BB",
+          "value": "neutral\\Scritter.grp"
+        },
+        {
+          "bit": "0x3BC",
+          "value": "neutral\\Icritter.grp"
+        },
+        {
+          "bit": "0x3BD",
+          "value": "neutral\\ncicShad.grp"
+        },
+        {
+          "bit": "0x3BE",
+          "value": "neutral\\Uraj.grp"
+        },
+        {
+          "bit": "0x3BF",
+          "value": "neutral\\Khalis.grp"
+        },
+        {
+          "bit": "0x3C0",
+          "value": "thingy\\bsmoke.grp"
+        },
+        {
+          "bit": "0x3C1",
+          "value": "bullet\\Spike.grp"
+        },
+        {
+          "bit": "0x3C2",
+          "value": "thingy\\ZDvPuke.grp"
+        },
+        {
+          "bit": "0x3C3",
+          "value": "thingy\\ZDvHit.grp"
+        },
+        {
+          "bit": "0x3C4",
+          "value": "thingy\\PcsSplsh.grp"
+        },
+        {
+          "bit": "0x3C5",
+          "value": "bullet\\SMmissle.grp"
+        },
+        {
+          "bit": "0x3C6",
+          "value": "bullet\\grenade.grp"
+        },
+        {
+          "bit": "0x3C7",
+          "value": "thingy\\tCureSml.grp"
+        },
+        {
+          "bit": "0x3C8",
+          "value": "thingy\\tCureMed.grp"
+        },
+        {
+          "bit": "0x3C9",
+          "value": "thingy\\tCureLrg.grp"
+        },
+        {
+          "bit": "0x3CA",
+          "value": "thingy\\tmeHealM.grp"
+        },
+        {
+          "bit": "0x3CB",
+          "value": "thingy\\tmeHealM.grp"
+        },
+        {
+          "bit": "0x3CC",
+          "value": "thingy\\tmeHealL.grp"
+        },
+        {
+          "bit": "0x3CD",
+          "value": "thingy\\PDaMyoSm.grp"
+        },
+        {
+          "bit": "0x3CE",
+          "value": "thingy\\PDaMyoMd.grp"
+        },
+        {
+          "bit": "0x3CF",
+          "value": "thingy\\PDaMyoLg.grp"
+        },
+        {
+          "bit": "0x3D0",
+          "value": "thingy\\TmeFlshS.grp"
+        },
+        {
+          "bit": "0x3D1",
+          "value": "thingy\\TmeFlshM.grp"
+        },
+        {
+          "bit": "0x3D2",
+          "value": "thingy\\TmeFlshL.grp"
+        },
+        {
+          "bit": "0x3D3",
+          "value": "thingy\\PDaPsySm.grp"
+        },
+        {
+          "bit": "0x3D4",
+          "value": "thingy\\PDaPsyMd.grp"
+        },
+        {
+          "bit": "0x3D5",
+          "value": "thingy\\PDaPsyLg.grp"
+        },
+        {
+          "bit": "0x3D6",
+          "value": "thingy\\PDaParSm.grp"
+        },
+        {
+          "bit": "0x3D7",
+          "value": "thingy\\PDaParMd.grp"
+        },
+        {
+          "bit": "0x3D8",
+          "value": "thingy\\PDaParLg.grp"
+        },
+        {
+          "bit": "0x3D9",
+          "value": "zerg\\zmarker.grp"
+        },
+        {
+          "bit": "0x3DA",
+          "value": "thingy\\ZdvGooS.grp"
+        },
+        {
+          "bit": "0x3DB",
+          "value": "thingy\\ZdvGooS.grp"
+        },
+        {
+          "bit": "0x3DC",
+          "value": "thingy\\ZdvGooS.grp"
+        },
+        {
+          "bit": "0x3DD",
+          "value": "thingy\\ZdvGooS.grp"
+        },
+        {
+          "bit": "0x3DE",
+          "value": "thingy\\ZdvGooM.grp"
+        },
+        {
+          "bit": "0x3DF",
+          "value": "thingy\\ZdvGooM.grp"
+        },
+        {
+          "bit": "0x3E0",
+          "value": "thingy\\ZdvGooM.grp"
+        },
+        {
+          "bit": "0x3E1",
+          "value": "thingy\\ZdvGooM.grp"
+        },
+        {
+          "bit": "0x3E2",
+          "value": "thingy\\ZdvGooL.grp"
+        },
+        {
+          "bit": "0x3E3",
+          "value": "thingy\\ZdvGooL.grp"
+        },
+        {
+          "bit": "0x3E4",
+          "value": "thingy\\ZdvGooL.grp"
+        },
+        {
+          "bit": "0x3E5",
+          "value": "thingy\\ZdvGooL.grp"
+        },
+        {
+          "bit": "0x3E6",
+          "value": "thingy\\MaelHit.grp"
+        }
+      ]
+    }
+  ]
+}

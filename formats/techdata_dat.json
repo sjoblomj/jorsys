@@ -1,12 +1,12 @@
 {
   "title": "techdata.dat",
-  "description": "",
+  "description": "techdata.dat holds the data for technologies: the spells and abilities that are researched once, such as Stim Packs, Lockdown or Burrowing (see Appendix: Techdata list). It gives each technology's research cost, the energy it costs to use, its icon, its name, its race and whether it belongs to Brood War. It is the file arr\\techdata.dat in the game's MPQ archives and is 836 bytes long. Each field below is a list with one entry for each of the 44 technologies, and the lists are stored one after another with nothing in between, so the offsets are from the start of the file. The layout is the same in every version from 1.04 to 1.17, of both StarCraft and Brood War, and StarEdit reads the file in the same layout. StarCraft 1.00 to 1.03 used an older, shorter layout, with 24 technologies (432 bytes). That older file is still in StarDat.mpq in later versions, but it is never loaded: the newer copy in patch_rt.mpq (or, in 1.05 to 1.07, BrooDat.mpq) is found first. The patch_rt.mpq copy is the same in 1.08 to 1.17. The game loads the file again each time a game starts, before the map's own settings are applied, so a change to the file takes effect at the next game. Fields are read in order, and the game stops with a file error if the file is longer than the layout. A shorter file that ends exactly where a field ends loads without an error; the fields after the end then keep whatever they held before.\n\nA map can replace the costs. Its technology settings (the CHK section TECS in StarCraft maps and TECx in Brood War maps) hold minerals, gas, time and energy for each technology, and for every technology whose \"use default settings\" flag is clear these replace the four Cost fields of this file for that game. Saved games store the four Cost fields as well. Which technologies each player may research, and which they start with, come from the map, not from this file.\n\nTechnologies 0 to 23 are those of the original StarCraft and 24 to 43 were added by Brood War. Entries 26, 33 and 35 to 43 are unused.",
   "spec": [
     {
       "name": "Cost: Minerals",
       "offset": "0x0000",
       "length": "88 bytes (2 bytes / Technology)",
-      "description": "Cost in Minerals required to research this Technology.",
+      "description": "Minerals needed to research this technology. Taken when the research starts and given back if it is cancelled.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
@@ -14,7 +14,7 @@
       "name": "Cost: Vespene Gas",
       "offset": "0x0058",
       "length": "88 bytes (2 bytes / Technology)",
-      "description": "Cost in Vespene Gas to research this Technology.",
+      "description": "Vespene gas needed to research this technology. Taken when the research starts and given back if it is cancelled.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
@@ -22,48 +22,56 @@
       "name": "Cost: Research Time",
       "offset": "0x00B0",
       "length": "88 bytes (2 bytes / Technology)",
-      "description": "Time required to research this Technology.",
-      "values": "Integer values between 0 and 65535.",
-      "bits": []
-    },
-    {
-      "name": "Cost: Mana",
-      "offset": "0x0108",
-      "length": "88 bytes (2 bytes / Technology)",
-      "description": "Mana required to use this Technology.",
+      "description": "Time the research takes, in game frames: the value is copied into the building's research countdown when the research starts. The progress bar shown while researching is measured against it too. StarEdit shows the time divided by 15, as seconds.",
       "values": "Integer value between 0 and 65535.",
       "bits": []
     },
     {
-      "name": "Unknown",
+      "name": "Cost: Energy",
+      "offset": "0x0108",
+      "length": "88 bytes (2 bytes / Technology)",
+      "description": "Energy a unit needs, and spends, to use this technology. The value is in whole energy points; the game multiplies it by 256, because units keep their energy in 1/256 points. The cost charged for a spell is looked up through the order's technology in orders.dat. Some of the checks (for example the one made when the spell is clicked) keep only the low byte of the value, so a cost above 255 does not work consistently. A button that uses the technology shows this cost in its tooltip.",
+      "values": "Integer value between 0 and 255 (see the description). Units can hold at most 250 energy.",
+      "bits": []
+    },
+    {
+      "name": "Requirements: Research",
       "offset": "0x0160",
-      "length": "176 bytes (4 bytes / Technology)",
-      "description": "Unknown, most likely this is a flag of some sort. Always set to 0xFFFFFFFF.",
-      "values": "Integer values between 0 and 2^32",
+      "length": "88 bytes (2 bytes / Technology)",
+      "description": "Where this technology's research requirements start in the game's built-in requirement list (the technology research requirements, inside the executable, not in any data file), as a position in that list. 0 means the technology has no requirements entry and is never allowed. The game fills this field in itself: whenever it checks a technology whose entry holds 0xFFFF, it walks the built-in list, stores the position for every technology listed there (replacing what the file had), and sets every entry still 0xFFFF to 0. So a value other than 0xFFFF only survives for technologies that have no entry in the built-in list, or if the file has no 0xFFFF at all, and it then picks (part of) an existing entry of the list; nothing checks it. The shipped file has 0xFFFF everywhere, so the game always uses its built-in list.",
+      "values": "0xFFFF (let the game fill it in).",
+      "bits": []
+    },
+    {
+      "name": "Requirements: Use",
+      "offset": "0x01B8",
+      "length": "88 bytes (2 bytes / Technology)",
+      "description": "Where this technology's requirements for using it (casting the spell or using the ability, checked each time a unit tries) start in the game's built-in requirement list (the technology use requirements, inside the executable, not in any data file), as a position in that list. 0 means the technology has no requirements entry and is never allowed. The game fills this field in itself: whenever it checks a technology whose entry holds 0xFFFF, it walks the built-in list, stores the position for every technology listed there (replacing what the file had), and sets every entry still 0xFFFF to 0. So a value other than 0xFFFF only survives for technologies that have no entry in the built-in list, or if the file has no 0xFFFF at all, and it then picks (part of) an existing entry of the list; nothing checks it. The shipped file has 0xFFFF everywhere, so the game always uses its built-in list.",
+      "values": "0xFFFF (let the game fill it in).",
       "bits": []
     },
     {
       "name": "Icon",
       "offset": "0x0210",
       "length": "88 bytes (2 bytes / Technology)",
-      "description": "The index of an icon in the cmdicons.grp file.",
-      "values": "Integer value between 0 and the last index of cmdicons.grp.",
+      "description": "Frame of unit\\cmdbtns\\cmdicons.grp shown in the status panel while this technology is being researched. Command buttons do not use it; their icons are part of the button sets in the executable.",
+      "values": "Integer value between 0 and the last frame of cmdicons.grp.",
       "bits": []
     },
     {
       "name": "Label",
       "offset": "0x0268",
       "length": "88 bytes (2 bytes / Technology)",
-      "description": "Index of a string in rez\\stat_txt.tbl which is the label for this technology.",
-      "values": "Integer value between 0 and the last index of rez\\stat_txt.tbl",
+      "description": "Name of the technology: a string number in rez\\stat_txt.tbl, counting from 1. The game uses it in the tooltip of the icon shown while the technology is being researched (\"Cancel Research\" followed by the name in brackets). StarEdit uses it to name the technology in its technology settings.",
+      "values": "Integer value between 1 and the number of strings in rez\\stat_txt.tbl. 0 or a number beyond the last string gives an empty name.",
       "bits": []
     },
     {
       "name": "Race",
       "offset": "0x02C0",
       "length": "44 bytes (1 byte / Technology)",
-      "description": "Determines the race this Technology is researched by.",
-      "values": null,
+      "description": "Only used by StarEdit, which lists the technologies under their race in the technology settings of a map, and leaves out technologies with the value 3. The game itself never reads this field.",
+      "values": "Values above 3 are not checked by StarEdit.",
       "bits": [
         {
           "bit": "0x00",
@@ -79,7 +87,7 @@
         },
         {
           "bit": "0x03",
-          "value": "All"
+          "value": "None: StarEdit leaves the entry out of its lists"
         }
       ]
     },
@@ -87,16 +95,16 @@
       "name": "Researched",
       "offset": "0x02EC",
       "length": "44 bytes (1 byte / Technology)",
-      "description": "Boolean flag which determines whether this Technology is already researched.",
+      "description": "Not used: no code in StarCraft or StarEdit reads this field, in any version from 1.04 to 1.17. In the shipped file it is 1 for the technologies that need no research (Scanner Sweep, Defensive Matrix, Infestation, Dark Swarm, Parasite, Archon Warp, Dark Archon Meld, Feedback, Healing) and for the unused entry 33. Whether a player starts with a technology is set by the map.",
       "values": null,
       "bits": [
         {
           "bit": "0x00",
-          "value": "false (not researched)"
+          "value": "Needs research (not used by the game)"
         },
         {
           "bit": "0x01",
-          "value": "true (researched)"
+          "value": "Available without research (not used by the game)"
         }
       ]
     },
@@ -104,16 +112,20 @@
       "name": "Brood War Flag",
       "offset": "0x0318",
       "length": "44 bytes (1 byte / Technology)",
-      "description": "Boolean flag that determines whether this technology is Brood War-researchable only.",
+      "description": "Only used by StarEdit, which shows the technologies marked 1 only when the map is a Brood War map. The game itself never reads this field.",
       "values": null,
       "bits": [
         {
           "bit": "0x00",
-          "value": "false (SC and BW)"
+          "value": "Shown in StarEdit for StarCraft and Brood War maps"
         },
         {
           "bit": "0x01",
-          "value": "true (BW Only)"
+          "value": "Shown in StarEdit only for Brood War maps"
+        },
+        {
+          "bit": "0x02 and up",
+          "value": "Never shown in StarEdit"
         }
       ]
     }
@@ -121,7 +133,7 @@
   "appendices": [
     {
       "name": "Appendix: Techdata list",
-      "description": "List of technologies.",
+      "description": "The technology list, with the names the game uses (from each technology's Label). Every field of the file has one entry for each of these, in this order. Entries 26, 33 and 35 to 43 have no name and no use. The game's technology number 44 means \"no technology\" (for example in orders.dat), but it has no entry in this file.",
       "bits": [
         {
           "bit": "0x00",
@@ -177,7 +189,7 @@
         },
         {
           "bit": "0x0D",
-          "value": "Spawn Broodlings"
+          "value": "Spawn Broodling"
         },
         {
           "bit": "0x0E",
@@ -229,7 +241,7 @@
         },
         {
           "bit": "0x1A",
-          "value": "Unknown Tech26"
+          "value": "Unused 26"
         },
         {
           "bit": "0x1B",
@@ -257,7 +269,7 @@
         },
         {
           "bit": "0x21",
-          "value": "Unknown Tech33"
+          "value": "Unused 33"
         },
         {
           "bit": "0x22",
@@ -265,39 +277,39 @@
         },
         {
           "bit": "0x23",
-          "value": "Unknown Tech35"
+          "value": "Unused 35"
         },
         {
           "bit": "0x24",
-          "value": "Unknown Tech36"
+          "value": "Unused 36"
         },
         {
           "bit": "0x25",
-          "value": "Unknown Tech37"
+          "value": "Unused 37"
         },
         {
           "bit": "0x26",
-          "value": "Unknown Tech38"
+          "value": "Unused 38"
         },
         {
           "bit": "0x27",
-          "value": "Unknown Tech39"
+          "value": "Unused 39"
         },
         {
           "bit": "0x28",
-          "value": "Unknown Tech40"
+          "value": "Unused 40"
         },
         {
           "bit": "0x29",
-          "value": "Unknown Tech41"
+          "value": "Unused 41"
         },
         {
           "bit": "0x2A",
-          "value": "Unknown Tech42"
+          "value": "Unused 42"
         },
         {
           "bit": "0x2B",
-          "value": "Unknown Tech43"
+          "value": "Unused 43"
         }
       ]
     }
