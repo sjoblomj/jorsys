@@ -1,12 +1,24 @@
 # weapons.dat Format
 
-weapons.dat holds the data for the weapons units attack with, and for the spells that work by firing a weapon (see Appendix: Weapons list): the bullet each fires, what it can target, its range, damage and how the damage is dealt, its cooldown, and the name, icon and error message shown for it. It is the file arr\weapons.dat in the game's MPQ archives and is 5460 bytes long. Each field below is a list with one entry for each of the 130 weapons, and the lists are stored one after another with nothing in between, so the offsets are from the start of the file. The layout is the same in every version from 1.04 to 1.17, of both StarCraft and Brood War, and StarEdit reads the file in the same layout. StarCraft 1.00 to 1.03 used an older, shorter layout with 100 weapons (4200 bytes). That older file is still in StarDat.mpq in later versions, but it is never loaded: the newer copy in patch_rt.mpq (or, in 1.05 to 1.07, BrooDat.mpq) is found first. The patch_rt.mpq copy is the same in 1.08 to 1.17; the BrooDat.mpq copy differs from it only in the maximum range of weapon 7 (160 instead of 192) and the damage of weapons 84 (16 instead of 14) and 103 (5 instead of 6). The game loads the file again each time a game starts, before the map's own settings are applied. Fields are read in order, and the game stops with a file error if the file is longer than the layout. A shorter file that ends exactly where a field ends loads without an error; the fields after the end then keep whatever they held before.
+weapons.dat holds the data of the weapons that units attack with, and of the spells that work by firing a weapon (see Appendix: Weapons list). Each entry gives the bullet the weapon fires, what it can target, its range, its damage and how the damage is dealt, its cooldown, and the name, icon and error message shown for it. Which weapons a unit uses is set in units.dat (Ground Weapon and Air Weapon). Weapon number 130 means "no weapon" there; it has no entry in this file.
 
-Which weapons a unit uses is set in units.dat (Ground Weapon and Air Weapon). Weapon number 130 means "no weapon" there; it has no entry in this file. No field is checked against the size of the table it points into, so out-of-range values read whatever follows in memory.
+The file is arr\weapons.dat in the game's MPQ archives. It has 130 entries, one for each weapon, and is 5460 bytes long. It is stored field by field, not entry by entry: first the Label of all 130 weapons, then the Graphics of all 130, and so on, with nothing in between. The offsets below count from the start of the file.
 
-A map can replace Damage and Bonus. Its unit settings (the CHK section UNIS in StarCraft maps and UNIx in Brood War maps) hold them for each weapon, and for every unit whose "use default settings" flag is clear, they are copied into the unit's ground and air weapon (those of its turret, if it has one). Weapons of units left at their defaults keep the values of this file. Saved games store Damage and Bonus as well.
+The layout is the same in every version from 1.04 to 1.17, in both StarCraft and Brood War. StarCraft 1.00 to 1.03 used an older, shorter layout with 100 weapons (4200 bytes). That older file is still in StarDat.mpq in later versions, but it is never loaded, because the game finds the newer copy in patch_rt.mpq first (in 1.05 to 1.07, the copy in BrooDat.mpq). The patch_rt.mpq copy is the same in 1.08 to 1.17. The BrooDat.mpq copy differs from it in three values only: the maximum range of weapon 7 (160 instead of 192), the damage of weapon 84 (16 instead of 14) and the damage of weapon 103 (5 instead of 6).
 
-Damage is dealt in steps. A bullet deals (Damage + Bonus × the player's level of the Damage Upgrade) hit points, divided where a splash or bounce says so. The target's shields take it first, less the shield upgrade level (unless the damage class is 4); what is left is reduced by the target's armor plus its armor upgrade level (again unless the class is 4), then multiplied by the factor for the damage class and the target's size (see Damage Class). If the shields took none of the hit, it deals at least half a hit point.
+The game loads the file each time a game starts, before the map's own settings are applied. StarEdit reads the file in the same layout. If the file is longer than the layout, the game stops with a file error. A shorter file loads without an error if it ends exactly where a field ends; the missing fields then keep whatever they held before. Out-of-range values are not rejected: the game then reads whatever follows the table that the value points into.
+
+A map can replace Damage and Bonus. Its unit settings (the CHK section UNIS in StarCraft maps and UNIx in Brood War maps) hold them for each weapon. For every unit whose "use default settings" flag is clear, they are copied into the unit's ground and air weapon (those of its turret, if it has one). Weapons of units left at their defaults keep the values of this file. Saved games store Damage and Bonus as well.
+
+Damage is dealt in steps:
+
+1. A bullet deals Damage + Bonus × the player's level of the Damage Upgrade, in hit points. This is divided where a splash or bounce says so.
+2. The target's shields take the damage first, less the shield upgrade level.
+3. What is left is reduced by the target's armor plus its armor upgrade level.
+4. The result is multiplied by the factor for the damage class and the target's size (see Damage Class).
+5. If the shields took none of the hit, it deals at least half a hit point.
+
+Damage class 4 skips the shield upgrade in step 2 and the armor in step 3.
 
 ## Label
 {{begin-formattable}}
