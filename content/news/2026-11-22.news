@@ -1,0 +1,13 @@
+{{begin-newsitem |time=2026-11-22T09:41:04Z |title=Down the rabbit holes |author=Ojan |resources=wayland.jpg |categories=WarCraft II, modding, formats |summary=AxeGraft leads to MPQDraft, which leads to Wine}}
+
+I have spent some time now going down various rabbit holes. In order to further improve {{highlight |text=AxeGraft}}, I realized I wanted to modernize and update {{highlight |text=MPQDraft}} first. A new update of it is underway, but there's still more I want to do there.
+
+However, when updating {{highlight |text=MPQDraft}}, I realized that Diablo does not even play on my system, and I knew since before that StarCraft and Warcraft II give a very poor experience as well. My system is an old Lenovo Thinkpad with a 4K screen, running the fantastic [labwc](https://github.com/labwc/labwc), a Linux [Wayland](https://en.wikipedia.org/wiki/Wayland_(protocol)) compositor.
+
+{{img |file=wayland.jpg |title=Wayland the smith}}
+
+To play these games, you need [Wine](https://winehq.org), a compatibility layer for running Windows programs under Linux. It seems to have been lacking a little bit in three separate areas: DPI scaling for smaller screen resolutions, repainting of the screen under certain conditions, and how its wayland driver handles window popups. I have made fixes for all those areas, so if they get merged, the experience going forward should be smoother for everyone playing with similar systems.
+
+Diablo I still has some minor issues after this: in the main menu there are artifacts from previous screens still visible when they should be repainted. It appears that Windows 8 and above handles these situations differently than the Windows versions Diablo I was developed for. While I haven't tried this, I thus belive Wine behaves correct in how it handles this area, and attempting to run Diablo I under a modern Windows version will likely result in the same visual issues. Fixing it in Wine will make Wine deviate from its goal of behaving like modern Windows. Anyway, it is a minor issue, not a showstopper like the other fixes.
+
+So, hopefully this gets accepted in Wine, and regardless, I have unblocked what I need in order to continue with the next version of {{highlight |text=MPQDraft}}.
