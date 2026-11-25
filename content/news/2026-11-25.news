@@ -1,0 +1,397 @@
+{{begin-newsitem |time=2026-11-25T20:12:02Z |title=A flurry of tool releases |author=Ojan |categories=StarCraft I, WarCraft II, modding, tools |summary=New releases of RuneFoundry, PUDForge, scmJS, mpqcli, StarDraft 2 and Chkdraft}}
+
+There is so much happening in the community right now that it is hard to keep up! Despite the age of the games, tools for both StarCraft and WarCraft II are getting new releases at a rapid pace, and several of them have put out a whole string of versions since I last wrote about them. Here is a roundup of the latest releases of {{highlight |text=mpqcli}}, {{highlight |text=RuneFoundry}}, {{highlight |text=PUDForge}}, {{highlight |text=StarDraft 2}}, {{highlight |text=Chkdraft}} and {{highlight |text=scmJS}}.
+
+---
+
+## {{highlight |text=mpqcli}}
+
+Version 0.13.3 of [mpqcli](https://github.com/thegraydot/mpqcli) was released on 20 November 2026. {{highlight |text=mpqcli}} is a command-line tool by {{highlight |text=Thomas Laurenson}} to create, list, extract and modify MPQ archives. MPQ archives were used for many years by Blizzard games such as StarCraft I and Warcraft II, and contain the game assets that game modifications change.
+
+There have been two releases since the last time {{highlight |text=mpqcli}} was in the news here: [0.13.2](https://github.com/thegraydot/mpqcli/releases/tag/v0.13.2) and [0.13.3](https://github.com/thegraydot/mpqcli/releases/tag/v0.13.3).
+
+### Changes in {{highlight |text=mpqcli}} 0.13.3:
+
+#### Fixed
+
+- Store, list, extract and read file names with non-ASCII characters correctly on Windows 10 version 1903 and later
+- Print non-ASCII file names correctly in the Windows console
+- Exit with 130 on Windows when interrupted, as on Linux, instead of 3
+- End by SIGTERM when stopped with SIGTERM, so a shell reports 143 rather than an interrupt's 130
+
+### Changes in {{highlight |text=mpqcli}} 0.13.2:
+
+#### Changed
+
+- Say on stderr when read or extract uses the default locale because the file has no copy in the one asked for
+
+#### Fixed
+
+- Extract each name once when extracting every file, under the locale it is stored in, and name the left-out locales on stderr
+- Extract files stored only under a non-default locale when extracting every file, instead of failing
+- List every locale of a name stored under more than 32, instead of reading past a buffer
+- Show an empty time in list for a file time that cannot be converted, instead of reading past a buffer
+
+### Download:
+
+Find version 0.13.3 of {{highlight |text=mpqcli}} [here](https://github.com/thegraydot/mpqcli/releases/tag/v0.13.3).
+
+---
+
+## {{highlight |text=RuneFoundry}}
+
+Version 0.6.5-alpha of [RuneFoundry](https://github.com/pudforge/RuneFoundry) was released on 9 October 2026. {{highlight |text=RuneFoundry}} is a set of mod tools for Warcraft II Remastered by {{highlight |text=milestone}}. It has two programs: a launcher that installs and plays mods, and an editor that makes them. It can edit things like campaigns, AI scripts, sprites and unit and weapon properties.
+
+### Changes in {{highlight |text=RuneFoundry}} 0.6.5-alpha:
+
+If Warcraft II or Battle.net is set to run as administrator, RuneFoundry now says so and explains how to turn it off. That setting stops a mod's rules from working.
+
+### Download:
+
+Find version 0.6.5-alpha of {{highlight |text=RuneFoundry}} [here](https://github.com/pudforge/RuneFoundry/releases/tag/v0.6.5-alpha).
+
+---
+
+## {{highlight |text=PUDForge}}
+
+Version 0.1.80 of [PUDForge](https://github.com/pudforge/PUDForge) was released on 13 October 2026. {{highlight |text=PUDForge}} is a map editor for Warcraft II by {{highlight |text=milestone}}, which runs on Windows. The map format is the same in the original DOS versions of Warcraft II as in the Battle.net Edition and the Remastered version, so its maps work in all of them.
+
+### Changes in {{highlight |text=PUDForge}} 0.1.80:
+
+**New**
+
+- Help, Report an Issue sends your text to the PUDForge issue list. The reply
+  gives a link to the issue.
+- Each right-click menu has Report an Issue with the item that you clicked.
+- After a crash, PUDForge asks at the next start to send a crash report.
+
+### Download:
+
+Find version 0.1.80 of {{highlight |text=PUDForge}} [here](https://github.com/pudforge/PUDForge/releases/tag/v0.1.80).
+
+---
+
+## {{highlight |text=StarDraft 2}}
+
+Version 0.9.2 of [StarDraft 2](https://github.com/stardraft-editor/stardraft) was released on 24 November 2026. {{highlight |text=StarDraft 2}} is a map editor for StarCraft: Remastered on Windows by {{highlight |text=Milestone}} and {{highlight |text=iDoodler}}. It can be used for classic maps, but its main focus is EUD maps, where it brings the editing of the map, the game data and the triggers together in one place.
+
+There have been 22 releases since the last time {{highlight |text=StarDraft 2}} was in the news here, all of which are found on the [releases page](https://github.com/stardraft-editor/stardraft/releases). The changes in the three latest are listed below.
+
+### Changes in {{highlight |text=StarDraft 2}} 0.9.2:
+
+[Video: the new features of 0.9.2](https://raw.githubusercontent.com/stardraft-editor/stardraft/v0.9.2/docs/user/images/0.9.2/whats-new.mp4)
+
+#### New
+
+- File > Import from SCMSCX: search [scmscx.com](https://scmscx.com), then download and open a map in one step.
+- Fog of war tool (Shift+F): paint and erase the fog of one or more players.
+- Edit > Resize map (Ctrl+Shift+R): drag the map's edges on the map. The new ground is the terrain picked in the
+  Terrain palette.
+- Map sizes of your own: type the width and the height.
+- Pathing overlay: each region has an outline, and lines show where ground units can go between regions.
+- Palettes: Ctrl+wheel makes the items bigger or smaller.
+- View > Overlays > Psi power: which Protoss buildings have power from a Pylon.
+- Stars in space: the game's moving stars over Space Platform maps.
+- Protected maps open as view only. {{highlight |text=StarDraft 2}} does not save, export or copy from them.
+
+#### Map
+
+- The arrow keys move the selected sprites and doodads.
+- Town areas show the total minerals and gas of each town.
+- Terrain select: Isometric shows the diamonds that each shape copies.
+
+#### Triggers
+
+- New blocks from {{highlight |text=EUD Editor 3}}'s TETools: build, morph and train units, control groups, and more.
+- Easier to read helper code: unit fields have names, not memory offsets.
+
+#### [CMBW mod](https://cosmonarchy.com/)
+
+- Recolor preview: see the mod's recolors on the map.
+- Recolor action: paste the line that Recolor preview copies.
+
+#### Fixes
+
+- SC:R's newer doodads (Space Platform, Desert, Twilight) show and can be placed.
+- The end piece of a ramp is no longer marked invalid.
+- Submenus stay on the screen.
+- Briefing: Space in the text box no longer plays or pauses the preview.
+- Map data > Technologies: the Changed filter shows techs that are set for all players.
+- Unit properties: a click in the list keeps the search.
+- Korean: locations are 로케이션.
+
+### Changes in {{highlight |text=StarDraft 2}} 0.9.1.1:
+
+#### Fixes
+
+- [Cosmonarchy BW](https://cosmonarchy.com/): maps save in the format the mod opens. Maps made with File > New could not be played in the mod.
+- Downloads for macOS and Linux are back (0.9.1 had only Windows).
+- Town areas: an area's town hall place can be over the mod's markers and over the map's own town halls.
+
+### Changes in {{highlight |text=StarDraft 2}} 0.9.1:
+
+[Video: the new features of 0.9.1](https://raw.githubusercontent.com/stardraft-editor/stardraft/v0.9.1/docs/user/images/0.9.1/whats-new.mp4)
+
+#### New
+
+- New language support: Portuguese (Brazil) and German.
+- Copy and paste units between maps. Doodads paste only in a map of the same tileset.
+- Tile variations: select up to 2 x 3 tiles, and the side bar shows their variations. Point to one to see it on the
+  map, click to use it. Alt + wheel steps a tile through its variations.
+- Pie palette for Units, Doodads and Sprites: hold Space and pick from rings at the mouse. Custom terrain has rings
+  too.
+- Edit > Arrange: align, spread, row, column, grid or circle for the selected units.
+- View > In-game view (experimental): the map at the game's screen size (Ctrl+Shift+G).
+- Plugins: [Hyperion](https://github.com/Mad-Man-Dan/hyperion-public) (experimental), with up to 64 players. Program options > Plugins is a choice of No plugin, [Cosmonarchy BW](https://cosmonarchy.com/) or [Hyperion](https://github.com/Mad-Man-Dan/hyperion-public).
+- Mod terrain mapper (experimental): make a mod's isometric terrain tile by tile, with match suggestions.
+
+#### Map
+
+- Terrain: Copy as text, and Ctrl+V of custom terrain text makes it the Brush.
+- Symmetry: one button for all mirrors; up to 32 anchors and 64 brushes.
+- Units: drag while pasting to paste copies along the way.
+- Locations: right-click lists the locations under the pointer, to select one under others.
+- Town areas use the game's resource area rule, each area in its own color.
+- Zoom in to 1600%.
+- Map title colors, an owner for many units at once, and a better Custom terrain list order.
+
+#### Triggers
+
+- New action: Shift a location in a direction.
+- A player from a variable or a value in more places. New values: Game time in seconds, The number of players, and
+  more.
+- For each unit accepts Men, Buildings and Factories.
+- Sound files in epScript: a list of the files as you type a sound name.
+
+#### [CMBW mod](https://cosmonarchy.com/)
+
+- ISOM terrains is one choice of three: game terrains only, built-in mod terrains (deprecated), or a
+  terrain rules file.
+- The Units palette shows a mod's own unit icons.
+
+#### The program
+
+- Open the last session's tabs on start (Program options).
+- Faster start: 257 ms (was 475 ms).
+- 50 recent maps and projects.
+- Report feedback sends in the background.
+
+#### Fixes
+
+- Installation doors and traps show and place correctly.
+- The SD selection circle is as bright as HD's.
+- Map layers stay after a save, a tab switch or a CLI save.
+- Mining Lab: maps with no start location mine again.
+
+### Download:
+
+Find version 0.9.2 of {{highlight |text=StarDraft 2}} [here](https://github.com/stardraft-editor/stardraft/releases/tag/v0.9.2).
+
+---
+
+## {{highlight |text=Chkdraft}}
+
+Version 2.20 of [Chkdraft](https://github.com/TheNitesWhoSay/Chkdraft) was released on 24 November 2026. {{highlight |text=Chkdraft}} is an open-source map editor for StarCraft by {{highlight |text=TheNitesWhoSay}}.
+
+There have been four releases since the last time {{highlight |text=Chkdraft}} was in the news here: [2.17](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.17), [2.18](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.18), [2.19](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.19) and [2.20](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.20). The changes are listed below.
+
+### Changes in {{highlight |text=Chkdraft}} 2.20:
+
+- Fix various issues with location 255
+- Fix a rare crash that could occur with suggestions
+
+### Changes in {{highlight |text=Chkdraft}} 2.19:
+
+- Actor {{amp}} image properties auto-refresh in actor properties (toggleable via auto refresh UI checkbox)
+- Auto-update actor list in actor properties (in response to unit/sprite changes)
+- Button in actor properties to reset an actor {{amp}} its images back to original state
+- Center an actor on the map when selected in actor properties
+
+### Changes in {{highlight |text=Chkdraft}} 2.18:
+
+- Add recent maps menu
+- Add ability to scroll around the map by arrow keys (and WASD if WASD is toggled on)
+- Prevent beep when changing the placement player by hotkey
+- Add a border to the tileset indexed window
+- Render null/black tiles as black when pasting
+- Name map properties menu item to match the tab name
+- Fix a bug in text trig bug where the user inputting multiple strings before a separator/delimiter caused incorrect strings to be used rather than erroring out
+
+### Changes in {{highlight |text=Chkdraft}} 2.17:
+
+- Greatly improve trigger condition/action/briefing-action suggestion behavior
+- 65% faster updates to conditions/actions/briefing-actions
+- Significantly smoother submit/cancel change behavior when looking at suggestions/options for condition/action fields
+- Allow creating new strings as well as selecting existing from string suggestions
+- Allow numeric value entry in suggestions (showing the meaning and letting it be selected)
+- Add a toolbar to suggestion showing the relevant actions/teaching the relevant hotkeys
+- Fix cut/copy/paste/delete behavior in conditions/actions so it counts as one undoable action
+- Fixes for editor-only strings, triggers extensions and trigger comments/notes fields
+- Add selection counts on the status bar
+- Only run minimap tests if StarCraft assets are available
+
+### Download:
+
+Find version 2.20 of {{highlight |text=Chkdraft}} [here](https://github.com/TheNitesWhoSay/Chkdraft/releases/tag/2.20).
+
+---
+
+## {{highlight |text=scmJS}}
+
+Version 0.18.0 of [scmJS](https://github.com/scm-js/scm-js) was released on 20 November 2026. {{highlight |text=scmJS}} is a map editor for StarCraft, Brood War and StarCraft: Remastered by {{highlight |text=jeany55}}. It takes inspiration from {{highlight |text=StarEdit}}, {{highlight |text=SCMDraft 2}} and {{highlight |text=StarForge}}, and runs either as a desktop app for Windows, macOS and Linux, or directly in the browser at [scmjs.dev/editor](https://scmjs.dev/editor/).
+
+There have been 31 releases since the last time {{highlight |text=scmJS}} was in the news here, all of which are found on the [releases page](https://github.com/scm-js/scm-js/releases). The changes in the two latest are listed below.
+
+### Changes in {{highlight |text=scmJS}} 0.18.0:
+
+A protected map whose archive is full of files nothing names can be saved again. An AI can
+now play scenarios on a map to check its triggers, and give a map a TrigScript script.
+`scmjs mcp` now serves only the map tools unless you ask for more, so read **AI apps** if
+you use the mod, replay or account tools.
+
+#### Saving
+
+- Some protected maps could not be saved at all: every Save failed with `MpqError`.
+  Protectors fill the map's archive with files that nothing in the map names, so there was
+  no room for the files the editor writes. The game never opens such a file, so when there
+  is no room, Save now leaves them out and the map plays the same. The Save dialog says
+  how many it leaves out.
+- Repair 1.7.0 finds those files as a map opens and leaves them out of the next save, like
+  its other safe repairs. **Undo** in Repair's list puts them back.
+
+#### Using the editor online
+
+- A tab left open while scmjs.dev is updated keeps working. If part of the editor still
+  cannot be downloaded, a notice says so and offers **Reload**, which keeps your recovery
+  copies.
+
+#### AI apps
+
+- **`scmjs mcp` serves the map tools and no others.** The mod, replay and scmjs.dev account
+  tools are now sets you turn on: `scmjs mcp --tools all`, or `--tools mods,replays,account`
+  for some of them. In Claude Desktop, tick the set in the extension's settings. 0.17.0
+  served every tool, so add one of these if an AI used those tools for you. When a set is
+  off, the AI is told how to turn it on.
+- `map_test` plays scenarios on a map in the game and says what happened: each expectation
+  with what the game gave, how the game ended and for whom, minerals and gas, the text
+  shown and the triggers that fired. A scenario can be given inline, and `save` keeps it in
+  the map's tests file.
+- `map_script_import` gives a map a TrigScript script, or changes some of its files, and
+  compiles it at once, with errors given as file, line and column. `map_script_export` gives
+  the files back, and `map_script_api` looks up what a script can call.
+- The Claude Desktop extension now includes TypeScript, so `map_build` works with nothing
+  else installed.
+
+#### Command line
+
+- `scmjs map test --show` prints what each game did. `--only <name>` plays one scenario,
+  `-` reads scenarios from standard input and `--save` keeps them. `scmjs mod test` takes the
+  same flags.
+- `scmjs map script import`, `export` and `api` do what the AI tools of the same names do.
+- A script compiles with TypeScript 6. TypeScript 7 and 5 cannot compile one, and
+  `scmjs doctor` now says "too new" or "too old" for them. Install `typescript@6`, since
+  `typescript` alone installs 7.
+- For a Homebrew install, `scmjs about` and `scmjs doctor` give the update command as
+  `brew update {{amp}}{{amp}} brew upgrade scmjs`. `brew upgrade` alone may not see a new release for a
+  day.
+
+#### Privacy
+
+- When something goes wrong, the count the editor sends now also says which part of the
+  editor it was in, such as which dialog, and for a map file's archive, which kind of
+  problem it was. It still never sends the error's message, the map or a file name.
+
+#### Plugins
+
+- Repair 1.7.0: files in a map's archive that nothing names, left out of the next save.
+
+#### For plugin authors
+
+- `api.document.archive.unreachable()` counts the archive's files that nothing names, and
+  `dropUnreachable({ asOpened })` leaves them out of the next save. Its result has `undo()`
+  to put them back. Use `asOpened` only for a repair made as the map opens.
+- The API version stays 1.
+
+### Changes in {{highlight |text=scmJS}} 0.17.0:
+
+Preferences has a filter box, can draw the interface larger, and resets one page at a
+time. The View menu remembers what was ticked, and the Heal tab shows and counts the
+seams it mends. Claude Desktop can now work on your maps, installed from one file with no
+terminal.
+
+#### Preferences
+
+- A filter box above the page list finds a setting on any page. Type a word and every
+  section that has it is shown under its page's name, with its own controls. On Hotkeys
+  the box narrows the list to a command by its name or its keys: `Ctrl+S` finds Save.
+- **View ▸ Interface** draws the menus, toolbar, palettes, panels and dialogs at 115% or
+  130%. The map is not enlarged, and a press still lands on the tile under the pointer.
+- **View ▸ Notices** has **Keep notices until I close them**. With two or more up, a
+  **Close all** sits above them.
+- **Reset this page** puts back only the page in front, and **Reset everything…** asks
+  first. Neither changes the Privacy tick.
+- New scenario, Saving and Recovery are on a new **Files** page. General keeps Language,
+  Startup, Maps and Privacy.
+- The plugins' pages are listed by the plugin's name.
+
+#### View menu
+
+- Grid, Location Names, Animate Water, Animate Units and Remastered Graphics come back as
+  they were left. The three ticks that set what they started with are gone from
+  Preferences ▸ View, and a choice made there is carried over.
+- Where the system asks for reduced motion, the two animations start off until you tick
+  them.
+
+#### Terrain
+
+- The Heal tab says what a seam is, draws the seams on the map while it is open, and
+  counts them, for the whole map or the area marked.
+- Every Heal stroke says what it did: the tiles it changed and the seams left, or why it
+  changed nothing.
+
+#### Several maps
+
+- Switching to another open map ends a unit being placed and forgets where the Blend
+  brush started.
+
+#### AI apps
+
+- Claude Desktop installs {{highlight |text=scmJS}} from one file: `scmjs-mcp-windows-x64.mcpb`, or
+  `scmjs-mcp-macos-arm64.mcpb` / `scmjs-mcp-macos-x64.mcpb` on a Mac, on this release's
+  page. It asks for your maps folder and needs no terminal or Node.js.
+- Ask the AI to sign you in to scmjs.dev: it opens the sign-in page in your browser, with
+  no terminal.
+- `scmjs mcp --folder <folder>` names the folder the tools work in, for an app that starts
+  the server somewhere else.
+- The AI tools guide starts with setting up Claude Desktop, then example requests with
+  what they give back, and what to do when something goes wrong.
+
+#### Plugins
+
+- Aftermath 0.27.2: the replay timeline and its charts follow the pointer at a larger
+  interface size.
+- scmjs.dev 1.41.1: its Preferences page is listed before the Account dialog has been
+  opened.
+
+#### For plugin authors
+
+- At 115% and 130% your dialogs and panels are drawn larger with the rest of the
+  interface. A pointer's `clientX` / `clientY` and `getBoundingClientRect()` are in page
+  pixels, while `clientWidth` and the lengths you set are in the element's own. Turn a
+  pointer position into a place in your element with the rectangle alone,
+  `(e.clientX - rect.left) / rect.width * element.clientWidth`, or divide by
+  `element.currentCSSZoom`. A tooltip function's `offsetX` / `offsetY` are page pixels
+  too.
+- **Reset everything…** calls a Preferences page's `reset()` when the page has been shown
+  since the dialog opened, even with another page in front.
+- `animateWater`, `animateUnits` and `hdGraphics` are no longer fields of `Preferences`.
+  Read them with `api.view.flags()`. The grid, location names, the two animations and
+  Remastered graphics are now remembered between sessions, so a plugin that changes one
+  for a moment should set it back.
+- A notice stays up, whatever time it was given, for someone who keeps notices until
+  they close them.
+- The API version stays 1.
+
+## Download:
+
+Find version 0.18.0 of {{highlight |text=scmJS}} [here](https://github.com/scm-js/scm-js/releases/tag/v0.18.0).
