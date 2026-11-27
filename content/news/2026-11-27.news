@@ -1,0 +1,11 @@
+{{begin-newsitem |time=2026-11-27T17:34:43Z |title=AxeGraft page |author=Ojan |resources=axegraft.png |categories=StarCraft I, Warcraft II, modding, tools |summary=Page for AxeGraft}}
+
+I finally got around to make a page for {{highlight |text=AxeGraft}}, [here](../common/software/axegraft.html).
+
+{{highlight |text=AxeGraft}} is a tool I released [earlier](../archive/november_2026.html#newsitem_2026-11-09T16:30:19Z) this month. While many things in StarCraft and Warcraft II are stored in files that are easily editable and modifiable, a fair chunk of things are built directly into the game executable themselves. Most notably, these include what buttons and abilities each unit has, what buildings can do, and what the tech-tree looks like.
+
+{{img |file=axegraft.png |title=AxeGraft}}
+
+With {{highlight |text=AxeGraft}}, this is now modifiable! It consists of an Editor where you make your edits, and a Patcher where you load a set of edits. The Editor runs directly in your browser, while the Patcher is a plugin for [MPQDraft](https://www.jorsys.org/common/software/mpqdraft.html). It has support for nearly all versions of StarCraft: Brood War <= version 1.17, and for Warcraft II: Battle.net Edition.
+
+Read more about this successor to {{highlight |text=FireGraft}} / {{highlight |text=StarGraft}} / {{highlight |text=MemGraft}} / {{highlight |text=WarHack}} [here](../common/software/axegraft.html)!
